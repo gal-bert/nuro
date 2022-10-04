@@ -7,8 +7,10 @@
 
 import Foundation
 
-/// Put any constant variables here like userDefault keys, nib name, etc
+/// Put any constant variables here like paths, etc
 
 class Constants {
+    
+    static let GUIDED_ACCESS_SETTINGS_PATH = "App-prefs:ACCESSIBILITY&path=GUIDED_ACCESS_TITLE"
     
 }

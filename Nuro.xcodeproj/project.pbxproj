@@ -28,6 +28,7 @@
 		0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */; };
 		0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */; };
 		0CA82E3128EC79F000D811A6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3028EC79F000D811A6 /* Query.swift */; };
+		0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3228EC7B2500D811A6 /* Seeder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityViewModel.swift; sourceTree = "<group>"; };
 		0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityViewController.swift; sourceTree = "<group>"; };
 		0CA82E3028EC79F000D811A6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		0CA82E3228EC7B2500D811A6 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		0C79CE9F28EAB45100706D0A /* Nuro */ = {
 			isa = PBXGroup;
 			children = (
+				0CA82E3428EC7B5400D811A6 /* Assets */,
 				0CA82E0B28EC6E2C00D811A6 /* Base */,
 				0CA82E2E28EC799B00D811A6 /* Models */,
 				0CA82E0E28EC6FF400D811A6 /* Components */,
@@ -317,8 +320,24 @@
 			isa = PBXGroup;
 			children = (
 				0CA82E3028EC79F000D811A6 /* Query.swift */,
+				0CA82E3228EC7B2500D811A6 /* Seeder.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0CA82E3428EC7B5400D811A6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E3528EC7B6600D811A6 /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0CA82E3528EC7B6600D811A6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,6 +483,7 @@
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
 				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
+				0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */,
 				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
