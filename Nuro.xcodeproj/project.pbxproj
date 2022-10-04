@@ -27,6 +27,7 @@
 		0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2828EC77D700D811A6 /* ParentTodayActivityView.swift */; };
 		0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */; };
 		0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */; };
+		0CA82E3128EC79F000D811A6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3028EC79F000D811A6 /* Query.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		0CA82E2828EC77D700D811A6 /* ParentTodayActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityView.swift; sourceTree = "<group>"; };
 		0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityViewModel.swift; sourceTree = "<group>"; };
 		0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityViewController.swift; sourceTree = "<group>"; };
+		0CA82E3028EC79F000D811A6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		0CA82E0A28EC6D9400D811A6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0CA82E2F28EC79E100D811A6 /* CoreData */,
 				0CA82E1428EC719100D811A6 /* Extensions */,
 				0CA82E0228EC6A8C00D811A6 /* Environment.swift */,
 				0CA82E0428EC6D3F00D811A6 /* Constants.swift */,
@@ -310,6 +313,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0CA82E2F28EC79E100D811A6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E3028EC79F000D811A6 /* Query.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -456,6 +467,7 @@
 				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
+				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
