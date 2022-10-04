@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA028EAB45100706D0A /* AppDelegate.swift */; };
 		0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA228EAB45100706D0A /* SceneDelegate.swift */; };
-		0C79CEA528EAB45100706D0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA428EAB45100706D0A /* ViewController.swift */; };
 		0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */; };
 		0C79CEAD28EAB45200706D0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C79CEAC28EAB45200706D0A /* Assets.xcassets */; };
 		0C79CEB028EAB45200706D0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C79CEAE28EAB45200706D0A /* LaunchScreen.storyboard */; };
@@ -18,6 +17,16 @@
 		0C79CEC728EAB45200706D0A /* NuroUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEC628EAB45200706D0A /* NuroUITestsLaunchTests.swift */; };
 		0C89BFE928EC68F200E5D6D4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFE828EC68F200E5D6D4 /* RxSwift */; };
 		0C89BFEC28EC690300E5D6D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFEB28EC690300E5D6D4 /* SnapKit */; };
+		0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0228EC6A8C00D811A6 /* Environment.swift */; };
+		0CA82E0528EC6D3F00D811A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0428EC6D3F00D811A6 /* Constants.swift */; };
+		0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */; };
+		0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1528EC719B00D811A6 /* String+Ext.swift */; };
+		0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1D28EC72E500D811A6 /* Colors.swift */; };
+		0CA82E2428EC765400D811A6 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2328EC765400D811A6 /* Icons.swift */; };
+		0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2528EC76D000D811A6 /* Strings.swift */; };
+		0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2828EC77D700D811A6 /* ParentTodayActivityView.swift */; };
+		0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */; };
+		0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +50,6 @@
 		0C79CE9D28EAB45100706D0A /* Nuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEA028EAB45100706D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C79CEA228EAB45100706D0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C79CEA428EAB45100706D0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0C79CEAA28EAB45100706D0A /* Nuro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nuro.xcdatamodel; sourceTree = "<group>"; };
 		0C79CEAC28EAB45200706D0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C79CEAF28EAB45200706D0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,16 @@
 		0C79CEC028EAB45200706D0A /* NuroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEC428EAB45200706D0A /* NuroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuroUITests.swift; sourceTree = "<group>"; };
 		0C79CEC628EAB45200706D0A /* NuroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuroUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0CA82E0228EC6A8C00D811A6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		0CA82E0428EC6D3F00D811A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		0CA82E1528EC719B00D811A6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		0CA82E1D28EC72E500D811A6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0CA82E2328EC765400D811A6 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		0CA82E2528EC76D000D811A6 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		0CA82E2828EC77D700D811A6 /* ParentTodayActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityView.swift; sourceTree = "<group>"; };
+		0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityViewModel.swift; sourceTree = "<group>"; };
+		0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +121,10 @@
 		0C79CE9F28EAB45100706D0A /* Nuro */ = {
 			isa = PBXGroup;
 			children = (
-				0C79CEA028EAB45100706D0A /* AppDelegate.swift */,
-				0C79CEA228EAB45100706D0A /* SceneDelegate.swift */,
-				0C79CEA428EAB45100706D0A /* ViewController.swift */,
-				0C79CEAC28EAB45200706D0A /* Assets.xcassets */,
-				0C79CEAE28EAB45200706D0A /* LaunchScreen.storyboard */,
-				0C79CEB128EAB45200706D0A /* Info.plist */,
-				0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */,
+				0CA82E0B28EC6E2C00D811A6 /* Base */,
+				0CA82E0E28EC6FF400D811A6 /* Components */,
+				0CA82E0D28EC6F2E00D811A6 /* Features */,
+				0CA82E0A28EC6D9400D811A6 /* Utilities */,
 			);
 			path = Nuro;
 			sourceTree = "<group>";
@@ -129,6 +144,162 @@
 				0C79CEC628EAB45200706D0A /* NuroUITestsLaunchTests.swift */,
 			);
 			path = NuroUITests;
+			sourceTree = "<group>";
+		};
+		0CA82E0A28EC6D9400D811A6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E1428EC719100D811A6 /* Extensions */,
+				0CA82E0228EC6A8C00D811A6 /* Environment.swift */,
+				0CA82E0428EC6D3F00D811A6 /* Constants.swift */,
+				0CA82E1D28EC72E500D811A6 /* Colors.swift */,
+				0CA82E2328EC765400D811A6 /* Icons.swift */,
+				0CA82E2528EC76D000D811A6 /* Strings.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0CA82E0B28EC6E2C00D811A6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E0C28EC6EA000D811A6 /* Lifecycle */,
+				0C79CEAE28EAB45200706D0A /* LaunchScreen.storyboard */,
+				0C79CEB128EAB45200706D0A /* Info.plist */,
+				0C79CEAC28EAB45200706D0A /* Assets.xcassets */,
+				0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0CA82E0C28EC6EA000D811A6 /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				0C79CEA028EAB45100706D0A /* AppDelegate.swift */,
+				0C79CEA228EAB45100706D0A /* SceneDelegate.swift */,
+			);
+			path = Lifecycle;
+			sourceTree = "<group>";
+		};
+		0CA82E0D28EC6F2E00D811A6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E1028EC701900D811A6 /* Parent */,
+				0CA82E1328EC702D00D811A6 /* Child */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0CA82E0E28EC6FF400D811A6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E1728EC724800D811A6 /* Sidebar */,
+				0CA82E1C28EC727E00D811A6 /* Textfields */,
+				0CA82E1B28EC727700D811A6 /* Labels */,
+				0CA82E1A28EC726600D811A6 /* Buttons */,
+				0CA82E1928EC725600D811A6 /* Collectionview */,
+				0CA82E1828EC724F00D811A6 /* Tableview */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0CA82E1028EC701900D811A6 /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E2228EC75F100D811A6 /* TodayActivity */,
+				0CA82E2028EC75CD00D811A6 /* ActivityList */,
+				0CA82E2128EC75E800D811A6 /* Routine */,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
+		0CA82E1328EC702D00D811A6 /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E1F28EC75BE00D811A6 /* Routine */,
+			);
+			path = Child;
+			sourceTree = "<group>";
+		};
+		0CA82E1428EC719100D811A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */,
+				0CA82E1528EC719B00D811A6 /* String+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0CA82E1728EC724800D811A6 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sidebar;
+			sourceTree = "<group>";
+		};
+		0CA82E1828EC724F00D811A6 /* Tableview */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tableview;
+			sourceTree = "<group>";
+		};
+		0CA82E1928EC725600D811A6 /* Collectionview */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Collectionview;
+			sourceTree = "<group>";
+		};
+		0CA82E1A28EC726600D811A6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		0CA82E1B28EC727700D811A6 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		0CA82E1C28EC727E00D811A6 /* Textfields */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Textfields;
+			sourceTree = "<group>";
+		};
+		0CA82E1F28EC75BE00D811A6 /* Routine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routine;
+			sourceTree = "<group>";
+		};
+		0CA82E2028EC75CD00D811A6 /* ActivityList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ActivityList;
+			sourceTree = "<group>";
+		};
+		0CA82E2128EC75E800D811A6 /* Routine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routine;
+			sourceTree = "<group>";
+		};
+		0CA82E2228EC75F100D811A6 /* TodayActivity */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E2828EC77D700D811A6 /* ParentTodayActivityView.swift */,
+				0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */,
+				0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */,
+			);
+			path = TodayActivity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +440,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C79CEA528EAB45100706D0A /* ViewController.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
+				0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */,
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
+				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
+				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
+				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
+				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
+				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
+				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
+				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
+				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
+				0CA82E0528EC6D3F00D811A6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +623,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CL42QD4LKB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Nuro/Info.plist;
+				INFOPLIST_FILE = Nuro/Base/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -474,7 +654,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CL42QD4LKB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Nuro/Info.plist;
+				INFOPLIST_FILE = Nuro/Base/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
