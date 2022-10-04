@@ -302,8 +302,8 @@
 		0CA82E2228EC75F100D811A6 /* TodayActivity */ = {
 			isa = PBXGroup;
 			children = (
-				0CA82E2828EC77D700D811A6 /* ParentTodayActivityView.swift */,
-				0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */,
+				0CA82E3628EC7C6B00D811A6 /* Views */,
+				0CA82E3728EC7C7500D811A6 /* ViewModels */,
 				0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */,
 			);
 			path = TodayActivity;
@@ -338,6 +338,22 @@
 			children = (
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		0CA82E3628EC7C6B00D811A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E2828EC77D700D811A6 /* ParentTodayActivityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0CA82E3728EC7C7500D811A6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
