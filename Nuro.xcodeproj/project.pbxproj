@@ -122,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				0CA82E0B28EC6E2C00D811A6 /* Base */,
+				0CA82E2E28EC799B00D811A6 /* Models */,
 				0CA82E0E28EC6FF400D811A6 /* Components */,
 				0CA82E0D28EC6F2E00D811A6 /* Features */,
 				0CA82E0A28EC6D9400D811A6 /* Utilities */,
@@ -300,6 +301,13 @@
 				0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */,
 			);
 			path = TodayActivity;
+			sourceTree = "<group>";
+		};
+		0CA82E2E28EC799B00D811A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
