@@ -10,32 +10,46 @@ import SnapKit
 
 class ParentTodayActivityView: UIView {
     
-    let moreBtn = SelectButton(title: "asd")
+    let moreButton = MoreButton()
+    let smallCapsuleButton = SmallCapsuleButton()
     var delegate: ParentTodayActivityDelegate!
     
+    var vc: ParentTodayActivityViewController!
+    
     func setup(vc: ParentTodayActivityViewController) {
-        backgroundColor = .white
-        
         delegate = vc
+        self.vc = vc
         
-        vc.title = "Halo, Mom"
-        vc.navigationController?.navigationBar.prefersLargeTitles = true
-        
-        addSubview(moreBtn)
-        
-        moreBtn.addTarget(self, action: #selector(btnAction), for: .touchUpInside)
-        
+        backgroundColor = .white
+    
+        setupNavigationBar()
         setupConstraints()
     }
     
-    @objc func btnAction() {
-        delegate?.printText()
+    private func setupNavigationBar() {
+        vc.title = "Halo, Mom"
+        vc.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        vc.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(customView: moreButton),
+            UIBarButtonItem(customView: smallCapsuleButton)
+        ]
+        
+        moreButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
+        smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
+    }
+    
+    
+    @objc private func selectButtonAction() {
+        delegate.printText(text: "Select Button Clicked")
+    }
+
+    @objc private func smallCapsuleButtonAction() {
+        delegate.printText(text: "More Button Clicked")
     }
     
     private func setupConstraints() {
-        moreBtn.snp.makeConstraints { make in
-            make.top.left.equalTo(safeAreaLayoutGuide).inset(20)
-        }
+        
     }
     
 }

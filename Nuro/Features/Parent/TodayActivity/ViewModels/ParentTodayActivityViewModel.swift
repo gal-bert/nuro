@@ -9,8 +9,8 @@ import Foundation
 
 class ParentTodayActivityViewModel {
     
-    func printText() {
-        print("Hello World")
+    func printText(text: String) {
+        print("\(text)")
     }
     
 }
