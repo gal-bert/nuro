@@ -10,7 +10,7 @@ import SnapKit
 
 class ParentTodayActivityView: UIView {
     
-    let moreBtn = MoreButton()
+    let moreBtn = SelectButton(title: "asd")
     var delegate: ParentTodayActivityDelegate!
     
     func setup(vc: ParentTodayActivityViewController) {
