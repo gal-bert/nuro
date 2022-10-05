@@ -8,11 +8,17 @@
 import UIKit
 
 class ParentTodayActivityViewController: UIViewController {
+    
+    let parentTodayActivityView = ParentTodayActivityView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        parentTodayActivityView.setup()
         // Do any additional setup after loading the view.
+    }
+    
+    override func loadView() {
+        self.view = parentTodayActivityView
     }
     
 
