@@ -8,7 +8,7 @@
 import Foundation
 
 extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
-    func printText() {
-        viewModel.printText()
+    func printText(text: String) {
+        viewModel.printText(text: text)
     }
 }
