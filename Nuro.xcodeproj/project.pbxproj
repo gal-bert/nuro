@@ -328,6 +328,7 @@
 		0CA82E3428EC7B5400D811A6 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0CD4D50B28ED223A000B86FD /* Fonts */,
 				0CA82E3528EC7B6600D811A6 /* Images */,
 			);
 			path = Assets;
@@ -354,6 +355,13 @@
 				0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0CD4D50B28ED223A000B86FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
