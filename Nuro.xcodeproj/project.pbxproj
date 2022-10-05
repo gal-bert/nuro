@@ -29,6 +29,7 @@
 		0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */; };
 		0CA82E3128EC79F000D811A6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3028EC79F000D811A6 /* Query.swift */; };
 		0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3228EC7B2500D811A6 /* Seeder.swift */; };
+		0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityViewController.swift; sourceTree = "<group>"; };
 		0CA82E3028EC79F000D811A6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		0CA82E3228EC7B2500D811A6 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
+		0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +290,7 @@
 		0CA82E2028EC75CD00D811A6 /* ActivityList */ = {
 			isa = PBXGroup;
 			children = (
+				0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */,
 			);
 			path = ActivityList;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
 				0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */,
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
+				0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */,
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
 				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
 				0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */,
