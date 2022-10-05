@@ -10,6 +10,8 @@ import SnapKit
 
 class ParentRoutineView: UIView {
     
+    var delegate: ParentRoutineDelegate!
+    
     let segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"])
         view.selectedSegmentIndex = 0
@@ -26,32 +28,32 @@ class ParentRoutineView: UIView {
     
     func setup(vc: ParentRoutineViewController) {
         backgroundColor = .white
+        
+        delegate = vc
+        
         vc.title = "Rutinitas"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         
-        let moreButton = MoreButton()
+        let moreBtn = MoreButton()
+        let editBtn = SelectButton(title: "Edit")
         
-        let customView = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-        customView.setTitle("Pilih", for: .normal)
-        customView.titleLabel?.font = UIFont(name: ".AppleSystemUIFont", size: 24)
-        customView.backgroundColor = .systemBlue
-        customView.layer.cornerRadius = 20
+        let moreButton = UIBarButtonItem(customView: moreBtn)
+        let editButton = UIBarButtonItem(customView: editBtn)
         
-        
-        let pilihButton = UIBarButtonItem(customView: customView)
-        
-        let moreBtn = UIBarButtonItem(customView: moreButton)
-        
-        vc.navigationItem.rightBarButtonItems = [moreBtn, pilihButton]
+        vc.navigationItem.rightBarButtonItems = [moreButton, editButton]
         
         addSubview(segmentedControl)
         segmentedControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
         
         addSubview(labelHeader)
         
-        
         setupConstraint()
 
+    }
+    
+    @objc func segmentedValueChanged() {
+        delegate?.printText()
+        print("Selected Segment is : \(segmentedControl.selectedSegmentIndex)")
     }
     
     private func setupConstraint() {
@@ -63,9 +65,5 @@ class ParentRoutineView: UIView {
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
             make.left.right.equalToSuperview().inset(20)
         }
-    }
-    
-    @objc func segmentedValueChanged() -> Void {
-        print("Selected Segment is : \(segmentedControl.selectedSegmentIndex)")
     }
 }
