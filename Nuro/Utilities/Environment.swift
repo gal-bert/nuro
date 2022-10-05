@@ -13,6 +13,6 @@ import UIKit
 class Environment {
     
     static let appName = "Nuro"
-    static let initialVC = ParentTodayActivityViewController() // MARK: Setup initial View Controller here
+    static let initialVC = ChildRoutineViewController() // MARK: Setup initial View Controller here
     
 }
