@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectButton: UIButton {
+class SmallCapsuleButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,8 +23,9 @@ class SelectButton: UIButton {
     
     private func setupButton() {
         configuration = .filled()
-        layer.cornerRadius = 20
         clipsToBounds = true
+        layer.cornerRadius = 17
+        layer.cornerCurve = .continuous
     }
     
     
