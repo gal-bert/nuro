@@ -10,5 +10,5 @@ import UIKit
 /// Put icons that are used on the app here
 
 class Icons {
-    
+    static let ELLIPSIS = "ellipsis.circle.fill"
 }

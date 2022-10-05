@@ -15,6 +15,7 @@
 		0C79CEBB28EAB45200706D0A /* NuroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEBA28EAB45200706D0A /* NuroTests.swift */; };
 		0C79CEC528EAB45200706D0A /* NuroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEC428EAB45200706D0A /* NuroUITests.swift */; };
 		0C79CEC728EAB45200706D0A /* NuroUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEC628EAB45200706D0A /* NuroUITestsLaunchTests.swift */; };
+		0C89254028ED396D007BE0A4 /* MoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89253F28ED396D007BE0A4 /* MoreButton.swift */; };
 		0C89BFE928EC68F200E5D6D4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFE828EC68F200E5D6D4 /* RxSwift */; };
 		0C89BFEC28EC690300E5D6D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFEB28EC690300E5D6D4 /* SnapKit */; };
 		0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0228EC6A8C00D811A6 /* Environment.swift */; };
@@ -62,6 +63,7 @@
 		0C79CEC028EAB45200706D0A /* NuroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEC428EAB45200706D0A /* NuroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuroUITests.swift; sourceTree = "<group>"; };
 		0C79CEC628EAB45200706D0A /* NuroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuroUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0C89253F28ED396D007BE0A4 /* MoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButton.swift; sourceTree = "<group>"; };
 		0CA82E0228EC6A8C00D811A6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		0CA82E0428EC6D3F00D811A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		0CA82E1A28EC726600D811A6 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				0C89253F28ED396D007BE0A4 /* MoreButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
 				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
 				0CA82E0528EC6D3F00D811A6 /* Constants.swift in Sources */,
+				0C89254028ED396D007BE0A4 /* MoreButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

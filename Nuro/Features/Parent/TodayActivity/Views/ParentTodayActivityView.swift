@@ -8,24 +8,37 @@
 import UIKit
 import SnapKit
 
+protocol ParentTodayActivityDelegate {
+    func printText()
+}
+
 class ParentTodayActivityView: UIView {
     
-    let label: UILabel = {
-        let view = UILabel()
-        view.textColor = .black
-        view.text = "Hello World"
-        return view
-    }()
+    let moreBtn = MoreButton()
+    var delegate: ParentTodayActivityDelegate!
     
-    func setup() {
+    func setup(vc: ParentTodayActivityViewController) {
         backgroundColor = .white
-        addSubview(label)
+        
+        delegate = vc
+        
+        vc.title = "Halo, Mom"
+        vc.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        addSubview(moreBtn)
+        
+        moreBtn.addTarget(self, action: #selector(btnAction), for: .touchUpInside)
+        
         setupConstraints()
     }
     
+    @objc func btnAction() {
+        delegate?.printText()
+    }
+    
     private func setupConstraints() {
-        label.snp.makeConstraints { make in
-            make.top.left.right.equalTo(safeAreaLayoutGuide).inset(20)
+        moreBtn.snp.makeConstraints { make in
+            make.top.left.equalTo(safeAreaLayoutGuide).inset(20)
         }
     }
     

@@ -10,26 +10,20 @@ import UIKit
 class ParentTodayActivityViewController: UIViewController {
     
     let parentTodayActivityView = ParentTodayActivityView()
+    let viewModel = ParentTodayActivityViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        parentTodayActivityView.setup()
-        // Do any additional setup after loading the view.
+        parentTodayActivityView.setup(vc: self)
     }
     
     override func loadView() {
         self.view = parentTodayActivityView
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
+    func printText() {
+        viewModel.printText()
     }
-    */
-
 }
