@@ -44,11 +44,13 @@ class ChildRoutineView: UIView {
         return view
     }()
     
-    var vc: ChildRoutineViewController?
+    var vc: ChildRoutineViewController!
+    var delegate: ChildRoutineDelegate!
     
     func setup(vc: ChildRoutineViewController) {
         backgroundColor = .white
         self.vc = vc
+        delegate = vc
         
         setupUI()
         setupConstraints()
@@ -68,8 +70,9 @@ class ChildRoutineView: UIView {
     private func setupConstraints() {
         stickView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.left.right.equalTo(self).offset(80)
+            make.left.equalTo(self).offset(80)
             make.height.equalTo(64)
+            make.width.equalTo(Constants.SCREEN_WIDTH * 1.5)
         }
         
         activityCollectionView.snp.makeConstraints { make in
@@ -114,6 +117,42 @@ class ChildRoutineView: UIView {
     }
     
     @objc func startActivity() {
+//        delegate.animateNextActivity()
         
+        // TODO: Segue to full screen activity page
+        // ..
+    }
+    
+    func animateDeleteRow() {
+        activityCollectionView.performBatchUpdates {
+            activityCollectionView.deleteItems(at: [IndexPath(row: 0, section: 0)])
+        }
+    }
+    
+    func animateHideRow() {
+        activityCollectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
+    }
+    
+    func animateStickStartMovement() {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
+            stickView.frame = CGRect(x: stickView.frame.origin.x - Constants.HALF_SCREEN_WIDTH, y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
+        }, completion: { [self] _ in
+            stickView.snp.makeConstraints { make in
+                make.left.equalTo(self).offset(-24)
+            }
+        })
+    }
+    
+    func animateStickEndMovement() {
+        stickView.snp.removeConstraints()
+        stickView.snp.makeConstraints { make in
+            make.centerY.equalTo(self)
+            make.right.equalTo(self).offset(-80)
+            make.height.equalTo(64)
+            make.width.equalTo(Constants.SCREEN_WIDTH * 2)
+        }
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
+            stickView.frame = CGRect(x: stickView.frame.origin.x - Constants.HALF_SCREEN_WIDTH - 80, y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
+        }, completion: nil)
     }
 }
