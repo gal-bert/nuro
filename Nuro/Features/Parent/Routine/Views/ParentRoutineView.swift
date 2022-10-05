@@ -29,11 +29,6 @@ class ParentRoutineView: UIView {
         vc.title = "Rutinitas"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         
-//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-//        let config = UIImage.SymbolConfiguration(pointSize: 30)
-//        button.titleLabel?.font = UIFont(name: ".AppleSystemUIFontCompact", size: 24)
-//        button.setImage(UIImage(systemName: "ellipsis.circle.fill", withConfiguration: config), for: .normal)
-        
         let moreButton = MoreButton()
         
         let customView = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
