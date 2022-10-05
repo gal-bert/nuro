@@ -12,8 +12,6 @@ class Jumbotron: UIView {
     let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-//        view.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
-//        view.layer.borderWidth = 1
         view.layer.cornerRadius = view.frame.height
         view.clipsToBounds = true
         return view

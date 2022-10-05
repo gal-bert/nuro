@@ -27,6 +27,19 @@ class ParentTodayActivityView: UIView {
         return view
     }()
     
+    let scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.backgroundColor = .green
+        return view
+    }()
+    
+    let stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 20
+        return view
+    }()
+    
     var delegate: ParentTodayActivityDelegate!
     var vc: ParentTodayActivityViewController!
     
@@ -40,9 +53,14 @@ class ParentTodayActivityView: UIView {
         backgroundColor = .white
     
         setupNavigationBar()
-        addSubview(jumbotron)
-        addSubview(headerLabel)
-        addSubview(tableView)
+        
+        addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        stackView.addArrangedSubview(jumbotron)
+        stackView.addArrangedSubview(headerLabel)
+        stackView.addArrangedSubview(tableView)
+        
+        stackView.setCustomSpacing(40, after: jumbotron)
         
         setupConstraints()
     }
@@ -50,6 +68,7 @@ class ParentTodayActivityView: UIView {
     private func setupNavigationBar() {
         vc.title = "Halo, Mom"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
+        vc.navigationController?.navigationBar.backgroundColor = .white
         
         vc.navigationItem.rightBarButtonItems = [
             UIBarButtonItem(customView: moreButton),
@@ -69,19 +88,29 @@ class ParentTodayActivityView: UIView {
     }
     
     private func setupConstraints() {
+        
+        scrollView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(safeAreaLayoutGuide)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(scrollView)
+            make.width.equalTo(scrollView.snp.width).inset(10)
+        }
+        
         jumbotron.snp.makeConstraints { make in
-            make.top.left.right.equalTo(safeAreaLayoutGuide).inset(20)
+            make.top.equalTo(stackView.snp.top).offset(20)
             make.height.equalTo(200)
+            make.left.equalTo(stackView.snp.left).offset(20)
+            
         }
-        
+
         headerLabel.snp.makeConstraints { make in
-            make.top.equalTo(jumbotron.snp.bottom).offset(40)
-            make.left.equalTo(safeAreaLayoutGuide).inset(20)
+            
         }
-        
+
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(headerLabel.snp.bottom).offset(20)
-            make.left.right.bottom.equalTo(self).inset(0)
+            make.height.equalTo(15*45)
         }
     }
     
