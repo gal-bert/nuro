@@ -12,8 +12,9 @@ class ParentTodayActivityView: UIView {
     
     let moreButton = MoreButton()
     let smallCapsuleButton = SmallCapsuleButton()
-    var delegate: ParentTodayActivityDelegate!
+    let jumbotron = Jumbotron()
     
+    var delegate: ParentTodayActivityDelegate!
     var vc: ParentTodayActivityViewController!
     
     func setup(vc: ParentTodayActivityViewController) {
@@ -23,6 +24,9 @@ class ParentTodayActivityView: UIView {
         backgroundColor = .white
     
         setupNavigationBar()
+        addSubview(jumbotron)
+        
+        
         setupConstraints()
     }
     
@@ -39,7 +43,6 @@ class ParentTodayActivityView: UIView {
         smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
     }
     
-    
     @objc private func selectButtonAction() {
         delegate.printText(text: "Select Button Clicked")
     }
@@ -49,7 +52,10 @@ class ParentTodayActivityView: UIView {
     }
     
     private func setupConstraints() {
-        
+        jumbotron.snp.makeConstraints { make in
+            make.top.left.right.equalTo(safeAreaLayoutGuide).inset(20)
+            make.height.equalTo(300)
+        }
     }
     
 }
