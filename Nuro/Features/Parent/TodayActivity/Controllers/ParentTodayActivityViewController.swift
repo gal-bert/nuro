@@ -21,9 +21,3 @@ class ParentTodayActivityViewController: UIViewController {
         self.view = parentTodayActivityView
     }
 }
-
-extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
-    func printText() {
-        viewModel.printText()
-    }
-}

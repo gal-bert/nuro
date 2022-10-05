@@ -8,10 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol ParentTodayActivityDelegate {
-    func printText()
-}
-
 class ParentTodayActivityView: UIView {
     
     let moreBtn = MoreButton()
