@@ -60,8 +60,6 @@ class ParentTodayActivityView: UIView {
         stackView.addArrangedSubview(headerLabel)
         stackView.addArrangedSubview(tableView)
         
-        stackView.setCustomSpacing(40, after: jumbotron)
-        
         setupConstraints()
     }
     
@@ -74,6 +72,7 @@ class ParentTodayActivityView: UIView {
             UIBarButtonItem(customView: moreButton),
             UIBarButtonItem(customView: smallCapsuleButton)
         ]
+        
         
         moreButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
         smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
@@ -95,18 +94,14 @@ class ParentTodayActivityView: UIView {
         
         stackView.snp.makeConstraints { make in
             make.top.bottom.equalTo(scrollView)
-            make.width.equalTo(scrollView.snp.width).inset(10)
+            make.left.right.equalTo(scrollView).inset(20)
+            make.width.equalTo(scrollView.snp.width).inset(20)
         }
+        stackView.setCustomSpacing(40, after: jumbotron)
         
         jumbotron.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.top).offset(20)
             make.height.equalTo(200)
-            make.left.equalTo(stackView.snp.left).offset(20)
-            
-        }
-
-        headerLabel.snp.makeConstraints { make in
-            
         }
 
         tableView.snp.makeConstraints { make in

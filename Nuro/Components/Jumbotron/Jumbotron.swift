@@ -20,9 +20,9 @@ class Jumbotron: UIView {
     let clockLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 80, weight: .bold)
+        view.font = UIFont.systemFont(ofSize: 36, weight: .bold)
         view.text = "10.34"
-        view.backgroundColor = .red
+//        view.backgroundColor = .red
         return view
     }()
     
@@ -31,7 +31,14 @@ class Jumbotron: UIView {
         view.textColor = .black
         view.font = UIFont.systemFont(ofSize: 32, weight: .regular)
         view.text = "Senin, 26 September 2022"
-        view.backgroundColor = .orange
+//        view.backgroundColor = .orange
+        return view
+    }()
+    
+    let stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 5
         return view
     }()
 
@@ -46,31 +53,26 @@ class Jumbotron: UIView {
     
     func setup() {
         self.layer.cornerRadius = 20
-        backgroundColor = .yellow
+        backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         imageView.image = UIImage(named: "dummy")
         addSubview(imageView)
-        addSubview(clockLabel)
-        addSubview(dateLabel)
+        addSubview(stackView)
+        stackView.addArrangedSubview(clockLabel)
+        stackView.addArrangedSubview(dateLabel)
+        
         setupConstraints()
     }
     
     private func setupConstraints() {
         imageView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self).inset(35)
-            make.left.equalTo(self).inset(25)
+            make.top.left.bottom.equalTo(self).inset(35)
             make.width.equalTo(imageView.snp.height)
         }
         
-        clockLabel.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(20)
+        stackView.snp.makeConstraints { make in
+            make.centerY.equalTo(self)
             make.left.equalTo(imageView.snp.right).offset(25)
         }
-        
-        dateLabel.snp.makeConstraints { make in
-            make.top.equalTo(clockLabel.snp.bottom).offset(20)
-            make.left.equalTo(imageView.snp.right).offset(25)
-        }
-        
     }
     
 }
