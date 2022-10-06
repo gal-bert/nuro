@@ -9,8 +9,8 @@ import Foundation
 
 class ParentRoutineViewModel {
     
-    func printText() {
-        print("Segmented Selected")
+    func printText(text: String) {
+        print("Segmented Selected \(text)")
     }
     
 }

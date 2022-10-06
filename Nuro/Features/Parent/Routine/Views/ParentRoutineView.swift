@@ -35,7 +35,7 @@ class ParentRoutineView: UIView {
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         
         let moreBtn = MoreButton()
-        let editBtn = SelectButton(title: "Edit")
+        let editBtn = SmallCapsuleButton(title: "Edit")
         
         let moreButton = UIBarButtonItem(customView: moreBtn)
         let editButton = UIBarButtonItem(customView: editBtn)
@@ -52,8 +52,7 @@ class ParentRoutineView: UIView {
     }
     
     @objc func segmentedValueChanged() {
-        delegate?.printText()
-        print("Selected Segment is : \(segmentedControl.selectedSegmentIndex)")
+        delegate?.printText(text: "\(segmentedControl.selectedSegmentIndex)")
     }
     
     private func setupConstraint() {
