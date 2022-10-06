@@ -9,6 +9,8 @@ import UIKit
 
 class ChildActivityCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "childActivityCollectionViewCell"
+    
     private lazy var activityImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit

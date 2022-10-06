@@ -100,7 +100,7 @@ class ChildRoutineView: UIView {
         activityCollectionView.collectionViewLayout = collectionViewLayout()
         activityCollectionView.isUserInteractionEnabled = false
         
-        activityCollectionView.register(ChildActivityCollectionViewCell.self, forCellWithReuseIdentifier: "childActivityCell")
+        activityCollectionView.register(ChildActivityCollectionViewCell.self, forCellWithReuseIdentifier: ChildActivityCollectionViewCell.identifier)
     }
     
     private func collectionViewLayout() -> UICollectionViewCompositionalLayout {

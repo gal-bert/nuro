@@ -30,10 +30,16 @@ class ChildRoutineViewController: UIViewController {
         hideFirstActivityCard = true
         
         childRoutineView.animateHideRow()
-        viewModel.removeFirstActivity()
-        Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { [self] timer in
-            childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activityName.count)
+        if viewModel.activityName.count > 0 {
+            viewModel.removeFirstActivity()
+            Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { [self] timer in
+                childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activityName.count)
+            }
         }
+        else {
+            // Segue ke activity done
+        }
+        
         
         hideFirstActivityCard = false
     }
