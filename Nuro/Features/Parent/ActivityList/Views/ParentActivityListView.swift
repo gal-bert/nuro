@@ -10,9 +10,11 @@ import SnapKit
 
 class ParentActivityListView: UIView {
     
-    let moreButton = MoreButton()
-    let smallCapsuleButton = SmallCapsuleButton()
-    var delegate: ParentActivityListDelegate
+    
+    var delegate: ParentActivityListDelegate!
+    
+    var vc: ParentActivityListViewController!
+    
     func setup(vc: ParentActivityListViewController) {
         delegate = vc
         self.vc = vc
@@ -20,13 +22,8 @@ class ParentActivityListView: UIView {
         backgroundColor = .white
         
         setupNavigationBar()
+        //setupButtonView()
     }
-    
-    //    private func setupConstraints() {
-    //        label.snp.makeConstraints { make in
-    //            make.top.left.right.equalTo(safeAreaLayoutGuide).inset(20)
-    //        }
-    //    }
     
     private func setupNavigationBar() {
         
@@ -34,25 +31,44 @@ class ParentActivityListView: UIView {
         vc.title = "Daftar Aktivitas"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         
-        vc.navigationItem.rightBarButtonItem = [
+        let moreButton = MoreButton()
+        let pilihButton = SmallCapsuleButton(title: "Pilih")
+        
+        vc.navigationItem.rightBarButtonItems = [
             UIBarButtonItem(customView: moreButton),
-            UIBarButtonItem(customView: smallCapsuleButton)
+            UIBarButtonItem(customView: pilihButton)
         ]
         
-        moreButton.addTarget(self, action: #selector(smallCapsuleButton), for: .touchUpInside)
-        smallCapsuleButton.addTarget(self, action: #selector(selectbutton), for: .touchUpInside)
+        moreButton.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
+        pilihButton.addTarget(self, action: #selector(pilihButtonAction), for: .touchUpInside)
+        
+        //searchController
+        let searchController = UISearchController(searchResultsController: nil)
+        vc.navigationItem.searchController = searchController
+        if #available(iOS 16, *){
+                    vc.navigationItem.preferredSearchBarPlacement = .stacked
+        }
     }
     
-    @objc private func selectButtonAction() {
+//    private func setupButtonView() {
+//        //
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.definesPresentationContext = true
+//        vc.navigationItem.searchController = searchController
+//
+//    }
+    
+    @objc private func pilihButtonAction() {
         delegate.printText(text: "Select Button Clicked")
     }
     
-    @objc private func smallCapsuleButtonAction() {
+    @objc private func moreButtonAction() {
         delegate.printText(text: "More Button Clicked")
     }
     
     private func setupConstraints() {
         
     }
-
-
+    
+}

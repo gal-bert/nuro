@@ -53,7 +53,7 @@ class Jumbotron: UIView {
         
         clockLabel.snp.makeConstraints { make in
             make.top.bottom.equalTo(self).inset(35)
-            make.left.equalTo(<#T##other: ConstraintRelatableTarget##ConstraintRelatableTarget#>)
+            //make.left.equalTo(<#T##other: ConstraintRelatableTarget##ConstraintRelatableTarget#>)
         }
         
     }
