@@ -24,6 +24,7 @@ class ParentTodayActivityView: UIView {
     
     let tableView: UITableView = {
         let view = UITableView()
+        view.isScrollEnabled = false
         return view
     }()
     
@@ -48,7 +49,8 @@ class ParentTodayActivityView: UIView {
         delegate = vc
         tableView.dataSource = vc
         tableView.delegate = vc
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ParentActivityTableViewCell.self, forCellReuseIdentifier: ParentActivityTableViewCell.identifier)
+//        tableView.register(MyTableViewCell.self, forCellReuseIdentifier: MyTableViewCell.identifier)
         
         backgroundColor = .white
     
@@ -105,7 +107,7 @@ class ParentTodayActivityView: UIView {
         }
 
         tableView.snp.makeConstraints { make in
-            make.height.equalTo(15*45)
+            make.height.equalTo(15 * Constants.COLLECTION_VIEW_CELL_HEIGHT)
         }
     }
     

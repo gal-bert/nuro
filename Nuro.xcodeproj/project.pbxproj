@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */; };
 		0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA028EAB45100706D0A /* AppDelegate.swift */; };
 		0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA228EAB45100706D0A /* SceneDelegate.swift */; };
 		0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */; };
@@ -34,6 +35,7 @@
 		0CA82E3128EC79F000D811A6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3028EC79F000D811A6 /* Query.swift */; };
 		0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3228EC7B2500D811A6 /* Seeder.swift */; };
 		0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F5128EDBB8C0033D5A6 /* Jumbotron.swift */; };
+		0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */; };
 		0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0C79CE9D28EAB45100706D0A /* Nuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEA028EAB45100706D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C79CEA228EAB45100706D0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		0CA82E3028EC79F000D811A6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		0CA82E3228EC7B2500D811A6 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		0CCD3F5128EDBB8C0033D5A6 /* Jumbotron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jumbotron.swift; sourceTree = "<group>"; };
+		0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,6 +272,7 @@
 		0CA82E1828EC724F00D811A6 /* Tableview */ = {
 			isa = PBXGroup;
 			children = (
+				0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */,
 			);
 			path = Tableview;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 		0CA82E1928EC725600D811A6 /* Collectionview */ = {
 			isa = PBXGroup;
 			children = (
+				0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */,
 			);
 			path = Collectionview;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
 				0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */,
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
+				0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
 				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
 				0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */,
@@ -551,6 +558,7 @@
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
+				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
