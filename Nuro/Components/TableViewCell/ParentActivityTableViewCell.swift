@@ -32,6 +32,8 @@ class ParentActivityTableViewCell: UITableViewCell {
         contentView.addSubview(myLabel)
         contentView.addSubview(collectionView)
         
+        backgroundColor = .orange
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ParentActivityCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityCollectionViewCell.identifier)
@@ -40,7 +42,8 @@ class ParentActivityTableViewCell: UITableViewCell {
     
     private func setupConstraints() {
         collectionView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(self).inset(20)
+            make.top.bottom.equalTo(self).inset(20)
+            make.left.right.equalTo(self)
         }
     }
     
@@ -70,5 +73,9 @@ extension ParentActivityTableViewCell: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 100)
     }
 }

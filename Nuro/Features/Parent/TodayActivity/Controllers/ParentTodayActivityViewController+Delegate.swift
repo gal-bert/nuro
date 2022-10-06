@@ -16,9 +16,10 @@ extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
 extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentTodayActivityView.tableView.dequeueReusableCell(withIdentifier: ParentActivityTableViewCell.identifier) as! ParentActivityTableViewCell
-
+        
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.loadTableView().count

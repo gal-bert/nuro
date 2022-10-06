@@ -229,8 +229,8 @@
 				0CA82E1C28EC727E00D811A6 /* Textfields */,
 				0CA82E1B28EC727700D811A6 /* Labels */,
 				0CA82E1A28EC726600D811A6 /* Buttons */,
-				0CA82E1928EC725600D811A6 /* Collectionview */,
-				0CA82E1828EC724F00D811A6 /* Tableview */,
+				0CA82E1928EC725600D811A6 /* CollectionViewCell */,
+				0CA82E1828EC724F00D811A6 /* TableViewCell */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,20 +269,20 @@
 			path = Sidebar;
 			sourceTree = "<group>";
 		};
-		0CA82E1828EC724F00D811A6 /* Tableview */ = {
+		0CA82E1828EC724F00D811A6 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */,
 			);
-			path = Tableview;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		0CA82E1928EC725600D811A6 /* Collectionview */ = {
+		0CA82E1928EC725600D811A6 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */,
 			);
-			path = Collectionview;
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		0CA82E1A28EC726600D811A6 /* Buttons */ = {

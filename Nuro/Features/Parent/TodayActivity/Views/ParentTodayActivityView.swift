@@ -50,8 +50,7 @@ class ParentTodayActivityView: UIView {
         tableView.dataSource = vc
         tableView.delegate = vc
         tableView.register(ParentActivityTableViewCell.self, forCellReuseIdentifier: ParentActivityTableViewCell.identifier)
-//        tableView.register(MyTableViewCell.self, forCellReuseIdentifier: MyTableViewCell.identifier)
-        
+            
         backgroundColor = .white
     
         setupNavigationBar()
@@ -74,7 +73,6 @@ class ParentTodayActivityView: UIView {
             UIBarButtonItem(customView: moreButton),
             UIBarButtonItem(customView: smallCapsuleButton)
         ]
-        
         
         moreButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
         smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
