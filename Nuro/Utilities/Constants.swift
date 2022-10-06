@@ -17,4 +17,6 @@ class Constants {
     static let HALF_SCREEN_WIDTH = UIScreen.main.bounds.width / 2
     static let SCREEN_WIDTH = UIScreen.main.bounds.width
     
+    static let COLLECTION_VIEW_CELL_HEIGHT = 280
+    static let COLLECTION_VIEW_CELL_WIDTH = 220
 }
