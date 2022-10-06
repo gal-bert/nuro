@@ -73,7 +73,7 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
     
     func makeHidden() {
         self.alpha = 1
-        UIView.animate(withDuration: 0.8, delay: 0, options: .curveEaseIn, animations: { [self] in
+        UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseIn, animations: { [self] in
             self.alpha = 0
             self.backgroundColor = .clear
             self.activityImage.backgroundColor = .clear

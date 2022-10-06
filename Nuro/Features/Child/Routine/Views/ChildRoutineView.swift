@@ -123,6 +123,18 @@ class ChildRoutineView: UIView {
         // ..
     }
     
+    func animateToNextActivity(totalActivity: Int, currTotalActivity: Int) {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
+            animateDeleteRow()
+            if totalActivity == currTotalActivity + 1 {
+                animateStickStartMovement()
+            }
+            else if currTotalActivity == 1 {
+                animateStickEndMovement()
+            }
+        }, completion: nil)
+    }
+    
     func animateDeleteRow() {
         activityCollectionView.performBatchUpdates {
             activityCollectionView.deleteItems(at: [IndexPath(row: 0, section: 0)])

@@ -9,19 +9,17 @@ import UIKit
 
 class ChildRoutineViewController: UIViewController {
     
-    // MARK: Dummy data
-    var activityName = ["Aktivitas 1", "Aktivitas 2", "Aktivitas 3", "Aktivitas 4", "Aktivitas 5"]
-    var activityImageName = ["face.smiling", "pencil", "square.and.arrow.up", "cup.and.saucer.fill", "bed.double.fill"]
-    var hide = false
-    var totalActivity = 0
+    var hideFirstActivityCard = false
+    private var totalActivity = 0
     
-    let childRoutineView = ChildRoutineView()
+    private let childRoutineView = ChildRoutineView()
+    let viewModel = ChildRoutineViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         childRoutineView.setup(vc: self)
-        totalActivity = activityName.count
+        totalActivity = viewModel.activityName.count
     }
     
     override func loadView() {
@@ -29,23 +27,14 @@ class ChildRoutineViewController: UIViewController {
     }
     
     func nextActivity() {
-        hide = true
-        childRoutineView.animateHideRow()
+        hideFirstActivityCard = true
         
-        activityName.removeFirst()
-        activityImageName.removeFirst()
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
-            UIView.animate(withDuration: 1, delay: 0.5, options: .curveEaseIn, animations: { [self] in
-                childRoutineView.animateDeleteRow()
-                if totalActivity == activityName.count + 1 {
-                    childRoutineView.animateStickStartMovement()
-                }
-                else if activityName.count == 1 {
-                    childRoutineView.animateStickEndMovement()
-                }
-            }, completion: { _ in
-                self.hide = false
-            })
+        childRoutineView.animateHideRow()
+        viewModel.removeFirstActivity()
+        Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { [self] timer in
+            childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activityName.count)
         }
+        
+        hideFirstActivityCard = false
     }
 }
