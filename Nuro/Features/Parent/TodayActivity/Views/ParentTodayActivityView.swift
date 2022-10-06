@@ -24,6 +24,7 @@ class ParentTodayActivityView: UIView {
     
     let tableView: UITableView = {
         let view = UITableView()
+        view.isScrollEnabled = false
         return view
     }()
     
@@ -48,8 +49,8 @@ class ParentTodayActivityView: UIView {
         delegate = vc
         tableView.dataSource = vc
         tableView.delegate = vc
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        tableView.register(ParentActivityTableViewCell.self, forCellReuseIdentifier: ParentActivityTableViewCell.identifier)
+            
         backgroundColor = .white
     
         setupNavigationBar()
@@ -72,7 +73,6 @@ class ParentTodayActivityView: UIView {
             UIBarButtonItem(customView: moreButton),
             UIBarButtonItem(customView: smallCapsuleButton)
         ]
-        
         
         moreButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
         smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
@@ -105,7 +105,7 @@ class ParentTodayActivityView: UIView {
         }
 
         tableView.snp.makeConstraints { make in
-            make.height.equalTo(15*45)
+            make.height.equalTo(15 * Constants.COLLECTION_VIEW_CELL_HEIGHT)
         }
     }
     
