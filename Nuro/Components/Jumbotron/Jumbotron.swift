@@ -21,8 +21,7 @@ class Jumbotron: UIView {
         let view = UILabel()
         view.textColor = .black
         view.font = UIFont.systemFont(ofSize: 36, weight: .bold)
-        view.text = "10.34"
-//        view.backgroundColor = .red
+        view.text = "00.00"
         return view
     }()
     
@@ -31,7 +30,6 @@ class Jumbotron: UIView {
         view.textColor = .black
         view.font = UIFont.systemFont(ofSize: 32, weight: .regular)
         view.text = "Senin, 26 September 2022"
-//        view.backgroundColor = .orange
         return view
     }()
     
@@ -61,6 +59,9 @@ class Jumbotron: UIView {
         stackView.addArrangedSubview(dateLabel)
         
         setupConstraints()
+        
+        getIndonesianDate()
+        getTickingTime()
     }
     
     private func setupConstraints() {
@@ -72,6 +73,19 @@ class Jumbotron: UIView {
         stackView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
             make.left.equalTo(imageView.snp.right).offset(25)
+        }
+    }
+    
+    private func getIndonesianDate() {
+        self.dateLabel.text = "\(Date().getLongIndonesianDate())"
+    }
+    
+    private func getTickingTime () {
+        /// Initialize tick time to prevent delay from timer
+        self.clockLabel.text = "\(Date().getTickingTime())"
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            self.clockLabel.text = "\(Date().getTickingTime())"
         }
     }
     

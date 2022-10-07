@@ -31,4 +31,31 @@ extension Date {
         return timestamp
     }
     
+    func getLongIndonesianDate() -> String {
+        
+        let dateformat = DateFormatter()
+        dateformat.locale = Locale(identifier: "id")
+        dateformat.dateFormat = "EEEE, dd MMMM yyyy"
+        return dateformat.string(from: self)
+        
+    }
+    
+    func getTickingTime() -> String {
+        let date = Date()
+        let calendar = Calendar.current
+        var time: String = ""
+        
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        
+        let hourString = hour < 12 ? "0\(hour)" : "\(hour)"
+        let minuteString = minute < 10 ? "0\(minute)" : "\(minute)"
+            
+        time = "\(hourString):\(minuteString)"
+        
+        return time
+        
+    }
+    
 }
