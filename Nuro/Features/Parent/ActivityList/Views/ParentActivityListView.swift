@@ -8,8 +8,7 @@
 import UIKit
 import SnapKit
 
-class ParentActivityListView: UIView {
-    
+class ParentActivityListView: UIView, UISearchResultsUpdating {
     
     var delegate: ParentActivityListDelegate!
     
@@ -23,6 +22,13 @@ class ParentActivityListView: UIView {
         
         setupNavigationBar()
         //setupButtonView()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        print(text)
     }
     
     private func setupNavigationBar() {
@@ -45,6 +51,9 @@ class ParentActivityListView: UIView {
         //searchController
         let searchController = UISearchController(searchResultsController: nil)
         vc.navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.autocapitalizationType = .none
+        searchController.obscuresBackgroundDuringPresentation = false
         if #available(iOS 16, *){
                     vc.navigationItem.preferredSearchBarPlacement = .stacked
         }

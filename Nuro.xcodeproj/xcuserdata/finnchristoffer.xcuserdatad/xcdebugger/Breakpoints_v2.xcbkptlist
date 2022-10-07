@@ -14,10 +14,10 @@
             filePath = "Nuro/Features/Parent/ActivityList/Views/ParentActivityListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "setup(vc:)"
-            landmarkType = "7">
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ParentActivityListView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
