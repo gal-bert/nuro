@@ -68,7 +68,7 @@ extension ParentActivityTableViewCell: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Constants.COLLECTION_VIEW_CELL_WIDTH, height: Constants.COLLECTION_VIEW_CELL_HEIGHT)
+        return CGSize(width: CollectionViewAttributes.COLLECTION_VIEW_CELL_WIDTH, height: CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
