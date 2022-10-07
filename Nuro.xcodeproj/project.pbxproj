@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20672E28F0850700AAA8F3 /* Paths.swift */; };
+		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
 		0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */; };
 		0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA028EAB45100706D0A /* AppDelegate.swift */; };
 		0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA228EAB45100706D0A /* SceneDelegate.swift */; };
@@ -23,7 +25,6 @@
 		0C89BFE928EC68F200E5D6D4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFE828EC68F200E5D6D4 /* RxSwift */; };
 		0C89BFEC28EC690300E5D6D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFEB28EC690300E5D6D4 /* SnapKit */; };
 		0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0228EC6A8C00D811A6 /* Environment.swift */; };
-		0CA82E0528EC6D3F00D811A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0428EC6D3F00D811A6 /* Constants.swift */; };
 		0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */; };
 		0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1528EC719B00D811A6 /* String+Ext.swift */; };
 		0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1D28EC72E500D811A6 /* Colors.swift */; };
@@ -61,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C20672E28F0850700AAA8F3 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
 		0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0C79CE9D28EAB45100706D0A /* Nuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEA028EAB45100706D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +82,6 @@
 		0C89254328ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentTodayActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
 		0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCapsuleButton.swift; sourceTree = "<group>"; };
 		0CA82E0228EC6A8C00D811A6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		0CA82E0428EC6D3F00D811A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		0CA82E1528EC719B00D811A6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		0CA82E1D28EC72E500D811A6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -191,7 +193,8 @@
 				0CA82E2F28EC79E100D811A6 /* CoreData */,
 				0CA82E1428EC719100D811A6 /* Extensions */,
 				0CA82E0228EC6A8C00D811A6 /* Environment.swift */,
-				0CA82E0428EC6D3F00D811A6 /* Constants.swift */,
+				0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */,
+				0C20672E28F0850700AAA8F3 /* Paths.swift */,
 				0CA82E1D28EC72E500D811A6 /* Colors.swift */,
 				0CA82E2328EC765400D811A6 /* Icons.swift */,
 				0CA82E2528EC76D000D811A6 /* Strings.swift */,
@@ -580,6 +583,7 @@
 			files = (
 				4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
+				0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */,
 				0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */,
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
 				0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */,
@@ -597,13 +601,13 @@
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
 				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
+				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
 				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
-				0CA82E0528EC6D3F00D811A6 /* Constants.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* MoreButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
