@@ -13,9 +13,9 @@ extension ChildRoutineViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChildActivityCollectionViewCell.identifier, for: indexPath) as! ChildActivityCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChildActivityCollectionViewCell.identifier, for: indexPath) as? ChildActivityCollectionViewCell else { return ChildActivityCollectionViewCell() }
         
-        if indexPath.row == 0 && hideFirstActivityCard == true {
+        if indexPath.row == 0 && isFirstActivityCardHidden == true {
             cell.makeHidden()
         }
         else {

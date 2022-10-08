@@ -9,7 +9,7 @@ import UIKit
 
 class ChildRoutineViewController: UIViewController {
     
-    var hideFirstActivityCard = false
+    var isFirstActivityCardHidden  = false
     private var totalActivity = 0
     
     private let childRoutineView = ChildRoutineView()
@@ -27,7 +27,7 @@ class ChildRoutineViewController: UIViewController {
     }
     
     func nextActivity() {
-        hideFirstActivityCard = true
+        isFirstActivityCardHidden  = true
         
         childRoutineView.animateHideRow()
         if viewModel.activityName.count > 0 {
@@ -41,6 +41,6 @@ class ChildRoutineViewController: UIViewController {
         }
         
         
-        hideFirstActivityCard = false
+        isFirstActivityCardHidden  = false
     }
 }
