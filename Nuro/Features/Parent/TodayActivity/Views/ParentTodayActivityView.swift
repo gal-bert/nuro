@@ -105,7 +105,7 @@ class ParentTodayActivityView: UIView {
         }
 
         tableView.snp.makeConstraints { make in
-            make.height.equalTo(15 * Constants.COLLECTION_VIEW_CELL_HEIGHT)
+            make.height.equalTo(15 * CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT)
         }
     }
     

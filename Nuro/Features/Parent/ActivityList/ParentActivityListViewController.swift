@@ -8,22 +8,17 @@
 import UIKit
 
 class ParentActivityListViewController: UIViewController {
+    
+    let parentActivityListView = ParentActivityListView()
+    let viewModel = ParentActivityListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        parentActivityListView.setup(vc: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func loadView() {
+        self.view = parentActivityListView
     }
-    */
 
 }
