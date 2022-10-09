@@ -68,26 +68,26 @@ class ChildRoutineView: UIView {
     private func setupConstraints() {
         stickView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.left.equalTo(self).offset(Constants.HALF_SCREEN_WIDTH / 6)
-            make.height.equalTo(Constants.HALF_SCREEN_HEIGHT / 6)
-            make.width.equalTo(Constants.SCREEN_WIDTH * 1.5)
+            make.left.equalTo(self).offset(ScreenSizes.HALF_SCREEN_WIDTH / 6)
+            make.height.equalTo(ScreenSizes.HALF_SCREEN_HEIGHT / 6)
+            make.width.equalTo(ScreenSizes.SCREEN_WIDTH * 1.5)
         }
         
         activityCollectionView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.right.equalToSuperview()
-            make.height.equalTo(Constants.HALF_SCREEN_HEIGHT)
+            make.height.equalTo(ScreenSizes.HALF_SCREEN_HEIGHT)
         }
         
         startButton.snp.makeConstraints { make in
-            make.top.equalTo(activityCollectionView.snp.bottom).offset(Constants.HALF_SCREEN_HEIGHT / 8)
+            make.top.equalTo(activityCollectionView.snp.bottom).offset(ScreenSizes.HALF_SCREEN_HEIGHT / 8)
             make.centerX.equalTo(self)
-            make.width.equalTo(Constants.HALF_SCREEN_WIDTH * 4 / 5)
-            make.height.equalTo(Constants.HALF_SCREEN_HEIGHT / 5)
+            make.width.equalTo(ScreenSizes.HALF_SCREEN_WIDTH * 4 / 5)
+            make.height.equalTo(ScreenSizes.HALF_SCREEN_HEIGHT / 5)
         }
         
         pageTitle.snp.makeConstraints { make in
-            make.bottom.equalTo(activityCollectionView.snp.top).offset(-Constants.HALF_SCREEN_HEIGHT / 8)
+            make.bottom.equalTo(activityCollectionView.snp.top).offset(-ScreenSizes.HALF_SCREEN_HEIGHT / 8)
             make.centerX.equalTo(self)
         }
     }
@@ -103,7 +103,7 @@ class ChildRoutineView: UIView {
     
     private func collectionViewLayout() -> UICollectionViewCompositionalLayout {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(Constants.HALF_SCREEN_WIDTH), heightDimension: .absolute(Constants.HALF_SCREEN_HEIGHT)), subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(ScreenSizes.HALF_SCREEN_WIDTH), heightDimension: .absolute(ScreenSizes.HALF_SCREEN_HEIGHT)), subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPagingCentered
@@ -115,7 +115,7 @@ class ChildRoutineView: UIView {
     }
     
     @objc func startActivity() {
-        delegate?.animateNextActivity()
+//        delegate?.animateNextActivity()
         
         // TODO: Segue to full screen activity page
         // ..
@@ -145,10 +145,10 @@ class ChildRoutineView: UIView {
     
     private func animateStickStartMovement() {
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
-            stickView.frame = CGRect(x: stickView.frame.origin.x - Constants.HALF_SCREEN_WIDTH, y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
+            stickView.frame = CGRect(x: stickView.frame.origin.x - ScreenSizes.HALF_SCREEN_WIDTH, y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
         }, completion: { [self] _ in
             stickView.snp.makeConstraints { make in
-                make.left.equalTo(self).offset(-Constants.HALF_SCREEN_WIDTH / 6)
+                make.left.equalTo(self).offset(-ScreenSizes.HALF_SCREEN_WIDTH / 6)
             }
         })
     }
@@ -157,12 +157,12 @@ class ChildRoutineView: UIView {
         stickView.snp.removeConstraints()
         stickView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.right.equalTo(self).offset(-Constants.HALF_SCREEN_WIDTH / 6)
-            make.height.equalTo(Constants.HALF_SCREEN_HEIGHT / 6)
-            make.width.equalTo(Constants.SCREEN_WIDTH * 2)
+            make.right.equalTo(self).offset(-ScreenSizes.HALF_SCREEN_WIDTH / 6)
+            make.height.equalTo(ScreenSizes.HALF_SCREEN_HEIGHT / 6)
+            make.width.equalTo(ScreenSizes.SCREEN_WIDTH * 2)
         }
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
-            stickView.frame = CGRect(x: stickView.frame.origin.x - Constants.HALF_SCREEN_WIDTH - (Constants.HALF_SCREEN_WIDTH / 6), y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
+            stickView.frame = CGRect(x: stickView.frame.origin.x - ScreenSizes.HALF_SCREEN_WIDTH - (ScreenSizes.HALF_SCREEN_WIDTH / 6), y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
         }, completion: nil)
     }
 }
