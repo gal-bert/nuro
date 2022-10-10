@@ -20,7 +20,7 @@ class Jumbotron: UIView {
     let clockLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 36, weight: .bold)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
         view.text = "00.00"
         return view
     }()
@@ -28,7 +28,7 @@ class Jumbotron: UIView {
     let dateLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 32, weight: .regular)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)
         view.text = "Senin, 26 September 2022"
         return view
     }()

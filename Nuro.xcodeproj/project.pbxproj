@@ -10,6 +10,14 @@
 		0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20672E28F0850700AAA8F3 /* Paths.swift */; };
 		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
 		0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */; };
+		0C74A03428F4527A0081A069 /* VisbyRoundCF-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */; };
+		0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */; };
+		0C74A03628F4527A0081A069 /* VisbyRoundCF-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */; };
+		0C74A03728F4527A0081A069 /* VisbyRoundCF-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02E28F4522F0081A069 /* VisbyRoundCF-Heavy.otf */; };
+		0C74A03828F4527A0081A069 /* VisbyRoundCF-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */; };
+		0C74A03928F4527A0081A069 /* VisbyRoundCF-DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02F28F4522F0081A069 /* VisbyRoundCF-DemiBold.otf */; };
+		0C74A03A28F4527A0081A069 /* VisbyRoundCF-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03028F4522F0081A069 /* VisbyRoundCF-Light.otf */; };
+		0C74A03B28F4527A0081A069 /* VisbyRoundCF-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */; };
 		0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA028EAB45100706D0A /* AppDelegate.swift */; };
 		0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA228EAB45100706D0A /* SceneDelegate.swift */; };
 		0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */; };
@@ -24,6 +32,7 @@
 		0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */; };
 		0C89BFE928EC68F200E5D6D4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFE828EC68F200E5D6D4 /* RxSwift */; };
 		0C89BFEC28EC690300E5D6D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFEB28EC690300E5D6D4 /* SnapKit */; };
+		0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C935DE528F4550800C7BA3E /* Fonts.swift */; };
 		0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0228EC6A8C00D811A6 /* Environment.swift */; };
 		0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */; };
 		0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1528EC719B00D811A6 /* String+Ext.swift */; };
@@ -79,6 +88,14 @@
 		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
 		0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0C74A02B28F437F90081A069 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraBold.otf"; sourceTree = "<group>"; };
+		0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraLight.otf"; sourceTree = "<group>"; };
+		0C74A02E28F4522F0081A069 /* VisbyRoundCF-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Heavy.otf"; sourceTree = "<group>"; };
+		0C74A02F28F4522F0081A069 /* VisbyRoundCF-DemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-DemiBold.otf"; sourceTree = "<group>"; };
+		0C74A03028F4522F0081A069 /* VisbyRoundCF-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Light.otf"; sourceTree = "<group>"; };
+		0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Regular.otf"; sourceTree = "<group>"; };
+		0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Bold.otf"; sourceTree = "<group>"; };
+		0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Medium.otf"; sourceTree = "<group>"; };
 		0C79CE9D28EAB45100706D0A /* Nuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEA028EAB45100706D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C79CEA228EAB45100706D0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +112,7 @@
 		0C89254128ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityDelegate.swift; sourceTree = "<group>"; };
 		0C89254328ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentTodayActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
 		0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCapsuleButton.swift; sourceTree = "<group>"; };
+		0C935DE528F4550800C7BA3E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0CA82E0228EC6A8C00D811A6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		0CA82E1528EC719B00D811A6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -227,6 +245,7 @@
 				0CA82E2328EC765400D811A6 /* Icons.swift */,
 				0CA82E2528EC76D000D811A6 /* Strings.swift */,
 				5FE0569628F324CC004A8CAA /* ScreenSizes.swift */,
+				0C935DE528F4550800C7BA3E /* Fonts.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -452,6 +471,14 @@
 		0CD4D50B28ED223A000B86FD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */,
+				0C74A02F28F4522F0081A069 /* VisbyRoundCF-DemiBold.otf */,
+				0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */,
+				0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */,
+				0C74A02E28F4522F0081A069 /* VisbyRoundCF-Heavy.otf */,
+				0C74A03028F4522F0081A069 /* VisbyRoundCF-Light.otf */,
+				0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */,
+				0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -644,8 +671,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C74A03B28F4527A0081A069 /* VisbyRoundCF-Bold.otf in Resources */,
+				0C74A03628F4527A0081A069 /* VisbyRoundCF-ExtraBold.otf in Resources */,
+				0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */,
 				0C79CEB028EAB45200706D0A /* LaunchScreen.storyboard in Resources */,
+				0C74A03928F4527A0081A069 /* VisbyRoundCF-DemiBold.otf in Resources */,
+				0C74A03728F4527A0081A069 /* VisbyRoundCF-Heavy.otf in Resources */,
+				0C74A03428F4527A0081A069 /* VisbyRoundCF-Medium.otf in Resources */,
+				0C74A03828F4527A0081A069 /* VisbyRoundCF-ExtraLight.otf in Resources */,
 				0C79CEAD28EAB45200706D0A /* Assets.xcassets in Resources */,
+				0C74A03A28F4527A0081A069 /* VisbyRoundCF-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +740,7 @@
 				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
 				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
+				0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
