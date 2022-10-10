@@ -78,6 +78,7 @@
 		0C20672E28F0850700AAA8F3 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
 		0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityTableViewCell.swift; sourceTree = "<group>"; };
+		0C74A02B28F437F90081A069 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C79CE9D28EAB45100706D0A /* Nuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEA028EAB45100706D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C79CEA228EAB45100706D0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 		0C79CE9428EAB45100706D0A = {
 			isa = PBXGroup;
 			children = (
+				0C74A02B28F437F90081A069 /* README.md */,
 				0C79CE9F28EAB45100706D0A /* Nuro */,
 				0C79CEB928EAB45200706D0A /* NuroTests */,
 				0C79CEC328EAB45200706D0A /* NuroUITests */,
@@ -454,13 +456,29 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-
 		3F0F385728ED33DF00C1EC68 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */,
-      );
+			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3F0F385828ED33E900C1EC68 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3F996A4C28EDAE7000C343CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */,
+				3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		4ABE2D1228ED31030082147F /* Views */ = {
@@ -471,30 +489,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3F0F385828ED33E900C1EC68 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */,
-        );
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		4ABE2D1528EDB3890082147F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-
-		3F996A4C28EDAE7000C343CC /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */,
-				3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */,
-        );
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		4ABE2D1628EDB3920082147F /* Controllers */ = {
@@ -506,7 +506,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-
 		5FDB041728ED43E100B346E2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,7 +532,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -691,7 +689,7 @@
 				0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */,
 				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
 				3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */,
-				0C89254728ED447D007BE0A4 /* SelectButton.swift in Sources */,
+				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
 				0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */,
