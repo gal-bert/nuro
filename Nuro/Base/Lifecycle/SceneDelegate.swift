@@ -13,12 +13,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        if #available(iOS 14, *) {
+            if window?.traitCollection.userInterfaceIdiom == .pad {
+                if let splitViewController = createThreeColumnSplitViewController() {
+                    window?.rootViewController = splitViewController
+                }
+            }
+        }
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let winScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: winScene)
-        window?.rootViewController = Environment.initialVC
+        window?.rootViewController = createThreeColumnSplitViewController()
         window?.makeKeyAndVisible()
         
     }
@@ -55,5 +62,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+@available(iOS 14, *)
+extension SceneDelegate {
+    
+    private func createThreeColumnSplitViewController() -> UISplitViewController? {
+//        guard
+            let parentTodayActivityViewController = ParentTodayActivityViewController()
+//            let recipeDetailViewController = ParentActivityListViewController()
+//        else { return nil }
+        
+        let sidebarViewController = SidebarViewController()
+        
+        let splitViewController = UISplitViewController(style: .doubleColumn)
+        splitViewController.primaryBackgroundStyle = .sidebar
+        splitViewController.preferredDisplayMode = .twoBesideSecondary
+        
+        splitViewController.setViewController(sidebarViewController, for: .primary)
+//        splitViewController.setViewController(recipeDetailViewController, for: .supplementary)
+        splitViewController.setViewController(parentTodayActivityViewController, for: .secondary)
+        
+        return splitViewController
+    }
+    
 }
 
