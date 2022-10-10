@@ -30,15 +30,15 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .orange
         
         contentView.addSubview(timeframeLabel)
         contentView.addSubview(collectionView)
         
-        backgroundColor = .orange
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ParentActivityCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityCollectionViewCell.identifier)
+        
         setupConstraints()
     }
     
@@ -83,6 +83,6 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 100)
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 100)
     }
 }

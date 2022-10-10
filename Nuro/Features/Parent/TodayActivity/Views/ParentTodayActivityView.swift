@@ -23,8 +23,9 @@ class ParentTodayActivityView: UIView {
     }()
     
     let tableView: UITableView = {
-        let view = UITableView()
+        let view = UITableView(frame: .zero, style: .insetGrouped)
         view.isScrollEnabled = false
+        view.allowsSelection = false
         return view
     }()
     
@@ -105,7 +106,7 @@ class ParentTodayActivityView: UIView {
         }
 
         tableView.snp.makeConstraints { make in
-            make.height.equalTo(CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT * 4)
+            make.height.equalTo(CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT * 5)
         }
     }
     
