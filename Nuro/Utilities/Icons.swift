@@ -9,6 +9,9 @@ import UIKit
 
 /// Put icons that are used on the app here
 
-class Icons {
-    static let ELLIPSIS = "ellipsis.circle.fill"
+enum Icons {
+    static let ellipsis = "ellipsis.circle.fill"
+    static let morning = "sun.and.horizon.fill"
+    static let afternoon = "sun.max.fill"
+    static let night = "moon.fill"
 }

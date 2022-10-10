@@ -49,7 +49,7 @@ class ParentTodayActivityView: UIView {
         delegate = vc
         tableView.dataSource = vc
         tableView.delegate = vc
-        tableView.register(ParentActivityTableViewCell.self, forCellReuseIdentifier: ParentActivityTableViewCell.identifier)
+        tableView.register(ParentTodayActivityTableViewCell.self, forCellReuseIdentifier: ParentTodayActivityTableViewCell.identifier)
             
         backgroundColor = .white
     

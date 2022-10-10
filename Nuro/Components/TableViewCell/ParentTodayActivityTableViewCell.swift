@@ -7,10 +7,18 @@
 
 import UIKit
 
-class ParentActivityTableViewCell: UITableViewCell {
+class ParentTodayActivityTableViewCell: UITableViewCell {
     
     static let identifier = "parentActivityTableViewCell"
     
+    var timeframeLabel: UILabel = {
+        let view = UILabel()
+        view.text = "Pagi"
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 30)
+        view.textColor = .black
+        return view
+    }()
+
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -19,17 +27,11 @@ class ParentActivityTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var myLabel: UILabel = {
-        let view = UILabel()
-        view.text = "Hello World"
-        view.textColor = .black
-        return view
-    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.addSubview(myLabel)
+        contentView.addSubview(timeframeLabel)
         contentView.addSubview(collectionView)
         
         backgroundColor = .orange
@@ -41,8 +43,14 @@ class ParentActivityTableViewCell: UITableViewCell {
     }
     
     private func setupConstraints() {
+        
+        timeframeLabel.snp.makeConstraints { make in
+            make.top.left.equalTo(self).inset(20)
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self).inset(20)
+            make.top.equalTo(timeframeLabel.snp.bottom).offset(20)
+            make.bottom.equalTo(self).inset(20)
             make.left.right.equalTo(self)
         }
     }
@@ -50,11 +58,10 @@ class ParentActivityTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
 }
 
-extension ParentActivityTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
