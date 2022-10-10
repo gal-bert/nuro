@@ -17,8 +17,8 @@ class ParentTodayActivityView: UIView {
     let headerLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 32, weight: .bold)
-        view.text = "Aktivitas Mendatang"
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
+        view.text = "Aktivitas Hari Ini"
         return view
     }()
     
@@ -105,7 +105,7 @@ class ParentTodayActivityView: UIView {
         }
 
         tableView.snp.makeConstraints { make in
-            make.height.equalTo(15 * CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT)
+            make.height.equalTo(CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT * 4)
         }
     }
     
