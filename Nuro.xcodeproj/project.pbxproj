@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20672E28F0850700AAA8F3 /* Paths.swift */; };
+		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
+		0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */; };
 		0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA028EAB45100706D0A /* AppDelegate.swift */; };
 		0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA228EAB45100706D0A /* SceneDelegate.swift */; };
 		0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */; };
@@ -22,7 +25,6 @@
 		0C89BFE928EC68F200E5D6D4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFE828EC68F200E5D6D4 /* RxSwift */; };
 		0C89BFEC28EC690300E5D6D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFEB28EC690300E5D6D4 /* SnapKit */; };
 		0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0228EC6A8C00D811A6 /* Environment.swift */; };
-		0CA82E0528EC6D3F00D811A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0428EC6D3F00D811A6 /* Constants.swift */; };
 		0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */; };
 		0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1528EC719B00D811A6 /* String+Ext.swift */; };
 		0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1D28EC72E500D811A6 /* Colors.swift */; };
@@ -34,12 +36,25 @@
 		0CA82E3128EC79F000D811A6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3028EC79F000D811A6 /* Query.swift */; };
 		0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3228EC7B2500D811A6 /* Seeder.swift */; };
 		0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F5128EDBB8C0033D5A6 /* Jumbotron.swift */; };
+		0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */; };
 		0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */; };
 		3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */; };
 		3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */; };
 		3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */; };
 		3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F996A4D28EDAEA600C343CC /* ParentRoutineDelegate.swift */; };
 		3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */; };
+		4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */; };
+		4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */; };
+		4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */; };
+		4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */; };
+		5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */; };
+		5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */; };
+		5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */; };
+		5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0569628F324CC004A8CAA /* ScreenSizes.swift */; };
+		5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */; };
+		5FEDEDF828ED35A400FB8DF6 /* ChildRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF728ED35A400FB8DF6 /* ChildRoutineView.swift */; };
+		5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF928ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift */; };
+		5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C20672E28F0850700AAA8F3 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
+		0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0C79CE9D28EAB45100706D0A /* Nuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEA028EAB45100706D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C79CEA228EAB45100706D0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +95,6 @@
 		0C89254328ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentTodayActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
 		0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCapsuleButton.swift; sourceTree = "<group>"; };
 		0CA82E0228EC6A8C00D811A6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		0CA82E0428EC6D3F00D811A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		0CA82E1528EC719B00D811A6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		0CA82E1D28EC72E500D811A6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -89,12 +106,25 @@
 		0CA82E3028EC79F000D811A6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		0CA82E3228EC7B2500D811A6 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		0CCD3F5128EDBB8C0033D5A6 /* Jumbotron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jumbotron.swift; sourceTree = "<group>"; };
+		0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewController.swift; sourceTree = "<group>"; };
 		3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewController.swift; sourceTree = "<group>"; };
 		3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineView.swift; sourceTree = "<group>"; };
 		3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewModel.swift; sourceTree = "<group>"; };
 		3F996A4D28EDAEA600C343CC /* ParentRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineDelegate.swift; sourceTree = "<group>"; };
 		3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
+		4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListView.swift; sourceTree = "<group>"; };
+		4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewModel.swift; sourceTree = "<group>"; };
+		4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentActivityListViewController+Delegate.swift"; sourceTree = "<group>"; };
+		4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDelegate.swift; sourceTree = "<group>"; };
+		5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineDelegate.swift; sourceTree = "<group>"; };
+		5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
+		5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewModel.swift; sourceTree = "<group>"; };
+		5FE0569628F324CC004A8CAA /* ScreenSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSizes.swift; sourceTree = "<group>"; };
+		5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewController.swift; sourceTree = "<group>"; };
+		5FEDEDF728ED35A400FB8DF6 /* ChildRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineView.swift; sourceTree = "<group>"; };
+		5FEDEDF928ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+DataSource.swift"; sourceTree = "<group>"; };
+		5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,10 +219,12 @@
 				0CA82E2F28EC79E100D811A6 /* CoreData */,
 				0CA82E1428EC719100D811A6 /* Extensions */,
 				0CA82E0228EC6A8C00D811A6 /* Environment.swift */,
-				0CA82E0428EC6D3F00D811A6 /* Constants.swift */,
+				0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */,
+				0C20672E28F0850700AAA8F3 /* Paths.swift */,
 				0CA82E1D28EC72E500D811A6 /* Colors.swift */,
 				0CA82E2328EC765400D811A6 /* Icons.swift */,
 				0CA82E2528EC76D000D811A6 /* Strings.swift */,
+				5FE0569628F324CC004A8CAA /* ScreenSizes.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -235,8 +267,8 @@
 				0CA82E1C28EC727E00D811A6 /* Textfields */,
 				0CA82E1B28EC727700D811A6 /* Labels */,
 				0CA82E1A28EC726600D811A6 /* Buttons */,
-				0CA82E1928EC725600D811A6 /* Collectionview */,
-				0CA82E1828EC724F00D811A6 /* Tableview */,
+				0CA82E1928EC725600D811A6 /* CollectionViewCell */,
+				0CA82E1828EC724F00D811A6 /* TableViewCell */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -275,18 +307,21 @@
 			path = Sidebar;
 			sourceTree = "<group>";
 		};
-		0CA82E1828EC724F00D811A6 /* Tableview */ = {
+		0CA82E1828EC724F00D811A6 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */,
 			);
-			path = Tableview;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		0CA82E1928EC725600D811A6 /* Collectionview */ = {
+		0CA82E1928EC725600D811A6 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */,
+				0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */,
 			);
-			path = Collectionview;
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		0CA82E1A28EC726600D811A6 /* Buttons */ = {
@@ -315,6 +350,10 @@
 		0CA82E1F28EC75BE00D811A6 /* Routine */ = {
 			isa = PBXGroup;
 			children = (
+				5FDB041728ED43E100B346E2 /* Controllers */,
+				5FEDEDF428ED352900FB8DF6 /* ViewModels */,
+				5FEDEDF328ED352400FB8DF6 /* Views */,
+				5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -322,6 +361,9 @@
 		0CA82E2028EC75CD00D811A6 /* ActivityList */ = {
 			isa = PBXGroup;
 			children = (
+				4ABE2D1628EDB3920082147F /* Controllers */,
+				4ABE2D1528EDB3890082147F /* ViewModels */,
+				4ABE2D1228ED31030082147F /* Views */,
 				0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */,
 			);
 			path = ActivityList;
@@ -412,10 +454,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+
 		3F0F385728ED33DF00C1EC68 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */,
+      );
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4ABE2D1228ED31030082147F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,19 +475,65 @@
 			isa = PBXGroup;
 			children = (
 				3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */,
+        );
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4ABE2D1528EDB3890082147F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+
 		3F996A4C28EDAE7000C343CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */,
 				3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */,
+        );
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4ABE2D1628EDB3920082147F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */,
+				4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+
+		5FDB041728ED43E100B346E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */,
+				5FEDEDF928ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift */,
+				5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5FEDEDF328ED352400FB8DF6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FEDEDF728ED35A400FB8DF6 /* ChildRoutineView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5FEDEDF428ED352900FB8DF6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -575,15 +672,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
 				3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */,
+				0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */,
 				0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */,
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
 				0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */,
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
+				5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */,
+				5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */,
+				0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */,
+				5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
 				3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */,
 				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
+				5FEDEDF828ED35A400FB8DF6 /* ChildRoutineView.swift in Sources */,
 				0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */,
 				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
 				3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */,
@@ -595,12 +699,20 @@
 				3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
+				5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */,
+				5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */,
+				5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */,
+				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
+				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
+				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
+				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
+				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
 				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
-				0CA82E0528EC6D3F00D811A6 /* Constants.swift in Sources */,
+				5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* MoreButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,6 +890,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -809,6 +922,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

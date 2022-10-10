@@ -12,8 +12,6 @@ class Jumbotron: UIView {
     let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
-        view.layer.borderWidth = 1
         view.layer.cornerRadius = view.frame.height
         view.clipsToBounds = true
         return view
@@ -22,8 +20,23 @@ class Jumbotron: UIView {
     let clockLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
-        view.font = UIFont(name: view.font.fontName, size: 20)
-        view.text = "10.50"
+        view.font = UIFont.systemFont(ofSize: 36, weight: .bold)
+        view.text = "00.00"
+        return view
+    }()
+    
+    let dateLabel: UILabel = {
+        let view = UILabel()
+        view.textColor = .black
+        view.font = UIFont.systemFont(ofSize: 32, weight: .regular)
+        view.text = "Senin, 26 September 2022"
+        return view
+    }()
+    
+    let stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 5
         return view
     }()
 
@@ -37,25 +50,43 @@ class Jumbotron: UIView {
     }
     
     func setup() {
-        backgroundColor = .yellow
+        self.layer.cornerRadius = 20
+        backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         imageView.image = UIImage(named: "dummy")
         addSubview(imageView)
-        addSubview(clockLabel)
+        addSubview(stackView)
+        stackView.addArrangedSubview(clockLabel)
+        stackView.addArrangedSubview(dateLabel)
+        
         setupConstraints()
+        
+        getIndonesianDate()
+        getTickingTime()
     }
     
     private func setupConstraints() {
         imageView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self).inset(35)
-            make.left.equalTo(self).inset(25)
+            make.top.left.bottom.equalTo(self).inset(35)
             make.width.equalTo(imageView.snp.height)
         }
         
-        clockLabel.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self).inset(35)
-            make.left.equalTo(<#T##other: ConstraintRelatableTarget##ConstraintRelatableTarget#>)
+        stackView.snp.makeConstraints { make in
+            make.centerY.equalTo(self)
+            make.left.equalTo(imageView.snp.right).offset(25)
         }
+    }
+    
+    private func getIndonesianDate() {
+        self.dateLabel.text = "\(Date().getLongIndonesianDate())"
+    }
+    
+    private func getTickingTime () {
+        /// Initialize tick time to prevent delay from timer
+        self.clockLabel.text = "\(Date().getTickingTime())"
         
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            self.clockLabel.text = "\(Date().getTickingTime())"
+        }
     }
     
 }
