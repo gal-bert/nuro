@@ -34,6 +34,10 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         
         contentView.addSubview(timeframeLabel)
         contentView.addSubview(collectionView)
+
+        layer.cornerRadius = 30
+        layer.borderWidth = 1
+        layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
         
         collectionView.delegate = self
         collectionView.dataSource = self

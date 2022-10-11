@@ -8,7 +8,7 @@
 import Foundation
 import QuartzCore
 
-enum Corners {
+enum Corner {
     static let topLeft  = CACornerMask.layerMinXMinYCorner
     static let topRight = CACornerMask.layerMaxXMinYCorner
     static let bottomLeft = CACornerMask.layerMinXMaxYCorner

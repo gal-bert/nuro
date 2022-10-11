@@ -16,22 +16,23 @@ class ParentTodayActivityView: UIView {
     
     let headerLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .black
+        view.textColor = Colors.black
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
         view.text = "Aktivitas Hari Ini"
         return view
     }()
     
     let tableView: UITableView = {
-        let view = UITableView(frame: .zero, style: .insetGrouped)
+        let view = UITableView(frame: .zero, style: .grouped)
         view.isScrollEnabled = false
         view.allowsSelection = false
+        view.separatorColor = .clear
+        view.backgroundColor = .clear
         return view
     }()
     
     let scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.backgroundColor = .green
         return view
     }()
     
@@ -52,7 +53,7 @@ class ParentTodayActivityView: UIView {
         tableView.delegate = vc
         tableView.register(ParentTodayActivityTableViewCell.self, forCellReuseIdentifier: ParentTodayActivityTableViewCell.identifier)
             
-        backgroundColor = .white
+        backgroundColor = Colors.white
     
         setupNavigationBar()
         
@@ -104,6 +105,8 @@ class ParentTodayActivityView: UIView {
             make.top.equalTo(stackView.snp.top).offset(20)
             make.height.equalTo(200)
         }
+        
+        stackView.setCustomSpacing(8, after: headerLabel)
 
         tableView.snp.makeConstraints { make in
             make.height.equalTo(CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT * 5)
