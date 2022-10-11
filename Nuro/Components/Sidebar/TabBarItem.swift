@@ -8,18 +8,18 @@
 import UIKit
 
 enum TabBarItem: Int, CaseIterable {
-    case parentTodayActivity, parentActivityList, parentRoutine, collections
+    case parentTodayActivity, parentRoutine, parentActivityList, childRoutine
     
     func title() -> String {
         switch self {
         case .parentTodayActivity:
-            return "Aktivitas Hari Ini"
-        case .parentActivityList:
-            return "Rutinitas"
+            return "Aktivitas hari ini"
         case .parentRoutine:
-            return "Daftar Aktivitas"
-        case .collections:
-            return "Collections"
+            return "Rutinitas"
+        case .parentActivityList:
+            return "Daftar aktivitas"
+        case .childRoutine:
+            return "Rutinitas anak"
         }
     }
     
@@ -27,11 +27,11 @@ enum TabBarItem: Int, CaseIterable {
         switch self {
         case .parentTodayActivity:
             return UIImage(systemName: "checkmark.square.fill")
-        case .parentActivityList:
-            return UIImage(systemName: "list.bullet.rectangle.portrait.fill")
         case .parentRoutine:
+            return UIImage(systemName: "list.bullet.rectangle.portrait.fill")
+        case .parentActivityList:
             return UIImage(systemName: "tornado.circle.fill")
-        case .collections:
+        case .childRoutine:
             return UIImage(systemName: "folder")
         }
     }

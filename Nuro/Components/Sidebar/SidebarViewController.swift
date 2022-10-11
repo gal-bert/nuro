@@ -16,7 +16,7 @@ class SidebarViewController: UIViewController {
     }
     
     private enum SidebarSection: Int {
-        case library, collections
+        case parentSection, childSection
     }
     
     private struct SidebarItem: Hashable, Identifiable {
@@ -40,14 +40,14 @@ class SidebarViewController: UIViewController {
     }
     
     private struct RowIdentifier {
-        static let todayActivity = UUID()
-        static let listActivity = UUID()
-        static let routine = UUID()
+        static let parentTodayActivity = UUID()
+        static let parentRoutine = UUID()
+        static let parentActivityList = UUID()
+        static let childRoutine = UUID()
     }
     
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>!
-    private var recipeCollectionsSubscriber: AnyCancellable?
 
 
     override func viewDidLoad() {
@@ -92,58 +92,26 @@ extension SidebarViewController: UICollectionViewDelegate {
         guard let sidebarItem = dataSource.itemIdentifier(for: indexPath) else { return }
         
         switch indexPath.section {
-        case SidebarSection.library.rawValue:
+        case SidebarSection.parentSection.rawValue:
             didSelectLibraryItem(sidebarItem, at: indexPath)
-        case SidebarSection.collections.rawValue:
+        case SidebarSection.childSection.rawValue:
             didSelectCollectionsItem(sidebarItem, at: indexPath)
         default:
             collectionView.deselectItem(at: indexPath, animated: true)
         }
     }
     
-    private func parentTodayActivityViewController() -> ParentTodayActivityViewController? {
-        guard
-            let splitViewController = self.splitViewController,
-            let secondaryViewController = splitViewController.viewController(for: .secondary)
-        else { return nil }
-        
-        return secondaryViewController as? ParentTodayActivityViewController
-    }
-    
-    private func parentRoutineViewController() -> ParentRoutineViewController? {
-        guard
-            let splitViewController = self.splitViewController,
-            let secondaryViewController = splitViewController.viewController(for: .secondary)
-        else { return nil }
-        
-        return secondaryViewController as? ParentRoutineViewController
-    }
-    
-    private func parentActivityListViewController() -> ParentActivityListViewController? {
-        guard
-            let splitViewController = self.splitViewController,
-            let secondaryViewController = splitViewController.viewController(for: .secondary)
-        else { return nil }
-        
-        return secondaryViewController as? ParentActivityListViewController
-    }
-    
     private func didSelectLibraryItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
-//        guard let secondaryViewController = self.parentTodayActivityViewController() else { return }
-        
         switch sidebarItem.id {
-        case RowIdentifier.todayActivity:
-            print("1")
-            let navCon = UINavigationController(rootViewController: ParentTodayActivityViewController ())
+        case RowIdentifier.parentTodayActivity:
+            let navCon = UINavigationController(rootViewController: ParentTodayActivityViewController())
             splitViewController?.setViewController(navCon, for: .secondary)
             
-        case RowIdentifier.listActivity:
-            print("2")
+        case RowIdentifier.parentRoutine:
             let navCon = UINavigationController(rootViewController: ParentRoutineViewController())
             splitViewController?.setViewController(navCon, for: .secondary)
             
-        case RowIdentifier.routine:
-            print("3")
+        case RowIdentifier.parentActivityList:
             let navCon = UINavigationController(rootViewController: ParentActivityListViewController())
             splitViewController?.setViewController(navCon, for: .secondary)
             
@@ -153,8 +121,13 @@ extension SidebarViewController: UICollectionViewDelegate {
     }
     
     private func didSelectCollectionsItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
-        if let recipeListViewController = self.parentTodayActivityViewController() {
-            let collection = sidebarItem.title
+        switch sidebarItem.id {
+        case RowIdentifier.childRoutine:
+            let navCon = UINavigationController(rootViewController: ChildRoutineViewController())
+            splitViewController?.setViewController(navCon, for: .secondary)
+            
+        default:
+            collectionView.deselectItem(at: indexPath, animated: true)
         }
     }
     
@@ -172,7 +145,6 @@ extension SidebarViewController {
             contentConfiguration.textProperties.color = .purple
             
             cell.contentConfiguration = contentConfiguration
-            cell.accessories = [.outlineDisclosure()]
         }
         
         let expandableRowRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SidebarItem> {
@@ -184,7 +156,6 @@ extension SidebarViewController {
             contentConfiguration.image = item.image
             
             cell.contentConfiguration = contentConfiguration
-            cell.accessories = [.outlineDisclosure()]
         }
         
         let rowRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SidebarItem> {
@@ -216,9 +187,22 @@ extension SidebarViewController {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
         let header = SidebarItem.header(title: "Orang Tua")
         let items: [SidebarItem] = [
-            .row(title: TabBarItem.parentTodayActivity.title(), subtitle: nil, image: TabBarItem.parentTodayActivity.image(), id: RowIdentifier.todayActivity),
-            .row(title: TabBarItem.parentActivityList.title(), subtitle: nil, image: TabBarItem.parentActivityList.image(), id: RowIdentifier.listActivity),
-            .row(title: TabBarItem.parentRoutine.title(), subtitle: nil, image: TabBarItem.parentRoutine.image(), id: RowIdentifier.routine)
+            .row(title: TabBarItem.parentTodayActivity.title(), subtitle: nil, image: TabBarItem.parentTodayActivity.image(), id: RowIdentifier.parentTodayActivity),
+            .row(title: TabBarItem.parentRoutine.title(), subtitle: nil, image: TabBarItem.parentRoutine.image(), id: RowIdentifier.parentActivityList),
+            .row(title: TabBarItem.parentActivityList.title(), subtitle: nil, image: TabBarItem.parentActivityList.image(), id: RowIdentifier.parentRoutine)
+        ]
+        
+        snapshot.append([header])
+        snapshot.expand([header])
+        snapshot.append(items, to: header)
+        return snapshot
+    }
+    
+    private func collectionsSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
+        var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
+        let header = SidebarItem.header(title: "Anak")
+        let items: [SidebarItem] = [
+            .row(title: TabBarItem.childRoutine.title(), subtitle: nil, image: TabBarItem.childRoutine.image(), id: RowIdentifier.childRoutine),
         ]
         
         snapshot.append([header])
@@ -228,7 +212,8 @@ extension SidebarViewController {
     }
     
     private func applyInitialSnapshot() {
-        dataSource.apply(librarySnapshot(), to: .library, animatingDifferences: false)
+        dataSource.apply(librarySnapshot(), to: .parentSection, animatingDifferences: false)
+        dataSource.apply(collectionsSnapshot(), to: .childSection, animatingDifferences: false)
     }
     
     
