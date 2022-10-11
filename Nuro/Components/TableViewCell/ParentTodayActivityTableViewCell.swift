@@ -57,7 +57,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(timeframeLabel.snp.bottom).offset(20)
-            make.bottom.equalTo(self).inset(20)
+            make.bottom.equalTo(self).inset(25)
             make.left.right.equalTo(self)
         }
     }
