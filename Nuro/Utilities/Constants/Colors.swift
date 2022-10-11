@@ -15,6 +15,10 @@ enum Colors {
     static let butter = UIColor(hex: "#FFD97EFF")
     static let cream = UIColor(hex: "#FFFAEEFF")
     static let darkGreyBlue = UIColor(hex: "#353A42FF")
+    static let surfieGreen = UIColor(hex: "#0D797FFF")
+    static let pattensBlue = UIColor(hex: "#DBEFFEFF")
+    static let matisse = UIColor(hex: "#175C8FFF")
+
     static let white = UIColor(hex: "#FFFFFFFF")
     static let black = UIColor(hex: "#000000FF")
     

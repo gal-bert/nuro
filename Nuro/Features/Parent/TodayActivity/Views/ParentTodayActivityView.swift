@@ -72,13 +72,13 @@ class ParentTodayActivityView: UIView {
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.backgroundColor = .white
         
-        vc.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(customView: moreButton),
-            UIBarButtonItem(customView: smallCapsuleButton)
-        ]
-        
-        moreButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
-        smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
+//        vc.navigationItem.rightBarButtonItems = [
+//            UIBarButtonItem(customView: moreButton),
+//            UIBarButtonItem(customView: smallCapsuleButton)
+//        ]
+//        
+//        moreButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
+//        smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
     }
     
     @objc private func selectButtonAction() {
