@@ -13,24 +13,4 @@ class ParentTodayActivityViewModel {
         print("\(text)")
     }
     
-    func loadTableView() -> [String] {
-        return [
-            "Alpha",
-            "Beta",
-            "Charlie",
-            "Alpha",
-            "Beta",
-            "Charlie",
-            "Alpha",
-            "Beta",
-            "Charlie",
-            "Alpha",
-            "Beta",
-            "Charlie",
-            "Alpha",
-            "Beta",
-            "Charlie",
-        ]
-    }
-    
 }
