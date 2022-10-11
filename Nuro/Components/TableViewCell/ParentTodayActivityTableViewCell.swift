@@ -11,6 +11,8 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
     
     static let identifier = "parentActivityTableViewCell"
     
+    var cellBackgroundColor: UIColor?
+    
     var timeframeLabel: UILabel = {
         let view = UILabel()
         view.text = "Pagi"
@@ -30,7 +32,8 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .orange
+        
+//        backgroundColor = .orange
         
         contentView.addSubview(timeframeLabel)
         contentView.addSubview(collectionView)

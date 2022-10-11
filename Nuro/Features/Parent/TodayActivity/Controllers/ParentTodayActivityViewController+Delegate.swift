@@ -20,7 +20,7 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
         switch indexPath.section {
         case 0:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.morning, text: "Pagi")
-        
+            cell.backgroundColor = Colors.royalPurple
         case 1:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8)
             

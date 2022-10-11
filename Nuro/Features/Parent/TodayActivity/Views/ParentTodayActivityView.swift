@@ -33,6 +33,7 @@ class ParentTodayActivityView: UIView {
     
     let scrollView: UIScrollView = {
         let view = UIScrollView()
+        view.backgroundColor = Colors.white
         return view
     }()
     
