@@ -44,7 +44,7 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT) + 100.0
+        return CGFloat(CollectionViewAttributes.collectionViewCellHeight) + 100.0
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

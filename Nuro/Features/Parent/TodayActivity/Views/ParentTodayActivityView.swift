@@ -110,7 +110,7 @@ class ParentTodayActivityView: UIView {
         stackView.setCustomSpacing(8, after: headerLabel)
 
         tableView.snp.makeConstraints { make in
-            make.height.equalTo(CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT * 5)
+            make.height.equalTo(CollectionViewAttributes.collectionViewCellHeight * 5)
         }
     }
     

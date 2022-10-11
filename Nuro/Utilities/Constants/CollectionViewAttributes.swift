@@ -10,6 +10,6 @@ import Foundation
 enum CollectionViewAttributes {
     
     static let collectionViewCellHeight = 280
-    static let collectionViewCellHeight = 220
+    static let collectionViewCellWidth = 220
     
 }
