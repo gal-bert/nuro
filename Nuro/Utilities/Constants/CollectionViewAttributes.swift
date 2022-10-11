@@ -7,9 +7,9 @@
 
 import Foundation
 
-class CollectionViewAttributes {
+enum CollectionViewAttributes {
     
-    static let COLLECTION_VIEW_CELL_HEIGHT = 280
-    static let COLLECTION_VIEW_CELL_WIDTH = 220
+    static let collectionViewCellHeight = 280
+    static let collectionViewCellWidth = 220
     
 }
