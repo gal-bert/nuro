@@ -9,7 +9,15 @@
 /* Begin PBXBuildFile section */
 		0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20672E28F0850700AAA8F3 /* Paths.swift */; };
 		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
-		0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */; };
+		0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */; };
+		0C74A03428F4527A0081A069 /* VisbyRoundCF-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */; };
+		0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */; };
+		0C74A03628F4527A0081A069 /* VisbyRoundCF-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */; };
+		0C74A03728F4527A0081A069 /* VisbyRoundCF-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02E28F4522F0081A069 /* VisbyRoundCF-Heavy.otf */; };
+		0C74A03828F4527A0081A069 /* VisbyRoundCF-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */; };
+		0C74A03928F4527A0081A069 /* VisbyRoundCF-DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02F28F4522F0081A069 /* VisbyRoundCF-DemiBold.otf */; };
+		0C74A03A28F4527A0081A069 /* VisbyRoundCF-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03028F4522F0081A069 /* VisbyRoundCF-Light.otf */; };
+		0C74A03B28F4527A0081A069 /* VisbyRoundCF-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */; };
 		0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA028EAB45100706D0A /* AppDelegate.swift */; };
 		0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA228EAB45100706D0A /* SceneDelegate.swift */; };
 		0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */; };
@@ -24,6 +32,7 @@
 		0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */; };
 		0C89BFE928EC68F200E5D6D4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFE828EC68F200E5D6D4 /* RxSwift */; };
 		0C89BFEC28EC690300E5D6D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C89BFEB28EC690300E5D6D4 /* SnapKit */; };
+		0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C935DE528F4550800C7BA3E /* Fonts.swift */; };
 		0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0228EC6A8C00D811A6 /* Environment.swift */; };
 		0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */; };
 		0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1528EC719B00D811A6 /* String+Ext.swift */; };
@@ -38,6 +47,9 @@
 		0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F5128EDBB8C0033D5A6 /* Jumbotron.swift */; };
 		0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */; };
 		0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */; };
+		0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C20F28F4630B00D91E79 /* Corners.swift */; };
+		0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21128F4874C00D91E79 /* TextAttachments.swift */; };
+		0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */; };
 		3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */; };
 		3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */; };
 		3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */; };
@@ -52,6 +64,7 @@
 		5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */; };
 		5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */; };
 		5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */; };
+		5F563D1528F4EE75003748D7 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D1428F4EE75003748D7 /* CircleImage.swift */; };
 		5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0569628F324CC004A8CAA /* ScreenSizes.swift */; };
 		5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */; };
 		5FEDEDF828ED35A400FB8DF6 /* ChildRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF728ED35A400FB8DF6 /* ChildRoutineView.swift */; };
@@ -79,8 +92,16 @@
 /* Begin PBXFileReference section */
 		0C20672E28F0850700AAA8F3 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
-		0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityTableViewCell.swift; sourceTree = "<group>"; };
+		0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0C74A02B28F437F90081A069 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraBold.otf"; sourceTree = "<group>"; };
+		0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraLight.otf"; sourceTree = "<group>"; };
+		0C74A02E28F4522F0081A069 /* VisbyRoundCF-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Heavy.otf"; sourceTree = "<group>"; };
+		0C74A02F28F4522F0081A069 /* VisbyRoundCF-DemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-DemiBold.otf"; sourceTree = "<group>"; };
+		0C74A03028F4522F0081A069 /* VisbyRoundCF-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Light.otf"; sourceTree = "<group>"; };
+		0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Regular.otf"; sourceTree = "<group>"; };
+		0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Bold.otf"; sourceTree = "<group>"; };
+		0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Medium.otf"; sourceTree = "<group>"; };
 		0C79CE9D28EAB45100706D0A /* Nuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEA028EAB45100706D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C79CEA228EAB45100706D0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +118,7 @@
 		0C89254128ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityDelegate.swift; sourceTree = "<group>"; };
 		0C89254328ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentTodayActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
 		0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCapsuleButton.swift; sourceTree = "<group>"; };
+		0C935DE528F4550800C7BA3E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0CA82E0228EC6A8C00D811A6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		0CA82E1528EC719B00D811A6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -111,6 +133,9 @@
 		0CCD3F5128EDBB8C0033D5A6 /* Jumbotron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jumbotron.swift; sourceTree = "<group>"; };
 		0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewController.swift; sourceTree = "<group>"; };
+		0CF2C20F28F4630B00D91E79 /* Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
+		0CF2C21128F4874C00D91E79 /* TextAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachments.swift; sourceTree = "<group>"; };
+		0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewController.swift; sourceTree = "<group>"; };
 		3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineView.swift; sourceTree = "<group>"; };
 		3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +150,7 @@
 		5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineDelegate.swift; sourceTree = "<group>"; };
 		5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewModel.swift; sourceTree = "<group>"; };
+		5F563D1428F4EE75003748D7 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		5FE0569628F324CC004A8CAA /* ScreenSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSizes.swift; sourceTree = "<group>"; };
 		5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewController.swift; sourceTree = "<group>"; };
 		5FEDEDF728ED35A400FB8DF6 /* ChildRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineView.swift; sourceTree = "<group>"; };
@@ -222,15 +248,10 @@
 		0CA82E0A28EC6D9400D811A6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0CF2C21628F5308D00D91E79 /* Constants */,
+				0CF2C21528F5307A00D91E79 /* Functions */,
 				0CA82E2F28EC79E100D811A6 /* CoreData */,
 				0CA82E1428EC719100D811A6 /* Extensions */,
-				0CA82E0228EC6A8C00D811A6 /* Environment.swift */,
-				0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */,
-				0C20672E28F0850700AAA8F3 /* Paths.swift */,
-				0CA82E1D28EC72E500D811A6 /* Colors.swift */,
-				0CA82E2328EC765400D811A6 /* Icons.swift */,
-				0CA82E2528EC76D000D811A6 /* Strings.swift */,
-				5FE0569628F324CC004A8CAA /* ScreenSizes.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -268,6 +289,7 @@
 		0CA82E0E28EC6FF400D811A6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5F563D1328F4EE50003748D7 /* ImageViews */,
 				0CCD3F5028EDBB820033D5A6 /* Jumbotron */,
 				0CA82E1728EC724800D811A6 /* Sidebar */,
 				0CA82E1C28EC727E00D811A6 /* Textfields */,
@@ -302,6 +324,7 @@
 			children = (
 				0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */,
 				0CA82E1528EC719B00D811A6 /* String+Ext.swift */,
+				0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -318,6 +341,7 @@
 			children = (
 				0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */,
 				4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */,
+				0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -373,6 +397,7 @@
 				4ABE2D1628EDB3920082147F /* Controllers */,
 				4ABE2D1528EDB3890082147F /* ViewModels */,
 				4ABE2D1228ED31030082147F /* Views */,
+				4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */,
 			);
 			path = ActivityList;
 			sourceTree = "<group>";
@@ -458,8 +483,40 @@
 		0CD4D50B28ED223A000B86FD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */,
+				0C74A02F28F4522F0081A069 /* VisbyRoundCF-DemiBold.otf */,
+				0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */,
+				0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */,
+				0C74A02E28F4522F0081A069 /* VisbyRoundCF-Heavy.otf */,
+				0C74A03028F4522F0081A069 /* VisbyRoundCF-Light.otf */,
+				0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */,
+				0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0CF2C21528F5307A00D91E79 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				0CF2C21128F4874C00D91E79 /* TextAttachments.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		0CF2C21628F5308D00D91E79 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E0228EC6A8C00D811A6 /* Environment.swift */,
+				0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */,
+				0C20672E28F0850700AAA8F3 /* Paths.swift */,
+				0CA82E1D28EC72E500D811A6 /* Colors.swift */,
+				0CA82E2328EC765400D811A6 /* Icons.swift */,
+				0CA82E2528EC76D000D811A6 /* Strings.swift */,
+				5FE0569628F324CC004A8CAA /* ScreenSizes.swift */,
+				0C935DE528F4550800C7BA3E /* Fonts.swift */,
+				0CF2C20F28F4630B00D91E79 /* Corners.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		3F0F385728ED33DF00C1EC68 /* Views */ = {
@@ -508,8 +565,17 @@
 			children = (
 				0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */,
 				4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */,
+				0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F563D1328F4EE50003748D7 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				5F563D1428F4EE75003748D7 /* CircleImage.swift */,
+			);
+			path = ImageViews;
 			sourceTree = "<group>";
 		};
 		5FDB041728ED43E100B346E2 /* Controllers */ = {
@@ -650,8 +716,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C74A03B28F4527A0081A069 /* VisbyRoundCF-Bold.otf in Resources */,
+				0C74A03628F4527A0081A069 /* VisbyRoundCF-ExtraBold.otf in Resources */,
+				0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */,
 				0C79CEB028EAB45200706D0A /* LaunchScreen.storyboard in Resources */,
+				0C74A03928F4527A0081A069 /* VisbyRoundCF-DemiBold.otf in Resources */,
+				0C74A03728F4527A0081A069 /* VisbyRoundCF-Heavy.otf in Resources */,
+				0C74A03428F4527A0081A069 /* VisbyRoundCF-Medium.otf in Resources */,
+				0C74A03828F4527A0081A069 /* VisbyRoundCF-ExtraLight.otf in Resources */,
 				0C79CEAD28EAB45200706D0A /* Assets.xcassets in Resources */,
+				0C74A03A28F4527A0081A069 /* VisbyRoundCF-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,10 +761,11 @@
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
 				5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */,
 				5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */,
-				0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */,
+				0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */,
 				5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
 				3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */,
+				5F563D1528F4EE75003748D7 /* CircleImage.swift in Sources */,
 				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
 				5FEDEDF828ED35A400FB8DF6 /* ChildRoutineView.swift in Sources */,
 				0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */,
@@ -702,6 +777,7 @@
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
 				0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */,
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
+				0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */,
 				3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
@@ -709,10 +785,13 @@
 				5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */,
 				5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */,
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
+				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
+				0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
 				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
 				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
+				0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,

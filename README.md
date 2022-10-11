@@ -2,7 +2,8 @@
 ## By Petak 9 Team
 
 ![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-[![Swift Version](https://img.shields.io/badge/Swift-5-F16D39.svg?style=flat)](https://developer.apple.com/swift)
+![Swift Version](https://img.shields.io/badge/Swift-5-F16D39.svg?style=flat)
+![Team](https://img.shields.io/badge/Petak%209-Project%20Nuro-yellowgreen)
 
 ## Our Challenge
 Help parents with Autism Spectrum Disorder (ASD) children in Indonesia to maintain their children routines consistency to improve self-independence
@@ -19,3 +20,6 @@ Help parents with Autism Spectrum Disorder (ASD) children in Indonesia to mainta
 * [@Octa](https://github.com/steanox)
 * [@Viona](https://github.com/alliciaviona)
 
+## Additional Packages
+* [SnapKit](https://github.com/SnapKit/SnapKit)
+* [RxSwift](https://github.com/ReactiveX/RxSwift)

@@ -19,8 +19,8 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
-        view.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
-        view.layer.borderWidth = 2
+        view.layer.cornerRadius = 20
+        view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
         return view
     }()
     
@@ -28,7 +28,7 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         let view = UILabel()
         view.text = "Judul Aktivitas"
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
         view.textAlignment = .center
         return view
     }()
@@ -37,17 +37,10 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         let view = UILabel()
         view.text = "Deskripsi aktivitas"
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.medium, size: 18)
         view.textAlignment = .center
         return view
     }()
-    
-//    let stackView: UIStackView = {
-//        let view = UIStackView()
-//        view.axis = .vertical
-//        view.spacing = 10
-//        return view
-//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,8 +67,8 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
     private func setupConstraints() {
         
         imageView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(self).inset(15)
-            make.height.equalTo(160)
+            make.top.left.right.equalTo(self)
+            make.height.equalTo(180)
         }
         
         titleLabel.snp.makeConstraints { make in

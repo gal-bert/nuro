@@ -49,7 +49,7 @@ extension Date {
         let minute = calendar.component(.minute, from: date)
         let seconds = calendar.component(.second, from: date)
         
-        let hourString = hour < 12 ? "0\(hour)" : "\(hour)"
+        let hourString = hour < 10 ? "0\(hour)" : "\(hour)"
         let minuteString = minute < 10 ? "0\(minute)" : "\(minute)"
             
         time = "\(hourString):\(minuteString)"
