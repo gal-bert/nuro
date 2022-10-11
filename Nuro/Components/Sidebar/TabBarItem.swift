@@ -15,9 +15,9 @@ enum TabBarItem: Int, CaseIterable {
         case .parentTodayActivity:
             return "Aktivitas Hari Ini"
         case .parentActivityList:
-            return "Daftar Aktivitas"
-        case .parentRoutine:
             return "Rutinitas"
+        case .parentRoutine:
+            return "Daftar Aktivitas"
         case .collections:
             return "Collections"
         }

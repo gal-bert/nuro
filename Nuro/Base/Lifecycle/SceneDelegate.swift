@@ -68,6 +68,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     
     private func createThreeColumnSplitViewController() -> UISplitViewController? {
+        
 //        guard
             let parentTodayActivityViewController = ParentTodayActivityViewController()
 //            let recipeDetailViewController = ParentActivityListViewController()
@@ -79,11 +80,19 @@ extension SceneDelegate {
         splitViewController.primaryBackgroundStyle = .sidebar
         splitViewController.preferredDisplayMode = .twoBesideSecondary
         
+        
         splitViewController.setViewController(sidebarViewController, for: .primary)
-//        splitViewController.setViewController(recipeDetailViewController, for: .supplementary)
         splitViewController.setViewController(parentTodayActivityViewController, for: .secondary)
         
         return splitViewController
+         
+        
+//        splitViewController.viewControllers = [
+//            UINavigationController(rootViewController: sidebarViewController),
+//            UINavigationController(rootViewController: parentTodayActivityViewController)
+//        ]
+        
+//        return splitViewController
     }
     
 }

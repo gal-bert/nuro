@@ -57,13 +57,7 @@ class SidebarViewController: UIViewController {
         configureDataSource()
         applyInitialSnapshot()
         
-//        recipeCollectionsSubscriber = dataStore.$collections
-//            .receive(on: RunLoop.main)
-//            .sink { [weak self] _ in
-//                guard let self = self else { return }
-//                let snapshot = self.collectionsSnapshot()
-//                self.dataSource.apply(snapshot, to: .collections, animatingDifferences: true)
-//            }
+        collectionView.selectItem(at: [0,1], animated: true, scrollPosition: .top)
     }
 
 }
@@ -107,37 +101,60 @@ extension SidebarViewController: UICollectionViewDelegate {
         }
     }
     
+    private func parentTodayActivityViewController() -> ParentTodayActivityViewController? {
+        guard
+            let splitViewController = self.splitViewController,
+            let secondaryViewController = splitViewController.viewController(for: .secondary)
+        else { return nil }
+        
+        return secondaryViewController as? ParentTodayActivityViewController
+    }
+    
+    private func parentRoutineViewController() -> ParentRoutineViewController? {
+        guard
+            let splitViewController = self.splitViewController,
+            let secondaryViewController = splitViewController.viewController(for: .secondary)
+        else { return nil }
+        
+        return secondaryViewController as? ParentRoutineViewController
+    }
+    
     private func parentActivityListViewController() -> ParentActivityListViewController? {
         guard
             let splitViewController = self.splitViewController,
-            let recipeListViewController = splitViewController.viewController(for: .supplementary)
+            let secondaryViewController = splitViewController.viewController(for: .secondary)
         else { return nil }
         
-        return recipeListViewController as? ParentActivityListViewController
+        return secondaryViewController as? ParentActivityListViewController
     }
     
     private func didSelectLibraryItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
-        guard let recipeListViewController = self.parentActivityListViewController() else { return }
+//        guard let secondaryViewController = self.parentTodayActivityViewController() else { return }
         
         switch sidebarItem.id {
         case RowIdentifier.todayActivity:
             print("1")
-//            recipeListViewController.showRecipes(.all)
+            let navCon = UINavigationController(rootViewController: ParentTodayActivityViewController ())
+            splitViewController?.setViewController(navCon, for: .secondary)
+            
         case RowIdentifier.listActivity:
             print("2")
-//            recipeListViewController.showRecipes(.favorites)
+            let navCon = UINavigationController(rootViewController: ParentRoutineViewController())
+            splitViewController?.setViewController(navCon, for: .secondary)
+            
         case RowIdentifier.routine:
             print("3")
-//            recipeListViewController.showRecipes(.recents)
+            let navCon = UINavigationController(rootViewController: ParentActivityListViewController())
+            splitViewController?.setViewController(navCon, for: .secondary)
+            
         default:
             collectionView.deselectItem(at: indexPath, animated: true)
         }
     }
     
     private func didSelectCollectionsItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
-        if let recipeListViewController = self.parentActivityListViewController() {
+        if let recipeListViewController = self.parentTodayActivityViewController() {
             let collection = sidebarItem.title
-//            recipeListViewController.showRecipes(from: collection)
         }
     }
     
@@ -210,25 +227,8 @@ extension SidebarViewController {
         return snapshot
     }
     
-//    private func collectionsSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
-//        var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
-//        let header = SidebarItem.header(title: TabBarItem.collections.title())
-//        let image = TabBarItem.collections.image()
-//
-//        var items = [SidebarItem]()
-////        for collectionName in dataStore.collections {
-////            items.append(.row(title: collectionName, subtitle: nil, image: image))
-////        }
-//
-//        snapshot.append([header])
-//        snapshot.expand([header])
-//        snapshot.append(items, to: header)
-//        return snapshot
-//    }
-    
     private func applyInitialSnapshot() {
         dataSource.apply(librarySnapshot(), to: .library, animatingDifferences: false)
-//        dataSource.apply(collectionsSnapshot(), to: .collections, animatingDifferences: false)
     }
     
     
