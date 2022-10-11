@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Paths {
+enum Paths {
     
-    static let GUIDED_ACCESS_SETTINGS_PATH = "App-prefs:ACCESSIBILITY&path=GUIDED_ACCESS_TITLE"
+    static let guidedAccessSettingsPath = "App-prefs:ACCESSIBILITY&path=GUIDED_ACCESS_TITLE"
     
 }
