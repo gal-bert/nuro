@@ -11,7 +11,7 @@ class TextAttachments {
     
     static func getAttachment(imageName: String, imageHeight: CGFloat = 30.0, yOffset: CGFloat = -3) -> NSTextAttachment {
         let imageAttachment = NSTextAttachment()
-        imageAttachment.image = UIImage(systemName: imageName)?.withTintColor(.blue)
+        imageAttachment.image = UIImage(systemName: imageName)
         
         let ratio = imageAttachment.image!.size.width / imageAttachment.image!.size.height
         imageAttachment.bounds = CGRectMake(5, yOffset, ratio * imageHeight, imageHeight)
