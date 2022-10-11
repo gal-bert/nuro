@@ -12,4 +12,10 @@ class ParentActivityListViewModel {
     func printText(text: String) {
         print("\(text)")
     }
+    
+    func loadTableView() -> [String] {
+        return [
+            ""
+        ]
+    }
 }

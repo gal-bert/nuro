@@ -10,6 +10,25 @@ import SnapKit
 
 class ParentActivityListView: UIView, UISearchResultsUpdating {
     
+    let tableViewFolder: UITableView = {
+        let view = UITableView()
+        view.isScrollEnabled = false
+        return view
+    }()
+    
+    let stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 100
+        return view
+    }()
+    
+    let scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.backgroundColor = .green
+        return view
+    }()
+    
     var delegate: ParentActivityListDelegate!
     
     var vc: ParentActivityListViewController!
@@ -17,10 +36,17 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
     func setup(vc: ParentActivityListViewController) {
         delegate = vc
         self.vc = vc
+        tableViewFolder.dataSource = vc
+        tableViewFolder.delegate = vc
+        tableViewFolder.register(ParentActivityFolderTableViewCell.self, forCellReuseIdentifier: ParentActivityFolderTableViewCell.identifier)
         
         backgroundColor = .white
         
         setupNavigationBar()
+        addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        stackView.addArrangedSubview(tableViewFolder)
+        setupConstraints()
         //setupButtonView()
     }
     
@@ -59,14 +85,7 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
         }
     }
     
-//    private func setupButtonView() {
-//        //
-//        let searchController = UISearchController(searchResultsController: nil)
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.definesPresentationContext = true
-//        vc.navigationItem.searchController = searchController
-//
-//    }
+
     
     @objc private func pilihButtonAction() {
         delegate.printText(text: "Select Button Clicked")
@@ -78,6 +97,18 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
     
     private func setupConstraints() {
         
+        scrollView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(safeAreaLayoutGuide)
+        }
+        stackView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(scrollView)
+            make.left.right.equalTo(scrollView).inset(20)
+            make.width.equalTo(scrollView.snp.width).inset(20)
+        }
+        
+        tableViewFolder.snp.makeConstraints { make in
+            make.height.equalTo(15 * CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT)
+        }
     }
     
 }

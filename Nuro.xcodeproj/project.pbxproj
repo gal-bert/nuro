@@ -47,6 +47,8 @@
 		4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */; };
 		4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */; };
 		4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */; };
+		4AD3981628F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */; };
+		4AD3981828F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */; };
 		5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */; };
 		5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */; };
 		5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */; };
@@ -118,6 +120,8 @@
 		4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewModel.swift; sourceTree = "<group>"; };
 		4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentActivityListViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDelegate.swift; sourceTree = "<group>"; };
+		4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityFolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityFolderTableViewCell.swift; sourceTree = "<group>"; };
 		5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineDelegate.swift; sourceTree = "<group>"; };
 		5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewModel.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */,
+				4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			children = (
 				5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */,
 				0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */,
+				4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -363,10 +369,10 @@
 		0CA82E2028EC75CD00D811A6 /* ActivityList */ = {
 			isa = PBXGroup;
 			children = (
+				4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */,
 				4ABE2D1628EDB3920082147F /* Controllers */,
 				4ABE2D1528EDB3890082147F /* ViewModels */,
 				4ABE2D1228ED31030082147F /* Views */,
-				0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */,
 			);
 			path = ActivityList;
 			sourceTree = "<group>";
@@ -500,8 +506,8 @@
 		4ABE2D1628EDB3920082147F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */,
 				4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */,
-				4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -670,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD3981828F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift in Sources */,
 				4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
 				3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */,
@@ -690,6 +697,7 @@
 				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
 				3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
+				4AD3981628F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
 				0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */,
