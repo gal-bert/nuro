@@ -12,7 +12,7 @@ class Jumbotron: UIView {
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.layer.cornerRadius = view.frame.height
+//        view.layer.cornerRadius = view.frame.height
         view.clipsToBounds = true
         return view
     }()

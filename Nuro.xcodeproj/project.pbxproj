@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20672E28F0850700AAA8F3 /* Paths.swift */; };
 		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
-		0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */; };
+		0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */; };
 		0C74A03428F4527A0081A069 /* VisbyRoundCF-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */; };
 		0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */; };
 		0C74A03628F4527A0081A069 /* VisbyRoundCF-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */; };
@@ -48,6 +48,8 @@
 		0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */; };
 		0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */; };
 		0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C20F28F4630B00D91E79 /* Corners.swift */; };
+		0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21128F4874C00D91E79 /* TextAttachments.swift */; };
+		0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */; };
 		3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */; };
 		3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */; };
 		3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */; };
@@ -87,7 +89,7 @@
 /* Begin PBXFileReference section */
 		0C20672E28F0850700AAA8F3 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
-		0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityTableViewCell.swift; sourceTree = "<group>"; };
+		0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0C74A02B28F437F90081A069 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraBold.otf"; sourceTree = "<group>"; };
 		0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -129,6 +131,8 @@
 		0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewController.swift; sourceTree = "<group>"; };
 		0CF2C20F28F4630B00D91E79 /* Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
+		0CF2C21128F4874C00D91E79 /* TextAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachments.swift; sourceTree = "<group>"; };
+		0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewController.swift; sourceTree = "<group>"; };
 		3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineView.swift; sourceTree = "<group>"; };
 		3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewModel.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				5FE0569628F324CC004A8CAA /* ScreenSizes.swift */,
 				0C935DE528F4550800C7BA3E /* Fonts.swift */,
 				0CF2C20F28F4630B00D91E79 /* Corners.swift */,
+				0CF2C21128F4874C00D91E79 /* TextAttachments.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			children = (
 				0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */,
 				0CA82E1528EC719B00D811A6 /* String+Ext.swift */,
+				0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -334,7 +340,7 @@
 		0CA82E1828EC724F00D811A6 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				0C556D0028EEB3EA005FCD73 /* ParentActivityTableViewCell.swift */,
+				0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -718,7 +724,7 @@
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
 				5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */,
 				5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */,
-				0C556D0128EEB3EA005FCD73 /* ParentActivityTableViewCell.swift in Sources */,
+				0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */,
 				5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
 				3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */,
@@ -740,6 +746,8 @@
 				5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */,
 				5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */,
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
+				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
+				0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
 				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
 				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
