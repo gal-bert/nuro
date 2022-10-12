@@ -69,10 +69,7 @@ extension SceneDelegate {
     
     private func createThreeColumnSplitViewController() -> UISplitViewController? {
         
-//        guard
-            let parentTodayActivityViewController = ParentTodayActivityViewController()
-//            let recipeDetailViewController = ParentActivityListViewController()
-//        else { return nil }
+        let parentTodayActivityViewController = ParentTodayActivityViewController()
         
         let sidebarViewController = SidebarViewController()
         
@@ -85,14 +82,6 @@ extension SceneDelegate {
         splitViewController.setViewController(parentTodayActivityViewController, for: .secondary)
         
         return splitViewController
-         
-        
-//        splitViewController.viewControllers = [
-//            UINavigationController(rootViewController: sidebarViewController),
-//            UINavigationController(rootViewController: parentTodayActivityViewController)
-//        ]
-        
-//        return splitViewController
     }
     
 }
