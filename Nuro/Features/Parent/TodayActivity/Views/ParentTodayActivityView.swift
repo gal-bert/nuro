@@ -10,27 +10,30 @@ import SnapKit
 
 class ParentTodayActivityView: UIView {
     
-    let moreButton = MoreButton()
+    let addButton = AddButton()
     let smallCapsuleButton = SmallCapsuleButton()
     let jumbotron = Jumbotron()
     
     let headerLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 32, weight: .bold)
-        view.text = "Aktivitas Mendatang"
+        view.textColor = Colors.black
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
+        view.text = "Aktivitas Hari Ini"
         return view
     }()
     
     let tableView: UITableView = {
-        let view = UITableView()
+        let view = UITableView(frame: .zero, style: .grouped)
         view.isScrollEnabled = false
+        view.allowsSelection = false
+        view.separatorColor = .clear
+        view.backgroundColor = .clear
         return view
     }()
     
     let scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.backgroundColor = .green
+        view.backgroundColor = Colors.white
         return view
     }()
     
@@ -49,9 +52,9 @@ class ParentTodayActivityView: UIView {
         delegate = vc
         tableView.dataSource = vc
         tableView.delegate = vc
-        tableView.register(ParentActivityTableViewCell.self, forCellReuseIdentifier: ParentActivityTableViewCell.identifier)
+        tableView.register(ParentTodayActivityTableViewCell.self, forCellReuseIdentifier: ParentTodayActivityTableViewCell.identifier)
             
-        backgroundColor = .white
+        backgroundColor = Colors.white
     
         setupNavigationBar()
         
@@ -70,11 +73,11 @@ class ParentTodayActivityView: UIView {
         vc.navigationController?.navigationBar.backgroundColor = .white
         
         vc.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(customView: moreButton),
+            UIBarButtonItem(customView: addButton),
             UIBarButtonItem(customView: smallCapsuleButton)
         ]
         
-        moreButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
         smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
     }
     
@@ -103,9 +106,11 @@ class ParentTodayActivityView: UIView {
             make.top.equalTo(stackView.snp.top).offset(20)
             make.height.equalTo(200)
         }
+        
+        stackView.setCustomSpacing(8, after: headerLabel)
 
         tableView.snp.makeConstraints { make in
-            make.height.equalTo(15 * CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT)
+            make.height.equalTo(CollectionViewAttributes.collectionViewCellHeight * 5)
         }
     }
     

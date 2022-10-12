@@ -9,31 +9,47 @@ import UIKit
 
 class Jumbotron: UIView {
     
-    let imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.layer.cornerRadius = view.frame.height
+//        view.layer.cornerRadius = view.frame.height
         view.clipsToBounds = true
         return view
     }()
     
-    let clockLabel: UILabel = {
+    private lazy var greetingLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 36, weight: .bold)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
+        view.text = "Selamat Pagi Mom!"
+        return view
+    }()
+    
+    private lazy var clockLabel: UILabel = {
+        let view = UILabel()
+        view.textColor = .black
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)
         view.text = "00.00"
         return view
     }()
     
-    let dateLabel: UILabel = {
+    private lazy var dateLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 32, weight: .regular)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)
         view.text = "Senin, 26 September 2022"
         return view
     }()
     
-    let stackView: UIStackView = {
+    
+    private lazy var childStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.spacing = 25
+        return view
+    }()
+
+    private lazy var parentStackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 5
@@ -54,14 +70,20 @@ class Jumbotron: UIView {
         backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         imageView.image = UIImage(named: "dummy")
         addSubview(imageView)
-        addSubview(stackView)
-        stackView.addArrangedSubview(clockLabel)
-        stackView.addArrangedSubview(dateLabel)
         
-        setupConstraints()
+        addSubview(parentStackView)
+        addSubview(childStackView)
+
+        childStackView.addArrangedSubview(clockLabel)
+        childStackView.addArrangedSubview(dateLabel)
+        
+        parentStackView.addArrangedSubview(greetingLabel)
+        parentStackView.addArrangedSubview(childStackView)
         
         getIndonesianDate()
         getTickingTime()
+        
+        setupConstraints()
     }
     
     private func setupConstraints() {
@@ -70,7 +92,7 @@ class Jumbotron: UIView {
             make.width.equalTo(imageView.snp.height)
         }
         
-        stackView.snp.makeConstraints { make in
+        parentStackView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
             make.left.equalTo(imageView.snp.right).offset(25)
         }

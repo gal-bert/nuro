@@ -1,5 +1,5 @@
 //
-//  SelectButton.swift
+//  MoreButton.swift
 //  Nuro
 //
 //  Created by Gregorius Albert on 05/10/22.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class SmallCapsuleButton: UIButton {
-    
+class AddButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setTitle("Button", for: .normal)
-        setupButton()
+        let config = UIImage.SymbolConfiguration(pointSize: 30)
+        self.setImage(UIImage(systemName: Icons.plus, withConfiguration: config), for: .normal)
+        tintColor = Colors.royalPurple
     }
     
     init(title: String) {
@@ -22,17 +22,13 @@ class SmallCapsuleButton: UIButton {
     }
     
     private func setupButton() {
-        setTitleColor(Colors.white, for: .normal)
         configuration = .plain()
         clipsToBounds = true
         layer.cornerRadius = 17
         layer.cornerCurve = .continuous
-        backgroundColor = Colors.royalPurple
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

@@ -10,7 +10,7 @@ import UIKit
 
 /// Put any variables related to the overall application like API endpoints, URLs, etc
 
-class Environment {
+enum Environment {
     
     static let appName = "Nuro"
     static let initialVC = showDoubleColumnSplitViewController() // MARK: Setup initial View Controller here
