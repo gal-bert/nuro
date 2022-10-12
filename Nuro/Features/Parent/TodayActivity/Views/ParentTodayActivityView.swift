@@ -10,7 +10,7 @@ import SnapKit
 
 class ParentTodayActivityView: UIView {
     
-    let moreButton = MoreButton()
+    let addButton = AddButton()
     let smallCapsuleButton = SmallCapsuleButton()
     let jumbotron = Jumbotron()
     
@@ -73,11 +73,11 @@ class ParentTodayActivityView: UIView {
         vc.navigationController?.navigationBar.backgroundColor = .white
         
         vc.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(customView: moreButton),
+            UIBarButtonItem(customView: addButton),
             UIBarButtonItem(customView: smallCapsuleButton)
         ]
         
-        moreButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(smallCapsuleButtonAction), for: .touchUpInside)
         smallCapsuleButton.addTarget(self, action: #selector(selectButtonAction), for: .touchUpInside)
     }
     

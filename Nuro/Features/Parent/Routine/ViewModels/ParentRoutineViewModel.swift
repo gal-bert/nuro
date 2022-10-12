@@ -10,7 +10,7 @@ import Foundation
 class ParentRoutineViewModel {
     
     func printText(text: String) {
-        print("Segmented Selected \(text)")
+        print("\(text)")
     }
     
 }

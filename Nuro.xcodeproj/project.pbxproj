@@ -26,7 +26,7 @@
 		0C79CEBB28EAB45200706D0A /* NuroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEBA28EAB45200706D0A /* NuroTests.swift */; };
 		0C79CEC528EAB45200706D0A /* NuroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEC428EAB45200706D0A /* NuroUITests.swift */; };
 		0C79CEC728EAB45200706D0A /* NuroUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEC628EAB45200706D0A /* NuroUITestsLaunchTests.swift */; };
-		0C89254028ED396D007BE0A4 /* MoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89253F28ED396D007BE0A4 /* MoreButton.swift */; };
+		0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89253F28ED396D007BE0A4 /* AddButton.swift */; };
 		0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89254128ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift */; };
 		0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89254328ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift */; };
 		0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */; };
@@ -112,7 +112,7 @@
 		0C79CEC028EAB45200706D0A /* NuroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEC428EAB45200706D0A /* NuroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuroUITests.swift; sourceTree = "<group>"; };
 		0C79CEC628EAB45200706D0A /* NuroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuroUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0C89253F28ED396D007BE0A4 /* MoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButton.swift; sourceTree = "<group>"; };
+		0C89253F28ED396D007BE0A4 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		0C89254128ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityDelegate.swift; sourceTree = "<group>"; };
 		0C89254328ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentTodayActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
 		0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCapsuleButton.swift; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 		0CA82E1A28EC726600D811A6 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				0C89253F28ED396D007BE0A4 /* MoreButton.swift */,
+				0C89253F28ED396D007BE0A4 /* AddButton.swift */,
 				0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */,
 			);
 			path = Buttons;
@@ -787,7 +787,7 @@
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
 				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
 				5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */,
-				0C89254028ED396D007BE0A4 /* MoreButton.swift in Sources */,
+				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
