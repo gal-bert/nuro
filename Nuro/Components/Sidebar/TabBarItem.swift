@@ -13,26 +13,26 @@ enum TabBarItem: Int, CaseIterable {
     func title() -> String {
         switch self {
         case .parentTodayActivity:
-            return "Aktivitas hari ini"
+            return Strings.parentTodayActivityTitle
         case .parentRoutine:
-            return "Rutinitas"
+            return Strings.parentRoutineTitle
         case .parentActivityList:
-            return "Daftar aktivitas"
+            return Strings.parentActivityListTitle
         case .childRoutine:
-            return "Rutinitas anak"
+            return Strings.childRoutineTitle
         }
     }
     
     func image() -> UIImage? {
         switch self {
         case .parentTodayActivity:
-            return UIImage(systemName: "checkmark.square.fill")
+            return UIImage(systemName: Icons.checkmark)
         case .parentRoutine:
-            return UIImage(systemName: "list.bullet.rectangle.portrait.fill")
+            return UIImage(systemName: Icons.tornado)
         case .parentActivityList:
-            return UIImage(systemName: "tornado.circle.fill")
+            return UIImage(systemName: Icons.listBulletRectanglePortrait)
         case .childRoutine:
-            return UIImage(systemName: "folder")
+            return UIImage(systemName: Icons.aqi)
         }
     }
 }

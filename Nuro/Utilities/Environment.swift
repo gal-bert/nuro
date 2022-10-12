@@ -13,6 +13,26 @@ import UIKit
 class Environment {
     
     static let appName = "Nuro"
-    static let initialVC = UINavigationController(rootViewController: ParentTodayActivityViewController()) // MARK: Setup initial View Controller here
+    static let initialVC = showDoubleColumnSplitViewController() // MARK: Setup initial View Controller here
     
+}
+
+@available(iOS 14, *)
+extension Environment {
+    static func showDoubleColumnSplitViewController() -> UISplitViewController? {
+        
+        let parentTodayActivityViewController = ParentTodayActivityViewController()
+        
+        let sidebarViewController = SidebarViewController()
+        
+        let splitViewController = UISplitViewController(style: .doubleColumn)
+        splitViewController.primaryBackgroundStyle = .sidebar
+        splitViewController.preferredDisplayMode = .twoBesideSecondary
+        
+        
+        splitViewController.setViewController(sidebarViewController, for: .primary)
+        splitViewController.setViewController(parentTodayActivityViewController, for: .secondary)
+        
+        return splitViewController
+    }
 }

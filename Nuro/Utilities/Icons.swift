@@ -11,4 +11,8 @@ import UIKit
 
 class Icons {
     static let ELLIPSIS = "ellipsis.circle.fill"
+    static let checkmark = "checkmark.square.fill"
+    static let listBulletRectanglePortrait = "list.bullet.rectangle.portrait.fill"
+    static let tornado = "tornado.circle.fill"
+    static let aqi = "aqi.high"
 }
