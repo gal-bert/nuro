@@ -11,7 +11,7 @@ class MoreButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         let config = UIImage.SymbolConfiguration(pointSize: 36)
-        self.setImage(UIImage(systemName: Icons.ellipsis, withConfiguration: config), for: .normal)
+        self.setImage(UIImage(systemName: Icons.ELLIPSIS, withConfiguration: config), for: .normal)
     }
     
     required init?(coder: NSCoder) {

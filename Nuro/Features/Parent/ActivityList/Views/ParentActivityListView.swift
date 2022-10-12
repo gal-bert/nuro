@@ -37,15 +37,15 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
         vc.title = "Daftar Aktivitas"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         
-        let moreButton = MoreButton()
+        let addButton = AddButton()
         let pilihButton = SmallCapsuleButton(title: "Pilih")
         
         vc.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(customView: moreButton),
+            UIBarButtonItem(customView: addButton),
             UIBarButtonItem(customView: pilihButton)
         ]
         
-        moreButton.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
         pilihButton.addTarget(self, action: #selector(pilihButtonAction), for: .touchUpInside)
         
         //searchController
