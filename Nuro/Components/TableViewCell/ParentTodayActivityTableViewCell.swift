@@ -12,6 +12,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
     static let identifier = "parentActivityTableViewCell"
     
     var cellBackgroundColor: UIColor?
+    var timeframe: Int?
     
     var timeframeLabel: UILabel = {
         let view = UILabel()
@@ -21,7 +22,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         return view
     }()
 
-    private lazy var collectionView: UICollectionView = {
+    var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -32,15 +33,13 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-//        backgroundColor = .orange
-        
+                
         contentView.addSubview(timeframeLabel)
         contentView.addSubview(collectionView)
+        
+        backgroundColor = cellBackgroundColor
 
         layer.cornerRadius = 30
-        layer.borderWidth = 1
-        layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -48,6 +47,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         
         setupConstraints()
     }
+
     
     private func setupConstraints() {
         
@@ -57,7 +57,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(timeframeLabel.snp.bottom).offset(20)
-            make.bottom.equalTo(self).inset(20)
+            make.bottom.equalTo(self).inset(25)
             make.left.right.equalTo(self)
         }
     }
@@ -90,6 +90,6 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 100)
+        return UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 100)
     }
 }
