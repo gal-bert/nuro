@@ -12,10 +12,14 @@ enum Colors {
     
     enum Brand {
         static let floralWhite = ColorRGBA.fraction(r: 255, g: 250, b: 238)
+        static let blueViolet = ColorRGBA.fraction(r: 112, g: 96, b: 180)
+        static let jasmine = ColorRGBA.fraction(r: 255, g: 217, b: 126)
     }
     
     enum Neutral {
-        
+        static let white = ColorRGBA.fraction(r: 255, g: 255, b: 255)
+        static let grey = ColorRGBA.fraction(r: 139, g: 139, b: 139)
+        static let bronze = ColorRGBA.fraction(r: 169, g: 158, b: 99)
     }
     
     enum Text {
