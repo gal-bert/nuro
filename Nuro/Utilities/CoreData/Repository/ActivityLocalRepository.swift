@@ -7,11 +7,12 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 protocol ActivityRepository {
-    func add(name: String, desc: String, imageURL: String, duration: Int, to category: Category)
+    func add(name: String, desc: String, image: UIImage, duration: Int, to category: Category)
     func getActivitiesOfCategory(category: Category) -> [Activity]
-    func update(activity: Activity, newName: String, newDesc: String, newImageURL: String, newDuration: Int, newCategory: Category)
+    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newDuration: Int, newCategory: Category)
     func delete(activity: Activity)
 }
 
@@ -21,14 +22,19 @@ class ActivityLocalRepository: ActivityRepository {
     
     private let context = CoreDataManager.shared.context
     
-    func add(name: String, desc: String, imageURL: String, duration: Int, to category: Category) {
+    func add(name: String, desc: String, image: UIImage, duration: Int, to category: Category) {
         let newActivity = Activity(context: context)
         newActivity.activityName = name
         newActivity.activityDesc = desc
-        newActivity.activityImageURL = imageURL
         newActivity.activityDuration = Int16(duration)
         newActivity.category = category
         newActivity.createdAt = Date()
+        
+        var imageData = image.pngData()
+        if imageData == nil {
+            imageData = image.jpegData(compressionQuality: 1.0)
+        }
+        newActivity.activityImage = imageData
         
         do {
             try context.save()
@@ -47,12 +53,17 @@ class ActivityLocalRepository: ActivityRepository {
         return activities
     }
     
-    func update(activity: Activity, newName: String, newDesc: String, newImageURL: String, newDuration: Int, newCategory: Category) {
+    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newDuration: Int, newCategory: Category) {
         activity.activityName = newName
         activity.activityDesc = newDesc
-        activity.activityImageURL = newImageURL
         activity.activityDuration = Int16(newDuration)
         activity.category = newCategory
+        
+        var newImageData = newImage.pngData()
+        if newImageData == nil {
+            newImageData = newImage.jpegData(compressionQuality: 1.0)
+        }
+        activity.activityImage = newImageData
         
         do {
             try context.save()
