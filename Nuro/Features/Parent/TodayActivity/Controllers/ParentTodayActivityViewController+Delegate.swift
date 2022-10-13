@@ -19,13 +19,22 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
         
         switch indexPath.section {
         case 0:
-            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.morning, text: "Pagi")
-            cell.backgroundColor = Colors.royalPurple
+            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.morning, text: "Pagi", colorName: Colors.matisse ?? .black)
+            cell.backgroundColor = Colors.pattensBlue
+            cell.collectionView.backgroundColor = cell.backgroundColor
+            cell.timeframeLabel.textColor = Colors.matisse
+    
         case 1:
-            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8)
-            
+            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8, colorName: Colors.butter ?? .black)
+            cell.backgroundColor = Colors.cream
+            cell.collectionView.backgroundColor = cell.backgroundColor
+            cell.timeframeLabel.textColor = Colors.butter
+        
         case 2:
-            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.night, text: "Malam")
+            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.night, text: "Malam", colorName: Colors.butter ?? .black)
+            cell.backgroundColor = Colors.darkGreyBlue
+            cell.collectionView.backgroundColor = cell.backgroundColor
+            cell.timeframeLabel.textColor = Colors.butter
             
         default:
             cell.timeframeLabel.text = "Empty"
@@ -44,7 +53,7 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(CollectionViewAttributes.collectionViewCellHeight) + 100.0
+        return CGFloat(CollectionViewAttributes.collectionViewCellHeight) + 110.0
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
