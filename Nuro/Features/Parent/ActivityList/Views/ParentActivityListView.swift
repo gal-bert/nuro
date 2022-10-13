@@ -34,7 +34,7 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
     private func setupNavigationBar() {
         
         //Title Navbar
-        vc.title = "Daftar Aktivitas"
+        vc.title = Strings.parentActivityListTitle
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         
         let addButton = AddButton()

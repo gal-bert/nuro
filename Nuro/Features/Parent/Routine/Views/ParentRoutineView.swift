@@ -47,7 +47,7 @@ class ParentRoutineView: UIView {
     }
     
     private func setupNavigationBar() {
-        vc.title = "Rutinitas"
+        vc.title = Strings.parentRoutineTitle
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 40)!]
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.backgroundColor = Colors.white

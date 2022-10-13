@@ -18,7 +18,7 @@ class ParentTodayActivityView: UIView {
         let view = UILabel()
         view.textColor = Colors.black
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
-        view.text = "Aktivitas Hari Ini"
+        view.text = Strings.parentTodayActivityTitle
         return view
     }()
     
