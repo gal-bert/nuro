@@ -13,6 +13,6 @@ import UIKit
 enum Environment {
     
     static let appName = "Nuro"
-    static let initialVC = UINavigationController(rootViewController: ParentTodayActivityViewController()) // MARK: Setup initial View Controller here
+    static let initialVC = UINavigationController(rootViewController: ParentActivityListViewController()) // MARK: Setup initial View Controller here
     
 }

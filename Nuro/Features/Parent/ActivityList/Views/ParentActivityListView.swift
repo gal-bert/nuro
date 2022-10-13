@@ -10,6 +10,10 @@ import SnapKit
 
 class ParentActivityListView: UIView, UISearchResultsUpdating {
     
+    
+    var delegate: ParentActivityListDelegate!
+    var vc: ParentActivityListViewController!
+    
     let tableViewFolder: UITableView = {
         let view = UITableView()
         view.isScrollEnabled = false
@@ -19,7 +23,7 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
     let stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
-        view.spacing = 100
+        view.spacing = 50
         return view
     }()
     
@@ -28,10 +32,6 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
         view.backgroundColor = .green
         return view
     }()
-    
-    var delegate: ParentActivityListDelegate!
-    
-    var vc: ParentActivityListViewController!
     
     func setup(vc: ParentActivityListViewController) {
         delegate = vc
@@ -47,7 +47,7 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(tableViewFolder)
         setupConstraints()
-        //setupButtonView()
+        setupSearchController()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -59,24 +59,27 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
     
     private func setupNavigationBar() {
         
+        let moreButton = MoreButton()
+        
         //Title Navbar
         vc.title = "Daftar Aktivitas"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
+        vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
         
-        let moreButton = MoreButton()
-        let pilihButton = SmallCapsuleButton(title: "Pilih")
         
-        vc.navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(customView: moreButton),
-            UIBarButtonItem(customView: pilihButton)
-        ]
-        
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: moreButton)
         moreButton.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
-        pilihButton.addTarget(self, action: #selector(pilihButtonAction), for: .touchUpInside)
-        
+
+    }
+    
+    private func setupSearchController() {
         //searchController
         let searchController = UISearchController(searchResultsController: nil)
         vc.navigationItem.searchController = searchController
+        searchController.searchBar.searchTextField.backgroundColor = Colors.cream
+        searchController.searchBar.barTintColor = .black
+        searchController.searchBar.placeholder = "Aktivitas, Kegiatan, Pekerjaan Rumah"
+        searchController.searchBar.searchTextField.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 22)
         searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
@@ -84,8 +87,6 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
                     vc.navigationItem.preferredSearchBarPlacement = .stacked
         }
     }
-    
-
     
     @objc private func pilihButtonAction() {
         delegate.printText(text: "Select Button Clicked")
@@ -107,7 +108,7 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
         }
         
         tableViewFolder.snp.makeConstraints { make in
-            make.height.equalTo(15 * CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT)
+            make.height.equalTo(15 * CollectionViewAttributes.collectionViewCellHeight)
         }
     }
     

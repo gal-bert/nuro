@@ -12,31 +12,63 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     static let identifier = "parentActivityFolderCollectionViewCell"
     
     func setImage(image: String) {
-        imageViewFolder.image = UIImage(named: image)
+        imageView.image = UIImage(named: image)
     }
     
-    private lazy var imageViewFolder: UIImageView = {
-        let imageView = UIImageView()
-//        image.contentMode = UIView.ContentMode.scaleAspectFit
-        imageView.layer.masksToBounds = true
-        imageView.layer.borderColor = UIColor.black.cgColor
-        imageView.layer.borderWidth = 5
-        imageView.layer.cornerRadius = self.frame.size.width/2
-        return imageView
+    private lazy var topFolderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .green
+        view.layer.cornerRadius = 20
+        view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
+        return view
     }()
+    
+    private lazy var bgView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .blue
+        view.layer.cornerRadius =  20
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    let stackView: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.spacing = 20
+        return view
+    }()
+    
+    private lazy var imageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        view.layer.borderWidth = 2
+        view.layer.borderColor = Colors.royalPurple?.cgColor
+        view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
+        return view
+    }()
+    
+    private lazy var circleImage = CircleImage(size: 125, imageName: "dummy")
+    
+//    private lazy var circleImageFolder: UIImageView = {
+//        let circleImage = CircleImage(size: ScreenSizes.halfScreenWidth, imageName: "image1:1")
+//        return circleImage
+//    }()
     
     private lazy var titleLabelFolder: UILabel = {
         let view = UILabel()
-        view.text = "Judul Aja"
+        view.text = "Judul Aktivitas"
         view.textColor = .black
-        view.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
         view.textAlignment = .center
         return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .gray
+//        backgroundColor = .gray
         layer.cornerRadius = 20
         setupView()
         setupConstraints()
@@ -47,25 +79,44 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-        backgroundColor = .red
+//        backgroundColor = .red
+        addSubview(topFolderView)
+        addSubview(bgView)
+        bgView.addSubview(stackView)
+        stackView.addArrangedSubview(circleImage)
+//        stackView.addArrangedSubview(backgroundView)
+        stackView.addArrangedSubview(titleLabelFolder)
         
-        addSubview(imageViewFolder)
-        addSubview(titleLabelFolder)
-        
-        imageViewFolder.image = UIImage(named: "image1:1")
+        imageView.image = UIImage(named: "dummy")
     }
     
     private func setupConstraints() {
         
-        imageViewFolder.snp.makeConstraints { make in
-            make.top.left.right.equalTo(self).inset(15)
-            make.height.equalTo(160)
+        topFolderView.snp.makeConstraints { make in
+            make.top.equalTo(self)
+            make.left.right.equalTo(self).inset(32)
+            make.height.equalTo(16)
+            make.width.equalTo(220)
         }
         
-        titleLabelFolder.snp.makeConstraints { make in
-            make.top.equalTo(imageViewFolder.snp.bottom).offset(15)
-            make.left.right.equalTo(self).inset(10)
+        bgView.snp.makeConstraints { make in
+            make.top.equalTo(topFolderView.snp.bottom)
+            make.left.right.bottom.equalTo(self)
         }
+        
+        stackView.snp.makeConstraints { make in
+            make.centerX.equalTo(self)
+            make.centerY.equalTo(self)
+        }
+        
+        circleImage.snp.makeConstraints { make in
+            make.width.height.equalTo(125)
+        }
+//
+//        titleLabelFolder.snp.makeConstraints { make in
+//            make.top.equalTo(imageView.snp.bottom).offset(22)
+//            make.left.right.equalTo(self).inset(31)
+//        }
     }
 }
 
