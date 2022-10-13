@@ -19,7 +19,16 @@ enum Colors {
     }
     
     enum Text {
-        
+        static let onyx = ColorRGBA.fraction(r: 53, g: 58, b: 66)
+        static let verseGreen = ColorRGBA.fraction(r: 16, g: 128, b: 20)
+        static let blueViolet = ColorRGBA.fraction(r: 112, g: 96, b: 180)
+        static let gold = ColorRGBA.fraction(r: 177, g: 144, b: 22)
+        static let frostbite = ColorRGBA.fraction(r: 218, g: 40, b: 168)
+        static let blueSapphire = ColorRGBA.fraction(r: 23, g: 92, b: 143)
+        static let plum = ColorRGBA.fraction(r: 145, g: 71, b: 149)
+        static let russet = ColorRGBA.fraction(r: 139, g: 77, b: 31)
+        static let slateBlue = ColorRGBA.fraction(r: 101, g: 85, b: 199)
+        static let seaweed = ColorRGBA.fraction(r: 13, g: 121, b: 127)
     }
     
     enum Background {
