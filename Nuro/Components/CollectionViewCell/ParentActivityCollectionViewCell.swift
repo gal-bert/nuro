@@ -56,11 +56,12 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
     
     private func setupView() {
         
-        backgroundColor = Colors.cream
-        layer.borderColor = Colors.butter?.cgColor
+        backgroundColor = Colors.Brand.floralWhite
+        layer.borderColor = Colors.Brand.jasmine.cgColor
         layer.borderWidth = 1
         
-        titleLabel.textColor = Colors.surfieGreen
+        titleLabel.textColor = Colors.Text.onyx
+        descriptionLabel.textColor = titleLabel.textColor
         
         addSubview(imageView)
         addSubview(titleLabel)

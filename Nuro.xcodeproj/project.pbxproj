@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20672E28F0850700AAA8F3 /* Paths.swift */; };
 		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
+		0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4A801C28F7D31600890495 /* ColorRGBA.swift */; };
 		0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */; };
 		0C74A03428F4527A0081A069 /* VisbyRoundCF-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */; };
 		0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */; };
@@ -101,6 +102,7 @@
 /* Begin PBXFileReference section */
 		0C20672E28F0850700AAA8F3 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
+		0C4A801C28F7D31600890495 /* ColorRGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRGBA.swift; sourceTree = "<group>"; };
 		0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0C74A02B28F437F90081A069 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				0CF2C21128F4874C00D91E79 /* TextAttachments.swift */,
+				0C4A801C28F7D31600890495 /* ColorRGBA.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
 				0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
+				0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,

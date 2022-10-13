@@ -16,9 +16,9 @@ class ParentTodayActivityView: UIView {
     
     let headerLabel: UILabel = {
         let view = UILabel()
-        view.textColor = Colors.black
+        view.textColor = Colors.Text.onyx
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
-        view.text = "Aktivitas Hari Ini"
+        view.text = Strings.parentTodayActivityTitle
         return view
     }()
     
@@ -33,7 +33,7 @@ class ParentTodayActivityView: UIView {
     
     let scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.backgroundColor = Colors.white
+        view.backgroundColor = Colors.Neutral.white
         return view
     }()
     
@@ -54,7 +54,7 @@ class ParentTodayActivityView: UIView {
         tableView.delegate = vc
         tableView.register(ParentTodayActivityTableViewCell.self, forCellReuseIdentifier: ParentTodayActivityTableViewCell.identifier)
             
-        backgroundColor = Colors.white
+        backgroundColor = Colors.Neutral.white
     
         setupNavigationBar()
         
@@ -70,7 +70,7 @@ class ParentTodayActivityView: UIView {
     private func setupNavigationBar() {
         vc.title = "Halo, Mom"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
-        vc.navigationController?.navigationBar.backgroundColor = Colors.white
+        vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
 
     }
     
