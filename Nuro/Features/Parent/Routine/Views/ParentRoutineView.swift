@@ -31,7 +31,7 @@ class ParentRoutineView: UIView {
     var vc: ParentRoutineViewController!
     
     func setup(vc: ParentRoutineViewController) {
-        backgroundColor = Colors.white
+        backgroundColor = Colors.Neutral.white
         
         self.vc = vc
         delegate = vc
@@ -50,7 +50,7 @@ class ParentRoutineView: UIView {
         vc.title = Strings.parentRoutineTitle
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 40)!]
         vc.navigationController?.navigationBar.prefersLargeTitles = true
-        vc.navigationController?.navigationBar.backgroundColor = Colors.white
+        vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
         
         vc.navigationItem.rightBarButtonItems = [
             UIBarButtonItem(customView: addButton),
