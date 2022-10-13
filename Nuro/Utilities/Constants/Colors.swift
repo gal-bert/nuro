@@ -27,7 +27,14 @@ enum Colors {
     }
     
     enum Background {
-        
+        static let alabaster = ColorRGBA.fraction(r: 228, g: 242, b: 229)
+        static let lavender = ColorRGBA.fraction(r: 235, g: 231, b: 252)
+        static let papayaWhip = ColorRGBA.fraction(r: 255, g: 242, b: 209)
+        static let pinkLace = ColorRGBA.fraction(r: 255, g: 228, b: 248)
+        static let water = ColorRGBA.fraction(r: 219, g: 239, b: 254)
+        static let platinum = ColorRGBA.fraction(r: 233, g: 213, b: 234)
+        static let apricot = ColorRGBA.fraction(r: 252, g: 209, b: 177)
+        static let soap = ColorRGBA.fraction(r: 205, g: 201, b: 233)
     }
     
     enum Button {
