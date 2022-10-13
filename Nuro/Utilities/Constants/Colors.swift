@@ -27,7 +27,9 @@ enum Colors {
     }
     
     enum Button {
-        
+        static let burlywood = ColorRGBA.fraction(r: 228, g: 242, b: 229)
+        static let pewterBlue = ColorRGBA.fraction(r: 235, g: 231, b: 252)
+        static let brightGray = ColorRGBA.fraction(r: 239, g: 239, b: 239)
     }
     
 //    static let royalPurple = UIColor(hex: "#7060B4FF")
