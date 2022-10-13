@@ -21,10 +21,19 @@ class CategoryLocalRepository: CategoryRepository {
     
     func getAll() -> [Category] {
         let request: NSFetchRequest = Category.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "categoryName", ascending: true)]
         
-        guard let categories = try? context.fetch(request)
+        guard var categories = try? context.fetch(request)
         else {
             return []
+        }
+        
+        for (index, category) in categories.enumerated() {
+            if category.categoryName == Strings.Category.others {
+                let temp = categories[index]
+                categories.remove(at: index)
+                categories.append(temp)
+            }
         }
         
         return categories
@@ -40,4 +49,16 @@ class CategoryLocalRepository: CategoryRepository {
             print("Add new category failed")
         }
     }
+    
+    func removeAll(categories: [Category]) {
+            for category in categories {
+                context.delete(category)
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                print("Failed to remove all categories")
+            }
+        }
 }

@@ -5,22 +5,28 @@
         <attribute name="activityDuration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="activityImageURL" optional="YES" attributeType="String"/>
         <attribute name="activityName" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="activityList" inverseEntity="Category"/>
-        <relationship name="routines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Routine" inverseName="activity" inverseEntity="Routine"/>
+        <relationship name="routineDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RoutineDetail" inverseName="activity" inverseEntity="RoutineDetail"/>
     </entity>
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
         <attribute name="categoryName" optional="YES" attributeType="String"/>
         <relationship name="activityList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="category" inverseEntity="Activity"/>
     </entity>
-    <entity name="Routine" representedClassName="Routine" syncable="YES" codeGenerationType="class">
-        <attribute name="dayID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="RoutineDetail" representedClassName="RoutineDetail" syncable="YES" codeGenerationType="class">
         <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="routineDetails" inverseEntity="Activity"/>
+        <relationship name="routineHeader" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RoutineHeader" inverseName="routineDetails" inverseEntity="RoutineHeader"/>
+    </entity>
+    <entity name="RoutineHeader" representedClassName="RoutineHeader" syncable="YES" codeGenerationType="class">
+        <attribute name="dayID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="routines" inverseEntity="Activity"/>
+        <relationship name="routineDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RoutineDetail" inverseName="routineHeader" inverseEntity="RoutineDetail"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="Activity" positionX="-63" positionY="-18" width="128" height="134"/>
         <element name="Category" positionX="-54" positionY="18" width="128" height="59"/>
-        <element name="Routine" positionX="-36" positionY="27" width="128" height="89"/>
+        <element name="RoutineDetail" positionX="-36" positionY="54" width="128" height="74"/>
+        <element name="RoutineHeader" positionX="-45" positionY="45" width="128" height="74"/>
     </elements>
 </model>
