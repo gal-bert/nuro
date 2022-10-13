@@ -12,7 +12,7 @@ class AddButton: UIButton {
         super.init(frame: frame)
         let config = UIImage.SymbolConfiguration(pointSize: 30)
         self.setImage(UIImage(systemName: Icons.plus, withConfiguration: config), for: .normal)
-        tintColor = Colors.royalPurple
+        tintColor = Colors.Brand.blueViolet
     }
     
     init(title: String) {

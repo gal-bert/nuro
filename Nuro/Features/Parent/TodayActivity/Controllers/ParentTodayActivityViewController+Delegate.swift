@@ -19,22 +19,19 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
         
         switch indexPath.section {
         case 0:
-            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.morning, text: "Pagi", colorName: Colors.matisse ?? .black)
-            cell.backgroundColor = Colors.pattensBlue
+            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.morning, text: "Pagi", colorName: Colors.Text.onyx)
+            cell.backgroundColor = Colors.Background.water
             cell.collectionView.backgroundColor = cell.backgroundColor
-            cell.timeframeLabel.textColor = Colors.matisse
     
         case 1:
-            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8, colorName: Colors.butter ?? .black)
-            cell.backgroundColor = Colors.cream
+            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8, colorName: Colors.Text.onyx)
+            cell.backgroundColor = Colors.Background.papayaWhip
             cell.collectionView.backgroundColor = cell.backgroundColor
-            cell.timeframeLabel.textColor = Colors.butter
         
         case 2:
-            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.night, text: "Malam", colorName: Colors.butter ?? .black)
-            cell.backgroundColor = Colors.darkGreyBlue
+            cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.night, text: "Malam", colorName: Colors.Text.onyx)
+            cell.backgroundColor = Colors.Background.soap
             cell.collectionView.backgroundColor = cell.backgroundColor
-            cell.timeframeLabel.textColor = Colors.butter
             
         default:
             cell.timeframeLabel.text = "Empty"

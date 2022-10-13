@@ -18,7 +18,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         let view = UILabel()
         view.text = "Pagi"
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 30)
-        view.textColor = .black
+        view.textColor = Colors.Text.onyx
         return view
     }()
 
