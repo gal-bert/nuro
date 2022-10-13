@@ -33,7 +33,7 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     let stackView: UIStackView = {
         let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = true
         view.axis = .vertical
         view.spacing = 20
         return view
@@ -52,23 +52,18 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     private lazy var circleImage = CircleImage(size: 125, imageName: "dummy")
     
-//    private lazy var circleImageFolder: UIImageView = {
-//        let circleImage = CircleImage(size: ScreenSizes.halfScreenWidth, imageName: "image1:1")
-//        return circleImage
-//    }()
-    
     private lazy var titleLabelFolder: UILabel = {
         let view = UILabel()
         view.text = "Judul Aktivitas"
         view.textColor = .black
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
         view.textAlignment = .center
+        view.numberOfLines = 0
         return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor = .gray
         layer.cornerRadius = 20
         setupView()
         setupConstraints()
@@ -79,12 +74,10 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-//        backgroundColor = .red
         addSubview(topFolderView)
         addSubview(bgView)
         bgView.addSubview(stackView)
         stackView.addArrangedSubview(circleImage)
-//        stackView.addArrangedSubview(backgroundView)
         stackView.addArrangedSubview(titleLabelFolder)
         
         imageView.image = UIImage(named: "dummy")
@@ -112,11 +105,10 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
         circleImage.snp.makeConstraints { make in
             make.width.height.equalTo(125)
         }
-//
+        
 //        titleLabelFolder.snp.makeConstraints { make in
-//            make.top.equalTo(imageView.snp.bottom).offset(22)
-//            make.left.right.equalTo(self).inset(31)
+//            make.width.equalTo(250)
 //        }
+        
     }
 }
-

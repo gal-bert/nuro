@@ -29,7 +29,6 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
     
     let scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.backgroundColor = .green
         return view
     }()
     

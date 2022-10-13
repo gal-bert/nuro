@@ -26,6 +26,6 @@ extension ParentActivityListViewController: UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(CollectionViewAttributes.COLLECTION_VIEW_CELL_HEIGHT) + 50.0
+        return CGFloat(CollectionViewAttributes.collectionViewFolderCellHeight) * 3
     }
 }

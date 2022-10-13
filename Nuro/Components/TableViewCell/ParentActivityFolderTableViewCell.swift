@@ -20,11 +20,7 @@ class ParentActivityFolderTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         contentView.addSubview(collectionViewFolder)
-        
-        backgroundColor = .orange
-        
         collectionViewFolder.delegate = self
         collectionViewFolder.dataSource = self
         collectionViewFolder.register(ParentActivityFolderCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityFolderCollectionViewCell.identifier)
