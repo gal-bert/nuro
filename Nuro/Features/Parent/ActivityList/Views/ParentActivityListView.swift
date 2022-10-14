@@ -20,14 +20,14 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
         return view
     }()
     
-    let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 50
         return view
     }()
     
-    let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         return view
     }()

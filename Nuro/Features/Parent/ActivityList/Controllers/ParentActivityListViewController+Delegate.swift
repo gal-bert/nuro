@@ -15,14 +15,16 @@ extension ParentActivityListViewController: ParentActivityListDelegate {
 
 extension ParentActivityListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = parentActivityListView.tableViewFolder.dequeueReusableCell(withIdentifier: ParentActivityFolderTableViewCell.identifier) as! ParentActivityFolderTableViewCell
-        
+       guard let cell = parentActivityListView.tableViewFolder.dequeueReusableCell(withIdentifier: ParentActivityFolderTableViewCell.identifier) as? ParentActivityFolderTableViewCell
+        else {
+            return UITableViewCell()
+        }
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.loadTableView().count
+        return viewModel.loadDataToTableView().count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
