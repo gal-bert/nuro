@@ -58,25 +58,28 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
     
     private func setupNavigationBar() {
         
-        let moreButton = MoreButton()
+        vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
+        let addButton = AddButton()
         
         //Title Navbar
-        vc.title = "Daftar Aktivitas"
+        vc.title = Strings.parentActivityListTitle
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
         
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addButton)
         
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: moreButton)
-        moreButton.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
-
+        
+        addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
+        
+        //searchController
+        
     }
     
     private func setupSearchController() {
-        //searchController
         let searchController = UISearchController(searchResultsController: nil)
         vc.navigationItem.searchController = searchController
-        searchController.searchBar.searchTextField.backgroundColor = Colors.cream
-        searchController.searchBar.barTintColor = .black
+        searchController.searchBar.searchTextField.backgroundColor = Colors.Brand.floralWhite
+        searchController.searchBar.barTintColor = Colors.Text.onyx
         searchController.searchBar.placeholder = "Aktivitas, Kegiatan, Pekerjaan Rumah"
         searchController.searchBar.searchTextField.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 22)
         searchController.searchResultsUpdater = self
@@ -87,12 +90,8 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
         }
     }
     
-    @objc private func pilihButtonAction() {
-        delegate.printText(text: "Select Button Clicked")
-    }
-    
-    @objc private func moreButtonAction() {
-        delegate.printText(text: "More Button Clicked")
+    @objc private func addButtonAction() {
+        delegate.printText(text: "Add Button Clicked")
     }
     
     private func setupConstraints() {

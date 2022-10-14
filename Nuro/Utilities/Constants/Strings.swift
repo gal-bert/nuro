@@ -11,5 +11,8 @@ import Foundation
 /// Put strings here for reusables
 
 enum Strings {
-    
+    static let parentTodayActivityTitle = "Aktivitas Hari Ini"
+    static let parentRoutineTitle = "Rutinitas"
+    static let parentActivityListTitle = "Daftar Aktivitas"
+    static let childRoutineTitle = "Rutinitas Anak"
 }

@@ -10,7 +10,8 @@ import SnapKit
 
 class ParentRoutineView: UIView {
     
-    var delegate: ParentRoutineDelegate!
+    let addButton = AddButton()
+    let editButton = SmallCapsuleButton(title: "Edit")
     
     let segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"])
@@ -20,27 +21,22 @@ class ParentRoutineView: UIView {
     
     let labelHeader: UILabel = {
         let view = UILabel()
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
         view.text = "Pagi"
         view.textAlignment = .left
-        view.font = UIFont.boldSystemFont(ofSize: 28)
         return view
     }()
     
+    var delegate: ParentRoutineDelegate!
+    var vc: ParentRoutineViewController!
+    
     func setup(vc: ParentRoutineViewController) {
-        backgroundColor = .white
+        backgroundColor = Colors.Neutral.white
         
+        self.vc = vc
         delegate = vc
         
-        vc.title = "Rutinitas"
-        vc.navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let moreBtn = MoreButton()
-        let editBtn = SmallCapsuleButton(title: "Edit")
-        
-        let moreButton = UIBarButtonItem(customView: moreBtn)
-        let editButton = UIBarButtonItem(customView: editBtn)
-        
-        vc.navigationItem.rightBarButtonItems = [moreButton, editButton]
+        setupNavigationBar()
         
         addSubview(segmentedControl)
         segmentedControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
@@ -48,11 +44,33 @@ class ParentRoutineView: UIView {
         addSubview(labelHeader)
         
         setupConstraint()
-
+    }
+    
+    private func setupNavigationBar() {
+        vc.title = Strings.parentRoutineTitle
+        vc.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 40)!]
+        vc.navigationController?.navigationBar.prefersLargeTitles = true
+        vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
+        
+        vc.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(customView: addButton),
+            UIBarButtonItem(customView: editButton)
+        ]
+        
+        addButton.addTarget(self, action: #selector(didAddButtonClicked), for: .touchUpInside)
+        editButton.addTarget(self, action: #selector(didEditButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc private func didAddButtonClicked() {
+        delegate.printText(text: "Add Button Clicked")
+    }
+    
+    @objc private func didEditButtonClicked() {
+        delegate.printText(text: "Edit Button Clicked")
     }
     
     @objc func segmentedValueChanged() {
-        delegate?.printText(text: "\(segmentedControl.selectedSegmentIndex)")
+        delegate?.printText(text: "Selected segmented \(segmentedControl.selectedSegmentIndex)")
     }
     
     private func setupConstraint() {

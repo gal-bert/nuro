@@ -11,13 +11,9 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "parentActivityFolderCollectionViewCell"
     
-    func setImage(image: String) {
-        imageView.image = UIImage(named: image)
-    }
-    
     private lazy var topFolderView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
+        view.backgroundColor = Colors.Brand.jasmine
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
         return view
@@ -25,7 +21,7 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     private lazy var bgView: UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
+        view.backgroundColor = Colors.Background.papayaWhip
         view.layer.cornerRadius =  20
         view.clipsToBounds = true
         return view
@@ -33,20 +29,9 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     let stackView: UIStackView = {
         let view = UIStackView()
-//        view.translatesAutoresizingMaskIntoConstraints = true
         view.axis = .vertical
+        view.alignment = .center
         view.spacing = 20
-        return view
-    }()
-    
-    private lazy var imageView: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 20
-        view.layer.borderWidth = 2
-        view.layer.borderColor = Colors.royalPurple?.cgColor
-        view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
         return view
     }()
     
@@ -54,11 +39,11 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     private lazy var titleLabelFolder: UILabel = {
         let view = UILabel()
-        view.text = "Judul Aktivitas"
+        view.text = "Kebersihan Diri"
         view.textColor = .black
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
         view.textAlignment = .center
-        view.numberOfLines = 0
+        view.numberOfLines = 2
         return view
     }()
     
@@ -80,7 +65,7 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(circleImage)
         stackView.addArrangedSubview(titleLabelFolder)
         
-        imageView.image = UIImage(named: "dummy")
+//        imageView.image = UIImage(named: "dummy")
     }
     
     private func setupConstraints() {
@@ -98,17 +83,12 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
         }
         
         stackView.snp.makeConstraints { make in
-            make.centerX.equalTo(self)
             make.centerY.equalTo(self)
+            make.left.right.equalTo(self).inset(8)
         }
         
         circleImage.snp.makeConstraints { make in
             make.width.height.equalTo(125)
         }
-        
-//        titleLabelFolder.snp.makeConstraints { make in
-//            make.width.equalTo(250)
-//        }
-        
     }
 }

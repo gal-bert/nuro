@@ -14,4 +14,9 @@ enum Icons {
     static let morning = "sun.and.horizon.fill"
     static let afternoon = "sun.max.fill"
     static let night = "moon.fill"
+    static let plus = "plus.circle.fill"
+    static let checkmark = "checkmark.square.fill"
+    static let listBulletRectanglePortrait = "list.bullet.rectangle.portrait.fill"
+    static let tornado = "tornado.circle.fill"
+    static let aqi = "aqi.high"
 }
