@@ -52,6 +52,9 @@ class SidebarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.tintColor = Colors.Brand.blueViolet
+        view.tintColor = Colors.Brand.blueViolet
 
         configureCollectionView()
         configureDataSource()
@@ -78,6 +81,7 @@ extension SidebarViewController {
             var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
             configuration.showsSeparators = false
             configuration.headerMode = .firstItemInSection
+            configuration.backgroundColor = Colors.Brand.floralWhite
             let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
             return section
         }
@@ -93,15 +97,15 @@ extension SidebarViewController: UICollectionViewDelegate {
         
         switch indexPath.section {
         case SidebarSection.parentSection.rawValue:
-            didSelectLibraryItem(sidebarItem, at: indexPath)
+            didSelectParentItem(sidebarItem, at: indexPath)
         case SidebarSection.childSection.rawValue:
-            didSelectCollectionsItem(sidebarItem, at: indexPath)
+            didSelectChildItem(sidebarItem, at: indexPath)
         default:
             collectionView.deselectItem(at: indexPath, animated: true)
         }
     }
     
-    private func didSelectLibraryItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
+    private func didSelectParentItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
         switch sidebarItem.id {
         case RowIdentifier.parentTodayActivity:
             let navCon = UINavigationController(rootViewController: ParentTodayActivityViewController())
@@ -120,7 +124,7 @@ extension SidebarViewController: UICollectionViewDelegate {
         }
     }
     
-    private func didSelectCollectionsItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
+    private func didSelectChildItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
         switch sidebarItem.id {
         case RowIdentifier.childRoutine:
             let navCon = UINavigationController(rootViewController: ChildRoutineViewController())
@@ -141,8 +145,8 @@ extension SidebarViewController {
             
             var contentConfiguration = UIListContentConfiguration.sidebarHeader()
             contentConfiguration.text = item.title
-            contentConfiguration.textProperties.font = .systemFont(ofSize: 32)
-            contentConfiguration.textProperties.color = .purple
+            contentConfiguration.textProperties.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)!
+            contentConfiguration.textProperties.color = Colors.Text.onyx
             
             cell.contentConfiguration = contentConfiguration
         }
@@ -163,8 +167,11 @@ extension SidebarViewController {
             
             var contentConfiguration = UIListContentConfiguration.sidebarSubtitleCell()
             contentConfiguration.text = item.title
+            contentConfiguration.textProperties.font = UIFont(name: Fonts.VisbyRoundCF.medium, size: 20)!
+            contentConfiguration.textProperties.color = Colors.Text.onyx
             contentConfiguration.secondaryText = item.subtitle
             contentConfiguration.image = item.image
+            contentConfiguration.imageProperties.tintColor = Colors.Brand.blueViolet
             
             cell.contentConfiguration = contentConfiguration
         }
@@ -183,13 +190,13 @@ extension SidebarViewController {
         }
     }
     
-    private func librarySnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
+    private func parentSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
         let header = SidebarItem.header(title: "Orang Tua")
         let items: [SidebarItem] = [
             .row(title: TabBarItem.parentTodayActivity.title(), subtitle: nil, image: TabBarItem.parentTodayActivity.image(), id: RowIdentifier.parentTodayActivity),
-            .row(title: TabBarItem.parentRoutine.title(), subtitle: nil, image: TabBarItem.parentRoutine.image(), id: RowIdentifier.parentActivityList),
-            .row(title: TabBarItem.parentActivityList.title(), subtitle: nil, image: TabBarItem.parentActivityList.image(), id: RowIdentifier.parentRoutine)
+            .row(title: TabBarItem.parentRoutine.title(), subtitle: nil, image: TabBarItem.parentRoutine.image(), id: RowIdentifier.parentRoutine),
+            .row(title: TabBarItem.parentActivityList.title(), subtitle: nil, image: TabBarItem.parentActivityList.image(), id: RowIdentifier.parentActivityList)
         ]
         
         snapshot.append([header])
@@ -198,7 +205,7 @@ extension SidebarViewController {
         return snapshot
     }
     
-    private func collectionsSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
+    private func childSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
         let header = SidebarItem.header(title: "Anak")
         let items: [SidebarItem] = [
@@ -212,8 +219,8 @@ extension SidebarViewController {
     }
     
     private func applyInitialSnapshot() {
-        dataSource.apply(librarySnapshot(), to: .parentSection, animatingDifferences: false)
-        dataSource.apply(collectionsSnapshot(), to: .childSection, animatingDifferences: false)
+        dataSource.apply(parentSnapshot(), to: .parentSection, animatingDifferences: false)
+        dataSource.apply(childSnapshot(), to: .childSection, animatingDifferences: false)
     }
     
     
