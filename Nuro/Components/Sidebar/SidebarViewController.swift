@@ -52,6 +52,9 @@ class SidebarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.tintColor = Colors.Brand.blueViolet
+        view.tintColor = Colors.Brand.blueViolet
 
         configureCollectionView()
         configureDataSource()
@@ -78,6 +81,7 @@ extension SidebarViewController {
             var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
             configuration.showsSeparators = false
             configuration.headerMode = .firstItemInSection
+            configuration.backgroundColor = Colors.Brand.floralWhite
             let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
             return section
         }
@@ -141,8 +145,8 @@ extension SidebarViewController {
             
             var contentConfiguration = UIListContentConfiguration.sidebarHeader()
             contentConfiguration.text = item.title
-            contentConfiguration.textProperties.font = .systemFont(ofSize: 32)
-            contentConfiguration.textProperties.color = .purple
+            contentConfiguration.textProperties.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)!
+            contentConfiguration.textProperties.color = Colors.Text.onyx
             
             cell.contentConfiguration = contentConfiguration
         }
@@ -163,8 +167,11 @@ extension SidebarViewController {
             
             var contentConfiguration = UIListContentConfiguration.sidebarSubtitleCell()
             contentConfiguration.text = item.title
+            contentConfiguration.textProperties.font = UIFont(name: Fonts.VisbyRoundCF.medium, size: 20)!
+            contentConfiguration.textProperties.color = Colors.Text.onyx
             contentConfiguration.secondaryText = item.subtitle
             contentConfiguration.image = item.image
+            contentConfiguration.imageProperties.tintColor = Colors.Brand.blueViolet
             
             cell.contentConfiguration = contentConfiguration
         }
