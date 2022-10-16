@@ -37,7 +37,9 @@ class ActivityLocalRepository: ActivityRepository {
     }
     
     func getActivitiesOfCategory(category: Category) -> [Activity] {
-        var activities = category.activityList?.allObjects as! [Activity]
+        guard var activities = category.activityList?.allObjects as? [Activity] else {
+            return []
+        }
         
         activities = activities.sorted(by: { first, second in
             return first.createdAt?.compare(second.createdAt ?? Date()) == .orderedAscending

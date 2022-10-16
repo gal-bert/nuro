@@ -36,7 +36,9 @@ class RoutineDetailLocalRepository: RoutineDetailRepository {
     }
     
     func getRoutineDetails(of header: RoutineHeader) -> [RoutineDetail] {
-        var routineDetails = header.routineDetails?.allObjects as! [RoutineDetail]
+        guard var routineDetails = header.routineDetails?.allObjects as? [RoutineDetail] else {
+            return []
+        }
         
         routineDetails = routineDetails.sorted(by: { first, second in
             return first.position < second.position
@@ -47,7 +49,9 @@ class RoutineDetailLocalRepository: RoutineDetailRepository {
     
     func getRoutineDetails(dayID: Int, timeID: Int) -> [RoutineDetail] {
         let routineHeader = routineHeaderRepo.getRoutineOfDayAndTime(dayID: dayID, timeID: timeID)
-        var routineDetails = routineHeader.routineDetails?.allObjects as! [RoutineDetail]
+        guard var routineDetails = routineHeader.routineDetails?.allObjects as? [RoutineDetail] else {
+            return []
+        }
         
         routineDetails = routineDetails.sorted(by: { first, second in
             return first.position < second.position
