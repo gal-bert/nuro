@@ -8,15 +8,6 @@
 import Foundation
 import CoreData
 
-protocol RoutineDetailRepository {
-    func add(dayID: Int, timeID: Int, activity: Activity)
-    func getMaxPosition(routineHeader: RoutineHeader) -> Int16
-    func getRoutineDetails(of header: RoutineHeader) -> [RoutineDetail]
-    func getRoutineDetails(dayID: Int, timeID: Int) -> [RoutineDetail]
-    func updatePosition(routineDetail: RoutineDetail, newPosition: Int)
-    func delete(routineDetail: RoutineDetail)
-}
-
 class RoutineDetailLocalRepository: RoutineDetailRepository {
     
     static let shared = RoutineDetailLocalRepository()

@@ -8,11 +8,6 @@
 import Foundation
 import CoreData
 
-protocol CategoryRepository {
-    func getAll() -> [Category]
-    func addCategory(name: String)
-}
-
 class CategoryLocalRepository: CategoryRepository {
     
     static let shared = CategoryLocalRepository()

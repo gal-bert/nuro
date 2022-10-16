@@ -9,13 +9,6 @@ import Foundation
 import CoreData
 import UIKit
 
-protocol ActivityRepository {
-    func add(name: String, desc: String, image: UIImage, duration: Int, to category: Category)
-    func getActivitiesOfCategory(category: Category) -> [Activity]
-    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newDuration: Int, newCategory: Category)
-    func delete(activity: Activity)
-}
-
 class ActivityLocalRepository: ActivityRepository {
     
     static let shared = ActivityLocalRepository()

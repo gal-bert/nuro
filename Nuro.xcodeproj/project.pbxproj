@@ -72,6 +72,7 @@
 		5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2628F79E77003748D7 /* ActivityModel.swift */; };
 		5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */; };
 		5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */; };
+		5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */; };
 		5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0569628F324CC004A8CAA /* ScreenSizes.swift */; };
 		5FE056AF28F4E2BA004A8CAA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE056AE28F4E2BA004A8CAA /* CoreDataManager.swift */; };
 		5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */; };
@@ -168,6 +169,7 @@
 		5F563D2628F79E77003748D7 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderLocalRepository.swift; sourceTree = "<group>"; };
 		5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailLocalRepository.swift; sourceTree = "<group>"; };
+		5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
 		5FE0569628F324CC004A8CAA /* ScreenSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSizes.swift; sourceTree = "<group>"; };
 		5FE056AE28F4E2BA004A8CAA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				0CA82E3028EC79F000D811A6 /* Query.swift */,
 				0CA82E3228EC7B2500D811A6 /* Seeder.swift */,
 				5FE056AE28F4E2BA004A8CAA /* CoreDataManager.swift */,
+				5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -814,6 +817,7 @@
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
 				5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */,
 				5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */,
+				5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */,
 				0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */,
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
 				0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */,

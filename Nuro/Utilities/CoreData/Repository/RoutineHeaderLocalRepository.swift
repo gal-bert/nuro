@@ -8,13 +8,6 @@
 import Foundation
 import CoreData
 
-protocol RoutineHeaderRepository {
-    func add(dayID: Int, timeID: Int)
-    func getAll() -> [RoutineHeader]
-    func getRoutinesOfDay(dayID: Int) -> [RoutineHeader]
-    func getRoutineOfDayAndTime(dayID: Int, timeID: Int) -> RoutineHeader
-}
-
 class RoutineHeaderLocalRepository: RoutineHeaderRepository {
     
     static let shared = RoutineHeaderLocalRepository()
