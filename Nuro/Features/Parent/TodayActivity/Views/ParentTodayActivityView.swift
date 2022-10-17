@@ -63,7 +63,6 @@ class ParentTodayActivityView: UIView {
         stackView.addArrangedSubview(jumbotron)
         stackView.addArrangedSubview(headerLabel)
         stackView.addArrangedSubview(tableView)
-        stackView.addArrangedSubview(emptyState)
         
         setupConstraints()
         
