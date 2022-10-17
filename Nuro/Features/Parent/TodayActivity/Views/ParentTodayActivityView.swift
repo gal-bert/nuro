@@ -10,9 +10,9 @@ import SnapKit
 
 class ParentTodayActivityView: UIView {
     
-    let addButton = AddButton()
-    let smallCapsuleButton = SmallCapsuleButton()
     let jumbotron = Jumbotron()
+    
+    let emptyState = ParentTodayActivityEmptyStateView()
     
     let headerLabel: UILabel = {
         let view = UILabel()
@@ -63,15 +63,22 @@ class ParentTodayActivityView: UIView {
         stackView.addArrangedSubview(jumbotron)
         stackView.addArrangedSubview(headerLabel)
         stackView.addArrangedSubview(tableView)
+        stackView.addArrangedSubview(emptyState)
         
         setupConstraints()
+        
+        // TODO: Add Empty state logic
+        setupEmptyState()
+    }
+    
+    private func setupEmptyState() {
+        stackView.removeArrangedSubview(tableView)
+        stackView.addArrangedSubview(emptyState)
+        stackView.setCustomSpacing(ScreenSizes.quarterScreenHeight - 60, after: headerLabel)
     }
     
     private func setupNavigationBar() {
-        vc.title = "Halo, Mom"
-        vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
-
     }
     
     private func setupConstraints() {
@@ -97,6 +104,8 @@ class ParentTodayActivityView: UIView {
         tableView.snp.makeConstraints { make in
             make.height.equalTo(CollectionViewAttributes.collectionViewCellHeight * 5)
         }
+        
+        
     }
     
 }
