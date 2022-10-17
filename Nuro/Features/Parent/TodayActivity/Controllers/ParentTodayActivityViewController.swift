@@ -10,7 +10,6 @@ import UIKit
 class ParentTodayActivityViewController: UIViewController {
     
     let parentTodayActivityView = ParentTodayActivityView()
-    let emptyState = ParentTodayActivityEmptyStateView()
     let viewModel = ParentTodayActivityViewModel()
 
     override func viewDidLoad() {
