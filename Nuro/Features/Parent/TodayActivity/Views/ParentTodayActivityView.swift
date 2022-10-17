@@ -68,7 +68,7 @@ class ParentTodayActivityView: UIView {
         setupConstraints()
         
         // TODO: Add Empty state logic
-        setupEmptyState()
+//        setupEmptyState()
     }
     
     private func setupEmptyState() {
