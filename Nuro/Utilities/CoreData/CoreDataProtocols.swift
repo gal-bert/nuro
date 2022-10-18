@@ -9,6 +9,7 @@ import UIKit
 
 protocol CategoryRepository {
     func getAll() -> [Category]
+    func getCategory(name: String) -> Category
     func addCategory(name: String)
 }
 

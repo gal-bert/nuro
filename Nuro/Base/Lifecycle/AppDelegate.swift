@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let seederValidator = SeederValidator.shared
         seederValidator.checkCategorySeedingStatus()
         seederValidator.checkRoutineHeaderSeedingStatus()
+        seederValidator.checkActivitySeedingStatus()
         
         return true
     }

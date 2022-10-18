@@ -23,4 +23,10 @@ class SeederValidator {
             seeder.seedRoutineHeaderData()
         }
     }
+    
+    func checkActivitySeedingStatus() {
+        if ActivityLocalRepository.shared.getActivitiesOfCategory(category: CategoryLocalRepository.shared.getCategory(name: "Edukasi")).isEmpty {
+            seeder.seedActivityData()
+        }
+    }
 }

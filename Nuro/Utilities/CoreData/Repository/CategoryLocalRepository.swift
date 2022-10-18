@@ -28,10 +28,23 @@ class CategoryLocalRepository: CategoryRepository {
                 let temp = categories[index]
                 categories.remove(at: index)
                 categories.append(temp)
+                break
             }
         }
         
         return categories
+    }
+    
+    func getCategory(name: String) -> Category {
+        let request: NSFetchRequest = Category.fetchRequest()
+        request.predicate = NSPredicate(format: "categoryName = %@", name)
+        
+        guard let categories = try? context.fetch(request)
+        else {
+            return Category()
+        }
+        
+        return categories[0]
     }
     
     func addCategory(name: String) {
