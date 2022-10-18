@@ -74,7 +74,8 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self)
-            make.height.equalTo(180)
+//            make.height.equalTo(180)
+            make.height.equalTo(contentView.frame.height * 2 / 3)
         }
         
         titleLabel.snp.makeConstraints { make in
