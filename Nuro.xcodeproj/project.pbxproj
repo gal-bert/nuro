@@ -43,6 +43,7 @@
 		0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */; };
 		0CA82E3128EC79F000D811A6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3028EC79F000D811A6 /* Query.swift */; };
 		0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3228EC7B2500D811A6 /* Seeder.swift */; };
+		0CB13F8228FC052100009729 /* ParentTodayActivityEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB13F8128FC052100009729 /* ParentTodayActivityEmptyStateView.swift */; };
 		0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F5128EDBB8C0033D5A6 /* Jumbotron.swift */; };
 		0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */; };
 		0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */; };
@@ -62,6 +63,8 @@
 		4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */; };
 		4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */; };
 		4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */; };
+		4AD3981628F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */; };
+		4AD3981828F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */; };
 		5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */; };
 		5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */; };
 		5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */; };
@@ -70,11 +73,21 @@
 		5FC373F028FCB203004EF523 /* ParentChildRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373EF28FCB203004EF523 /* ParentChildRoutineViewController.swift */; };
 		5FC373F228FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373F128FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift */; };
 		5FC373F928FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373F828FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift */; };
+		5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D1E28F598DF003748D7 /* CategoryLocalRepository.swift */; };
+		5F563D2128F61424003748D7 /* ActivityLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2028F61424003748D7 /* ActivityLocalRepository.swift */; };
+		5F563D2528F79E6D003748D7 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2428F79E6D003748D7 /* CategoryModel.swift */; };
+		5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2628F79E77003748D7 /* ActivityModel.swift */; };
+		5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */; };
+		5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */; };
+		5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */; };
 		5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE0569628F324CC004A8CAA /* ScreenSizes.swift */; };
+		5FE056AF28F4E2BA004A8CAA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE056AE28F4E2BA004A8CAA /* CoreDataManager.swift */; };
 		5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */; };
 		5FEDEDF828ED35A400FB8DF6 /* ChildRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF728ED35A400FB8DF6 /* ChildRoutineView.swift */; };
 		5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDF928ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift */; };
 		5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */; };
+		5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */; };
+		5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +149,8 @@
 		0CA82E2C28EC784E00D811A6 /* ParentTodayActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityViewController.swift; sourceTree = "<group>"; };
 		0CA82E3028EC79F000D811A6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		0CA82E3228EC7B2500D811A6 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
+		0CB13F8128FC052100009729 /* ParentTodayActivityEmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityEmptyStateView.swift; sourceTree = "<group>"; };
+		0CB13F8328FD0F1D00009729 /* Nuro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nuro.entitlements; sourceTree = "<group>"; };
 		0CCD3F5128EDBB8C0033D5A6 /* Jumbotron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jumbotron.swift; sourceTree = "<group>"; };
 		0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +168,8 @@
 		4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewModel.swift; sourceTree = "<group>"; };
 		4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentActivityListViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDelegate.swift; sourceTree = "<group>"; };
+		4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityFolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityFolderTableViewCell.swift; sourceTree = "<group>"; };
 		5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineDelegate.swift; sourceTree = "<group>"; };
 		5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewModel.swift; sourceTree = "<group>"; };
@@ -161,11 +178,21 @@
 		5FC373EF28FCB203004EF523 /* ParentChildRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentChildRoutineViewController.swift; sourceTree = "<group>"; };
 		5FC373F128FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentChildRoutineViewController+DataSource.swift"; sourceTree = "<group>"; };
 		5FC373F828FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
+		5F563D1E28F598DF003748D7 /* CategoryLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLocalRepository.swift; sourceTree = "<group>"; };
+		5F563D2028F61424003748D7 /* ActivityLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalRepository.swift; sourceTree = "<group>"; };
+		5F563D2428F79E6D003748D7 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		5F563D2628F79E77003748D7 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderLocalRepository.swift; sourceTree = "<group>"; };
+		5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailLocalRepository.swift; sourceTree = "<group>"; };
+		5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
 		5FE0569628F324CC004A8CAA /* ScreenSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSizes.swift; sourceTree = "<group>"; };
+		5FE056AE28F4E2BA004A8CAA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5FEDEDF528ED355100FB8DF6 /* ChildRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewController.swift; sourceTree = "<group>"; };
 		5FEDEDF728ED35A400FB8DF6 /* ChildRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineView.swift; sourceTree = "<group>"; };
 		5FEDEDF928ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+DataSource.swift"; sourceTree = "<group>"; };
 		5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderModel.swift; sourceTree = "<group>"; };
+		5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +246,7 @@
 		0C79CE9F28EAB45100706D0A /* Nuro */ = {
 			isa = PBXGroup;
 			children = (
+				0CB13F8328FD0F1D00009729 /* Nuro.entitlements */,
 				0CA82E3428EC7B5400D811A6 /* Assets */,
 				0CA82E0B28EC6E2C00D811A6 /* Base */,
 				0CA82E2E28EC799B00D811A6 /* Models */,
@@ -353,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */,
+				4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -362,6 +391,7 @@
 			children = (
 				5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */,
 				0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */,
+				4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -436,6 +466,10 @@
 		0CA82E2E28EC799B00D811A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5F563D2428F79E6D003748D7 /* CategoryModel.swift */,
+				5F563D2628F79E77003748D7 /* ActivityModel.swift */,
+				5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */,
+				5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,8 +477,11 @@
 		0CA82E2F28EC79E100D811A6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				5FE056B028F4E3D4004A8CAA /* Repository */,
 				0CA82E3028EC79F000D811A6 /* Query.swift */,
 				0CA82E3228EC7B2500D811A6 /* Seeder.swift */,
+				5FE056AE28F4E2BA004A8CAA /* CoreDataManager.swift */,
+				5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -469,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				0CA82E2828EC77D700D811A6 /* ParentTodayActivityView.swift */,
+				0CB13F8128FC052100009729 /* ParentTodayActivityEmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -622,6 +660,17 @@
 				5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5FE056B028F4E3D4004A8CAA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5F563D1E28F598DF003748D7 /* CategoryLocalRepository.swift */,
+				5F563D2028F61424003748D7 /* ActivityLocalRepository.swift */,
+				5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */,
+				5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		5FEDEDF328ED352400FB8DF6 /* Views */ = {
@@ -786,15 +835,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD3981828F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift in Sources */,
 				4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
 				3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */,
 				0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */,
 				5FC373F028FCB203004EF523 /* ParentChildRoutineViewController.swift in Sources */,
 				5FC373F928FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift in Sources */,
+				5F563D2528F79E6D003748D7 /* CategoryModel.swift in Sources */,
 				0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */,
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
+				5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */,
 				0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */,
+				5F563D2128F61424003748D7 /* ActivityLocalRepository.swift in Sources */,
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
 				5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */,
 				5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */,
@@ -810,23 +863,31 @@
 				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
 				3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
+				4AD3981628F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
+				5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */,
+				5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */,
+				5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */,
 				0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */,
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
 				0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */,
 				3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */,
 				5FC373EE28FCB14E004EF523 /* ParentChildRoutineView.swift in Sources */,
+				5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */,
 				3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
 				5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */,
 				5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */,
 				5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */,
+				0CB13F8228FC052100009729 /* ParentTodayActivityEmptyStateView.swift in Sources */,
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
 				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
 				0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
+				5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */,
+				5FE056AF28F4E2BA004A8CAA /* CoreDataManager.swift in Sources */,
 				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
 				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
@@ -837,8 +898,10 @@
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
 				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
+				5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */,
 				5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */,
 				5FC373F228FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift in Sources */,
+				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1006,6 +1069,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CL42QD4LKB;
@@ -1022,7 +1086,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.Nuro;
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1038,6 +1102,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CL42QD4LKB;
@@ -1054,7 +1119,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.Nuro;
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

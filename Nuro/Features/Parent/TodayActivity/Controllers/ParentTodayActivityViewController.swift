@@ -14,7 +14,7 @@ class ParentTodayActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        parentTodayActivityView.setup(vc: self)
+        parentTodayActivityView.setup(vc: self)       
     }
     
     override func loadView() {

@@ -18,7 +18,7 @@ class Jumbotron: UIView {
     
     private lazy var greetingLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .black
+        view.textColor = Colors.Brand.blueViolet
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
         view.text = "Selamat Pagi Mom!"
         return view
@@ -26,7 +26,7 @@ class Jumbotron: UIView {
     
     private lazy var clockLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .black
+        view.textColor = Colors.Brand.blueViolet
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)
         view.text = "00.00"
         return view
@@ -34,7 +34,7 @@ class Jumbotron: UIView {
     
     private lazy var dateLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .black
+        view.textColor = Colors.Brand.blueViolet
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)
         view.text = "Senin, 26 September 2022"
         return view
@@ -66,7 +66,7 @@ class Jumbotron: UIView {
     
     func setup() {
         self.layer.cornerRadius = 20
-        backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
         imageView.image = UIImage(named: "dummy")
         addSubview(imageView)
         

@@ -30,6 +30,16 @@ class TextAttachments {
         
         return imageAttachment
     }
+
+    static func iconOnly(imageName: String, text: String, imageHeight: CGFloat = 30.0, yOffset: CGFloat = -3, colorName: UIColor) -> NSMutableAttributedString {
+        
+        let imageAttachment = getAttachment(imageName: imageName, imageHeight: imageHeight, yOffset: yOffset, colorName: colorName)
+        
+        let fullString = NSMutableAttributedString(string: "")
+        fullString.append(NSAttributedString(attachment: imageAttachment))
+        
+        return fullString
+    }
     
     static func leadingAttachment(imageName: String, text: String, imageHeight: CGFloat = 30.0, yOffset: CGFloat = -3, colorName: UIColor) -> NSMutableAttributedString {
         
