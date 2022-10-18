@@ -60,7 +60,7 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         layer.borderColor = Colors.Brand.jasmine.cgColor
         layer.borderWidth = 1
         
-        titleLabel.textColor = Colors.Text.onyx
+        titleLabel.textColor = Colors.Text.seaweed
         descriptionLabel.textColor = titleLabel.textColor
         
         addSubview(imageView)
