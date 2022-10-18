@@ -45,10 +45,8 @@ class ParentTodayActivityView: UIView {
     }()
     
     var delegate: ParentTodayActivityDelegate!
-    var vc: ParentTodayActivityViewController!
     
     func setup(vc: ParentTodayActivityViewController) {
-        self.vc = vc
         delegate = vc
         tableView.dataSource = vc
         tableView.delegate = vc
@@ -56,7 +54,7 @@ class ParentTodayActivityView: UIView {
             
         backgroundColor = Colors.Neutral.white
     
-        setupNavigationBar()
+        setupNavigationBar(vc: vc)
         
         addSubview(scrollView)
         scrollView.addSubview(stackView)
@@ -76,7 +74,7 @@ class ParentTodayActivityView: UIView {
         stackView.setCustomSpacing(ScreenSizes.quarterScreenHeight - 60, after: headerLabel)
     }
     
-    private func setupNavigationBar() {
+    private func setupNavigationBar(vc: ParentTodayActivityViewController) {
         vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
     }
     

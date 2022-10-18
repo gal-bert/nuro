@@ -8,14 +8,22 @@
 import UIKit
 
 extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
+    
     func printText(text: String) {
         viewModel.printText(text: text)
     }
+
+    func presentViewController(dest: UIViewController) {
+        present(UINavigationController(rootViewController: dest), animated: true)
+    }
+    
 }
 
 extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentTodayActivityView.tableView.dequeueReusableCell(withIdentifier: ParentTodayActivityTableViewCell.identifier) as! ParentTodayActivityTableViewCell
+        
+        cell.setupDelegate(vc: self)
         
         switch indexPath.section {
         case 0:

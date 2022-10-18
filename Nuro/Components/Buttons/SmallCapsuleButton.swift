@@ -22,12 +22,20 @@ class SmallCapsuleButton: UIButton {
     }
     
     private func setupButton() {
-        setTitleColor(Colors.Neutral.white, for: .normal)
-        configuration = .plain()
         clipsToBounds = true
         layer.cornerRadius = 17
         layer.cornerCurve = .continuous
+
+        setTitleColor(Colors.Neutral.white, for: .normal)
         backgroundColor = Colors.Brand.blueViolet
+        frame.size.width = 60
+    }
+    
+    override open var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? UIColor.black : Colors.Brand.blueViolet
+            setTitleColor(Colors.Neutral.white, for: .normal)
+        }
     }
     
     
