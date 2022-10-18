@@ -45,15 +45,4 @@ class CategoryLocalRepository: CategoryRepository {
         }
     }
     
-    func removeAll(categories: [Category]) {
-            for category in categories {
-                context.delete(category)
-            }
-            
-            do {
-                try context.save()
-            } catch {
-                print("Failed to remove all categories")
-            }
-        }
 }
