@@ -19,6 +19,8 @@ extension ParentChildRoutineViewController: UITableViewDataSource {
         }
         
         cell.isViewingChildRoutine = true
+        
+        // TODO: Sync text and collection view item based on routine time
         cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.morning, text: "Pagi", colorName: Colors.Text.onyx)
         cell.backgroundColor = Colors.Background.water
         cell.collectionView.backgroundColor = cell.backgroundColor
