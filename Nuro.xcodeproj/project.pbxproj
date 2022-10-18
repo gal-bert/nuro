@@ -52,11 +52,13 @@
 		0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */; };
 		0CF582EC28F6969800C3D20D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0CF582EB28F6969800C3D20D /* SnapKit */; };
 		0CF582EF28F696A600C3D20D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0CF582EE28F696A600C3D20D /* RxSwift */; };
+		3F06EDE328FD64EA003DD7C0 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */; };
 		3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */; };
 		3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */; };
 		3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */; };
 		3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F996A4D28EDAEA600C343CC /* ParentRoutineDelegate.swift */; };
 		3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */; };
+		3FBF126A28FEC61400CCC850 /* HeaderTimeframeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */; };
 		3FE992D728F43D820013E78B /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D628F43D820013E78B /* SidebarViewController.swift */; };
 		3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D828F43DCC0013E78B /* TabBarItem.swift */; };
 		4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */; };
@@ -153,11 +155,13 @@
 		0CF2C20F28F4630B00D91E79 /* Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
 		0CF2C21128F4874C00D91E79 /* TextAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachments.swift; sourceTree = "<group>"; };
 		0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewController.swift; sourceTree = "<group>"; };
 		3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineView.swift; sourceTree = "<group>"; };
 		3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewModel.swift; sourceTree = "<group>"; };
 		3F996A4D28EDAEA600C343CC /* ParentRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineDelegate.swift; sourceTree = "<group>"; };
 		3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
+		3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTimeframeSection.swift; sourceTree = "<group>"; };
 		3FE992D628F43D820013E78B /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		3FE992D828F43DCC0013E78B /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListView.swift; sourceTree = "<group>"; };
@@ -373,6 +377,8 @@
 			children = (
 				0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */,
 				4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */,
+				3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */,
+				3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -801,6 +807,7 @@
 			files = (
 				4AD3981828F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift in Sources */,
 				4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */,
+				3F06EDE328FD64EA003DD7C0 /* ActivitiesTableViewCell.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
 				3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */,
 				0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */,
@@ -839,6 +846,7 @@
 				3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
+				3FBF126A28FEC61400CCC850 /* HeaderTimeframeSection.swift in Sources */,
 				5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */,
 				5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */,
 				5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */,
