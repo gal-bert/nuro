@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct ActivityModel {
     var activityName: String
     var activityDesc: String
-    var activityImageURL: String
+    var activityImage: UIImage
     var activityDuration: Int
     var createdAt: Date
-    var category: CategoryModel
+    var category: Category
 }
