@@ -74,10 +74,15 @@
 		5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */; };
 		5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */; };
 		5F563D1528F4EE75003748D7 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D1428F4EE75003748D7 /* CircleImage.swift */; };
+		5FC373EE28FCB14E004EF523 /* ParentChildRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373ED28FCB14E004EF523 /* ParentChildRoutineView.swift */; };
+		5FC373F028FCB203004EF523 /* ParentChildRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373EF28FCB203004EF523 /* ParentChildRoutineViewController.swift */; };
+		5FC373F228FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373F128FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift */; };
+		5FC373F928FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373F828FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift */; };
 		5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D1E28F598DF003748D7 /* CategoryLocalRepository.swift */; };
 		5F563D2128F61424003748D7 /* ActivityLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2028F61424003748D7 /* ActivityLocalRepository.swift */; };
 		5F563D2528F79E6D003748D7 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2428F79E6D003748D7 /* CategoryModel.swift */; };
 		5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2628F79E77003748D7 /* ActivityModel.swift */; };
+		5F87D83428FE5F6D00C06CE1 /* SeederValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F87D83328FE5F6D00C06CE1 /* SeederValidator.swift */; };
 		5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */; };
 		5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */; };
 		5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */; };
@@ -180,10 +185,15 @@
 		5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewModel.swift; sourceTree = "<group>"; };
 		5F563D1428F4EE75003748D7 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		5FC373ED28FCB14E004EF523 /* ParentChildRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentChildRoutineView.swift; sourceTree = "<group>"; };
+		5FC373EF28FCB203004EF523 /* ParentChildRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentChildRoutineViewController.swift; sourceTree = "<group>"; };
+		5FC373F128FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentChildRoutineViewController+DataSource.swift"; sourceTree = "<group>"; };
+		5FC373F828FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5F563D1E28F598DF003748D7 /* CategoryLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLocalRepository.swift; sourceTree = "<group>"; };
 		5F563D2028F61424003748D7 /* ActivityLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalRepository.swift; sourceTree = "<group>"; };
 		5F563D2428F79E6D003748D7 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5F563D2628F79E77003748D7 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		5F87D83328FE5F6D00C06CE1 /* SeederValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederValidator.swift; sourceTree = "<group>"; };
 		5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderLocalRepository.swift; sourceTree = "<group>"; };
 		5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailLocalRepository.swift; sourceTree = "<group>"; };
 		5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
@@ -346,6 +356,7 @@
 		0CA82E1028EC701900D811A6 /* Parent */ = {
 			isa = PBXGroup;
 			children = (
+				5FC373EA28FCB11E004EF523 /* ChildRoutine */,
 				0CA82E2228EC75F100D811A6 /* TodayActivity */,
 				0CA82E2028EC75CD00D811A6 /* ActivityList */,
 				0CA82E2128EC75E800D811A6 /* Routine */,
@@ -482,9 +493,9 @@
 		0CA82E2F28EC79E100D811A6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				5F87D83528FE6B3F00C06CE1 /* Seeder */,
 				5FE056B028F4E3D4004A8CAA /* Repository */,
 				0CA82E3028EC79F000D811A6 /* Query.swift */,
-				0CA82E3228EC7B2500D811A6 /* Seeder.swift */,
 				5FE056AE28F4E2BA004A8CAA /* CoreDataManager.swift */,
 				5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */,
 			);
@@ -629,6 +640,42 @@
 				5F563D1428F4EE75003748D7 /* CircleImage.swift */,
 			);
 			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		5F87D83528FE6B3F00C06CE1 /* Seeder */ = {
+			isa = PBXGroup;
+			children = (
+				0CA82E3228EC7B2500D811A6 /* Seeder.swift */,
+				5F87D83328FE5F6D00C06CE1 /* SeederValidator.swift */,
+			);
+			path = Seeder;
+			sourceTree = "<group>";
+		};
+		5FC373EA28FCB11E004EF523 /* ChildRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				5FC373EC28FCB12D004EF523 /* Controllers */,
+				5FC373EB28FCB128004EF523 /* Views */,
+			);
+			path = ChildRoutine;
+			sourceTree = "<group>";
+		};
+		5FC373EB28FCB128004EF523 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FC373ED28FCB14E004EF523 /* ParentChildRoutineView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5FC373EC28FCB12D004EF523 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FC373EF28FCB203004EF523 /* ParentChildRoutineViewController.swift */,
+				5FC373F128FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift */,
+				5FC373F828FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		5FDB041728ED43E100B346E2 /* Controllers */ = {
@@ -822,6 +869,8 @@
 				0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */,
 				0CA96D7628FD269000DB7D4C /* CellEditButton.swift in Sources */,
 				0CD5796528FEB7CF00F40DB3 /* ParentTodayActivityEditOrder+Delegate.swift in Sources */,
+				5FC373F028FCB203004EF523 /* ParentChildRoutineViewController.swift in Sources */,
+				5FC373F928FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift in Sources */,
 				5F563D2528F79E6D003748D7 /* CategoryModel.swift in Sources */,
 				0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */,
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
@@ -855,6 +904,7 @@
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
 				0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */,
 				3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */,
+				5FC373EE28FCB14E004EF523 /* ParentChildRoutineView.swift in Sources */,
 				5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */,
 				3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
@@ -876,11 +926,13 @@
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
+				5F87D83428FE5F6D00C06CE1 /* SeederValidator.swift in Sources */,
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
 				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
 				5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */,
 				5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */,
+				5FC373F228FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 			);

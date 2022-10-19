@@ -14,6 +14,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
     
     var cellBackgroundColor: UIColor?
     var timeframe: Int?
+    var isViewingChildRoutine: Bool = false
     
     var timeframeLabel: UILabel = {
         let view = UILabel()
@@ -110,7 +111,13 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CollectionViewAttributes.collectionViewCellWidth, height: CollectionViewAttributes.collectionViewCellHeight)
+        if isViewingChildRoutine { // Parent Child Routine
+            return CGSize(width: CollectionViewAttributes.collectionViewCellWidth + 24, height: CollectionViewAttributes.collectionViewCellHeight + 24)
+        }
+        else { // Parent Today Activity
+            return CGSize(width: CollectionViewAttributes.collectionViewCellWidth, height: CollectionViewAttributes.collectionViewCellHeight)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
