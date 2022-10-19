@@ -21,7 +21,7 @@ class ParentRoutineView: UIView {
     
     let tableView: UITableView = {
         let view = UITableView()
-        view.allowsSelection = false
+//        view.allowsSelection = false
         view.separatorColor = .clear
         view.backgroundColor = .clear
         return view

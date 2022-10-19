@@ -17,7 +17,7 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentRoutineView.tableView.dequeueReusableCell(withIdentifier: ActivitiesTableViewCell.identifier) as! ActivitiesTableViewCell
-        
+
         return cell
     }
     
@@ -53,10 +53,17 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
         return view
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        print(indexPath)
+    }
+    
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
     }
-
+    
 }
 
 
