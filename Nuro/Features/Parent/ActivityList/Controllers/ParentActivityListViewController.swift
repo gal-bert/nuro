@@ -2,7 +2,7 @@
 //  ParentActivityListViewController.swift
 //  Nuro
 //
-//  Created by Gregorius Albert on 05/10/22.
+//  Created by Finn Christoffer Kurniawan on 05/10/22.
 //
 
 import UIKit
