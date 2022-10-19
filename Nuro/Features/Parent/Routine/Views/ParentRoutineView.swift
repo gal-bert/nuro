@@ -13,6 +13,7 @@ class ParentRoutineView: UIView {
     let addButton = AddButton()
     let editButton = SmallCapsuleButton(title: "Edit")
     
+    
     let segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"])
         view.selectedSegmentIndex = 0
