@@ -19,7 +19,9 @@ class ParentTodayActivityEditOrderView: UIView {
     var tableView: UITableView = {
         let view = UITableView()
         view.separatorColor = .clear
+        view.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 80, right: 0)
         view.isEditing = true
+        
         return view
     }()
     

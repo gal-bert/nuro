@@ -15,10 +15,10 @@ class ParentTodayActivityEditOrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isModalInPresentation = true
         parentTodayActivityEditOrderView.setup(vc: self)
         
         // Disable swipe down to dismiss / lightbox mode
-        self.isModalInPresentation = true
     }
     
     override func loadView() {

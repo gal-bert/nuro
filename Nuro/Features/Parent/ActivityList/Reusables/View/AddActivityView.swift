@@ -9,6 +9,12 @@ import UIKit
 
 class AddActivityView: UIView {
     
+    lazy var segmentedControl: UISegmentedControl = {
+        let view = UISegmentedControl(items: ["Semua"])
+        view.selectedSegmentIndex = 0
+        return view
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -25,7 +31,7 @@ class AddActivityView: UIView {
         collectionView.register(AddActivityContentCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityContentCollectionViewCell.identifier)
         
         
-        addSubview(collectionView)
+        addMultipleSubviews(views: segmentedControl, collectionView)
         
         setupNavigationBar(vc: vc)
         setupConstraints()
@@ -36,9 +42,15 @@ class AddActivityView: UIView {
     }
     
     private func setupConstraints() {
+        
+        segmentedControl.snp.makeConstraints { make in
+            make.top.left.right.equalTo(safeAreaLayoutGuide).inset(20)
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(safeAreaLayoutGuide)
-            make.left.right.equalTo(self).inset(15)
+            make.top.equalTo(segmentedControl.snp.bottom).offset(20)
+            make.left.right.equalTo(safeAreaLayoutGuide).inset(15)
+            make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
     
