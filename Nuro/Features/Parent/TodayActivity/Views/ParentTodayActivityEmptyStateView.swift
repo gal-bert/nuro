@@ -53,7 +53,7 @@ class ParentTodayActivityEmptyStateView: UIView {
         let prefix = "Buka halaman"
         let suffix = "untuk menambahkan aktivitas harian"
         
-        let textAttachment = TextAttachments.iconOnly(imageName: Icons.tornado, text: "", yOffset: -10, colorName: Colors.Brand.blueViolet)
+        let textAttachment = TextAttachments.iconOnly(imageName: Icons.folder, text: "", yOffset: -10, colorName: Colors.Brand.blueViolet)
         
         let str = NSMutableAttributedString(string: "")
         let attr = [NSAttributedString.Key.font : UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)]

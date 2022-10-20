@@ -8,10 +8,6 @@
 import UIKit
 
 extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
-    
-    func printText(text: String) {
-        viewModel.printText(text: text)
-    }
 
     func presentViewController(dest: UIViewController) {
         present(UINavigationController(rootViewController: dest), animated: true)

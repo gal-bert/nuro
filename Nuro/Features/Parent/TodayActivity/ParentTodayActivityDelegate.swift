@@ -8,7 +8,6 @@
 import UIKit
 
 protocol ParentTodayActivityDelegate {
-    func printText(text: String)
     func presentViewController(dest: UIViewController)
 }
 

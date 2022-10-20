@@ -17,6 +17,6 @@ enum Icons {
     static let plus = "plus.circle.fill"
     static let checkmark = "checkmark.square.fill"
     static let listBulletRectanglePortrait = "list.bullet.rectangle.portrait.fill"
-    static let tornado = "tornado.circle.fill"
+    static let folder = "folder.fill"
     static let aqi = "aqi.high"
 }

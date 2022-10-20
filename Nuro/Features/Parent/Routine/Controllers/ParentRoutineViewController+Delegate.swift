@@ -17,7 +17,7 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentRoutineView.tableView.dequeueReusableCell(withIdentifier: ActivitiesTableViewCell.identifier) as! ActivitiesTableViewCell
-
+        
         return cell
     }
     
@@ -55,13 +55,41 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        print(indexPath)
     }
     
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        guard tableView.isEditing else { return .none }
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // TODO: Delete coredata
+        }
+    }
+    
+}
+
+extension ParentRoutineViewController : UITableViewDragDelegate {
+    
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let dragItem = UIDragItem(itemProvider: NSItemProvider())
+//        dragItem.localObject = arr[indexPath.row]
+        return [dragItem]
+        
+        // TODO: Implement array changes and save to coredata
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        let mv = arr[sourceIndexPath.row]
+//        arr.remove(at: sourceIndexPath.row)
+//        arr.insert(mv, at: destinationIndexPath.row)
+        // TODO: Implement array changes and save to coredata
     }
     
 }
