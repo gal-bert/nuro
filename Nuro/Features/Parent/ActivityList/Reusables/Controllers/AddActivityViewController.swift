@@ -15,9 +15,8 @@ class AddActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        preferredContentSize = .init(width: ScreenSizes.halfScreenWidth * 1.75, height: ScreenSizes.halfScreenHeight * 1.5)
+        preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
 
-        
         addActivityView.setup(vc: self)
         viewModel.loadSegmentedControlItems(vc: self)
     }
