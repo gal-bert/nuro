@@ -44,6 +44,7 @@
 		0CA82E3128EC79F000D811A6 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3028EC79F000D811A6 /* Query.swift */; };
 		0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E3228EC7B2500D811A6 /* Seeder.swift */; };
 		0CA96D7628FD269000DB7D4C /* CellEditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA96D7528FD269000DB7D4C /* CellEditButton.swift */; };
+		0CAD212C2901538C00941794 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD212B2901538C00941794 /* Alert.swift */; };
 		0CAFDA5328FE568C0035F252 /* ParentTodayActivityEditOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFDA5228FE568C0035F252 /* ParentTodayActivityEditOrderView.swift */; };
 		0CAFDA5528FE58D60035F252 /* ParentTodayActivityEditOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFDA5428FE58D60035F252 /* ParentTodayActivityEditOrderViewController.swift */; };
 		0CB13F8228FC052100009729 /* ParentTodayActivityEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB13F8128FC052100009729 /* ParentTodayActivityEmptyStateView.swift */; };
@@ -158,6 +159,7 @@
 		0CA82E3028EC79F000D811A6 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		0CA82E3228EC7B2500D811A6 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		0CA96D7528FD269000DB7D4C /* CellEditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEditButton.swift; sourceTree = "<group>"; };
+		0CAD212B2901538C00941794 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		0CAFDA5228FE568C0035F252 /* ParentTodayActivityEditOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityEditOrderView.swift; sourceTree = "<group>"; };
 		0CAFDA5428FE58D60035F252 /* ParentTodayActivityEditOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityEditOrderViewController.swift; sourceTree = "<group>"; };
 		0CB13F8128FC052100009729 /* ParentTodayActivityEmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityEmptyStateView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		0CA82E0E28EC6FF400D811A6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0CAD212A2901538500941794 /* Alerts */,
 				5F563D1328F4EE50003748D7 /* ImageViews */,
 				0CCD3F5028EDBB820033D5A6 /* Jumbotron */,
 				0CA82E1728EC724800D811A6 /* Sidebar */,
@@ -540,6 +543,14 @@
 				0CA82E2A28EC782200D811A6 /* ParentTodayActivityViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0CAD212A2901538500941794 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				0CAD212B2901538C00941794 /* Alert.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		0CCD3F5028EDBB820033D5A6 /* Jumbotron */ = {
@@ -908,6 +919,7 @@
 				5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */,
 				5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */,
 				0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */,
+				0CAD212C2901538C00941794 /* Alert.swift in Sources */,
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
 				0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */,
 				3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */,
