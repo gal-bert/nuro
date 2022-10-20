@@ -69,7 +69,10 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // TODO: Delete coredata
+            let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
+                //TODO: Add delete functions here
+            }
+            present(alert, animated: true)
         }
     }
     
