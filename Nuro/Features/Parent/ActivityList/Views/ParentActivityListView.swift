@@ -40,6 +40,7 @@ class ParentActivityListView: UIView, UISearchResultsUpdating {
         setupNavigationBar()
         setupSearchController()
         setupConstraints()
+        
     }
     
     private func createWhiteBG(_ frame : CGSize) -> UIImage? {

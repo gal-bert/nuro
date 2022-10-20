@@ -49,6 +49,7 @@ extension ParentActivityListViewController: UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selected Cell : \(indexPath.row)")
+        navigationController?.pushViewController(ParentActivityListDetailViewController(), animated: true)
     }
     
     func collectionView(_ collectionViewFolder: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -24,21 +24,13 @@ class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var bgView: UIView = {
-        let view = UIView()
-        view.backgroundColor = Colors.Brand.floralWhite
-        view.layer.cornerRadius =  20
-        view.clipsToBounds = true
-        return view
-    }()
-    
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Detail Aktivitas"
         view.textColor = .black
-        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)
         view.textAlignment = .center
-        view.numberOfLines = 2
+//        view.numberOfLines = 2
         return view
     }()
     
@@ -54,13 +46,28 @@ class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-        addSubview(bgView)
+        
+        backgroundColor = Colors.Brand.floralWhite
+        layer.borderColor = Colors.Brand.jasmine.cgColor
+        layer.borderWidth = 1
+        
+        titleLabel.textColor = Colors.Text.onyx
+        addSubview(imageView)
         addSubview(titleLabel)
         
+        imageView.image = UIImage(named: "dummy")
     }
     
     private func setupConstraints() {
         
+        imageView.snp.makeConstraints { make in
+            make.top.left.right.equalTo(self)
+            make.height.equalTo(120)
+        }
         
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.centerX.equalTo(self)
+        }
     }
 }
