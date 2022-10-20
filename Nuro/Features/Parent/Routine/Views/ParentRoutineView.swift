@@ -75,6 +75,8 @@ class ParentRoutineView: UIView {
     
     @objc private func didEditButtonClicked() {
         tableView.setEditing(!tableView.isEditing, animated: true)
+        editButton.setTitle((tableView.isEditing == true) ? "Selesai" : "Edit", for: .normal)
+        editButton.frame.size.width = (tableView.isEditing == true) ? 80 : 60
         tableView.dragInteractionEnabled = (tableView.isEditing == true) ? true : false
     }
     
