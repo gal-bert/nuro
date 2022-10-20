@@ -1,39 +1,30 @@
 //
-//  ParentActivityCollectionViewCell.swift
+//  AddActivityCollectionViewCell.swift
 //  Nuro
 //
-//  Created by Gregorius Albert on 06/10/22.
+//  Created by Gregorius Albert on 20/10/22.
 //
 
 import UIKit
 
-class ParentActivityCollectionViewCell: UICollectionViewCell {
-    
-    static let identifier = "parentActivityCollectionViewCell"
-    
+class AddActivityContentCollectionViewCell: UICollectionViewCell {
+    static let identifier = "addActivityContentCollectionViewCell"
+
     var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
+        view.image = UIImage(named: "dummy")
         return view
     }()
     
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
-        view.text = "Judul Aktivitas"
+        view.text = "Sepak Bola"
         view.textColor = .black
-        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
-        view.textAlignment = .center
-        return view
-    }()
-    
-    private lazy var descriptionLabel: UILabel = {
-        let view = UILabel()
-        view.text = "Deskripsi aktivitas"
-        view.textColor = .black
-        view.font = UIFont(name: Fonts.VisbyRoundCF.medium, size: 18)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 20)
         view.textAlignment = .center
         return view
     }()
@@ -57,13 +48,8 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         layer.borderWidth = 1
         
         titleLabel.textColor = Colors.Text.seaweed
-        descriptionLabel.textColor = titleLabel.textColor
+        addMultipleSubviews(views: imageView, titleLabel)
         
-        addSubview(imageView)
-        addSubview(titleLabel)
-        addSubview(descriptionLabel)
-        
-        imageView.image = UIImage(named: "dummy")
     }
     
     private func setupConstraints() {
@@ -76,11 +62,6 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(15)
-            make.left.right.equalTo(self).inset(10)
-        }
-        
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.left.right.equalTo(self).inset(10)
         }
         

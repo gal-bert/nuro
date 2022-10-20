@@ -11,6 +11,8 @@ enum CollectionViewAttributes {
     
     static let collectionViewCellHeight = 280
     static let collectionViewCellWidth = 220
+    static let smallCollectionViewCellHeight = 165
+    static let smallCollectionViewCellWidth = 167
     static let collectionViewFolderCellHeight = 256
     static let collectionViewFolderCellWidth = Int(ScreenSizes.screenWidth/4-50)
 }

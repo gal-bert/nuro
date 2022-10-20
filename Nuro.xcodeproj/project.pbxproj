@@ -57,6 +57,9 @@
 		0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */; };
 		0CD5796328FE720F00F40DB3 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5796228FE720F00F40DB3 /* UIView+Ext.swift */; };
 		0CD5796528FEB7CF00F40DB3 /* ParentTodayActivityEditOrder+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5796428FEB7CF00F40DB3 /* ParentTodayActivityEditOrder+Delegate.swift */; };
+		0CF06681290180CE00061701 /* AddActivityViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF06680290180CE00061701 /* AddActivityViewController+Delegate.swift */; };
+		0CF066832901856200061701 /* AddActivityContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF066822901856200061701 /* AddActivityContentCollectionViewCell.swift */; };
+		0CF066852901870000061701 /* AddActivityButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF066842901870000061701 /* AddActivityButtonCollectionViewCell.swift */; };
 		0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C20F28F4630B00D91E79 /* Corners.swift */; };
 		0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21128F4874C00D91E79 /* TextAttachments.swift */; };
 		0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */; };
@@ -177,6 +180,9 @@
 		0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewController.swift; sourceTree = "<group>"; };
 		0CD5796228FE720F00F40DB3 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		0CD5796428FEB7CF00F40DB3 /* ParentTodayActivityEditOrder+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentTodayActivityEditOrder+Delegate.swift"; sourceTree = "<group>"; };
+		0CF06680290180CE00061701 /* AddActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
+		0CF066822901856200061701 /* AddActivityContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		0CF066842901870000061701 /* AddActivityButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CF2C20F28F4630B00D91E79 /* Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
 		0CF2C21128F4874C00D91E79 /* TextAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachments.swift; sourceTree = "<group>"; };
 		0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -422,6 +428,8 @@
 				5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */,
 				0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */,
 				4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */,
+				0CF066822901856200061701 /* AddActivityContentCollectionViewCell.swift */,
+				0CF066842901870000061701 /* AddActivityButtonCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -633,6 +641,7 @@
 			isa = PBXGroup;
 			children = (
 				0CAD213C2901693E00941794 /* AddActivityViewController.swift */,
+				0CF06680290180CE00061701 /* AddActivityViewController+Delegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -991,6 +1000,7 @@
 				5F563D1528F4EE75003748D7 /* CircleImage.swift in Sources */,
 				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
 				5FEDEDF828ED35A400FB8DF6 /* ChildRoutineView.swift in Sources */,
+				0CF066852901870000061701 /* AddActivityButtonCollectionViewCell.swift in Sources */,
 				3FE992D728F43D820013E78B /* SidebarViewController.swift in Sources */,
 				0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */,
 				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
@@ -1012,6 +1022,7 @@
 				5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */,
 				3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
+				0CF066832901856200061701 /* AddActivityContentCollectionViewCell.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
 				0CAD21352901683F00941794 /* ParentTodayActivityEditOrderViewModel.swift in Sources */,
 				3FBF126A28FEC61400CCC850 /* HeaderTimeframeSection.swift in Sources */,
@@ -1042,6 +1053,7 @@
 				5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */,
 				5FC373F228FCBA97004EF523 /* ParentChildRoutineViewController+DataSource.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
+				0CF06681290180CE00061701 /* AddActivityViewController+Delegate.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

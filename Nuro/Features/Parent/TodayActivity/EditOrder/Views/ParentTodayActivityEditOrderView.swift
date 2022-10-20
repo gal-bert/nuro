@@ -51,7 +51,7 @@ class ParentTodayActivityEditOrderView: UIView {
     }
     
     @objc func tambah() {
-        delegate.pushViewController(dest: UIViewController())
+        delegate.pushViewController(dest: AddActivityViewController())
     }
     
     
