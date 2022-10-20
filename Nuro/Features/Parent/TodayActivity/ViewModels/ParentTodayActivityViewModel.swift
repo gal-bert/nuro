@@ -8,9 +8,7 @@
 import Foundation
 
 class ParentTodayActivityViewModel {
+
     
-    func printText(text: String) {
-        print("\(text)")
-    }
     
 }

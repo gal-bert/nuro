@@ -28,7 +28,7 @@ enum TabBarItem: Int, CaseIterable {
         case .parentTodayActivity:
             return UIImage(systemName: Icons.checkmark)
         case .parentRoutine:
-            return UIImage(systemName: Icons.tornado)
+            return UIImage(systemName: Icons.folder)
         case .parentActivityList:
             return UIImage(systemName: Icons.listBulletRectanglePortrait)
         case .childRoutine:

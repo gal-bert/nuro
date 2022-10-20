@@ -11,10 +11,10 @@ class ActivitiesTableViewCell: UITableViewCell {
     
     static let identifier = "activitiesTableViewCell"
     
-    private lazy var cellImageView: UIImageView = {
+    lazy var cellImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = Colors.Brand.blueViolet
-// MARK: Uncomment to use inject dummy image
+//        MARK: Uncomment to use inject dummy image
 //        view.image = UIImage(named: "dummy")
         view.contentMode = .scaleToFill
         view.layer.cornerRadius = 20
@@ -22,7 +22,7 @@ class ActivitiesTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = Colors.Text.onyx
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
@@ -30,7 +30,7 @@ class ActivitiesTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var descLabel: UILabel = {
+    lazy var descLabel: UILabel = {
         let view = UILabel()
         view.textColor = Colors.Text.onyx
         view.font = UIFont(name: Fonts.VisbyRoundCF.medium, size: 16)
@@ -38,7 +38,7 @@ class ActivitiesTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var categoryLabel: UILabel = {
+    lazy var categoryLabel: UILabel = {
         let view = UILabel()
         view.textColor = Colors.Text.verseGreen
         view.font = UIFont(name: Fonts.VisbyRoundCF.medium, size: 16)
@@ -89,8 +89,8 @@ class ActivitiesTableViewCell: UITableViewCell {
     
     private func setupConstraints() {
         wrapperView.snp.makeConstraints { make in
-            make.left.right.equalTo(self)
-            make.top.bottom.equalTo(self).inset(5)
+            make.left.right.equalTo(contentView).inset(15)
+            make.top.bottom.equalTo(contentView).inset(5)
         }
 
         cellImageView.snp.makeConstraints { make in
@@ -122,7 +122,7 @@ class ActivitiesTableViewCell: UITableViewCell {
 //
 //        // MARK: Found weird bug below, uncomment to make cell is having distance
 ////        contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 5, right: 0))
-//        
+//
 //    }
     
 }

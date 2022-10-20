@@ -18,16 +18,19 @@ class ParentTodayActivityEditOrderView: UIView {
     
     var tableView: UITableView = {
         let view = UITableView()
-        
+        view.separatorColor = .clear
+        view.isEditing = true
         return view
     }()
     
     func setup(vc: ParentTodayActivityEditOrderViewController) {
         backgroundColor = .white
-        
+        delegate = vc
         tableView.delegate = vc
         tableView.dataSource = vc
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.dragDelegate = vc
+        tableView.dragInteractionEnabled = true
+        tableView.register(ActivitiesTableViewCell.self, forCellReuseIdentifier: ActivitiesTableViewCell.identifier)
         
         addSubview(tableView)
         
@@ -43,10 +46,6 @@ class ParentTodayActivityEditOrderView: UIView {
         vc.navigationItem.rightBarButtonItem?.tintColor = Colors.Brand.blueViolet
     }
     
-    func setupDelegate(vc: ParentTodayActivityEditOrderViewController) {
-        delegate = vc
-    }
-    
     @objc func dismissAction() {
         delegate.dismissViewController()
     }
@@ -60,7 +59,8 @@ class ParentTodayActivityEditOrderView: UIView {
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(self)
-            make.left.right.bottom.equalTo(self)
+            make.left.right.equalTo(self)
+            make.bottom.equalTo(self)
         }
         
     }

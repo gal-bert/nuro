@@ -39,6 +39,8 @@ class ParentRoutineView: UIView {
         
         tableView.dataSource = vc
         tableView.delegate = vc
+        tableView.dragDelegate = vc
+        tableView.dragInteractionEnabled = false
         tableView.register(ActivitiesTableViewCell.self, forCellReuseIdentifier: ActivitiesTableViewCell.identifier)
         tableView.register(HeaderTimeframeSection.self, forHeaderFooterViewReuseIdentifier: HeaderTimeframeSection.identifier)
         
@@ -72,7 +74,8 @@ class ParentRoutineView: UIView {
     }
     
     @objc private func didEditButtonClicked() {
-        delegate.printText(text: "Edit Button Clicked")
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        tableView.dragInteractionEnabled = (tableView.isEditing == true) ? true : false
     }
     
     @objc func segmentedValueChanged() {
@@ -86,7 +89,7 @@ class ParentRoutineView: UIView {
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview()
             make.height.equalTo(600)
         }
     }
