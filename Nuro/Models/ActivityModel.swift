@@ -12,7 +12,6 @@ struct ActivityModel {
     var activityName: String
     var activityDesc: String
     var activityImage: UIImage
-    var activityDuration: Int
     var createdAt: Date
     var category: Category
 }
