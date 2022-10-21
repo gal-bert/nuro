@@ -10,7 +10,7 @@ import UIKit
 class AddActivityContentCollectionViewCell: UICollectionViewCell {
     static let identifier = "addActivityContentCollectionViewCell"
 
-    var imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
@@ -20,7 +20,7 @@ class AddActivityContentCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Sepak Bola"
         view.textColor = .black

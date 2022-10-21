@@ -26,7 +26,7 @@ class AddActivityView: UIView {
         backgroundColor = .white
         
         collectionView.delegate = vc
-        collectionView.dataSource = vc
+//        collectionView.dataSource = vc
         collectionView.register(AddActivityButtonCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityButtonCollectionViewCell.identifier)
         collectionView.register(AddActivityContentCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityContentCollectionViewCell.identifier)
         
