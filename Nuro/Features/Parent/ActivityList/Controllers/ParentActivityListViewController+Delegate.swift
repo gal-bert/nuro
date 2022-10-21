@@ -13,26 +13,12 @@ extension ParentActivityListViewController: ParentActivityListDelegate {
     }
 }
 
-extension UIImage {
-    func createImageWithRoundBorder(cornerRadiuos : CGFloat) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
-        let rect = CGRect(origin:CGPoint(x: 0, y: 0), size: self.size)
-        let context = UIGraphicsGetCurrentContext()
-
-        let path = UIBezierPath(
-            roundedRect: rect,
-            cornerRadius: cornerRadiuos
-        )
-        context?.beginPath()
-        context?.addPath(path.cgPath)
-        context?.closePath()
-        context?.clip()
-        self.draw(at: CGPoint.zero)
-        context?.restoreGState()
-        path.lineWidth = 1.5
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
+extension ParentActivityListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        print(text)
     }
 }
 

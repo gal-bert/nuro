@@ -15,6 +15,8 @@ class ParentActivityListDetailView: UIView {
     
     let editButton = SmallCapsuleButton(title: "Edit")
     
+    let searchController = SearchController()
+    
     let collectionViewListDetail: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -30,6 +32,7 @@ class ParentActivityListDetailView: UIView {
         collectionViewListDetail.delegate = vc
         collectionViewListDetail.register(ParentActivityListDetailCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier)
         addSubview(collectionViewListDetail)
+        searchController.setupSearchController(vc: vc)
         setupNavigationBar()
         setupConstraints()
     }
@@ -52,21 +55,6 @@ class ParentActivityListDetailView: UIView {
             UIBarButtonItem(customView: editButton)
             ]
     }
-    
-//    private func setupSearchController() {
-//        let searchController = UISearchController(searchResultsController: nil)
-//        vc.navigationItem.searchController = searchController
-//        searchController.searchBar.searchTextField.backgroundColor = Colors.Brand.floralWhite
-//        searchController.searchBar.barTintColor = Colors.Text.onyx
-//        searchController.searchBar.placeholder = "Aktivitas, Kegiatan, Pekerjaan Rumah"
-//        searchController.searchBar.searchTextField.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 22)
-//        searchController.searchResultsUpdater = self
-//        searchController.searchBar.autocapitalizationType = .none
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        if #available(iOS 16, *){
-//            vc.navigationItem.preferredSearchBarPlacement = .stacked
-//        }
-//    }
     
     @objc private func addButtonAction() {
         delegate.printText(text: "Add Button Clicked")
