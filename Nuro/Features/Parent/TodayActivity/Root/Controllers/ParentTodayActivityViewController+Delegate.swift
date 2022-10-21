@@ -10,7 +10,10 @@ import UIKit
 extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
 
     func presentViewController(dest: UIViewController) {
-        present(UINavigationController(rootViewController: dest), animated: true)
+        let vc = UINavigationController(rootViewController: dest)
+        vc.modalPresentationStyle = .formSheet
+        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
+        present(vc, animated: true)
     }
     
 }

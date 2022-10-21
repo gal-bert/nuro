@@ -11,12 +11,15 @@ import UIKit
 enum ScreenSizes {
     
     static let screenWidth = UIScreen.main.bounds.width
-    static let halfScreenHeight = UIScreen.main.bounds.height / 2
-    static let halfScreenWidth = UIScreen.main.bounds.width / 2
+    static let screenHeight = UIScreen.main.bounds.height
     
-    static let quarterScreenHeight = UIScreen.main.bounds.height / 4
-    static let quarterScreenWidth = UIScreen.main.bounds.width / 4
+    static let halfScreenHeight = screenHeight / 2
+    static let halfScreenWidth = screenWidth / 2
     
+    static let quarterScreenHeight = screenHeight / 4
+    static let quarterScreenWidth = screenWidth / 4
     
+    static let modalHeight = halfScreenHeight * 1.5
+    static let modalWidth = halfScreenWidth * 1.75
     
 }

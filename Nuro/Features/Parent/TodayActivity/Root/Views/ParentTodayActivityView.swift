@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class ParentTodayActivityView: UIView {
     
@@ -106,3 +105,14 @@ class ParentTodayActivityView: UIView {
     }
     
 }
+
+//struct ParentTodayActivityViewPreview: PreviewProvider {
+//    static var previews: some View {
+//        ViewPreview {
+//            ParentTodayActivityView()
+//        }
+//        .previewDevice(PreviewDevice(rawValue: "iPad Pro (11-inch) (3rd generation)"))
+//        .previewDisplayName("VIEW 1")
+//        .ignoresSafeArea()
+//    }
+//}

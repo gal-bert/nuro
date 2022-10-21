@@ -35,6 +35,18 @@ class ActivityLocalRepository: ActivityRepository {
         }
     }
     
+    func getAllActivities() -> [Activity] {
+        let request: NSFetchRequest = Activity.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
+        
+        guard var activities = try? context.fetch(request)
+        else {
+            return []
+        }
+        
+        return activities
+    }
+    
     func getActivitiesOfCategory(category: Category) -> [Activity] {
         guard var activities = category.activityList?.allObjects as? [Activity] else {
             return []
