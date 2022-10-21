@@ -127,7 +127,7 @@ extension SidebarViewController: UICollectionViewDelegate {
     private func didSelectChildItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
         switch sidebarItem.id {
         case RowIdentifier.childRoutine:
-            let navCon = UINavigationController(rootViewController: ChildRoutineViewController())
+            let navCon = UINavigationController(rootViewController: ParentChildRoutineViewController())
             splitViewController?.setViewController(navCon, for: .secondary)
             
         default:

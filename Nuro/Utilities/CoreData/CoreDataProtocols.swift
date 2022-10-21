@@ -9,13 +9,14 @@ import UIKit
 
 protocol CategoryRepository {
     func getAll() -> [Category]
+    func getCategory(name: String) -> Category
     func addCategory(name: String)
 }
 
 protocol ActivityRepository {
-    func add(name: String, desc: String, image: UIImage, duration: Int, to category: Category)
+    func add(name: String, desc: String, image: UIImage, to category: Category)
     func getActivitiesOfCategory(category: Category) -> [Activity]
-    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newDuration: Int, newCategory: Category)
+    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newCategory: Category)
     func delete(activity: Activity)
 }
 

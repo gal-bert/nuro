@@ -15,11 +15,10 @@ class ActivityLocalRepository: ActivityRepository {
     
     private let context = CoreDataManager.shared.context
     
-    func add(name: String, desc: String, image: UIImage, duration: Int, to category: Category) {
+    func add(name: String, desc: String, image: UIImage, to category: Category) {
         let newActivity = Activity(context: context)
         newActivity.activityName = name
         newActivity.activityDesc = desc
-        newActivity.activityDuration = Int16(duration)
         newActivity.category = category
         newActivity.createdAt = Date()
         
@@ -48,10 +47,9 @@ class ActivityLocalRepository: ActivityRepository {
         return activities
     }
     
-    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newDuration: Int, newCategory: Category) {
+    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newCategory: Category) {
         activity.activityName = newName
         activity.activityDesc = newDesc
-        activity.activityDuration = Int16(newDuration)
         activity.category = newCategory
         
         var newImageData = newImage.pngData()

@@ -10,9 +10,11 @@ import UIKit
 class ParentTodayActivityTableViewCell: UITableViewCell {
     
     static let identifier = "parentActivityTableViewCell"
+    var delegate: ParentTodayActivityDelegate!
     
     var cellBackgroundColor: UIColor?
     var timeframe: Int?
+    var isViewingChildRoutine: Bool = false
     
     var timeframeLabel: UILabel = {
         let view = UILabel()
@@ -30,11 +32,23 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         return view
     }()
     
+    var editButton = CellEditButton()
+    
+    var stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.alignment = .fill
+        view.distribution = .fillProportionally
+        return view
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
                 
-        contentView.addSubview(timeframeLabel)
+        contentView.addSubview(stackView)
+        stackView.addArrangedSubview(timeframeLabel)
+        stackView.addArrangedSubview(editButton)
+        
         contentView.addSubview(collectionView)
         
         backgroundColor = cellBackgroundColor
@@ -45,14 +59,29 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.register(ParentActivityCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityCollectionViewCell.identifier)
         
+        editButton.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
+        
         setupConstraints()
+    }
+    
+    func setupDelegate(vc: ParentTodayActivityViewController) {
+        delegate = vc
+    }
+    
+    
+    @objc func editButtonAction() {
+        delegate.presentViewController(dest: ParentTodayActivityEditOrderViewController())
     }
 
     
     private func setupConstraints() {
+
+        stackView.snp.makeConstraints { make in
+            make.top.left.right.equalTo(self).inset(20)
+        }
         
-        timeframeLabel.snp.makeConstraints { make in
-            make.top.left.equalTo(self).inset(20)
+        editButton.snp.makeConstraints { make in
+            make.width.equalTo(80)
         }
         
         collectionView.snp.makeConstraints { make in
@@ -82,7 +111,13 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CollectionViewAttributes.collectionViewCellWidth, height: CollectionViewAttributes.collectionViewCellHeight)
+        if isViewingChildRoutine { // Parent Child Routine
+            return CGSize(width: CollectionViewAttributes.collectionViewCellWidth + 24, height: CollectionViewAttributes.collectionViewCellHeight + 24)
+        }
+        else { // Parent Today Activity
+            return CGSize(width: CollectionViewAttributes.collectionViewCellWidth, height: CollectionViewAttributes.collectionViewCellHeight)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -13,17 +13,18 @@ class ParentRoutineView: UIView {
     let addButton = AddButton()
     let editButton = SmallCapsuleButton(title: "Edit")
     
+    
     let segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"])
         view.selectedSegmentIndex = 0
         return view
     }()
     
-    let labelHeader: UILabel = {
-        let view = UILabel()
-        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
-        view.text = "Pagi"
-        view.textAlignment = .left
+    let tableView: UITableView = {
+        let view = UITableView()
+//        view.allowsSelection = false
+        view.separatorColor = .clear
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -36,12 +37,19 @@ class ParentRoutineView: UIView {
         self.vc = vc
         delegate = vc
         
+        tableView.dataSource = vc
+        tableView.delegate = vc
+        tableView.dragDelegate = vc
+        tableView.dragInteractionEnabled = false
+        tableView.register(ActivitiesTableViewCell.self, forCellReuseIdentifier: ActivitiesTableViewCell.identifier)
+        tableView.register(HeaderTimeframeSection.self, forHeaderFooterViewReuseIdentifier: HeaderTimeframeSection.identifier)
+        
         setupNavigationBar()
         
         addSubview(segmentedControl)
         segmentedControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
         
-        addSubview(labelHeader)
+        addSubview(tableView)
         
         setupConstraint()
     }
@@ -66,7 +74,10 @@ class ParentRoutineView: UIView {
     }
     
     @objc private func didEditButtonClicked() {
-        delegate.printText(text: "Edit Button Clicked")
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        editButton.setTitle((tableView.isEditing == true) ? "Selesai" : "Edit", for: .normal)
+        editButton.frame.size.width = (tableView.isEditing == true) ? 80 : 60
+        tableView.dragInteractionEnabled = (tableView.isEditing == true) ? true : false
     }
     
     @objc func segmentedValueChanged() {
@@ -78,9 +89,10 @@ class ParentRoutineView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.left.right.equalToSuperview().inset(20)
         }
-        labelHeader.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(600)
         }
     }
 }
