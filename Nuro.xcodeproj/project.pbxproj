@@ -76,12 +76,19 @@
 		3FBF126A28FEC61400CCC850 /* HeaderTimeframeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */; };
 		3FE992D728F43D820013E78B /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D628F43D820013E78B /* SidebarViewController.swift */; };
 		3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D828F43DCC0013E78B /* TabBarItem.swift */; };
+		4A854D7F28FEF3250048C7D8 /* ParentActivityListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D7E28FEF3250048C7D8 /* ParentActivityListDetailView.swift */; };
+		4A854D8328FEF3A90048C7D8 /* ParentActivityListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8228FEF3A90048C7D8 /* ParentActivityListDetailViewController.swift */; };
+		4A854D8528FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8428FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift */; };
+		4A854D8728FEF8060048C7D8 /* ParentActivityListDetailViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8628FEF8060048C7D8 /* ParentActivityListDetailViewController+Delegate.swift */; };
+		4A854D8928FEF9270048C7D8 /* ParentActivityListDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8828FEF9270048C7D8 /* ParentActivityListDetailDelegate.swift */; };
+		4A854D8B28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8A28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift */; };
+		4A854D8E29017F270048C7D8 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8D29017F270048C7D8 /* SearchController.swift */; };
+		4A854D90290235B50048C7D8 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8F290235B50048C7D8 /* UIImage+Ext.swift */; };
 		4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */; };
 		4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */; };
 		4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */; };
 		4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */; };
-		4AD3981628F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */; };
-		4AD3981828F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */; };
+		4AD3981628F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3981528F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift */; };
 		5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */; };
 		5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */; };
 		5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */; };
@@ -197,12 +204,19 @@
 		3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTimeframeSection.swift; sourceTree = "<group>"; };
 		3FE992D628F43D820013E78B /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		3FE992D828F43DCC0013E78B /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		4A854D7E28FEF3250048C7D8 /* ParentActivityListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailView.swift; sourceTree = "<group>"; };
+		4A854D8228FEF3A90048C7D8 /* ParentActivityListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailViewController.swift; sourceTree = "<group>"; };
+		4A854D8428FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailViewModel.swift; sourceTree = "<group>"; };
+		4A854D8628FEF8060048C7D8 /* ParentActivityListDetailViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentActivityListDetailViewController+Delegate.swift"; sourceTree = "<group>"; };
+		4A854D8828FEF9270048C7D8 /* ParentActivityListDetailDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailDelegate.swift; sourceTree = "<group>"; };
+		4A854D8A28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		4A854D8D29017F270048C7D8 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		4A854D8F290235B50048C7D8 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListView.swift; sourceTree = "<group>"; };
 		4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewModel.swift; sourceTree = "<group>"; };
 		4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentActivityListViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDelegate.swift; sourceTree = "<group>"; };
-		4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityFolderCollectionViewCell.swift; sourceTree = "<group>"; };
-		4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityFolderTableViewCell.swift; sourceTree = "<group>"; };
+		4AD3981528F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListFolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineDelegate.swift; sourceTree = "<group>"; };
 		5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewModel.swift; sourceTree = "<group>"; };
@@ -363,6 +377,7 @@
 		0CA82E0E28EC6FF400D811A6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4A854D8C29017F070048C7D8 /* SearchBar */,
 				0CAD212A2901538500941794 /* Alerts */,
 				5F563D1328F4EE50003748D7 /* ImageViews */,
 				0CCD3F5028EDBB820033D5A6 /* Jumbotron */,
@@ -401,6 +416,7 @@
 				0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */,
 				0CA82E1528EC719B00D811A6 /* String+Ext.swift */,
 				0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */,
+				4A854D8F290235B50048C7D8 /* UIImage+Ext.swift */,
 				0CD5796228FE720F00F40DB3 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
@@ -434,6 +450,8 @@
 				4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */,
 				0CF066822901856200061701 /* AddActivityContentCollectionViewCell.swift */,
 				0CF066842901870000061701 /* AddActivityButtonCollectionViewCell.swift */,
+				4AD3981528F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift */,
+				4A854D8A28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -477,10 +495,11 @@
 			isa = PBXGroup;
 			children = (
 				0CAD2137290168EC00941794 /* Reusables */,
+				4A854D8828FEF9270048C7D8 /* ParentActivityListDetailDelegate.swift */,
+				4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */,
+				4ABE2D1228ED31030082147F /* Views */,
 				4ABE2D1628EDB3920082147F /* Controllers */,
 				4ABE2D1528EDB3890082147F /* ViewModels */,
-				4ABE2D1228ED31030082147F /* Views */,
-				4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */,
 			);
 			path = ActivityList;
 			sourceTree = "<group>";
@@ -723,10 +742,19 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		4A854D8C29017F070048C7D8 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				4A854D8D29017F270048C7D8 /* SearchController.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		4ABE2D1228ED31030082147F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */,
+				4A854D7E28FEF3250048C7D8 /* ParentActivityListDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -735,6 +763,7 @@
 			isa = PBXGroup;
 			children = (
 				4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */,
+				4A854D8428FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -744,6 +773,8 @@
 			children = (
 				4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */,
 				0CD4D51028ED2819000B86FD /* ParentActivityListViewController.swift */,
+				4A854D8228FEF3A90048C7D8 /* ParentActivityListDetailViewController.swift */,
+				4A854D8628FEF8060048C7D8 /* ParentActivityListDetailViewController+Delegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1005,18 +1036,21 @@
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
 				3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */,
 				5F563D1528F4EE75003748D7 /* CircleImage.swift in Sources */,
+				4A854D8928FEF9270048C7D8 /* ParentActivityListDetailDelegate.swift in Sources */,
 				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
 				5FEDEDF828ED35A400FB8DF6 /* ChildRoutineView.swift in Sources */,
 				0CF066852901870000061701 /* AddActivityButtonCollectionViewCell.swift in Sources */,
 				3FE992D728F43D820013E78B /* SidebarViewController.swift in Sources */,
+				4A854D8328FEF3A90048C7D8 /* ParentActivityListDetailViewController.swift in Sources */,
 				0CA82E3328EC7B2500D811A6 /* Seeder.swift in Sources */,
 				0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */,
 				3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
-				4AD3981628F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift in Sources */,
+				4AD3981628F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
 				5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */,
+				4A854D8E29017F270048C7D8 /* SearchController.swift in Sources */,
 				5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */,
 				0CAD213F2901694B00941794 /* AddActivityViewModel.swift in Sources */,
 				5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */,
@@ -1028,6 +1062,8 @@
 				5FC373EE28FCB14E004EF523 /* ParentChildRoutineView.swift in Sources */,
 				5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */,
 				3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */,
+				4A854D8528FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift in Sources */,
+				4A854D8B28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
 				0CF066832901856200061701 /* AddActivityContentCollectionViewCell.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
@@ -1036,6 +1072,7 @@
 				5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */,
 				5FEDEDF628ED355100FB8DF6 /* ChildRoutineViewController.swift in Sources */,
 				5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */,
+				4A854D90290235B50048C7D8 /* UIImage+Ext.swift in Sources */,
 				0CB13F8228FC052100009729 /* ParentTodayActivityEmptyStateView.swift in Sources */,
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
 				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
@@ -1046,10 +1083,12 @@
 				5FE056AF28F4E2BA004A8CAA /* CoreDataManager.swift in Sources */,
 				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
 				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
+				4A854D8728FEF8060048C7D8 /* ParentActivityListDetailViewController+Delegate.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
 				0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CAD21412901695400941794 /* AddActivityView.swift in Sources */,
+				4A854D7F28FEF3250048C7D8 /* ParentActivityListDetailView.swift in Sources */,
 				0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
 				5F87D83428FE5F6D00C06CE1 /* SeederValidator.swift in Sources */,

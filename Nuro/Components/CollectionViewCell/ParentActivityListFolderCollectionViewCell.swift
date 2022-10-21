@@ -9,7 +9,7 @@ import UIKit
 
 class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "parentActivityFolderCollectionViewCell"
+    static let identifier = "parentActivityListFolderCollectionViewCell"
     
     private lazy var topFolderView: UIView = {
         let view = UIView()
@@ -37,9 +37,9 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     private lazy var circleImage = CircleImage(size: 125, imageName: "dummy")
     
-    private lazy var titleLabelFolder: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let view = UILabel()
-        view.text = "Kebersihan Diri"
+        view.text = "Jenis Aktivitas"
         view.textColor = .black
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
         view.textAlignment = .center
@@ -63,7 +63,7 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
         addSubview(bgView)
         bgView.addSubview(stackView)
         stackView.addArrangedSubview(circleImage)
-        stackView.addArrangedSubview(titleLabelFolder)
+        stackView.addArrangedSubview(titleLabel)
         
 //        imageView.image = UIImage(named: "dummy")
     }
