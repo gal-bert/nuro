@@ -19,21 +19,7 @@ class ChildStarterView: UIView {
     }()
     
     private lazy var timeImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, imageName: Icons.morning)
-    
-    private lazy var viewRoutineButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.configuration = .filled()
-        button.addTarget(self, action: #selector(viewRoutine), for: .touchUpInside)
-        button.layer.cornerRadius = 30
-        button.clipsToBounds = true
-        button.setTitleColor(Colors.Brand.blueViolet, for: .normal)
-        
-        let font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 48)
-        let attributedTitle = NSAttributedString(string: "Selamat Pagi", attributes: [NSAttributedString.Key.font: font as Any])
-        button.setAttributedTitle(attributedTitle, for: UIControl.State.normal)
-        
-        return button
-    }()
+    private lazy var button = ChildButton(title: "Selamat pagi")
     
     private lazy var stackView: UIStackView = {
         let sv = UIStackView()
@@ -44,8 +30,13 @@ class ChildStarterView: UIView {
     }()
     
     func setup() {
+        setupButton()
         setupUI()
         setupConstraints()
+    }
+    
+    private func setupButton() {
+        button.addTarget(self, action: #selector(viewRoutine), for: .touchUpInside)
     }
     
     private func setupUI() {
@@ -54,7 +45,7 @@ class ChildStarterView: UIView {
         addSubview(stackView)
         stackView.addArrangedSubview(greetingLabel)
         stackView.addArrangedSubview(timeImage)
-        stackView.addArrangedSubview(viewRoutineButton)
+        stackView.addArrangedSubview(button)
     }
     
     private func setupConstraints() {
@@ -66,13 +57,14 @@ class ChildStarterView: UIView {
             make.width.height.equalTo(ScreenSizes.halfScreenHeight - 80)
         }
         
-        viewRoutineButton.snp.makeConstraints { make in
+        button.snp.makeConstraints { make in
             make.width.equalTo(ScreenSizes.halfScreenWidth)
             make.height.equalTo(120)
         }
     }
     
     @objc func viewRoutine() {
-        
+        // TODO: Add segue to child routine view
+        // ..
     }
 }
