@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         seederValidator.checkCategorySeedingStatus()
         seederValidator.checkRoutineHeaderSeedingStatus()
         seederValidator.checkActivitySeedingStatus()
+        seederValidator.checkDummyActivitySeedingStatus()
         
         return true
     }

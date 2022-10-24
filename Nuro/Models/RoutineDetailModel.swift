@@ -8,7 +8,7 @@
 import Foundation
 
 struct RoutineDetailModel {
-    var position: Int
+    var position: Int16
     var activity: Activity
-    var routineHeader: RoutineHeader
+    var routineHeader: RoutineHeaderModel
 }
