@@ -11,21 +11,17 @@ import CoreData
 class CoreDataManager {
     
     static let shared = CoreDataManager()
-    let container: NSPersistentCloudKitContainer
+    let container: NSPersistentContainer
     let context: NSManagedObjectContext
     
     private init() {
-        container = NSPersistentCloudKitContainer(name: "Nuro")
+        container = NSPersistentContainer(name: "Nuro")
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         context = container.viewContext
-        context.automaticallyMergesChangesFromParent = true
-        
-        // MARK: Check if chosen mergePolicy is correct after integration with CloudKit
-        context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
     }
     
 }

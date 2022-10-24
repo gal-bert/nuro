@@ -73,7 +73,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
 
     @objc func editButtonAction() {
         let dest = ParentTodayActivityEditOrderViewController()
-        dest.activities = routines
+        dest.routineDetails = routines
         delegate.presentViewController(dest: dest)
     }
 

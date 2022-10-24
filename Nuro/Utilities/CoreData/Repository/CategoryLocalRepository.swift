@@ -55,6 +55,7 @@ class CategoryLocalRepository: CategoryRepository {
             try context.save()
         } catch {
             print("Add new category failed")
+            print(error.localizedDescription)
         }
     }
     

@@ -32,6 +32,7 @@ class ActivityLocalRepository: ActivityRepository {
             try context.save()
         } catch {
             print("Add new activity failed")
+            print(error.localizedDescription)
         }
     }
     
@@ -74,6 +75,7 @@ class ActivityLocalRepository: ActivityRepository {
             try context.save()
         } catch {
             print("Failed to update activity")
+            print(error.localizedDescription)
         }
     }
     
@@ -84,6 +86,7 @@ class ActivityLocalRepository: ActivityRepository {
             try context.save()
         } catch {
             print("Failed to delete activity")
+            print(error.localizedDescription)
         }
     }
 }

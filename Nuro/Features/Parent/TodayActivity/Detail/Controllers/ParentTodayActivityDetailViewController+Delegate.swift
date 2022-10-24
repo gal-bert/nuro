@@ -14,9 +14,8 @@ extension ParentTodayActivityDetailViewController: ParentTodayActivityDetailDele
     
     func deleteAction() {
         let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
-            
-            RoutineDetailLocalRepository.shared.delete(routineDetail: self.routineDetail!)
-            
+            RoutineDetailLocalRepository.shared.delete(routineDetail: self.routineDetail ?? RoutineDetail())
+            self.dismiss(animated: true)
         }
         present(alert, animated: true)
     }
