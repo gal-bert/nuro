@@ -71,6 +71,7 @@ class ParentRoutineView: UIView {
     
     @objc private func didAddButtonClicked() {
         delegate.printText(text: "Add Button Clicked")
+        delegate.presentViewController(dest: ParentRoutineAddActivityViewController())
     }
     
     @objc private func didEditButtonClicked() {

@@ -5,8 +5,14 @@
 //  Created by Samuel Dennis on 05/10/22.
 //
 
-import Foundation
+import UIKit
 
 protocol ParentRoutineDelegate {
+    func presentViewController(dest: UIViewController)
     func printText(text: String)
+}
+
+protocol ParentRoutineAddActivityDelegate {
+    func dismissViewController()
+    func pushViewController(dest: UIViewController)
 }
