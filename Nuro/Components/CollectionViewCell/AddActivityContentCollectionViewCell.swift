@@ -26,6 +26,7 @@ class AddActivityContentCollectionViewCell: UICollectionViewCell {
         view.textColor = .black
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 20)
         view.textAlignment = .center
+        view.numberOfLines = 2
         return view
     }()
     
@@ -56,7 +57,6 @@ class AddActivityContentCollectionViewCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self)
-//            make.height.equalTo(180)
             make.height.equalTo(contentView.frame.height * 2 / 3)
         }
         

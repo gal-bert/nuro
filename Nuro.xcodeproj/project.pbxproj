@@ -506,8 +506,8 @@
 				4A854D8828FEF9270048C7D8 /* ParentActivityListDetailDelegate.swift */,
 				4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */,
 				4ABE2D1228ED31030082147F /* Views */,
-				4ABE2D1628EDB3920082147F /* Controllers */,
 				4ABE2D1528EDB3890082147F /* ViewModels */,
+				4ABE2D1628EDB3920082147F /* Controllers */,
 			);
 			path = ActivityList;
 			sourceTree = "<group>";

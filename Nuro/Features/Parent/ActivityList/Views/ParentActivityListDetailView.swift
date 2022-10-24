@@ -30,7 +30,7 @@ class ParentActivityListDetailView: UIView {
         self.vc = vc
         collectionViewListDetail.dataSource = vc
         collectionViewListDetail.delegate = vc
-        collectionViewListDetail.register(ParentActivityListDetailCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier)
+        collectionViewListDetail.register(AddActivityContentCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityContentCollectionViewCell.identifier)
         addSubview(collectionViewListDetail)
         searchController.setupSearchController(vc: vc)
         setupNavigationBar()

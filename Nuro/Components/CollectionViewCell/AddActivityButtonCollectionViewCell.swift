@@ -54,9 +54,6 @@ class AddActivityButtonCollectionViewCell: UICollectionViewCell {
         layer.borderColor = Colors.Brand.jasmine.cgColor
         layer.borderWidth = 1
         
-//        addSubview(stackView)
-//        stackView.addArrangedSubview(imageView)
-//        stackView.addArrangedSubview(titleLabel)
         addMultipleSubviews(views: imageView, titleLabel)
     }
     
