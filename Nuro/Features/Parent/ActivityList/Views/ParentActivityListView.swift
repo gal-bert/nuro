@@ -8,16 +8,7 @@
 import UIKit
 import SnapKit
 
-extension UIView{
-    func addAllSubview(_ views: UIView...){
-        for view in views{
-            addSubview(view)
-        }
-    }
-}
-
 class ParentActivityListView: UIView {
-    
     
     var delegate: ParentActivityListDelegate!
     var vc: ParentActivityListViewController!
@@ -41,6 +32,7 @@ class ParentActivityListView: UIView {
         addSubview(collectionViewFolder)
         setupNavigationBar()
         searchController.setupSearchController(vc: vc)
+        searchController.searchDelegate = vc
         setupConstraints()
         
     }

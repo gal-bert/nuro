@@ -9,6 +9,8 @@ import UIKit
 
 class AddActivityView: UIView {
     
+    var delegate: AddActivityDelegate!
+    
     lazy var segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Semua"])
         view.selectedSegmentIndex = 0
@@ -21,6 +23,8 @@ class AddActivityView: UIView {
         layout.scrollDirection = .vertical
         return view
     }()
+    
+    let searchController = SearchController()
 
     func setup(vc: AddActivityViewController) {
         backgroundColor = .white
@@ -34,6 +38,9 @@ class AddActivityView: UIView {
         addMultipleSubviews(views: segmentedControl, collectionView)
         
         setupNavigationBar(vc: vc)
+        searchController.setupSearchController(vc: vc)
+        searchController.searchDelegate = vc
+
         setupConstraints()
     }
     
@@ -53,7 +60,5 @@ class AddActivityView: UIView {
             make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
-    
-    // TODO: Setup Search Bar Controller
     
 }
