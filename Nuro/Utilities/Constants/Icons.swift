@@ -21,4 +21,5 @@ enum Icons {
     static let aqi = "aqi.high"
     static let chevronRight = "chevron.right"
     static let photo = "photo"
+    static let parentMode = "person.2.fill"
 }

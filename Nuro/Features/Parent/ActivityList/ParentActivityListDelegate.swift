@@ -10,3 +10,7 @@ import Foundation
 protocol ParentActivityListDelegate {
     func printText(text: String)
 }
+
+protocol AddActivityDelegate {
+    func updateSearchResults(text: String)
+}

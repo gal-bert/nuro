@@ -11,7 +11,7 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "parentActivityCollectionViewCell"
     
-    var imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
@@ -20,7 +20,7 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Judul Aktivitas"
         view.textColor = .black
@@ -29,7 +29,7 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var descriptionLabel: UILabel = {
+    lazy var descriptionLabel: UILabel = {
         let view = UILabel()
         view.text = "Deskripsi aktivitas"
         view.textColor = .black
@@ -64,6 +64,13 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         addSubview(descriptionLabel)
         
         imageView.image = UIImage(named: "dummy")
+    }
+
+    func configure(model: Activity) {
+        imageView.image = UIImage(data: model.activityImage ?? Data())
+        titleLabel.text = model.activityName
+        descriptionLabel.text = model.activityDesc
+
     }
     
     private func setupConstraints() {

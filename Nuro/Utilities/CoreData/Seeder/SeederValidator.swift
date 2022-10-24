@@ -29,4 +29,10 @@ class SeederValidator {
             seeder.seedActivityData()
         }
     }
+
+    func checkDummyActivitySeedingStatus() {
+        if RoutineDetailLocalRepository.shared.getRoutineDetails(dayID: 1, timeID: 1).isEmpty {
+            seeder.seedDummyRoutine()
+        }
+    }
 }

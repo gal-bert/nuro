@@ -22,10 +22,10 @@ class ActivityLocalRepository: ActivityRepository {
         newActivity.category = category
         newActivity.createdAt = Date()
         
-        var imageData = image.pngData()
-        if imageData == nil {
-            imageData = image.jpegData(compressionQuality: 1.0)
-        }
+//        var imageData = image.pngData()
+        var imageData = image.jpegData(compressionQuality: 0.2)
+//        if imageData == nil {
+//        }
         newActivity.activityImage = imageData
         
         do {

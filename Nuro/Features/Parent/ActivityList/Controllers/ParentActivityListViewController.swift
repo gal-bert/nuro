@@ -17,7 +17,7 @@ class ParentActivityListViewController: UIViewController {
         super.viewDidLoad()
         parentActivityListView.setup(vc: self)
 //        searchController.setupSearchController(vc: self)
-        parentActivityListView.searchController.searchResultsUpdater = self
+//        parentActivityListView.searchController.searchResultsUpdater = self
     }
     
     override func loadView() {
