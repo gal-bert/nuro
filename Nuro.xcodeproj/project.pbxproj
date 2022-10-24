@@ -92,6 +92,8 @@
 		5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */; };
 		5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */; };
 		5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */; };
+		5F3198FB2906101900E7FBE1 /* ChildActivityCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3198FA2906101900E7FBE1 /* ChildActivityCompletedViewController.swift */; };
+		5F3198FF2906103A00E7FBE1 /* ChildActivityCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3198FE2906103A00E7FBE1 /* ChildActivityCompletedView.swift */; };
 		5F563D1528F4EE75003748D7 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D1428F4EE75003748D7 /* CircleImage.swift */; };
 		5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D1E28F598DF003748D7 /* CategoryLocalRepository.swift */; };
 		5F563D2128F61424003748D7 /* ActivityLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2028F61424003748D7 /* ActivityLocalRepository.swift */; };
@@ -220,6 +222,8 @@
 		5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineDelegate.swift; sourceTree = "<group>"; };
 		5F2B8BEF28EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5F2B8BF128EE41A6000BA3F6 /* ChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineViewModel.swift; sourceTree = "<group>"; };
+		5F3198FA2906101900E7FBE1 /* ChildActivityCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityCompletedViewController.swift; sourceTree = "<group>"; };
+		5F3198FE2906103A00E7FBE1 /* ChildActivityCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityCompletedView.swift; sourceTree = "<group>"; };
 		5F563D1428F4EE75003748D7 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		5F563D1E28F598DF003748D7 /* CategoryLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLocalRepository.swift; sourceTree = "<group>"; };
 		5F563D2028F61424003748D7 /* ActivityLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalRepository.swift; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 		0CA82E1328EC702D00D811A6 /* Child */ = {
 			isa = PBXGroup;
 			children = (
+				5F3198F929060FDF00E7FBE1 /* ActivityCompleted */,
 				0CA82E1F28EC75BE00D811A6 /* Routine */,
 			);
 			path = Child;
@@ -435,7 +440,6 @@
 			isa = PBXGroup;
 			children = (
 				0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */,
-				4AD3981728F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift */,
 				3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */,
 				3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */,
 			);
@@ -447,7 +451,6 @@
 			children = (
 				5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */,
 				0CCD3F7928EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift */,
-				4AD3981528F44EC40091F7C9 /* ParentActivityFolderCollectionViewCell.swift */,
 				0CF066822901856200061701 /* AddActivityContentCollectionViewCell.swift */,
 				0CF066842901870000061701 /* AddActivityButtonCollectionViewCell.swift */,
 				4AD3981528F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift */,
@@ -779,6 +782,31 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		5F3198F929060FDF00E7FBE1 /* ActivityCompleted */ = {
+			isa = PBXGroup;
+			children = (
+				5F3198FD2906102700E7FBE1 /* Views */,
+				5F3198FC2906102100E7FBE1 /* Controllers */,
+			);
+			path = ActivityCompleted;
+			sourceTree = "<group>";
+		};
+		5F3198FC2906102100E7FBE1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F3198FA2906101900E7FBE1 /* ChildActivityCompletedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F3198FD2906102700E7FBE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F3198FE2906103A00E7FBE1 /* ChildActivityCompletedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5F563D1328F4EE50003748D7 /* ImageViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1010,8 +1038,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CD5796328FE720F00F40DB3 /* UIView+Ext.swift in Sources */,
-				4AD3981828F44FB20091F7C9 /* ParentActivityFolderTableViewCell.swift in Sources */,
 				4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */,
+				5F3198FB2906101900E7FBE1 /* ChildActivityCompletedViewController.swift in Sources */,
 				3F06EDE328FD64EA003DD7C0 /* ActivitiesTableViewCell.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
 				3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */,
@@ -1059,6 +1087,7 @@
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
 				0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */,
 				3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */,
+				5F3198FF2906103A00E7FBE1 /* ChildActivityCompletedView.swift in Sources */,
 				5FC373EE28FCB14E004EF523 /* ParentChildRoutineView.swift in Sources */,
 				5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */,
 				3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */,
