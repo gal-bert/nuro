@@ -22,7 +22,10 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentTodayActivityEditOrderView.tableView.dequeueReusableCell(withIdentifier: ActivitiesTableViewCell.identifier) as! ActivitiesTableViewCell
-        cell.titleLabel.text = arr[indexPath.row]
+        
+        let activity = activities[indexPath.row].activity
+        
+        cell.configure(model: activity ?? Activity())
         
         return cell
     }
@@ -52,15 +55,14 @@ extension ParentTodayActivityEditOrderViewController : UITableViewDragDelegate {
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
-        dragItem.localObject = arr[indexPath.row]
+        dragItem.localObject = activities[indexPath.row]
         return [dragItem]
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let mv = arr[sourceIndexPath.row]
-        arr.remove(at: sourceIndexPath.row)
-        arr.insert(mv, at: destinationIndexPath.row)
-        print("Object reattached")
+        let mv = activities[sourceIndexPath.row]
+        activities.remove(at: sourceIndexPath.row)
+        activities.insert(mv, at: destinationIndexPath.row)
     }
     
 }

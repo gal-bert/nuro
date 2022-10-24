@@ -72,11 +72,11 @@ class RoutineDetailLocalRepository: RoutineDetailRepository {
     
     func delete(routineDetail: RoutineDetail) {
         context.delete(routineDetail)
-        
         do {
             try context.save()
         } catch {
             print("Failed to delete routine detail")
+            print(error.localizedDescription)
         }
     }
 }

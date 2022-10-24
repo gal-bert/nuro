@@ -72,7 +72,9 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
 
 
     @objc func editButtonAction() {
-        delegate.presentViewController(dest: ParentTodayActivityEditOrderViewController())
+        let dest = ParentTodayActivityEditOrderViewController()
+        dest.activities = routines
+        delegate.presentViewController(dest: dest)
     }
 
 
@@ -103,6 +105,12 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return routines.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dest = ParentTodayActivityDetailViewController()
+        dest.routineDetail = routines[indexPath.item]
+        delegate.presentViewController(dest: dest)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
