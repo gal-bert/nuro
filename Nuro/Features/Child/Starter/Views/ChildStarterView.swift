@@ -14,12 +14,12 @@ class ChildStarterView: UIView {
         label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
         label.text = "Selamat pagi, xxxx!"
         label.textAlignment = .center
-        label.tintColor = Colors.Text.onyx
+        label.textColor = Colors.Text.onyx
         return label
     }()
     
     private lazy var timeImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, imageName: Icons.morning)
-    private lazy var button = ChildButton(title: "Selamat pagi")
+    private lazy var button = ChildButton(title: "Selamat pagi", height: ScreenSizes.halfScreenHeight / 4)
     
     private lazy var stackView: UIStackView = {
         let sv = UIStackView()
@@ -50,7 +50,7 @@ class ChildStarterView: UIView {
     
     private func setupConstraints() {
         stackView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(self).inset(80)
+            make.top.left.right.bottom.equalTo(self).inset(64)
         }
         
         timeImage.snp.makeConstraints { make in
@@ -59,7 +59,7 @@ class ChildStarterView: UIView {
         
         button.snp.makeConstraints { make in
             make.width.equalTo(ScreenSizes.halfScreenWidth)
-            make.height.equalTo(120)
+            make.height.equalTo(ScreenSizes.halfScreenHeight / 4)
         }
     }
     
