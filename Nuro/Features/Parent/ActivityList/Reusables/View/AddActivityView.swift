@@ -9,6 +9,8 @@ import UIKit
 
 class AddActivityView: UIView {
     
+    var delegate: AddActivityDelegate!
+    
     lazy var segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Semua"])
         view.selectedSegmentIndex = 0
@@ -37,6 +39,8 @@ class AddActivityView: UIView {
         
         setupNavigationBar(vc: vc)
         searchController.setupSearchController(vc: vc)
+        searchController.searchDelegate = vc
+
         setupConstraints()
     }
     
@@ -56,7 +60,5 @@ class AddActivityView: UIView {
             make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
-    
-    // TODO: Setup Search Bar Controller
     
 }

@@ -8,14 +8,14 @@
 import UIKit
 
 extension UIImage {
-    func createImageWithRoundBorder(cornerRadiuos : CGFloat) -> UIImage? {
+    func createImageWithRoundBorder(cornerRadius : CGFloat) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
         let rect = CGRect(origin:CGPoint(x: 0, y: 0), size: self.size)
         let context = UIGraphicsGetCurrentContext()
 
         let path = UIBezierPath(
             roundedRect: rect,
-            cornerRadius: cornerRadiuos
+            cornerRadius: cornerRadius
         )
         context?.beginPath()
         context?.addPath(path.cgPath)

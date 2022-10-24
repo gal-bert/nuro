@@ -13,12 +13,9 @@ extension ParentActivityListViewController: ParentActivityListDelegate {
     }
 }
 
-extension ParentActivityListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        print(text)
+extension ParentActivityListViewController: SearchControllerDelegate {
+    func getResult(text: String) {
+        print("Punya finn: \(text)")
     }
 }
 

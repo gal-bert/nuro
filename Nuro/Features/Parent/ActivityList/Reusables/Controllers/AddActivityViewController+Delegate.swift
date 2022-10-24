@@ -10,12 +10,19 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-extension AddActivityViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        print(text)
+//extension AddActivityViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        guard let text = searchController.searchBar.text else {
+//            return
+//        }
+//        print(text)
+//    }
+//}
+
+extension AddActivityViewController: SearchControllerDelegate {
+    func getResult(text: String) {
+        print("SEARCH: \(text)")
+        // TODO: What happen if search?
     }
 }
 

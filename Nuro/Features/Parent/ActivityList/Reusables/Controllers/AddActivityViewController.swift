@@ -11,6 +11,7 @@ import RxDataSources
 import RxCocoa
 
 class AddActivityViewController: UIViewController {
+    
 
     let addActivityView = AddActivityView()
     let viewModel = AddActivityViewModel()
@@ -18,11 +19,10 @@ class AddActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
 
         addActivityView.setup(vc: self)
-        addActivityView.searchController.searchResultsUpdater = self
+//        addActivityView.searchController.searchResultsUpdater = self
         
         viewModel.loadSegmentedControlItems(vc: self)
         
