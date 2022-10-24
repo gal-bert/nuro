@@ -15,7 +15,7 @@ class CircleImage: UIImageView {
         self.image = UIImage(systemName: imageName)
         self.contentMode = .scaleAspectFit
         self.layer.cornerRadius = size / 2
-        self.backgroundColor = .red
+        self.backgroundColor = Colors.Background.alabaster
         self.clipsToBounds = true
     }
     
