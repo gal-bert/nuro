@@ -37,4 +37,8 @@ class AddActivityViewModel {
         activities.onCompleted()
     }
     
+    func filterFromSearch() {
+        
+    }
+    
 }

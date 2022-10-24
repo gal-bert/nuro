@@ -12,10 +12,15 @@ class ParentTodayActivityViewController: UIViewController {
     let parentTodayActivityView = ParentTodayActivityView()
     let viewModel = ParentTodayActivityViewModel()
 
+    var activities = [RoutineHeaderModel]()
+    var routineDetailRepository = RoutineDetailLocalRepository.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
         parentTodayActivityView.setup(vc: self)
-        
+
+        viewModel.loadAll(dayId: 1)
+
     }
     
     override func loadView() {

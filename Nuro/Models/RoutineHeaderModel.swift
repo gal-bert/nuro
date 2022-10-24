@@ -8,7 +8,7 @@
 import Foundation
 
 struct RoutineHeaderModel {
-    var dayID: Int
-    var timeID: Int
-    var routineDetails: [RoutineDetail]
+    var dayID: Int16
+    var timeID: Int16
+    var routineDetails: [RoutineDetailModel]
 }
