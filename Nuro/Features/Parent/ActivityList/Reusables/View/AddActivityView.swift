@@ -21,6 +21,8 @@ class AddActivityView: UIView {
         layout.scrollDirection = .vertical
         return view
     }()
+    
+    let searchController = SearchController()
 
     func setup(vc: AddActivityViewController) {
         backgroundColor = .white
@@ -34,6 +36,7 @@ class AddActivityView: UIView {
         addMultipleSubviews(views: segmentedControl, collectionView)
         
         setupNavigationBar(vc: vc)
+        searchController.setupSearchController(vc: vc)
         setupConstraints()
     }
     

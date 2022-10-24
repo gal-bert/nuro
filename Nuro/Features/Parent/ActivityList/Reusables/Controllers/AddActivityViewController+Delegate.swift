@@ -10,6 +10,15 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
+extension AddActivityViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        print(text)
+    }
+}
+
 extension AddActivityViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
 //    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

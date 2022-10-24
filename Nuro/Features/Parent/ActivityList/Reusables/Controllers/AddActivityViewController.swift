@@ -22,8 +22,9 @@ class AddActivityViewController: UIViewController {
         preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
 
         addActivityView.setup(vc: self)
-        viewModel.loadSegmentedControlItems(vc: self)
+        addActivityView.searchController.searchResultsUpdater = self
         
+        viewModel.loadSegmentedControlItems(vc: self)
         
         viewModel.activities.bind(to: addActivityView.collectionView.rx.items(
             cellIdentifier: AddActivityContentCollectionViewCell.identifier,
