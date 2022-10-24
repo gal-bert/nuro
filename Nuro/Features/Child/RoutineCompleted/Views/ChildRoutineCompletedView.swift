@@ -56,8 +56,13 @@ class ChildRoutineCompletedView: UIView {
     private lazy var parentModeButton = ParentModeButton(size: 80)
     
     func setup() {
+        setupButton()
         setupUI()
         setupConstraints()
+    }
+    
+    private func setupButton() {
+        parentModeButton.addTarget(self, action: #selector(toPinUnlock), for: .touchUpInside)
     }
     
     private func setupUI() {
@@ -85,6 +90,11 @@ class ChildRoutineCompletedView: UIView {
             make.top.left.equalTo(self).inset(64)
             make.width.height.equalTo(80)
         }
+    }
+    
+    @objc func toPinUnlock() {
+        // TODO: Add segue to pin unlock page
+        // ..
     }
 
 }

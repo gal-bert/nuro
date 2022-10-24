@@ -28,20 +28,7 @@ class ChildActivityCompletedView: UIView {
     }()
     
     private lazy var appreciationImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, imageName: Icons.checkmark)
-    
-    private lazy var nextActivityButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.configuration = .filled()
-        button.addTarget(self, action: #selector(nextActivity), for: .touchUpInside)
-        button.layer.cornerRadius = 30
-        button.clipsToBounds = true
-        
-        let font = UIFont.systemFont(ofSize: 40, weight: .bold)
-        let attributedTitle = NSAttributedString(string: "Terima kasih", attributes: [NSAttributedString.Key.font: font])
-        button.setAttributedTitle(attributedTitle, for: UIControl.State.normal)
-        
-        return button
-    }()
+    private lazy var nextActivityButton = ChildButton(title: "Terima kasih", height: ScreenSizes.halfScreenHeight / 4)
     
     private lazy var labelStackView: UIStackView = {
         let sv = UIStackView()
@@ -59,8 +46,13 @@ class ChildActivityCompletedView: UIView {
     }()
     
     func setup() {
+        setupButton()
         setupUI()
         setupConstraints()
+    }
+    
+    private func setupButton() {
+        nextActivityButton.addTarget(self, action: #selector(nextActivity), for: .touchUpInside)
     }
     
     private func setupUI() {
