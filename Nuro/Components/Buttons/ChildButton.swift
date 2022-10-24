@@ -35,25 +35,31 @@ class ChildButton: UIButton {
     private func setupButton() {
         clipsToBounds = true
         layer.cornerRadius = 30
-        tintColor = Colors.Text.slateBlue
-        addSubview(topView)
+        tintColor = Colors.Button.darkBlueGray
         
         var config = UIButton.Configuration.filled()
-        config.titlePadding = 8
+        config.titlePadding = 12
         config.subtitle = " "
+        configuration = config
         
-        self.configuration = config
+        addSubview(topView)
+        topView.isUserInteractionEnabled = false
     }
     
     private func setupConstraints(height: CGFloat) {
         topView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self)
-            make.height.equalTo(height - 16)
+            make.height.equalTo(height - 20)
         }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    override open var isHighlighted: Bool {
+        didSet {
+            topView.backgroundColor = isHighlighted ? Colors.Background.soap : Colors.Brand.blueViolet
+        }
+    }
 }
