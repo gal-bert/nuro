@@ -13,18 +13,22 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
     
     private lazy var activityImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 20
-        imageView.backgroundColor = .systemGray5
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    private lazy var labelContainer = UIView()
+    private lazy var labelContainer: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colors.Text.verseGreen.withAlphaComponent(0.8)
+        view.layer.maskedCorners = [Corners.bottomLeft, Corners.bottomRight]
+        return view
+    }()
     
     private lazy var activityNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 32)
+        label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 40)
         label.textAlignment = .center
+        label.textColor = Colors.Neutral.white
         return label
     }()
     
@@ -40,26 +44,22 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
     }
     
     func setupUI() {
-        self.layer.cornerRadius = 20
-        self.backgroundColor = .systemGray2
+        layer.cornerRadius = 50
+        clipsToBounds = true
         
-        self.addSubview(activityImage)
-        self.addSubview(labelContainer)
+        contentView.addSubview(activityImage)
+        contentView.addSubview(labelContainer)
         labelContainer.addSubview(activityNameLabel)
     }
     
     func setupConstraints() {
         activityImage.snp.makeConstraints { make in
-            make.left.top.equalTo(self).offset(24)
-            make.right.equalTo(self).offset(-24)
-            make.height.equalTo(self.bounds.size.height * 3 / 4)
+            make.top.left.right.bottom.equalTo(self)
         }
         
         labelContainer.snp.makeConstraints { make in
-            make.bottom.equalTo(self.snp.bottom)
-            make.left.equalTo(self.snp.left).offset(24)
-            make.right.equalTo(self.snp.right).offset(-24)
-            make.top.equalTo(activityImage.snp.bottom)
+            make.bottom.left.right.equalTo(self)
+            make.height.equalTo(self.bounds.size.height * 1 / 4.5)
         }
         
         activityNameLabel.snp.makeConstraints { make in
@@ -68,17 +68,17 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setupValue(activityName: String, activityImageName: String) {
-        activityImage.image = UIImage(systemName: activityImageName)
-        activityNameLabel.text = activityName
+    func configure(model: Activity) {
+        activityImage.image = UIImage(data: model.activityImage ?? Data())
+        activityNameLabel.text = model.activityName
     }
     
     func makeHidden() {
         self.alpha = 1
         UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseIn, animations: { [self] in
             self.alpha = 0
-            self.backgroundColor = .clear
-            self.activityImage.backgroundColor = .clear
+            self.activityImage.alpha = 0
+            self.labelContainer.alpha = 0
         }, completion: nil)
     }
 }
