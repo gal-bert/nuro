@@ -59,7 +59,7 @@ class ChildButton: UIButton {
     
     override open var isHighlighted: Bool {
         didSet {
-            topView.backgroundColor = isHighlighted ? Colors.Background.soap : Colors.Brand.blueViolet
+            self.alpha = isHighlighted ? 0.7 : 1.0
         }
     }
 }

@@ -15,34 +15,40 @@ class ChildRoutineView: UIView {
         return cv
     }()
     
-    private lazy var pageTitle: UILabel = {
+    private lazy var pageTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Aktivitas XXXX"
-        label.font = .systemFont(ofSize: 64, weight: .bold)
+        label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
         label.textAlignment = .center
+        label.textColor = Colors.Text.onyx
         return label
     }()
     
-    private lazy var startButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.configuration = .filled()
-        button.addTarget(self, action: #selector(startActivity), for: .touchUpInside)
-        button.layer.cornerRadius = 17
-        button.clipsToBounds = true
-        
-        let font = UIFont.systemFont(ofSize: 40, weight: .bold)
-        let attributedTitle = NSAttributedString(string: "Mulai", attributes: [NSAttributedString.Key.font: font])
-        button.setAttributedTitle(attributedTitle, for: UIControl.State.normal)
-        
-        return button
+    private lazy var startButton = ChildButton(title: "MULAI", height: ScreenSizes.halfScreenHeight / 4)
+    
+    private lazy var stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.distribution = .equalSpacing
+        sv.alignment = .center
+        return sv
     }()
     
     private lazy var stickView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray
+        view.backgroundColor = Colors.Background.darkDeer
         view.layer.cornerRadius = 20
         return view
     }()
+    
+    private lazy var topStickView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colors.Background.deer
+        view.layer.cornerRadius = 20
+        return view
+    }()
+    
+    private lazy var parentButton = ParentModeButton(size: 80)
     
     private var delegate: ChildRoutineDelegate?
     
@@ -53,42 +59,53 @@ class ChildRoutineView: UIView {
         setupUI()
         setupConstraints()
         setupCollectionView(vc: vc)
+        setupButton()
     }
     
     private func setupUI() {
-        self.addSubview(stickView)
-        self.addSubview(activityCollectionView)
-        self.addSubview(startButton)
-        self.addSubview(pageTitle)
+        addSubview(stickView)
+        addSubview(stackView)
+        addSubview(parentButton)
+        stickView.addSubview(topStickView)
+        stackView.addArrangedSubview(pageTitleLabel)
+        stackView.addArrangedSubview(activityCollectionView)
+        stackView.addArrangedSubview(startButton)
         
         // TODO: Set title "Aktivitas Pagi/Siang/Malem"
-        pageTitle.text = "Aktivitas Pagi"
+        pageTitleLabel.text = "Aktivitas Pagi"
     }
     
     private func setupConstraints() {
         stickView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
             make.left.equalTo(self).offset(ScreenSizes.halfScreenWidth / 6)
-            make.height.equalTo(ScreenSizes.halfScreenHeight / 6)
+            make.height.equalTo(ScreenSizes.halfScreenHeight / 5)
             make.width.equalTo(ScreenSizes.screenWidth * 1.5)
         }
         
+        topStickView.snp.makeConstraints { make in
+            make.top.left.right.equalTo(stickView)
+            make.height.equalTo(ScreenSizes.halfScreenHeight / 5 - 12)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(self).inset(64)
+            make.left.right.equalTo(self)
+        }
+        
         activityCollectionView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
             make.left.right.equalToSuperview()
-            make.height.equalTo(ScreenSizes.halfScreenHeight)
+            make.height.equalTo(ScreenSizes.halfScreenHeight + 24)
         }
         
         startButton.snp.makeConstraints { make in
-            make.top.equalTo(activityCollectionView.snp.bottom).offset(ScreenSizes.halfScreenHeight / 8)
-            make.centerX.equalTo(self)
-            make.width.equalTo(ScreenSizes.halfScreenWidth * 4 / 5)
-            make.height.equalTo(ScreenSizes.halfScreenHeight / 5)
+            make.width.equalTo(ScreenSizes.screenWidth * 1 / 3)
+            make.height.equalTo(ScreenSizes.halfScreenHeight / 4)
         }
         
-        pageTitle.snp.makeConstraints { make in
-            make.bottom.equalTo(activityCollectionView.snp.top).offset(-ScreenSizes.halfScreenHeight / 8)
-            make.centerX.equalTo(self)
+        parentButton.snp.makeConstraints { make in
+            make.top.left.equalTo(64)
+            make.width.height.equalTo(80)
         }
     }
     
@@ -103,7 +120,7 @@ class ChildRoutineView: UIView {
     
     private func collectionViewLayout() -> UICollectionViewCompositionalLayout {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(ScreenSizes.halfScreenWidth), heightDimension: .absolute(ScreenSizes.halfScreenHeight)), subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(ScreenSizes.screenWidth * 2/3 - 16), heightDimension: .absolute(ScreenSizes.halfScreenHeight + 24)), subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPagingCentered
@@ -114,8 +131,12 @@ class ChildRoutineView: UIView {
         return layout
     }
     
+    private func setupButton() {
+        startButton.addTarget(self, action: #selector(startActivity), for: .touchUpInside)
+    }
+    
     @objc func startActivity() {
-//        delegate?.animateNextActivity()
+        delegate?.animateNextActivity()
         
         // TODO: Segue to full screen activity page
         // ..
@@ -158,7 +179,7 @@ class ChildRoutineView: UIView {
         stickView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
             make.right.equalTo(self).offset(-ScreenSizes.halfScreenWidth / 6)
-            make.height.equalTo(ScreenSizes.halfScreenHeight / 6)
+            make.height.equalTo(ScreenSizes.halfScreenHeight / 5)
             make.width.equalTo(ScreenSizes.screenWidth * 2)
         }
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
