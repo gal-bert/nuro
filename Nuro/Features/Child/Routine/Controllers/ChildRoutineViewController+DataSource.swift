@@ -19,7 +19,7 @@ extension ChildRoutineViewController: UICollectionViewDataSource {
             cell.makeHidden()
         }
         else {
-            cell.setupValue(activityName: viewModel.activityName[indexPath.row], activityImageName: viewModel.activityImageName[indexPath.row])
+            cell.configure(activityName: viewModel.activityName[indexPath.row], activityImageName: viewModel.activityImageName[indexPath.row])
         }
         
         return cell

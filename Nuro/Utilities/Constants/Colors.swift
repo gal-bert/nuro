@@ -44,6 +44,8 @@ enum Colors {
         static let platinum = ColorRGBA.fraction(r: 233, g: 213, b: 234)
         static let apricot = ColorRGBA.fraction(r: 252, g: 209, b: 177)
         static let soap = ColorRGBA.fraction(r: 205, g: 201, b: 233)
+        static let deer = ColorRGBA.fraction(r: 198, g: 136, b: 91)
+        static let darkDeer = ColorRGBA.fraction(r: 180, g: 125, b: 85)
     }
     
     enum Button {

@@ -32,7 +32,7 @@ class ChildRoutineViewController: UIViewController {
         childRoutineView.animateHideRow()
         if viewModel.activityName.count > 0 {
             viewModel.removeFirstActivity()
-            Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { [self] timer in
+            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [self] timer in
                 childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activityName.count)
             }
         }
