@@ -9,13 +9,16 @@ import Foundation
 
 class ChildRoutineViewModel {
     
-    // MARK: Dummy data
-    var activityName = ["Aktivitas 1", "Aktivitas 2", "Aktivitas 3", "Aktivitas 4", "Aktivitas 5"]
-    var activityImageName = ["test_2", "test_2", "test_2", "test_2", "test_2"]
+    var activities = [RoutineDetail]()
+    
+    private let routineDetailRepo = RoutineDetailLocalRepository.shared
+    
+    func loadActivities(dayID: Int, timeID: Int) {
+        activities = routineDetailRepo.getRoutineDetails(dayID: dayID, timeID: timeID)
+    }
     
     func removeFirstActivity() {
-        activityName.removeFirst()
-        activityImageName.removeFirst()
+        activities.removeFirst()
     }
     
 }

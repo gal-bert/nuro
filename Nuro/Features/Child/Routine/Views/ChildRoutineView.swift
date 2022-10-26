@@ -179,7 +179,7 @@ class ChildRoutineView: UIView {
         stickView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
             make.right.equalTo(self).offset(-ScreenSizes.halfScreenWidth / 6)
-            make.height.equalTo(ScreenSizes.halfScreenHeight / 6)
+            make.height.equalTo(ScreenSizes.halfScreenHeight / 5)
             make.width.equalTo(ScreenSizes.screenWidth * 2)
         }
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in

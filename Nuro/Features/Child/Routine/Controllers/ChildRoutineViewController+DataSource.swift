@@ -9,7 +9,7 @@ import UIKit
 
 extension ChildRoutineViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.activityName.count
+        viewModel.activities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -19,7 +19,7 @@ extension ChildRoutineViewController: UICollectionViewDataSource {
             cell.makeHidden()
         }
         else {
-            cell.configure(activityName: viewModel.activityName[indexPath.row], activityImageName: viewModel.activityImageName[indexPath.row])
+            cell.configure(model: viewModel.activities[indexPath.row].activity ?? Activity())
         }
         
         return cell

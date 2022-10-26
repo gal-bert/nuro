@@ -50,8 +50,6 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(activityImage)
         contentView.addSubview(labelContainer)
         labelContainer.addSubview(activityNameLabel)
-        
-        activityImage.image = UIImage(named: "test_2")
     }
     
     func setupConstraints() {
@@ -70,9 +68,9 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(activityName: String, activityImageName: String) {
-        activityImage.image = UIImage(named: activityImageName)
-        activityNameLabel.text = activityName
+    func configure(model: Activity) {
+        activityImage.image = UIImage(data: model.activityImage ?? Data())
+        activityNameLabel.text = model.activityName
     }
     
     func makeHidden() {
