@@ -14,9 +14,7 @@ class ActivitiesTableViewCell: UITableViewCell {
     lazy var cellImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = Colors.Brand.blueViolet
-//        MARK: Uncomment to use inject dummy image
-//        view.image = UIImage(named: "dummy")
-        view.contentMode = .scaleToFill
+        view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         return view
@@ -83,8 +81,13 @@ class ActivitiesTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(descLabel)
         stackView.addArrangedSubview(categoryLabel)
-        
-        
+    }
+    
+    func configure(model: Activity) {
+        cellImageView.image = UIImage(data: model.activityImage ?? Data())
+        titleLabel.text = model.activityName
+        descLabel.text = model.activityDesc
+        categoryLabel.text = model.category?.categoryName
     }
     
     private func setupConstraints() {
@@ -105,25 +108,10 @@ class ActivitiesTableViewCell: UITableViewCell {
             make.right.equalTo(wrapperView).inset(20)
             make.centerY.equalTo(wrapperView)
         }
-        
-//        contentView.snp.makeConstraints { make in
-//            make.bottom.equalTo(self).inset(20)
-//        }
+
 
     }
-    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        contentView.backgroundColor = Colors.Brand.floralWhite
-//        contentView.layer.cornerRadius = 20
-//        contentView.layer.borderColor = Colors.Brand.jasmine.cgColor
-//        contentView.layer.borderWidth = 1
-//
-//        // MARK: Found weird bug below, uncomment to make cell is having distance
-////        contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 5, right: 0))
-//
-//    }
+ 
     
 }
 

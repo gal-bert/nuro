@@ -27,6 +27,7 @@ class RoutineDetailLocalRepository: RoutineDetailRepository {
             try context.save()
         } catch {
             print("Add new routine detail failed")
+            print(error.localizedDescription)
         }
     }
     
@@ -67,16 +68,17 @@ class RoutineDetailLocalRepository: RoutineDetailRepository {
             try context.save()
         } catch {
             print("Failed to update routine detail position")
+            print(error.localizedDescription)
         }
     }
     
     func delete(routineDetail: RoutineDetail) {
         context.delete(routineDetail)
-        
         do {
             try context.save()
         } catch {
             print("Failed to delete routine detail")
+            print(error.localizedDescription)
         }
     }
 }
