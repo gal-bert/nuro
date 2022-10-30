@@ -25,6 +25,10 @@ extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
             dest.reloadDelegate = self
         }
         
+        else if let dest = dest as? ParentTodayActivityDetailViewController {
+            dest.reloadDelegate = self
+        }
+        
         present(vc, animated: true)
     }
     
