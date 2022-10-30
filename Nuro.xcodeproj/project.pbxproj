@@ -97,6 +97,12 @@
 		4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */; };
 		4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */; };
 		4AD3981628F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3981528F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift */; };
+		5F02CB33290A1DF60079FFC5 /* ChildPinUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02CB32290A1DF60079FFC5 /* ChildPinUnlockView.swift */; };
+		5F02CB35290A1E0D0079FFC5 /* ChildPinUnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02CB34290A1E0D0079FFC5 /* ChildPinUnlockViewController.swift */; };
+		5F02CB37290A203A0079FFC5 /* ChildPinUnlockViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02CB36290A203A0079FFC5 /* ChildPinUnlockViewController+DataSource.swift */; };
+		5F02CB39290A20760079FFC5 /* PinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02CB38290A20760079FFC5 /* PinTextField.swift */; };
+		5F02CB3B290A21AD0079FFC5 /* PinNumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02CB3A290A21AD0079FFC5 /* PinNumberCollectionViewCell.swift */; };
+		5F02CB3D290A21EA0079FFC5 /* DeletePinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02CB3C290A21EA0079FFC5 /* DeletePinButton.swift */; };
 		5F2158152908C0B900EA5085 /* ChildActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2158142908C0B900EA5085 /* ChildActivityViewController.swift */; };
 		5F2158172908C0C600EA5085 /* ChildActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2158162908C0C600EA5085 /* ChildActivityView.swift */; };
 		5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */; };
@@ -243,6 +249,12 @@
 		4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentActivityListViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDelegate.swift; sourceTree = "<group>"; };
 		4AD3981528F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListFolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F02CB32290A1DF60079FFC5 /* ChildPinUnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPinUnlockView.swift; sourceTree = "<group>"; };
+		5F02CB34290A1E0D0079FFC5 /* ChildPinUnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPinUnlockViewController.swift; sourceTree = "<group>"; };
+		5F02CB36290A203A0079FFC5 /* ChildPinUnlockViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildPinUnlockViewController+DataSource.swift"; sourceTree = "<group>"; };
+		5F02CB38290A20760079FFC5 /* PinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTextField.swift; sourceTree = "<group>"; };
+		5F02CB3A290A21AD0079FFC5 /* PinNumberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinNumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F02CB3C290A21EA0079FFC5 /* DeletePinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePinButton.swift; sourceTree = "<group>"; };
 		5F2158142908C0B900EA5085 /* ChildActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityViewController.swift; sourceTree = "<group>"; };
 		5F2158162908C0C600EA5085 /* ChildActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityView.swift; sourceTree = "<group>"; };
 		5F2B8BED28EE40A4000BA3F6 /* ChildRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineDelegate.swift; sourceTree = "<group>"; };
@@ -442,6 +454,7 @@
 		0CA82E1328EC702D00D811A6 /* Child */ = {
 			isa = PBXGroup;
 			children = (
+				5F02CB2F290A1DB40079FFC5 /* PinUnlock */,
 				5F2158112908C09900EA5085 /* Activity */,
 				5F3199002906156700E7FBE1 /* RoutineCompleted */,
 				5F3198F929060FDF00E7FBE1 /* ActivityCompleted */,
@@ -491,6 +504,7 @@
 				0CF066842901870000061701 /* AddActivityButtonCollectionViewCell.swift */,
 				4AD3981528F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift */,
 				4A854D8A28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift */,
+				5F02CB3A290A21AD0079FFC5 /* PinNumberCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -503,6 +517,7 @@
 				0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */,
 				5F3199072906276F00E7FBE1 /* ParentModeButton.swift */,
 				5F3198F02905FA6400E7FBE1 /* ChildButton.swift */,
+				5F02CB3C290A21EA0079FFC5 /* DeletePinButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -517,6 +532,7 @@
 		0CA82E1C28EC727E00D811A6 /* Textfields */ = {
 			isa = PBXGroup;
 			children = (
+				5F02CB38290A20760079FFC5 /* PinTextField.swift */,
 			);
 			path = Textfields;
 			sourceTree = "<group>";
@@ -907,7 +923,32 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-
+		5F02CB2F290A1DB40079FFC5 /* PinUnlock */ = {
+			isa = PBXGroup;
+			children = (
+				5F02CB31290A1DE30079FFC5 /* Controllers */,
+				5F02CB30290A1DDF0079FFC5 /* Views */,
+			);
+			path = PinUnlock;
+			sourceTree = "<group>";
+		};
+		5F02CB30290A1DDF0079FFC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F02CB32290A1DF60079FFC5 /* ChildPinUnlockView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5F02CB31290A1DE30079FFC5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F02CB34290A1E0D0079FFC5 /* ChildPinUnlockViewController.swift */,
+				5F02CB36290A203A0079FFC5 /* ChildPinUnlockViewController+DataSource.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		5F2158112908C09900EA5085 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -933,7 +974,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-
 		5F3198E92905F2A200E7FBE1 /* Starter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1323,23 +1363,29 @@
 				5F3199062906159900E7FBE1 /* ChildRoutineCompletedView.swift in Sources */,
 				5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */,
 				0CAD213D2901693E00941794 /* AddActivityViewController.swift in Sources */,
+				5F02CB37290A203A0079FFC5 /* ChildPinUnlockViewController+DataSource.swift in Sources */,
 				5FE056AF28F4E2BA004A8CAA /* CoreDataManager.swift in Sources */,
 				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
 				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
 				4A854D8728FEF8060048C7D8 /* ParentActivityListDetailViewController+Delegate.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
 				0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */,
+				5F02CB35290A1E0D0079FFC5 /* ChildPinUnlockViewController.swift in Sources */,
 				5F3198F12905FA6400E7FBE1 /* ChildButton.swift in Sources */,
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CAD21412901695400941794 /* AddActivityView.swift in Sources */,
 				4A854D7F28FEF3250048C7D8 /* ParentActivityListDetailView.swift in Sources */,
 				3F59A3752905B31500F1877B /* ParentRoutineAddActivityViewController+Delegate.swift in Sources */,
+				5F02CB33290A1DF60079FFC5 /* ChildPinUnlockView.swift in Sources */,
 				0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */,
+				5F02CB3B290A21AD0079FFC5 /* PinNumberCollectionViewCell.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
 				5F87D83428FE5F6D00C06CE1 /* SeederValidator.swift in Sources */,
+				5F02CB3D290A21EA0079FFC5 /* DeletePinButton.swift in Sources */,
 				5F3199042906158900E7FBE1 /* ChildRoutineCompletedViewController.swift in Sources */,
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
+				5F02CB39290A20760079FFC5 /* PinTextField.swift in Sources */,
 				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
 				5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */,
 				5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */,

@@ -22,4 +22,5 @@ enum Icons {
     static let chevronRight = "chevron.right"
     static let photo = "photo"
     static let parentMode = "person.2.fill"
+    static let cancel = "xmark"
 }
