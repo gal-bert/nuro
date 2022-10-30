@@ -16,3 +16,8 @@ protocol ParentRoutineAddActivityDelegate {
     func dismissViewController()
     func pushViewController(dest: UIViewController)
 }
+
+protocol ParentRoutineAddActivityRoutineTimeDelegate {
+    func dismissViewController()
+    func pushViewController(dest: UIViewController)
+}
