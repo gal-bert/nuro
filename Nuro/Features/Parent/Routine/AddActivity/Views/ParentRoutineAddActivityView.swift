@@ -57,10 +57,22 @@ class ParentRoutineAddActivityView: UIView {
         containerView.addSubview(stackView)
         stackView.addArrangedSubview(iconChooseImageView)
         stackView.addArrangedSubview(selectImageLabel)
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChooseActivity))
+        gestureRecognizer.numberOfTapsRequired = 1
+        gestureRecognizer.numberOfTouchesRequired = 1
+        
+        containerView.addGestureRecognizer(gestureRecognizer)
+        containerView.isUserInteractionEnabled = true
+        
         addSubview(waktuRutinitasButton)
         addSubview(hariRutinitasButton)
         
         setupConstraints()
+    }
+    
+    @objc private func didTapChooseActivity(_ gesture: UITapGestureRecognizer) {
+        delegate.pushViewController(dest: AddActivityViewController())
     }
     
     func setupNavigationBar(vc: ParentRoutineAddActivityViewController) {
