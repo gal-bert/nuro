@@ -7,12 +7,24 @@
 
 import UIKit
 
+extension ParentTodayActivityViewController: ReloadDelegate {
+    func reloadTableView() {
+        viewModel.loadAll(dayId: 1)
+        parentTodayActivityView.tableView.reloadData()
+    }
+}
+
 extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
 
     func presentViewController(dest: UIViewController) {
         let vc = UINavigationController(rootViewController: dest)
         vc.modalPresentationStyle = .formSheet
         vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
+        
+        if let dest = dest as? ParentTodayActivityEditOrderViewController {
+            dest.reloadDelegate = self
+        }
+        
         present(vc, animated: true)
     }
     
@@ -30,13 +42,14 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
             cell.backgroundColor = Colors.Background.water
             cell.collectionView.backgroundColor = cell.backgroundColor
             cell.routines = viewModel.morningActivities
-    
+            
         case 1:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8, colorName: Colors.Text.onyx)
             cell.backgroundColor = Colors.Background.papayaWhip
             cell.collectionView.backgroundColor = cell.backgroundColor
 //            cell.routines = viewModel.afternoonActivities
             cell.routines = viewModel.morningActivities
+            
         case 2:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.night, text: "Malam", colorName: Colors.Text.onyx)
             cell.backgroundColor = Colors.Background.soap
@@ -48,6 +61,7 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
             cell.timeframeLabel.text = "Empty"
         }
         
+        cell.collectionView.reloadData()
         return cell
     }
     
