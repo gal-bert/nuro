@@ -67,7 +67,7 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(model: Activity) {
-        imageView.image = UIImage(data: model.activityImage ?? Data())
+        imageView.image = Document.getImageFromDocument(imageURL: model.activityImageURL)
         titleLabel.text = model.activityName
         descriptionLabel.text = model.activityDesc
 

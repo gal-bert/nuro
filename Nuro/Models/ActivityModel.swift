@@ -11,7 +11,7 @@ import UIKit
 struct ActivityModel {
     var activityName: String
     var activityDesc: String
-    var activityImage: UIImage
+    var activityImageURL: String
     var createdAt: Date
     var category: Category
 }

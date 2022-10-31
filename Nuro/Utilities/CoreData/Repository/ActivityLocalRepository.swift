@@ -15,18 +15,13 @@ class ActivityLocalRepository: ActivityRepository {
     
     private let context = CoreDataManager.shared.context
     
-    func add(name: String, desc: String, image: UIImage, to category: Category) {
+    func add(name: String, desc: String, imageURL: String, to category: Category) {
         let newActivity = Activity(context: context)
         newActivity.activityName = name
         newActivity.activityDesc = desc
         newActivity.category = category
+        newActivity.activityImageURL = imageURL
         newActivity.createdAt = Date()
-        
-//        var imageData = image.pngData()
-        var imageData = image.jpegData(compressionQuality: 0.2)
-//        if imageData == nil {
-//        }
-        newActivity.activityImage = imageData
         
         do {
             try context.save()
@@ -40,7 +35,7 @@ class ActivityLocalRepository: ActivityRepository {
         let request: NSFetchRequest = Activity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
         
-        guard var activities = try? context.fetch(request)
+        guard let activities = try? context.fetch(request)
         else {
             return []
         }
@@ -60,16 +55,11 @@ class ActivityLocalRepository: ActivityRepository {
         return activities
     }
     
-    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newCategory: Category) {
+    func update(activity: Activity, newName: String, newDesc: String, newImageURL: String, newCategory: Category) {
         activity.activityName = newName
         activity.activityDesc = newDesc
         activity.category = newCategory
-        
-        var newImageData = newImage.pngData()
-        if newImageData == nil {
-            newImageData = newImage.jpegData(compressionQuality: 1.0)
-        }
-        activity.activityImage = newImageData
+        activity.activityImageURL = newImageURL
         
         do {
             try context.save()

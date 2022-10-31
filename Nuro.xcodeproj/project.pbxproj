@@ -127,6 +127,7 @@
 		5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F563D2628F79E77003748D7 /* ActivityModel.swift */; };
 		5F59FFA7290F436D00AD05F4 /* ChildPinUnlockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFA6290F436D00AD05F4 /* ChildPinUnlockViewModel.swift */; };
 		5F59FFA9290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFA8290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift */; };
+		5F59FFAB29106AAE00AD05F4 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFAA29106AAE00AD05F4 /* Document.swift */; };
 		5F87D83428FE5F6D00C06CE1 /* SeederValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F87D83328FE5F6D00C06CE1 /* SeederValidator.swift */; };
 		5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */; };
 		5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */; };
@@ -285,6 +286,7 @@
 		5F563D2628F79E77003748D7 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		5F59FFA6290F436D00AD05F4 /* ChildPinUnlockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPinUnlockViewModel.swift; sourceTree = "<group>"; };
 		5F59FFA8290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildPinUnlockViewController+Delegate.swift"; sourceTree = "<group>"; };
+		5F59FFAA29106AAE00AD05F4 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		5F87D83328FE5F6D00C06CE1 /* SeederValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederValidator.swift; sourceTree = "<group>"; };
 		5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderLocalRepository.swift; sourceTree = "<group>"; };
 		5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailLocalRepository.swift; sourceTree = "<group>"; };
@@ -802,6 +804,7 @@
 			children = (
 				0CF2C21128F4874C00D91E79 /* TextAttachments.swift */,
 				0C4A801C28F7D31600890495 /* ColorRGBA.swift */,
+				5F59FFAA29106AAE00AD05F4 /* Document.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -971,7 +974,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-
 		5F02CB2F290A1DB40079FFC5 /* PinUnlock */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,7 +1002,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-
 		5F2158112908C09900EA5085 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1355,6 +1356,7 @@
 				3F9664C0290EC87D0056B6D6 /* AddActivityRoutineTimeViewController+Delegate.swift in Sources */,
 				5F563D2528F79E6D003748D7 /* CategoryModel.swift in Sources */,
 				0CA82E2928EC77D700D811A6 /* ParentTodayActivityView.swift in Sources */,
+				5F59FFAB29106AAE00AD05F4 /* Document.swift in Sources */,
 				0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */,
 				5F59FFA7290F436D00AD05F4 /* ChildPinUnlockViewModel.swift in Sources */,
 				0CAFDA5528FE58D60035F252 /* ParentTodayActivityEditOrderViewController.swift in Sources */,
