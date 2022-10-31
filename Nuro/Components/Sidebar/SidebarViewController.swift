@@ -54,7 +54,7 @@ class SidebarViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.tintColor = Colors.Brand.blueViolet
-        view.tintColor = Colors.Brand.blueViolet
+//        view.tintColor = Colors.Brand.blueViolet
 
         configureCollectionView()
         configureDataSource()
@@ -168,10 +168,10 @@ extension SidebarViewController {
             var contentConfiguration = UIListContentConfiguration.sidebarSubtitleCell()
             contentConfiguration.text = item.title
             contentConfiguration.textProperties.font = UIFont(name: Fonts.VisbyRoundCF.medium, size: 20)!
-            contentConfiguration.textProperties.color = Colors.Text.onyx
+//            contentConfiguration.textProperties.color = Colors.Text.onyx
             contentConfiguration.secondaryText = item.subtitle
             contentConfiguration.image = item.image
-            contentConfiguration.imageProperties.tintColor = Colors.Brand.blueViolet
+//            contentConfiguration.imageProperties.tintColor = Colors.Brand.blueViolet
             
             cell.contentConfiguration = contentConfiguration
         }
