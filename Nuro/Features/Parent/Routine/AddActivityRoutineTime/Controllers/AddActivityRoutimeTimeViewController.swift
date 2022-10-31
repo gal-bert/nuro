@@ -10,6 +10,8 @@ import UIKit
 class AddActivityRoutimeTimeViewController: UIViewController {
 
     let addActivityRoutineTimeView = AddActivityRoutineTimeView()
+    let addActivityRoutineTimeViewModel = AddActivityRoutineTimeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isModalInPresentation = true

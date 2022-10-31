@@ -21,3 +21,8 @@ protocol ParentRoutineAddActivityRoutineTimeDelegate {
     func popViewController()
     func pushViewController(dest: UIViewController)
 }
+
+protocol ParentRoutineAddActivityRoutineDayDelegate {
+    func popViewController()
+    func pushViewController(dest: UIViewController)
+}
