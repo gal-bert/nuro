@@ -11,6 +11,11 @@
 		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
 		0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4A801C28F7D31600890495 /* ColorRGBA.swift */; };
 		0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */; };
+		0C5855D4290FFA10004D4DDD /* CreateActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855D3290FFA10004D4DDD /* CreateActivityView.swift */; };
+		0C5855D6290FFA53004D4DDD /* CreateActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855D5290FFA53004D4DDD /* CreateActivityViewController.swift */; };
+		0C5855D829100550004D4DDD /* SelectImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855D729100550004D4DDD /* SelectImageSelector.swift */; };
+		0C5855DA29101E0B004D4DDD /* CreateActivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855D929101E0B004D4DDD /* CreateActivityDelegate.swift */; };
+		0C5855DC29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855DB29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift */; };
 		0C74A03428F4527A0081A069 /* VisbyRoundCF-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */; };
 		0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */; };
 		0C74A03628F4527A0081A069 /* VisbyRoundCF-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */; };
@@ -167,6 +172,11 @@
 		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
 		0C4A801C28F7D31600890495 /* ColorRGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRGBA.swift; sourceTree = "<group>"; };
 		0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityTableViewCell.swift; sourceTree = "<group>"; };
+		0C5855D3290FFA10004D4DDD /* CreateActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityView.swift; sourceTree = "<group>"; };
+		0C5855D5290FFA53004D4DDD /* CreateActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewController.swift; sourceTree = "<group>"; };
+		0C5855D729100550004D4DDD /* SelectImageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageSelector.swift; sourceTree = "<group>"; };
+		0C5855D929101E0B004D4DDD /* CreateActivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityDelegate.swift; sourceTree = "<group>"; };
+		0C5855DB29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
 		0C74A02B28F437F90081A069 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraBold.otf"; sourceTree = "<group>"; };
 		0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -332,6 +342,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C5855D2290FF97D004D4DDD /* CreateActivity */ = {
+			isa = PBXGroup;
+			children = (
+				0C5855D3290FFA10004D4DDD /* CreateActivityView.swift */,
+				0C5855D5290FFA53004D4DDD /* CreateActivityViewController.swift */,
+				0C5855DB29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift */,
+				0C5855D929101E0B004D4DDD /* CreateActivityDelegate.swift */,
+			);
+			path = CreateActivity;
+			sourceTree = "<group>";
+		};
 		0C79CE9428EAB45100706D0A = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +585,7 @@
 		0CA82E2028EC75CD00D811A6 /* ActivityList */ = {
 			isa = PBXGroup;
 			children = (
+				0C5855D2290FF97D004D4DDD /* CreateActivity */,
 				0CAD2137290168EC00941794 /* Reusables */,
 				4A854D8828FEF9270048C7D8 /* ParentActivityListDetailDelegate.swift */,
 				4ABE2D1B28EDB4700082147F /* ParentActivityListDelegate.swift */,
@@ -886,6 +908,7 @@
 			isa = PBXGroup;
 			children = (
 				3F851DFC290698E900073CF7 /* CreateActivityButton.swift */,
+				0C5855D729100550004D4DDD /* SelectImageSelector.swift */,
 			);
 			path = CreateActivity;
 			sourceTree = "<group>";
@@ -971,7 +994,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-
 		5F02CB2F290A1DB40079FFC5 /* PinUnlock */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,7 +1022,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-
 		5F2158112908C09900EA5085 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1345,6 +1366,7 @@
 				5F3198FB2906101900E7FBE1 /* ChildActivityCompletedViewController.swift in Sources */,
 				3F06EDE328FD64EA003DD7C0 /* ActivitiesTableViewCell.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
+				0C5855DA29101E0B004D4DDD /* CreateActivityDelegate.swift in Sources */,
 				3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */,
 				0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */,
 				3F59A3712905AECE00F1877B /* ParentRoutineAddActivityView.swift in Sources */,
@@ -1359,6 +1381,7 @@
 				5F59FFA7290F436D00AD05F4 /* ChildPinUnlockViewModel.swift in Sources */,
 				0CAFDA5528FE58D60035F252 /* ParentTodayActivityEditOrderViewController.swift in Sources */,
 				5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */,
+				0C5855D829100550004D4DDD /* SelectImageSelector.swift in Sources */,
 				0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */,
 				5F563D2128F61424003748D7 /* ActivityLocalRepository.swift in Sources */,
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
@@ -1372,6 +1395,7 @@
 				0CAFDA5328FE568C0035F252 /* ParentTodayActivityEditOrderView.swift in Sources */,
 				5F2158152908C0B900EA5085 /* ChildActivityViewController.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
+				0C5855D4290FFA10004D4DDD /* CreateActivityView.swift in Sources */,
 				3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */,
 				5F563D1528F4EE75003748D7 /* CircleImage.swift in Sources */,
 				3F9664B5290E4F2F0056B6D6 /* PlainTableViewCell.swift in Sources */,
@@ -1408,6 +1432,7 @@
 				4A854D8528FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift in Sources */,
 				4A854D8B28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift in Sources */,
 				0CCF58E0290688E40005AF63 /* ParentTodayActivityDetailView.swift in Sources */,
+				0C5855DC29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
 				0CF066832901856200061701 /* AddActivityContentCollectionViewCell.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
@@ -1423,6 +1448,7 @@
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
 				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
 				0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */,
+				0C5855D6290FFA53004D4DDD /* CreateActivityViewController.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
 				5F3199062906159900E7FBE1 /* ChildRoutineCompletedView.swift in Sources */,
 				5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */,
@@ -1629,7 +1655,7 @@
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5658ASKD6C;
+				DEVELOPMENT_TEAM = CL42QD4LKB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1643,7 +1669,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.karennatalia.NuroByPetak9;
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1662,7 +1688,7 @@
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5658ASKD6C;
+				DEVELOPMENT_TEAM = CL42QD4LKB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1676,7 +1702,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.karennatalia.NuroByPetak9;
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
