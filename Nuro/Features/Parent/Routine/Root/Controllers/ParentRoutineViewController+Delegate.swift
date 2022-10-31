@@ -8,8 +8,8 @@
 import UIKit
 
 extension ParentRoutineViewController: ParentRoutineDelegate {
-    func printText(text: String) {
-        viewModel.printText(text: text)
+    func loadActivitiesForDay(dayId: Int) {
+        viewModel.loadActivities(dayId: dayId)
     }
     
     func presentViewController(dest: UIViewController) {
@@ -24,7 +24,14 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentRoutineView.tableView.dequeueReusableCell(withIdentifier: ActivitiesTableViewCell.identifier) as! ActivitiesTableViewCell
-        
+        if indexPath.section == 0 {
+            cell.configure(model: viewModel.morningActivities[indexPath.row].activity ?? Activity())
+        } else if indexPath.section == 1 {
+            cell.configure(model: viewModel.afternoonActivities[indexPath.row].activity ?? Activity())
+        } else {
+            cell.configure(model: viewModel.eveningActivities[indexPath.row].activity ?? Activity())
+        }
+
         return cell
     }
     
@@ -33,7 +40,13 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if section == 0 {
+            return viewModel.morningActivities.count
+        } else if section == 1 {
+            return viewModel.afternoonActivities.count
+        } else {
+            return viewModel.eveningActivities.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

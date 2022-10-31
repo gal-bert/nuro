@@ -15,6 +15,7 @@ class ParentRoutineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         parentRoutineView.setup(vc: self)
+        viewModel.loadAll(dayId: 1)
     }
     
     override func loadView() {
