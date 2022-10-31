@@ -8,15 +8,20 @@
 import UIKit
 
 extension ParentActivityListDetailViewController: ParentActivityListDetailDelegate {
-    func printText(text: String) {
-        viewModel.printText(text: text)
+    func presentViewController(dest: UIViewController) {
+        let vc = UINavigationController(rootViewController: dest)
+        vc.isModalInPresentation = true
+        vc.modalPresentationStyle = .formSheet
+        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
+        present(vc, animated: true)
     }
+    
 }
 
 extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

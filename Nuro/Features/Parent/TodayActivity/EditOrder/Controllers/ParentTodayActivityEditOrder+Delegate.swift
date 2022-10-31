@@ -10,6 +10,7 @@ import UIKit
 extension ParentTodayActivityEditOrderViewController: ParentTodayActivityEditOrderDelegate {
     func dismissViewController() {
         self.dismiss(animated: true)
+        reloadDelegate.reloadTableView()
     }
     
     func pushViewController(dest: UIViewController) {
@@ -43,7 +44,7 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
             let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
                 
                 RoutineDetailLocalRepository.shared.delete(routineDetail: self.routineDetails[indexPath.row] ?? RoutineDetail())
-                self.dismiss(animated: true)
+                self.dismissViewController()
             }
             present(alert, animated: true)
         }

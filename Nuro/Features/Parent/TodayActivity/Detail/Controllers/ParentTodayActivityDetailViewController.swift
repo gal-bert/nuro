@@ -11,6 +11,8 @@ class ParentTodayActivityDetailViewController: UIViewController {
     
     let parentTodayActivityDetailView = ParentTodayActivityDetailView()
     var routineDetail: RoutineDetail?
+    
+    var reloadDelegate: ReloadDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()

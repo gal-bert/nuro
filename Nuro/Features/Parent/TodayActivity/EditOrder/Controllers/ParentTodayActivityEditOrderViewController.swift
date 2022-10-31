@@ -12,6 +12,8 @@ class ParentTodayActivityEditOrderViewController: UIViewController {
     let parentTodayActivityEditOrderView = ParentTodayActivityEditOrderView()
     
     var routineDetails = [RoutineDetail]()
+    
+    var reloadDelegate: ReloadDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()

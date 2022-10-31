@@ -44,8 +44,6 @@ class ParentTodayActivityEditOrderView: UIView {
         vc.title = "Aktivitas Hari Ini - Pagi"
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(dismissAction))
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(tambah))
-//        vc.navigationItem.leftBarButtonItem?.tintColor = Colors.Brand.blueViolet
-//        vc.navigationItem.rightBarButtonItem?.tintColor = Colors.Brand.blueViolet
     }
     
     @objc func dismissAction() {
