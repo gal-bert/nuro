@@ -93,7 +93,7 @@ class ParentRoutineView: UIView {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
             make.left.right.equalToSuperview()
-            make.height.equalTo(600)
+            make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
 }

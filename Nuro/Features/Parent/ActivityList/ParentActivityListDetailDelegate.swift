@@ -5,8 +5,8 @@
 //  Created by Finn Christoffer Kurniawan on 18/10/22.
 //
 
-import Foundation
+import UIKit
 
 protocol ParentActivityListDetailDelegate {
-    func printText(text: String)
+    func presentViewController(dest: UIViewController)
 }

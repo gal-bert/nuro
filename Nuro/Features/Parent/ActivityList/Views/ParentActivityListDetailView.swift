@@ -57,18 +57,19 @@ class ParentActivityListDetailView: UIView {
     }
     
     @objc private func addButtonAction() {
-        delegate.printText(text: "Add Button Clicked")
+//        delegate.printText(text: "Add Button Clicked")
+        delegate.presentViewController(dest: CreateActivityViewController())
     }
     
     @objc private func editButtonAction() {
-        delegate.printText(text: "Edit Button Clicked")
+        
     }
     
     private func setupConstraints() {
         collectionViewListDetail.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(23)
             make.left.right.equalTo(self).inset(25)
-            make.height.equalTo(3 * CollectionViewAttributes.collectionViewDetailCellHeight)
+            make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
 }
