@@ -63,6 +63,7 @@ class AddActivityContentCollectionViewCell: UICollectionViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(15)
             make.left.right.equalTo(self).inset(10)
+            make.bottom.equalTo(self).inset(15)
         }
         
     }

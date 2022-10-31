@@ -18,8 +18,11 @@ class ChildRoutineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: Set current routine dayID and timeID
+        viewModel.loadActivities(dayID: 1, timeID: 1)
+        
         childRoutineView.setup(vc: self)
-        totalActivity = viewModel.activityName.count
+        totalActivity = viewModel.activities.count
     }
     
     override func loadView() {
@@ -30,10 +33,10 @@ class ChildRoutineViewController: UIViewController {
         isFirstActivityCardHidden  = true
         
         childRoutineView.animateHideRow()
-        if viewModel.activityName.count > 0 {
+        if viewModel.activities.count > 0 {
             viewModel.removeFirstActivity()
-            Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { [self] timer in
-                childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activityName.count)
+            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [self] timer in
+                childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activities.count)
             }
         }
         else {

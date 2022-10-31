@@ -23,6 +23,7 @@ class RoutineHeaderLocalRepository: RoutineHeaderRepository {
             try context.save()
         } catch {
             print("Add new routine header failed")
+            print(error.localizedDescription)
         }
     }
     

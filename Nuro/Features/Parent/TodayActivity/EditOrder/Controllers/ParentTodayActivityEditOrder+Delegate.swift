@@ -10,6 +10,7 @@ import UIKit
 extension ParentTodayActivityEditOrderViewController: ParentTodayActivityEditOrderDelegate {
     func dismissViewController() {
         self.dismiss(animated: true)
+        reloadDelegate.reloadTableView()
     }
     
     func pushViewController(dest: UIViewController) {
@@ -22,13 +23,16 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentTodayActivityEditOrderView.tableView.dequeueReusableCell(withIdentifier: ActivitiesTableViewCell.identifier) as! ActivitiesTableViewCell
-        cell.titleLabel.text = arr[indexPath.row]
+        
+        let activity = routineDetails[indexPath.row].activity
+        
+        cell.configure(model: activity ?? Activity())
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return routineDetails.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -38,13 +42,13 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
-                //TODO: Add delete functions here
+                
+                RoutineDetailLocalRepository.shared.delete(routineDetail: self.routineDetails[indexPath.row] ?? RoutineDetail())
+                self.dismissViewController()
             }
             present(alert, animated: true)
         }
     }
-    
-    
     
 }
 
@@ -52,15 +56,20 @@ extension ParentTodayActivityEditOrderViewController : UITableViewDragDelegate {
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
-        dragItem.localObject = arr[indexPath.row]
+        dragItem.localObject = routineDetails[indexPath.row]
         return [dragItem]
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let mv = arr[sourceIndexPath.row]
-        arr.remove(at: sourceIndexPath.row)
-        arr.insert(mv, at: destinationIndexPath.row)
-        print("Object reattached")
+        let mv = routineDetails[sourceIndexPath.row]
+        routineDetails.remove(at: sourceIndexPath.row)
+        routineDetails.insert(mv, at: destinationIndexPath.row)
+        
+        let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
+        
+        for (index, routine) in routineDetails.enumerated() {
+            routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
+        }
     }
     
 }

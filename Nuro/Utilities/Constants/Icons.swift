@@ -19,5 +19,8 @@ enum Icons {
     static let listBulletRectanglePortrait = "list.bullet.rectangle.portrait.fill"
     static let folder = "folder.fill"
     static let aqi = "aqi.high"
+    static let chevronRight = "chevron.right"
+    static let photo = "photo"
     static let parentMode = "person.2.fill"
+    static let cancel = "xmark"
 }
