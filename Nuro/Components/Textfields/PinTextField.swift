@@ -12,7 +12,7 @@ class PinTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUnderline(width: 80.0, height: 80.0, lineWidth: 10.0)
-//        isUserInteractionEnabled = false
+        isUserInteractionEnabled = false
         textAlignment = .center
         font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 48)
         textColor = Colors.Text.onyx

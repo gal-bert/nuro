@@ -29,7 +29,7 @@ class DeletePinButton: UIButton {
     
     private func addCustomShapeLayer(width: CGFloat, height: CGFloat) {
         let shapeLayer = CAShapeLayer()
-        shapeLayer.fillColor = Colors.Brand.blueViolet.cgColor
+        shapeLayer.fillColor = Colors.Neutral.bronze.cgColor
         shapeLayer.path = createCustomPath(width: width, height: height)
         shapeLayer.position = CGPoint(x: 0, y: 0)
         

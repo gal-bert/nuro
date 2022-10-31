@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ChildPinUnlockViewDelegate {
+    func deleteLastPin()
+}
+
 class ChildPinUnlockView: UIView {
     
     private lazy var pageTitleLabel: UILabel = {
@@ -63,9 +67,9 @@ class ChildPinUnlockView: UIView {
     private lazy var textField2 = PinTextField()
     private lazy var textField3 = PinTextField()
     private lazy var textField4 = PinTextField()
+    private var textFields = [PinTextField]()
     
     private lazy var deletePinButton = DeletePinButton(width: 64, height: 48)
-    
     private lazy var imageView = CircleImage(size: ScreenSizes.screenHeight * 1 / 3 + 48, imageName: Icons.morning)
     
     private lazy var instructionLabel: UILabel = {
@@ -78,14 +82,25 @@ class ChildPinUnlockView: UIView {
         return label
     }()
     
+    private var delegate: ChildPinUnlockViewDelegate?
+    
     func setup(vc: ChildPinUnlockViewController) {
         setupCollectionView(vc: vc)
         setupUI()
         setupConstraints()
+        
+        delegate = vc
+        deletePinButton.addTarget(self, action: #selector(deleteClicked), for: .touchUpInside)
+        
+        textFields.append(textField1)
+        textFields.append(textField2)
+        textFields.append(textField3)
+        textFields.append(textField4)
     }
     
     private func setupCollectionView(vc: ChildPinUnlockViewController) {
         collectionView.dataSource = vc
+        collectionView.delegate = vc
         collectionView.register(PinNumberCollectionViewCell.self, forCellWithReuseIdentifier: PinNumberCollectionViewCell.identifier)
     }
     
@@ -160,5 +175,23 @@ class ChildPinUnlockView: UIView {
         layout.minimumInteritemSpacing = 60
         layout.minimumLineSpacing = ScreenSizes.halfScreenHeight / 24
         return layout
+    }
+    
+    func updatePinTextField(count: Int, newInput: Int) {
+        textFields[count - 1].text = "\(newInput)"
+    }
+    
+    func clearTextFields() {
+        for textField in textFields {
+            textField.text = ""
+        }
+    }
+    
+    @objc func deleteClicked() {
+        delegate?.deleteLastPin()
+    }
+    
+    func clearLastPin(count: Int) {
+        textFields[count].text = ""
     }
 }

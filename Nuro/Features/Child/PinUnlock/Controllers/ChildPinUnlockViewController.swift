@@ -9,7 +9,8 @@ import UIKit
 
 class ChildPinUnlockViewController: UIViewController {
     
-    private let childPinUnlockView = ChildPinUnlockView()
+    let childPinUnlockView = ChildPinUnlockView()
+    let viewModel = ChildPinUnlockViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

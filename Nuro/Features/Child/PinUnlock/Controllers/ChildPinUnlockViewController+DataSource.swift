@@ -26,6 +26,7 @@ extension ChildPinUnlockViewController: UICollectionViewDataSource {
         else {
             cell.titleLabel.text = ""
             cell.backgroundColor = .clear
+            cell.isUserInteractionEnabled = false
         }
         
         return cell
