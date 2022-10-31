@@ -11,7 +11,7 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "parentActivityListFolderCollectionViewCell"
     
-    private lazy var topFolderView: UIView = {
+    lazy var topFolderView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.Brand.jasmine
         view.layer.cornerRadius = 20
@@ -19,7 +19,7 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var bgView: UIView = {
+    lazy var bgView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.Background.papayaWhip
         view.layer.cornerRadius =  20
@@ -37,7 +37,7 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     private lazy var circleImage = CircleImage(size: 125, imageName: "dummy")
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Jenis Aktivitas"
         view.textColor = .black

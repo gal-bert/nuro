@@ -7,12 +7,37 @@
 
 import UIKit
 
+protocol DeleteDataCollectionProtocol {
+    func deleteData(indx: Int)
+}
+
 class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
+    
+    var delegate: DeleteDataCollectionProtocol?
+    var index: IndexPath?
     
     static let identifier = "parentActivityListDetailCollectionViewCell"
     
     func setImage(image: String) {
         imageView.image = UIImage(named: image)
+    }
+    
+    lazy var deleteButton: UIButton = {
+        let view = UIButton()
+        let config = UIImage.SymbolConfiguration(pointSize: 40)
+        view.setImage(UIImage(systemName: "minus.circle.fill", withConfiguration: config), for: .normal)
+        view.tintColor = .red
+        view.backgroundColor = .white
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 25
+        view.isHidden = !isEditing
+        return view
+    }()
+    
+    var isEditing: Bool = false {
+        didSet {
+            deleteButton.isHidden = !isEditing
+        }
     }
     
     private lazy var imageView: UIImageView = {
@@ -24,7 +49,7 @@ class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Detail Aktivitas"
         view.textColor = .black
@@ -54,8 +79,11 @@ class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
         titleLabel.textColor = Colors.Text.onyx
         addSubview(imageView)
         addSubview(titleLabel)
+        addSubview(deleteButton)
         
         imageView.image = UIImage(named: "dummy")
+        
+        deleteButton.addTarget(self, action: #selector(deleteButtonAction), for: .touchUpInside)
     }
     
     private func setupConstraints() {
@@ -69,5 +97,13 @@ class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(imageView.snp.bottom).offset(10)
             make.centerX.equalTo(self)
         }
+        
+        deleteButton.snp.makeConstraints { make in
+            make.top.left.equalTo(self).inset(3)
+        }
+    }
+    
+    @objc private func deleteButtonAction() {
+        delegate?.deleteData(indx: (index?.row)!)
     }
 }

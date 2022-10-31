@@ -22,17 +22,20 @@ extension ParentActivityListViewController: SearchControllerDelegate {
 extension ParentActivityListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionViewFolder: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return viewModel.categoryActivities.count
     }
     
     func collectionView(_ collectionViewFolder: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionViewFolder.dequeueReusableCell(withReuseIdentifier: ParentActivityFolderCollectionViewCell.identifier, for: indexPath) as! ParentActivityFolderCollectionViewCell
+        cell.titleLabel.text = viewModel.categoryActivities[indexPath.item].categoryName
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selected Cell : \(indexPath.row)")
-        navigationController?.pushViewController(ParentActivityListDetailViewController(), animated: true)
+        let dest = ParentActivityListDetailViewController()
+        dest.viewModel.categorySelected = viewModel.categoryActivities[indexPath.item]
+        navigationController?.pushViewController(dest, animated: true)
     }
     
     func collectionView(_ collectionViewFolder: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
