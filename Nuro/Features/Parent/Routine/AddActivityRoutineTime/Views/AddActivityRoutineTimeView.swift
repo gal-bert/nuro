@@ -43,7 +43,7 @@ class AddActivityRoutineTimeView: UIView {
     }
     
     @objc func didFinishButtonClicked() {
-        delegate.dismissViewController()
+        delegate.popViewController()
     }
     
     private func setupConstraints() {
