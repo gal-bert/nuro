@@ -60,7 +60,24 @@ class ParentRoutineAddActivityView: UIView {
         addSubview(waktuRutinitasButton)
         addSubview(hariRutinitasButton)
         
+        containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapChooseActivity)))
+        waktuRutinitasButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapRoutineTime)))
+        hariRutinitasButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapRoutineDay)))
+        
         setupConstraints()
+    }
+    
+    @objc private func didTapChooseActivity(_ gesture: UITapGestureRecognizer) {
+        delegate.pushViewController(dest: AddActivityViewController())
+    }
+    
+    @objc private func didTapRoutineTime(_ gesture: UITapGestureRecognizer) {
+        // TODO: Push View Controller to Table View of Time Selection
+        delegate.pushViewController(dest: AddActivityRoutimeTimeViewController())
+    }
+
+    @objc private func didTapRoutineDay(_ gesture: UITapGestureRecognizer) {
+        // TODO: Push View Controller to Table View of Day Selection
     }
     
     func setupNavigationBar(vc: ParentRoutineAddActivityViewController) {
