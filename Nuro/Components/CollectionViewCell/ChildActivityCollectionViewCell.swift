@@ -69,7 +69,7 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(model: Activity) {
-        activityImage.image = UIImage(data: model.activityImage ?? Data())
+        activityImage.image = Document.getImageFromDocument(imageURL: model.activityImageURL)
         activityNameLabel.text = model.activityName
     }
     

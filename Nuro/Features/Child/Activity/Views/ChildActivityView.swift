@@ -75,7 +75,7 @@ class ChildActivityView: UIView {
     }
     
     private func setupValue(model: Activity) {
-        activityImage.image = UIImage(data: model.activityImage ?? Data())
+        activityImage.image = Document.getImageFromDocument(imageURL: model.activityImageURL)
         activityName.text = model.activityName
     }
     
