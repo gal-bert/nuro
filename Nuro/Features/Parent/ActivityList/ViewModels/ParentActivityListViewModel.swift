@@ -9,13 +9,16 @@ import Foundation
 
 class ParentActivityListViewModel {
     
+    let categoryRepository = CategoryLocalRepository.shared
+    
+    var categoryActivities = [Category]()
+    
+    func loadAllCategory() {
+        categoryActivities = categoryRepository.getAll()
+    }
+    
     func printText(text: String) {
         print("\(text)")
     }
     
-    func loadDataToTableView() -> [String] {
-        return [
-            ""
-        ]
-    }
 }

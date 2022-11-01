@@ -16,16 +16,23 @@ extension ParentActivityListDetailViewController: ParentActivityListDetailDelega
         present(vc, animated: true)
     }
     
+    func dismissViewController() {
+        parentActivityListDetailView.collectionView.reloadData()
+        dismiss(animated: true)
+    }
 }
 
 extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 16
+        return viewModel.listActivities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityContentCollectionViewCell.identifier, for: indexPath) as! AddActivityContentCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier, for: indexPath) as! ParentActivityListDetailCollectionViewCell
+        cell.titleLabel.text = viewModel.listActivities[indexPath.row].activityName
+        cell.imageView.image = UIImage(data: viewModel.listActivities[indexPath.row].activityImage!)
+        cell.index = indexPath
+        cell.delegate = self
         return cell
     }
     
@@ -37,11 +44,24 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
         return CGSize(width: CollectionViewAttributes.smallCollectionViewCellWidth, height: CollectionViewAttributes.smallCollectionViewCellHeight)
     }
     
-    func collectionView(_ collectionViewFolder: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
     }
     
-    func collectionView(_ collectionViewFolder: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+}
+
+extension ParentActivityListDetailViewController: DeleteDataCollectionProtocol {
+    func deleteData(indx: Int) {
+
+        let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari Daftar Aktivitas?") {
+            ActivityLocalRepository.shared.delete(activity: self.viewModel.listActivities[indx])
+            self.viewModel.loadAllActivity()
+            self.parentActivityListDetailView.collectionView.reloadData()
+            self.dismissViewController()
+        }
+        present(alert, animated: true)
     }
 }
