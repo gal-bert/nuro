@@ -11,9 +11,14 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "parentActivityListFolderCollectionViewCell"
     
+    //    var colorSet : ColorSetModel?
+    
+//    func setImage(image: String) {
+//        emojiImage.image = UIImage(named: image)
+//    }
+    
     lazy var topFolderView: UIView = {
         let view = UIView()
-        view.backgroundColor = Colors.Brand.jasmine
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
         return view
@@ -21,7 +26,6 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     lazy var bgView: UIView = {
         let view = UIView()
-        view.backgroundColor = Colors.Background.papayaWhip
         view.layer.cornerRadius =  20
         view.clipsToBounds = true
         return view
@@ -35,7 +39,15 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var circleImage = CircleImage(size: 125, imageName: "dummy")
+    lazy var circleImage = CircleImage(size: 125, imageName: "dummy")
+    
+    lazy var emojiImageView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "soapEmoji")
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        return view
+    }()
     
     lazy var titleLabel: UILabel = {
         let view = UILabel()
@@ -59,13 +71,21 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
+        circleImage.backgroundColor = Colors.Neutral.white
+//        addSubview(emojiImage)
         addSubview(topFolderView)
         addSubview(bgView)
         bgView.addSubview(stackView)
         stackView.addArrangedSubview(circleImage)
         stackView.addArrangedSubview(titleLabel)
-        
-//        imageView.image = UIImage(named: "dummy")
+        addSubview(emojiImageView)
+//        emojiImage.image = UIImage(named: "soapEmoji")
+    }
+    
+    func setupColorSet(colorSet:ColorSetModel) {
+        topFolderView.backgroundColor = colorSet.headerColor
+        bgView.backgroundColor = colorSet.backgroundColor
+        titleLabel.textColor = colorSet.textColor
     }
     
     private func setupConstraints() {
@@ -89,6 +109,12 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
         
         circleImage.snp.makeConstraints { make in
             make.width.height.equalTo(125)
+        }
+        
+        emojiImageView.snp.makeConstraints { make in
+            make.top.equalTo(self).inset(60)
+            make.centerX.equalTo(self)
+//            make.width.height.equalTo(100)
         }
     }
 }

@@ -55,4 +55,15 @@ enum Colors {
         static let darkBlueGray = ColorRGBA.fraction(r: 102, g: 88, b: 163)
     }
     
+    enum headerFolder {
+        static let alabasterDark = ColorRGBA.fraction(r: 207, g: 224, b: 209)
+        static let lavenderDark = ColorRGBA.fraction(r: 203, g: 198, b: 222)
+        static let papayaWhipDark = ColorRGBA.fraction(r: 222, g: 215, b: 189)
+        static let waterDark = ColorRGBA.fraction(r: 182, g: 201, b: 216)
+        static let platinumDark = ColorRGBA.fraction(r: 192, g: 167, b: 194)
+        static let apricotDark = ColorRGBA.fraction(r: 213, g: 179, b: 155)
+        static let pinkLaceDark = ColorRGBA.fraction(r: 215, g: 194, b: 212)
+        static let soapDark = ColorRGBA.fraction(r: 175, g: 173, b: 199)
+    }
+    
 }

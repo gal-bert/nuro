@@ -9,8 +9,6 @@ import UIKit
 
 class ParentActivityListDetailViewController: UIViewController {
     
-    var listArray = [Activity]()
-    
     let parentActivityListDetailView = ParentActivityListDetailView()
     let viewModel = ParentActivityListDetailViewModel()
     
@@ -18,7 +16,6 @@ class ParentActivityListDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         parentActivityListDetailView.setup(vc: self)
-//        navigationItem.rightBarButtonItem = editButtonItem
         viewModel.loadAllActivity()
     }
     

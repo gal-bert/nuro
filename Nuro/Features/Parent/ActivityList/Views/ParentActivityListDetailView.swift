@@ -60,7 +60,7 @@ class ParentActivityListDetailView: UIView {
     }
 
     @objc private func editButtonAction() {
-        
+        //belum tau mau diapain
     }
     
     private func setupConstraints() {

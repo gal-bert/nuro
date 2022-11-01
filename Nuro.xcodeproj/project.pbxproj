@@ -96,6 +96,9 @@
 		4A854D8B28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8A28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift */; };
 		4A854D8E29017F270048C7D8 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8D29017F270048C7D8 /* SearchController.swift */; };
 		4A854D90290235B50048C7D8 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8F290235B50048C7D8 /* UIImage+Ext.swift */; };
+		4AA00ACF29102973002CD604 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA00ACE29102973002CD604 /* ColorSet.swift */; };
+		4AA00AD129102AB2002CD604 /* ColorSetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA00AD029102AB2002CD604 /* ColorSetModel.swift */; };
+		4AA00AD32910E855002CD604 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA00AD22910E855002CD604 /* Images.swift */; };
 		4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */; };
 		4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */; };
 		4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */; };
@@ -254,6 +257,9 @@
 		4A854D8A28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A854D8D29017F270048C7D8 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		4A854D8F290235B50048C7D8 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		4AA00ACE29102973002CD604 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		4AA00AD029102AB2002CD604 /* ColorSetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSetModel.swift; sourceTree = "<group>"; };
+		4AA00AD22910E855002CD604 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		4ABE2D1328ED313E0082147F /* ParentActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListView.swift; sourceTree = "<group>"; };
 		4ABE2D1728EDB3B40082147F /* ParentActivityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListViewModel.swift; sourceTree = "<group>"; };
 		4ABE2D1928EDB44A0082147F /* ParentActivityListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentActivityListViewController+Delegate.swift"; sourceTree = "<group>"; };
@@ -603,6 +609,7 @@
 				5F563D2628F79E77003748D7 /* ActivityModel.swift */,
 				5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */,
 				5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */,
+				4AA00AD029102AB2002CD604 /* ColorSetModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -818,6 +825,8 @@
 				5FE0569628F324CC004A8CAA /* ScreenSizes.swift */,
 				0C935DE528F4550800C7BA3E /* Fonts.swift */,
 				0CF2C20F28F4630B00D91E79 /* Corners.swift */,
+				4AA00ACE29102973002CD604 /* ColorSet.swift */,
+				4AA00AD22910E855002CD604 /* Images.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -971,7 +980,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-
 		5F02CB2F290A1DB40079FFC5 /* PinUnlock */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,7 +1008,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-
 		5F2158112908C09900EA5085 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1372,6 +1379,7 @@
 				0CAFDA5328FE568C0035F252 /* ParentTodayActivityEditOrderView.swift in Sources */,
 				5F2158152908C0B900EA5085 /* ChildActivityViewController.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
+				4AA00AD32910E855002CD604 /* Images.swift in Sources */,
 				3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */,
 				5F563D1528F4EE75003748D7 /* CircleImage.swift in Sources */,
 				3F9664B5290E4F2F0056B6D6 /* PlainTableViewCell.swift in Sources */,
@@ -1387,6 +1395,7 @@
 				0C81BA7329063701004EAE13 /* SearchControllerDelegate.swift in Sources */,
 				3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
+				4AA00ACF29102973002CD604 /* ColorSet.swift in Sources */,
 				4AD3981628F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
@@ -1404,6 +1413,7 @@
 				5F3198FF2906103A00E7FBE1 /* ChildActivityCompletedView.swift in Sources */,
 				5FC373EE28FCB14E004EF523 /* ParentChildRoutineView.swift in Sources */,
 				5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */,
+				4AA00AD129102AB2002CD604 /* ColorSetModel.swift in Sources */,
 				3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */,
 				4A854D8528FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift in Sources */,
 				4A854D8B28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift in Sources */,

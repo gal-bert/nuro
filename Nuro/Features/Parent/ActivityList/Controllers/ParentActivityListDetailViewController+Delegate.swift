@@ -11,6 +11,11 @@ extension ParentActivityListDetailViewController: ParentActivityListDetailDelega
     func printText(text: String) {
         viewModel.printText(text: text)
     }
+    
+    func dismissViewController() {
+        parentActivityListDetailView.collectionView.reloadData()
+        dismiss(animated: true)
+    }
 }
 
 extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -21,6 +26,7 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier, for: indexPath) as! ParentActivityListDetailCollectionViewCell
         cell.titleLabel.text = viewModel.listActivities[indexPath.row].activityName
+        cell.imageView.image = UIImage(data: viewModel.listActivities[indexPath.row].activityImage!)
         cell.index = indexPath
         cell.delegate = self
         return cell
@@ -45,7 +51,13 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
 
 extension ParentActivityListDetailViewController: DeleteDataCollectionProtocol {
     func deleteData(indx: Int) {
-        viewModel.listActivities.remove(at: indx)
-        parentActivityListDetailView.collectionView.reloadData()
+
+        let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari Daftar Aktivitas?") {
+            ActivityLocalRepository.shared.delete(activity: self.viewModel.listActivities[indx])
+            self.viewModel.loadAllActivity()
+            self.parentActivityListDetailView.collectionView.reloadData()
+            self.dismissViewController()
+        }
+        present(alert, animated: true)
     }
 }
