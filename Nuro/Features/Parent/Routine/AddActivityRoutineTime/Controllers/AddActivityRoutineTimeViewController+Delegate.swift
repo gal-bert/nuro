@@ -8,7 +8,6 @@
 import UIKit
 
 extension AddActivityRoutimeTimeViewController: ParentRoutineAddActivityRoutineTimeDelegate {
-    
     func popViewController() {
         navigationController?.popViewController(animated: true)
     }
