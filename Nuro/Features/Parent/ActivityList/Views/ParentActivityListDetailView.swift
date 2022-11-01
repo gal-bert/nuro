@@ -42,7 +42,7 @@ class ParentActivityListDetailView: UIView {
         
         vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
         //Title Navbar
-        vc.title = "Judul Jenis Aktivitas"
+//        vc.title = "Judul Jenis Aktivitas"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
         
@@ -56,8 +56,10 @@ class ParentActivityListDetailView: UIView {
     }
     
     @objc private func addButtonAction() {
-//        delegate.printText(text: "Add Button Clicked")
-        delegate.presentViewController(dest: CreateActivityViewController())
+        let dest = CreateActivityViewController()
+        dest.category = delegate.getCategory()
+        dest.delegate = vc
+        delegate.presentViewController(dest: dest)
     }
 
     @objc private func editButtonAction() {

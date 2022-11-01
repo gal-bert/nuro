@@ -11,12 +11,14 @@ class ParentActivityListDetailViewController: UIViewController {
     
     let parentActivityListDetailView = ParentActivityListDetailView()
     let viewModel = ParentActivityListDetailViewModel()
+    var navTitle = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         parentActivityListDetailView.setup(vc: self)
         viewModel.loadAllActivity()
+        title = viewModel.categorySelected?.categoryName
     }
     
     override func loadView() {

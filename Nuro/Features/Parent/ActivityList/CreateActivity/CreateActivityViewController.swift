@@ -10,10 +10,14 @@ import UIKit
 class CreateActivityViewController: UIViewController {
     
     let createActivityView = CreateActivityView()
+    var category: Category?
+    
+    var delegate: ReloadCreateActivity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createActivityView.setup(vc: self)
+        print(category?.categoryName)
     }
 
     override func loadView() {

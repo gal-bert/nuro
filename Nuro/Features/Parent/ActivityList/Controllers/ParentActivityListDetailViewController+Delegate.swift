@@ -7,13 +7,22 @@
 
 import UIKit
 
-extension ParentActivityListDetailViewController: ParentActivityListDetailDelegate {
+extension ParentActivityListDetailViewController: ParentActivityListDetailDelegate, ReloadCreateActivity {
+    func getCategory() -> Category {
+        return viewModel.categorySelected ?? Category()
+    }
+    
     func presentViewController(dest: UIViewController) {
         let vc = UINavigationController(rootViewController: dest)
         vc.isModalInPresentation = true
         vc.modalPresentationStyle = .formSheet
-        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
+        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)        
         present(vc, animated: true)
+    }
+    
+    func reloadData() {
+        viewModel.loadAllActivity()
+        parentActivityListDetailView.collectionView.reloadData()
     }
     
     func dismissViewController() {
@@ -30,7 +39,7 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier, for: indexPath) as! ParentActivityListDetailCollectionViewCell
         cell.titleLabel.text = viewModel.listActivities[indexPath.row].activityName
-        cell.imageView.image = UIImage(data: viewModel.listActivities[indexPath.row].activityImage!)
+        cell.imageView.image = Document.getImageFromDocument(imageURL: viewModel.listActivities[indexPath.row].activityImageURL)
         cell.index = indexPath
         cell.delegate = self
         return cell
