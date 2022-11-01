@@ -1,13 +1,13 @@
 //
-//  AddActivityRoutineTimeView.swift
+//  AddActivityRoutineDayView.swift
 //  Nuro
 //
-//  Created by Samuel Dennis on 30/10/22.
+//  Created by Samuel Dennis on 31/10/22.
 //
 
 import UIKit
 
-class AddActivityRoutineTimeView: UIView {
+class AddActivityRoutineDayView: UIView {
     
     lazy var tableView: UITableView = {
         let view = UITableView()
@@ -17,10 +17,10 @@ class AddActivityRoutineTimeView: UIView {
         return view
     }()
     
-    var delegate: ParentRoutineAddActivityRoutineTimeDelegate!
-    var vc: AddActivityRoutimeTimeViewController!
+    var delegate: ParentRoutineAddActivityRoutineDayDelegate!
+    var vc: AddActivityRoutineDayViewController!
     
-    func setup(vc: AddActivityRoutimeTimeViewController) {
+    func setup(vc: AddActivityRoutineDayViewController) {
         backgroundColor = Colors.Neutral.white
         
         self.vc = vc
@@ -37,8 +37,8 @@ class AddActivityRoutineTimeView: UIView {
         setupConstraints()
     }
     
-    private func setupNavigationBar(vc: AddActivityRoutimeTimeViewController) {
-        vc.title = "Waktu Rutinitas"
+    private func setupNavigationBar(vc: AddActivityRoutineDayViewController) {
+        vc.title = "Hari Rutinitas"
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(didFinishButtonClicked))
     }
     

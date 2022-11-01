@@ -14,7 +14,7 @@ extension Date {
         return dateformat.string(from: self)
     }
     
-    func generateTimestampForFilename() -> String {
+    static func generateTimestampForFilename() -> String {
         let date = Date()
         let calendar = Calendar.current
 
@@ -25,8 +25,9 @@ extension Date {
         let hour = calendar.component(.hour, from: date)
         let minute = calendar.component(.minute, from: date)
         let second = calendar.component(.second, from: date)
+        let nanoSecond = calendar.component(.nanosecond, from: date)
 
-        let timestamp = "Nuro_\(year)\(month)\(day)_\(hour)\(minute)\(second)"
+        let timestamp = "Nuro_\(year)\(month)\(day)_\(hour)\(minute)\(second)\(nanoSecond)"
         
         return timestamp
     }

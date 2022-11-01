@@ -70,7 +70,6 @@ class ParentRoutineView: UIView {
     }
     
     @objc private func didAddButtonClicked() {
-        delegate.printText(text: "Add Button Clicked")
         delegate.presentViewController(dest: ParentRoutineAddActivityViewController())
     }
     
@@ -82,7 +81,8 @@ class ParentRoutineView: UIView {
     }
     
     @objc func segmentedValueChanged() {
-        delegate?.printText(text: "Selected segmented \(segmentedControl.selectedSegmentIndex)")
+        delegate.loadActivitiesForDay(dayId: segmentedControl.selectedSegmentIndex+1)
+        tableView.reloadData()
     }
     
     private func setupConstraint() {
@@ -93,7 +93,7 @@ class ParentRoutineView: UIView {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
             make.left.right.equalToSuperview()
-            make.height.equalTo(600)
+            make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
 }

@@ -84,7 +84,7 @@ class ActivitiesTableViewCell: UITableViewCell {
     }
     
     func configure(model: Activity) {
-        cellImageView.image = UIImage(data: model.activityImage ?? Data())
+        cellImageView.image = Document.getImageFromDocument(imageURL: model.activityImageURL)
         titleLabel.text = model.activityName
         descLabel.text = model.activityDesc
         categoryLabel.text = model.category?.categoryName

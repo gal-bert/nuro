@@ -16,18 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Otin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2g-CE-vBu">
-                                <rect key="frame" x="356.5" y="494" width="55" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="otin-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Uiv-yi-bs3">
+                                <rect key="frame" x="234" y="362" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="9rO-ar-KE2"/>
+                                    <constraint firstAttribute="width" constant="300" id="NSo-ez-MCb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="H2g-CE-vBu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4mX-8J-UdZ"/>
-                            <constraint firstItem="H2g-CE-vBu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xeS-UX-OaT"/>
+                            <constraint firstItem="Uiv-yi-bs3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9gF-Um-qHd"/>
+                            <constraint firstItem="Uiv-yi-bs3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FpF-8d-D4L"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,4 +37,7 @@
             <point key="canvasLocation" x="52.34375" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="otin-logo" width="2560" height="1440"/>
+    </resources>
 </document>

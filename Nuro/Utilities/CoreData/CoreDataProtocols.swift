@@ -14,9 +14,9 @@ protocol CategoryRepository {
 }
 
 protocol ActivityRepository {
-    func add(name: String, desc: String, image: UIImage, to category: Category)
+    func add(name: String, desc: String, imageURL: String, to category: Category)
     func getActivitiesOfCategory(category: Category) -> [Activity]
-    func update(activity: Activity, newName: String, newDesc: String, newImage: UIImage, newCategory: Category)
+    func update(activity: Activity, newName: String, newDesc: String, newImageURL: String, newCategory: Category)
     func delete(activity: Activity)
 }
 

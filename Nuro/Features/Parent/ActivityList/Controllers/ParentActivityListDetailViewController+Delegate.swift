@@ -8,8 +8,12 @@
 import UIKit
 
 extension ParentActivityListDetailViewController: ParentActivityListDetailDelegate {
-    func printText(text: String) {
-        viewModel.printText(text: text)
+    func presentViewController(dest: UIViewController) {
+        let vc = UINavigationController(rootViewController: dest)
+        vc.isModalInPresentation = true
+        vc.modalPresentationStyle = .formSheet
+        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
+        present(vc, animated: true)
     }
     
     func dismissViewController() {

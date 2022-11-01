@@ -9,8 +9,29 @@ import Foundation
 
 class ParentRoutineViewModel {
     
-    func printText(text: String) {
-        print("\(text)")
+    var routineHeaderRepo = RoutineHeaderLocalRepository.shared
+    var routineDetailRepo = RoutineDetailLocalRepository.shared
+    
+    var morningActivities = [RoutineDetail]()
+    var afternoonActivities = [RoutineDetail]()
+    var eveningActivities = [RoutineDetail]()
+    
+    var routineHeaders = [RoutineHeader]()
+    
+    func loadAll(dayId: Int) {
+        routineHeaders = routineHeaderRepo.getAll()
+        
+        loadActivities(dayId: dayId)
+
+        // 1. load all activities
+        // 2. Process to divide the data 3 section
     }
     
+    func loadActivities(dayId: Int) {
+        let startIndex = (dayId-1) * 3
+        
+        morningActivities = routineDetailRepo.getRoutineDetails(of: routineHeaders[startIndex])
+        afternoonActivities = routineDetailRepo.getRoutineDetails(of: routineHeaders[startIndex+1])
+        eveningActivities = routineDetailRepo.getRoutineDetails(of: routineHeaders[startIndex+2])
+    }
 }

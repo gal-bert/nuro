@@ -56,9 +56,9 @@ class ParentActivityListView: UIView {
     
     private func setupConstraints() {
         collectionViewFolder.snp.makeConstraints { make in
-            make.top.bottom.equalTo(safeAreaLayoutGuide).inset(23)
+            make.top.equalTo(safeAreaLayoutGuide).inset(23)
             make.left.right.equalTo(self).inset(25)
-            make.height.equalTo(3 * CollectionViewAttributes.collectionViewFolderCellHeight)
+            make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
     

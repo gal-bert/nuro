@@ -9,7 +9,7 @@ import UIKit
 
 protocol ParentRoutineDelegate {
     func presentViewController(dest: UIViewController)
-    func printText(text: String)
+    func loadActivitiesForDay(dayId: Int)
 }
 
 protocol ParentRoutineAddActivityDelegate {
@@ -18,6 +18,11 @@ protocol ParentRoutineAddActivityDelegate {
 }
 
 protocol ParentRoutineAddActivityRoutineTimeDelegate {
-    func dismissViewController()
+    func popViewController()
+    func pushViewController(dest: UIViewController)
+}
+
+protocol ParentRoutineAddActivityRoutineDayDelegate {
+    func popViewController()
     func pushViewController(dest: UIViewController)
 }
