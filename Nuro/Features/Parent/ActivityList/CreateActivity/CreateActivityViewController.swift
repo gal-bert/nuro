@@ -17,7 +17,6 @@ class CreateActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createActivityView.setup(vc: self)
-        print(category?.categoryName)
     }
 
     override func loadView() {
