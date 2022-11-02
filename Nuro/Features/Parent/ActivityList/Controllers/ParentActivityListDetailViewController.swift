@@ -11,7 +11,6 @@ class ParentActivityListDetailViewController: UIViewController {
     
     let parentActivityListDetailView = ParentActivityListDetailView()
     let viewModel = ParentActivityListDetailViewModel()
-    var navTitle = ""
     
     
     override func viewDidLoad() {
