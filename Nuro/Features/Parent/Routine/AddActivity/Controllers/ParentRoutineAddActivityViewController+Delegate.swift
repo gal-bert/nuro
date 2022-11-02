@@ -15,6 +15,13 @@ extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityDelega
     func pushViewController(dest: UIViewController) {
         navigationController?.pushViewController(dest, animated: true)
     }
-    
-    
+}
+
+extension ParentRoutineAddActivityViewController: ParentRoutineDataDelegate {
+    func sendResult(times: [Int]) {
+        
+        var timesSorted = times
+        timesSorted = timesSorted.sorted()
+        parentRoutineAddActivityView.waktuRutinitasButton.rightLabel.text = TimeToIdConverter.idToTime(times: timesSorted)
+    }
 }

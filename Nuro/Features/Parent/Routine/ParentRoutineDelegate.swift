@@ -17,6 +17,10 @@ protocol ParentRoutineAddActivityDelegate {
     func pushViewController(dest: UIViewController)
 }
 
+protocol ParentRoutineDataDelegate {
+    func sendResult(times: [Int])
+}
+
 protocol ParentRoutineAddActivityRoutineTimeDelegate {
     func popViewController()
     func pushViewController(dest: UIViewController)

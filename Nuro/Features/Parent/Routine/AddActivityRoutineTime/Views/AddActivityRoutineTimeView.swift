@@ -18,6 +18,7 @@ class AddActivityRoutineTimeView: UIView {
     }()
     
     var delegate: ParentRoutineAddActivityRoutineTimeDelegate!
+    var delegateData: ParentRoutineDataDelegate!
     var vc: AddActivityRoutimeTimeViewController!
     
     func setup(vc: AddActivityRoutimeTimeViewController) {
@@ -43,6 +44,14 @@ class AddActivityRoutineTimeView: UIView {
     }
     
     @objc func didFinishButtonClicked() {
+        let selectedCell = tableView.indexPathsForSelectedRows ?? []
+        var tempArr = [Int]()
+        
+        for i in selectedCell {
+            tempArr.append(i.row)
+        }
+        
+        delegateData.sendResult(times: tempArr)
         delegate.popViewController()
     }
     

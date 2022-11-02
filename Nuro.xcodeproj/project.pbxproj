@@ -80,6 +80,7 @@
 		3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */; };
 		3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */; };
 		3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */; };
+		3F3BD22C29116EA100295A57 /* TimeToIdConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BD22B29116EA100295A57 /* TimeToIdConverter.swift */; };
 		3F59A36D2905AC1900F1877B /* ParentRoutineAddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F59A36C2905AC1900F1877B /* ParentRoutineAddActivityViewController.swift */; };
 		3F59A3712905AECE00F1877B /* ParentRoutineAddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F59A3702905AECE00F1877B /* ParentRoutineAddActivityView.swift */; };
 		3F59A3752905B31500F1877B /* ParentRoutineAddActivityViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F59A3742905B31500F1877B /* ParentRoutineAddActivityViewController+Delegate.swift */; };
@@ -252,6 +253,7 @@
 		3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewController.swift; sourceTree = "<group>"; };
 		3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineView.swift; sourceTree = "<group>"; };
 		3F0F385D28ED3DA800C1EC68 /* ParentRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewModel.swift; sourceTree = "<group>"; };
+		3F3BD22B29116EA100295A57 /* TimeToIdConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeToIdConverter.swift; sourceTree = "<group>"; };
 		3F59A36C2905AC1900F1877B /* ParentRoutineAddActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineAddActivityViewController.swift; sourceTree = "<group>"; };
 		3F59A3702905AECE00F1877B /* ParentRoutineAddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineAddActivityView.swift; sourceTree = "<group>"; };
 		3F59A3742905B31500F1877B /* ParentRoutineAddActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentRoutineAddActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
@@ -845,6 +847,7 @@
 				0CF2C21128F4874C00D91E79 /* TextAttachments.swift */,
 				0C4A801C28F7D31600890495 /* ColorRGBA.swift */,
 				5F59FFAA29106AAE00AD05F4 /* Document.swift */,
+				3F3BD22B29116EA100295A57 /* TimeToIdConverter.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1454,6 +1457,7 @@
 				0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */,
 				5F3198EF2905F2E000E7FBE1 /* ChildStarterView.swift in Sources */,
 				5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */,
+				3F3BD22C29116EA100295A57 /* TimeToIdConverter.swift in Sources */,
 				0CAFDA5328FE568C0035F252 /* ParentTodayActivityEditOrderView.swift in Sources */,
 				5F2158152908C0B900EA5085 /* ChildActivityViewController.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
