@@ -33,7 +33,7 @@ class CreateActivityView: UIView {
         return view
     }()
     
-    private lazy var nameTextField: UITextField = {
+    lazy var nameTextField: UITextField = {
         let view = UITextField()
         view.backgroundColor = Colors.Brand.floralWhite
         view.layer.borderColor = Colors.Brand.jasmine.cgColor
@@ -73,7 +73,7 @@ class CreateActivityView: UIView {
         
         
         parentStackView.addArrangedSubview(topStackView)
-        parentStackView.addArrangedSubview(categoryContainer)
+//        parentStackView.addArrangedSubview(categoryContainer)
         
         topStackView.addArrangedSubview(selectImageSelector)
         topStackView.addArrangedSubview(rightStackView)

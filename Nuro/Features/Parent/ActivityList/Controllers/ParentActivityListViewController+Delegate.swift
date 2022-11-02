@@ -58,7 +58,6 @@ extension ParentActivityListViewController: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected Cell : \(indexPath.row)")
         let dest = ParentActivityListDetailViewController()
         dest.viewModel.categorySelected = viewModel.categoryActivities[indexPath.item]
         navigationController?.pushViewController(dest, animated: true)

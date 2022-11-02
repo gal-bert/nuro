@@ -17,6 +17,7 @@ class ParentActivityListDetailViewController: UIViewController {
         super.viewDidLoad()
         parentActivityListDetailView.setup(vc: self)
         viewModel.loadAllActivity()
+        title = viewModel.categorySelected?.categoryName
     }
     
     override func loadView() {

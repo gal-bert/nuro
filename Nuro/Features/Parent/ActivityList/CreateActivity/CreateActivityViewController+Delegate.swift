@@ -66,7 +66,14 @@ extension CreateActivityViewController: CreateActivityDelegate {
     }
     
     func saveActivity() {
-        // TODO: Insert to core data
+        
+        ActivityLocalRepository.shared.add(
+            name: createActivityView.nameTextField.text ?? "",
+            desc: createActivityView.descTextArea.text ?? "",
+            imageURL: Document.saveToDocument(image: createActivityView.selectImageSelector.imageView.image),
+            to: category ?? Category()
+        )
+        delegate.reloadData()
         dismissViewController()
     }
     
