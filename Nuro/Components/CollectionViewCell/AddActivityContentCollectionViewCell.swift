@@ -16,7 +16,7 @@ class AddActivityContentCollectionViewCell: UICollectionViewCell {
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
-        view.image = UIImage(named: "dummy")
+//        view.image = UIImage(named: "dummy")
         return view
     }()
     
@@ -51,6 +51,10 @@ class AddActivityContentCollectionViewCell: UICollectionViewCell {
         titleLabel.textColor = Colors.Text.seaweed
         addMultipleSubviews(views: imageView, titleLabel)
         
+    }
+
+    func configure() {
+
     }
     
     private func setupConstraints() {

@@ -14,3 +14,7 @@ protocol ParentActivityListDelegate {
 protocol AddActivityDelegate {
     func updateSearchResults(text: String)
 }
+
+protocol AddActivityToRoutineDelegate {
+    func addActivityToRoutine(activity: Activity)
+}

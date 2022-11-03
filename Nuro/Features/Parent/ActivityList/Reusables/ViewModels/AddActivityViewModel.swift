@@ -13,9 +13,8 @@ class AddActivityViewModel {
     
     let categoryRepository = CategoryLocalRepository.shared
     let activityRepository = ActivityLocalRepository.shared
-    let disposeBag = DisposeBag()
-    
-    let activities = PublishSubject<[Activity]>()
+    var activities = [Activity]()
+
     
     func loadSegmentedControlItems(vc: AddActivityViewController) {
         let categories = categoryRepository.getAll()
@@ -23,18 +22,14 @@ class AddActivityViewModel {
         for category in categories {
             component.insertSegment(withTitle: category.categoryName, at: component.numberOfSegments, animated: false)
         }
-        print(component.numberOfSegments)
     }
     
-//    func getNumberOfActivities() -> Observable<Int> {
-//        let data = Observable<Int>.just(activityRepository.getAllActivities().count)
-//        return data
-//    }
+    func getNumberOfActivities() -> Int {
+        return activities.count
+    }
     
     func loadAllActivities() {
-        let query = activityRepository.getAllActivities()
-        activities.onNext(query)
-        activities.onCompleted()
+        activities = activityRepository.getAllActivities()
     }
     
     func filterFromSearch() {

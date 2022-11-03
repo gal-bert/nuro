@@ -7,6 +7,12 @@
 
 import UIKit
 
+extension ParentRoutineAddActivityViewController: AddActivityToRoutineDelegate {
+    func addActivityToRoutine(activity: Activity) {
+        parentRoutineAddActivityView.iconChooseImageView.image = Document.getImageFromDocument(imageURL: activity.activityImageURL)
+    }
+}
+
 extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityDelegate {
     func dismissViewController() {
         self.dismiss(animated: true)

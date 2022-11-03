@@ -71,7 +71,9 @@ class ParentRoutineAddActivityView: UIView {
     }
     
     @objc private func didTapChooseActivity(_ gesture: UITapGestureRecognizer) {
-        delegate.pushViewController(dest: AddActivityViewController())
+        let dest = AddActivityViewController()
+        dest.delegate = vc
+        delegate.pushViewController(dest: dest)
     }
     
     @objc private func didTapRoutineTime(_ gesture: UITapGestureRecognizer) {

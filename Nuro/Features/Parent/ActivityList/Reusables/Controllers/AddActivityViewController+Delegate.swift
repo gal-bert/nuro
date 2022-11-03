@@ -26,39 +26,39 @@ extension AddActivityViewController: SearchControllerDelegate {
     }
 }
 
-extension AddActivityViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension AddActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        let activities = viewModel.loadAllActivities()
-//
-//        if indexPath.row == 0 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityButtonCollectionViewCell.identifier, for: indexPath) as! AddActivityButtonCollectionViewCell
-//            return cell
-//        }
-//        else {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityContentCollectionViewCell.identifier, for: indexPath) as! AddActivityContentCollectionViewCell
-//            cell.titleLabel.text = activities[indexPath.item].activityName
-//            cell.imageView.image = UIImage(data: activities[indexPath.item].activityImage!)
-//
-//            return cell
-//        }
-//
-//        return UICollectionViewCell()
-//    }
-    
-    
-    //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    //        let count = viewModel.getNumberOfActivities().subscribe(onNext: {_ in })
-    //        return count
-    //    }
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    let activities = viewModel.activities
+
+    if indexPath.row == 0 {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityButtonCollectionViewCell.identifier, for: indexPath) as! AddActivityButtonCollectionViewCell
+        return cell
+    }
+    else {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityContentCollectionViewCell.identifier, for: indexPath) as! AddActivityContentCollectionViewCell
+        cell.titleLabel.text = activities[indexPath.item].activityName
+        cell.imageView.image = Document.getImageFromDocument(imageURL: activities[indexPath.item].activityImageURL)
+
+        return cell
+    }
+
+    return UICollectionViewCell()
+}
+
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.getNumberOfActivities()
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             // TODO: Push view to create new activity
         }
         else {
-            // TODO: Add to core data
+            delegate?.addActivityToRoutine(activity: viewModel.activities[indexPath.item])
+            navigationController?.popViewController(animated: true)
         }
     }
     
