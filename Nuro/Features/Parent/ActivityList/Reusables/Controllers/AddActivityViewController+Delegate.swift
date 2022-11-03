@@ -16,8 +16,12 @@ extension AddActivityViewController: AddActivityDelegate {
     }
 
     func filterCategory() {
-        viewModel.filteredActivities = viewModel.activities.filter {
-            $0.category?.categoryName?.contains(addActivityView.segmentedControl.titleForSegment(at: addActivityView.segmentedControl.selectedSegmentIndex) ?? "") ?? true
+        if addActivityView.segmentedControl.selectedSegmentIndex > 0{
+            viewModel.filteredActivities = viewModel.activities.filter {
+                $0.category?.categoryName?.contains(addActivityView.segmentedControl.titleForSegment(at: addActivityView.segmentedControl.selectedSegmentIndex) ?? "") ?? true
+            }
+        } else {
+            viewModel.filteredActivities = viewModel.activities
         }
         addActivityView.collectionView.reloadData()
     }
