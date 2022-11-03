@@ -48,5 +48,18 @@ class ParentRoutineViewModel {
         }
     }
 
+    func getActivityNameFromCell(section:Int, row: Int) -> String {
+        switch section {
+        case 0: //Morning
+            return morningActivities[row].activity?.activityName ?? ""
+        case 1: //Afternoon
+            return afternoonActivities[row].activity?.activityName ?? ""
+        case 2: //Evening
+            return eveningActivities[row].activity?.activityName ?? ""
+        default:
+            return ""
+        }
+    }
+
 
 }
