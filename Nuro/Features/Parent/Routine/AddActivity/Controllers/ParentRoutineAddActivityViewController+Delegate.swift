@@ -23,11 +23,18 @@ extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityDelega
     }
 }
 
-extension ParentRoutineAddActivityViewController: ParentRoutineDataDelegate {
-    func sendResult(times: [Int]) {
+extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityTimeDataDelegate, ParentRoutineAddActivityDayDataDelegate {
+    func sendTimesResult(times: [Int]) {
         
         var timesSorted = times
         timesSorted = timesSorted.sorted()
         parentRoutineAddActivityView.waktuRutinitasButton.rightLabel.text = TimeToIdConverter.idToTime(times: timesSorted)
+    }
+    
+    func sendDaysResult(days: [Int]) {
+        
+        var daysSorted = days
+        daysSorted = daysSorted.sorted()
+        parentRoutineAddActivityView.hariRutinitasButton.rightLabel.text = DayToIdConverted.idToDay(days: daysSorted)
     }
 }

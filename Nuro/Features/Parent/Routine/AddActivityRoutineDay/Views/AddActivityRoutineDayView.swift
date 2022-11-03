@@ -18,6 +18,7 @@ class AddActivityRoutineDayView: UIView {
     }()
     
     var delegate: ParentRoutineAddActivityRoutineDayDelegate!
+    var delegateData: ParentRoutineAddActivityDayDataDelegate!
     var vc: AddActivityRoutineDayViewController!
     
     func setup(vc: AddActivityRoutineDayViewController) {
@@ -43,6 +44,14 @@ class AddActivityRoutineDayView: UIView {
     }
     
     @objc func didFinishButtonClicked() {
+        let selectedCell = tableView.indexPathsForSelectedRows ?? []
+        var tempArr = [Int]()
+        
+        for i in selectedCell {
+            tempArr.append(i.row)
+        }
+        
+        delegateData.sendDaysResult(days: tempArr)
         delegate.popViewController()
     }
     

@@ -85,7 +85,9 @@ class ParentRoutineAddActivityView: UIView {
 
     @objc private func didTapRoutineDay(_ gesture: UITapGestureRecognizer) {
         // TODO: Push View Controller to Table View of Day Selection
-        delegate.pushViewController(dest: AddActivityRoutineDayViewController())
+        let dest = AddActivityRoutineDayViewController()
+        dest.addActivityRoutineDayView.delegateData = vc
+        delegate.pushViewController(dest: dest)
     }
     
     func setupNavigationBar(vc: ParentRoutineAddActivityViewController) {
