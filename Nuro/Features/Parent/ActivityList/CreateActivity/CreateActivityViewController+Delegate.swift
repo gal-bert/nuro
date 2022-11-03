@@ -7,6 +7,22 @@
 
 import UIKit
 
+extension CreateActivityViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let text = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
+        
+        if text.isEmpty {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        } else {
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        return true
+    }
+    
+}
+
 extension CreateActivityViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
