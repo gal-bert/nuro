@@ -14,7 +14,7 @@ class AddActivityViewModel {
     let categoryRepository = CategoryLocalRepository.shared
     let activityRepository = ActivityLocalRepository.shared
     var activities = [Activity]()
-
+    var filteredActivities = [Activity]()
     
     func loadSegmentedControlItems(vc: AddActivityViewController) {
         let categories = categoryRepository.getAll()
@@ -22,10 +22,6 @@ class AddActivityViewModel {
         for category in categories {
             component.insertSegment(withTitle: category.categoryName, at: component.numberOfSegments, animated: false)
         }
-    }
-    
-    func getNumberOfActivities() -> Int {
-        return activities.count
     }
     
     func loadAllActivities() {

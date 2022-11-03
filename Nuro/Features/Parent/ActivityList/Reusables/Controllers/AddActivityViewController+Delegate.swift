@@ -10,14 +10,18 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-//extension AddActivityViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for searchController: UISearchController) {
-//        guard let text = searchController.searchBar.text else {
-//            return
-//        }
-//        print(text)
-//    }
-//}
+extension AddActivityViewController: AddActivityDelegate {
+    func updateSearchResults(text: String) {
+        print("SEARCH: \(text)")
+    }
+
+    func filterCategory() {
+        viewModel.filteredActivities = viewModel.activities.filter {
+            $0.category?.categoryName?.contains(addActivityView.segmentedControl.titleForSegment(at: addActivityView.segmentedControl.selectedSegmentIndex) ?? "") ?? true
+        }
+        addActivityView.collectionView.reloadData()
+    }
+}
 
 extension AddActivityViewController: SearchControllerDelegate {
     func getResult(text: String) {
@@ -30,7 +34,7 @@ extension AddActivityViewController: UICollectionViewDelegate, UICollectionViewD
     
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-    let activities = viewModel.activities
+    var activities = addActivityView.segmentedControl.selectedSegmentIndex > 0 ? viewModel.filteredActivities : viewModel.activities
 
     if indexPath.row == 0 {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityButtonCollectionViewCell.identifier, for: indexPath) as! AddActivityButtonCollectionViewCell
@@ -47,9 +51,9 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     return UICollectionViewCell()
 }
 
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getNumberOfActivities()
+        var activities = addActivityView.segmentedControl.selectedSegmentIndex > 0 ? viewModel.filteredActivities : viewModel.activities
+        return activities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
