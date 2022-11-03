@@ -97,7 +97,7 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \(viewModel.getActivityNameFromCell(section: indexPath.section, row: indexPath.row)) dari rutinitas ini?") {
+            let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(viewModel.getActivityNameFromCell(section: indexPath.section, row: indexPath.row))\" dari rutinitas ini?") {
                 //TODO: Add delete functions here
                 RoutineDetailLocalRepository.shared.delete(routineDetail: self.viewModel.getRoutineDetail(section: indexPath.section, row: indexPath.row))
                 self.viewModel.loadActivities(dayId: self.parentRoutineView.segmentedControl.selectedSegmentIndex+1)
