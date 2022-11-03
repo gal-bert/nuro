@@ -11,6 +11,7 @@ extension ParentRoutineAddActivityViewController: AddActivityToRoutineDelegate {
     func addActivityToRoutine(activity: Activity) {
         self.activity = activity
         parentRoutineAddActivityView.iconChooseImageView.image = Document.getImageFromDocument(imageURL: activity.activityImageURL)
+        parentRoutineAddActivityView.selectImageLabel.text = activity.activityName
     }
 }
 

@@ -61,7 +61,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
             // TODO: Push view to create new activity
         }
         else {
-            delegate?.addActivityToRoutine(activity: viewModel.activities[indexPath.item])
+            delegate?.addActivityToRoutine(activity: viewModel.filteredActivities[indexPath.item])
             navigationController?.popViewController(animated: true)
         }
     }
