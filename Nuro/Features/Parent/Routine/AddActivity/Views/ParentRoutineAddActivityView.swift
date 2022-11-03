@@ -71,7 +71,9 @@ class ParentRoutineAddActivityView: UIView {
     }
     
     @objc private func didTapChooseActivity(_ gesture: UITapGestureRecognizer) {
-        delegate.pushViewController(dest: AddActivityViewController())
+        let dest = AddActivityViewController()
+        dest.delegate = vc
+        delegate.pushViewController(dest: dest)
     }
     
     @objc private func didTapRoutineTime(_ gesture: UITapGestureRecognizer) {
@@ -101,7 +103,7 @@ class ParentRoutineAddActivityView: UIView {
     }
     
     @objc func didAddButtonClicked() {
-        // TODO: Save activity to routine with CoreData
+        delegate.saveActivity()
     }
     
     func setupConstraints() {

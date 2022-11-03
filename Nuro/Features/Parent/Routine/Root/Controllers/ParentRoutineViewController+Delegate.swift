@@ -7,6 +7,13 @@
 
 import UIKit
 
+extension ParentRoutineViewController: ReloadDelegate {
+    func reloadView() {
+        viewModel.loadActivities(dayId: parentRoutineView.segmentedControl.selectedSegmentIndex+1)
+        parentRoutineView.tableView.reloadData()
+    }
+}
+
 extension ParentRoutineViewController: ParentRoutineDelegate {
     func loadActivitiesForDay(dayId: Int) {
         viewModel.loadActivities(dayId: dayId)
@@ -88,9 +95,13 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
-            let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
+            let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(viewModel.getActivityNameFromCell(section: indexPath.section, row: indexPath.row))\" dari rutinitas ini?") {
                 //TODO: Add delete functions here
+                RoutineDetailLocalRepository.shared.delete(routineDetail: self.viewModel.getRoutineDetail(section: indexPath.section, row: indexPath.row))
+                self.viewModel.loadActivities(dayId: self.parentRoutineView.segmentedControl.selectedSegmentIndex+1)
+                self.parentRoutineView.tableView.reloadData()
             }
             present(alert, animated: true)
         }

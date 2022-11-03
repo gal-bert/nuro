@@ -10,14 +10,18 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-//extension AddActivityViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for searchController: UISearchController) {
-//        guard let text = searchController.searchBar.text else {
-//            return
-//        }
-//        print(text)
-//    }
-//}
+extension AddActivityViewController: AddActivityDelegate {
+    func updateSearchResults(text: String) {
+        print("SEARCH: \(text)")
+    }
+
+    func filterCategory() {
+        viewModel.filteredActivities = viewModel.activities.filter {
+            $0.category?.categoryName?.contains(addActivityView.segmentedControl.titleForSegment(at: addActivityView.segmentedControl.selectedSegmentIndex) ?? "") ?? true
+        }
+        addActivityView.collectionView.reloadData()
+    }
+}
 
 extension AddActivityViewController: SearchControllerDelegate {
     func getResult(text: String) {
@@ -26,39 +30,39 @@ extension AddActivityViewController: SearchControllerDelegate {
     }
 }
 
-extension AddActivityViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension AddActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        let activities = viewModel.loadAllActivities()
-//
-//        if indexPath.row == 0 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityButtonCollectionViewCell.identifier, for: indexPath) as! AddActivityButtonCollectionViewCell
-//            return cell
-//        }
-//        else {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityContentCollectionViewCell.identifier, for: indexPath) as! AddActivityContentCollectionViewCell
-//            cell.titleLabel.text = activities[indexPath.item].activityName
-//            cell.imageView.image = UIImage(data: activities[indexPath.item].activityImage!)
-//
-//            return cell
-//        }
-//
-//        return UICollectionViewCell()
-//    }
-    
-    
-    //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    //        let count = viewModel.getNumberOfActivities().subscribe(onNext: {_ in })
-    //        return count
-    //    }
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    var activities = addActivityView.segmentedControl.selectedSegmentIndex > 0 ? viewModel.filteredActivities : viewModel.activities
+
+    if indexPath.row == 0 {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityButtonCollectionViewCell.identifier, for: indexPath) as! AddActivityButtonCollectionViewCell
+        return cell
+    }
+    else {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityContentCollectionViewCell.identifier, for: indexPath) as! AddActivityContentCollectionViewCell
+        cell.titleLabel.text = activities[indexPath.item].activityName
+        cell.imageView.image = Document.getImageFromDocument(imageURL: activities[indexPath.item].activityImageURL)
+
+        return cell
+    }
+
+    return UICollectionViewCell()
+}
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var activities = addActivityView.segmentedControl.selectedSegmentIndex > 0 ? viewModel.filteredActivities : viewModel.activities
+        return activities.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             // TODO: Push view to create new activity
         }
         else {
-            // TODO: Add to core data
+            delegate?.addActivityToRoutine(activity: viewModel.activities[indexPath.item])
+            navigationController?.popViewController(animated: true)
         }
     }
     
