@@ -103,7 +103,7 @@ class ParentRoutineAddActivityView: UIView {
     }
     
     @objc func didAddButtonClicked() {
-        // TODO: Save activity to routine with CoreData
+        delegate.saveActivity()
     }
     
     func setupConstraints() {

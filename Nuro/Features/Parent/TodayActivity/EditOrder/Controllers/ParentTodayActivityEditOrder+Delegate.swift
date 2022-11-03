@@ -10,7 +10,7 @@ import UIKit
 extension ParentTodayActivityEditOrderViewController: ParentTodayActivityEditOrderDelegate {
     func dismissViewController() {
         self.dismiss(animated: true)
-        reloadDelegate.reloadTableView()
+        reloadDelegate.reloadView()
     }
     
     func pushViewController(dest: UIViewController) {

@@ -7,6 +7,13 @@
 
 import UIKit
 
+extension ParentRoutineViewController: ReloadDelegate {
+    func reloadView() {
+        viewModel.loadActivities(dayId: parentRoutineView.segmentedControl.selectedSegmentIndex+1)
+        parentRoutineView.tableView.reloadData()
+    }
+}
+
 extension ParentRoutineViewController: ParentRoutineDelegate {
     func loadActivitiesForDay(dayId: Int) {
         viewModel.loadActivities(dayId: dayId)

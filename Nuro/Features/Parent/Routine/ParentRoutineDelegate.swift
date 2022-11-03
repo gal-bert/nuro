@@ -15,6 +15,7 @@ protocol ParentRoutineDelegate {
 protocol ParentRoutineAddActivityDelegate {
     func dismissViewController()
     func pushViewController(dest: UIViewController)
+    func saveActivity()
 }
 
 protocol ParentRoutineAddActivityTimeDataDelegate {

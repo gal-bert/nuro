@@ -10,6 +10,11 @@ import UIKit
 class ParentRoutineAddActivityViewController: UIViewController {
     
     let parentRoutineAddActivityView = ParentRoutineAddActivityView()
+    var activity: Activity?
+    var days: [Int]?
+    var times: [Int]?
+    var reloadDelegate: ReloadDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isModalInPresentation = true
