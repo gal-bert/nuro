@@ -17,8 +17,12 @@ protocol ParentRoutineAddActivityDelegate {
     func pushViewController(dest: UIViewController)
 }
 
-protocol ParentRoutineDataDelegate {
-    func sendResult(times: [Int])
+protocol ParentRoutineAddActivityTimeDataDelegate {
+    func sendTimesResult(times: [Int])
+}
+
+protocol ParentRoutineAddActivityDayDataDelegate {
+    func sendDaysResult(days: [Int])
 }
 
 protocol ParentRoutineAddActivityRoutineTimeDelegate {

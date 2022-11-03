@@ -89,6 +89,7 @@
 		3F9664BC290EC67A0056B6D6 /* AddActivityRoutimeTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9664BB290EC67A0056B6D6 /* AddActivityRoutimeTimeViewController.swift */; };
 		3F9664BE290EC6AA0056B6D6 /* AddActivityRoutineTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9664BD290EC6AA0056B6D6 /* AddActivityRoutineTimeView.swift */; };
 		3F9664C0290EC87D0056B6D6 /* AddActivityRoutineTimeViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9664BF290EC87D0056B6D6 /* AddActivityRoutineTimeViewController+Delegate.swift */; };
+		3F98CCC22912855400400762 /* DayToIdConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98CCC12912855400400762 /* DayToIdConverter.swift */; };
 		3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F996A4D28EDAEA600C343CC /* ParentRoutineDelegate.swift */; };
 		3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */; };
 		3FBAB76C290F70390066E04D /* AddActivityRoutineTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBAB76B290F70390066E04D /* AddActivityRoutineTimeViewModel.swift */; };
@@ -262,6 +263,7 @@
 		3F9664BB290EC67A0056B6D6 /* AddActivityRoutimeTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityRoutimeTimeViewController.swift; sourceTree = "<group>"; };
 		3F9664BD290EC6AA0056B6D6 /* AddActivityRoutineTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityRoutineTimeView.swift; sourceTree = "<group>"; };
 		3F9664BF290EC87D0056B6D6 /* AddActivityRoutineTimeViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddActivityRoutineTimeViewController+Delegate.swift"; sourceTree = "<group>"; };
+		3F98CCC12912855400400762 /* DayToIdConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayToIdConverter.swift; sourceTree = "<group>"; };
 		3F996A4D28EDAEA600C343CC /* ParentRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineDelegate.swift; sourceTree = "<group>"; };
 		3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		3FBAB76B290F70390066E04D /* AddActivityRoutineTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddActivityRoutineTimeViewModel.swift; path = Nuro/Features/Parent/Routine/AddActivityRoutineTime/ViewModels/AddActivityRoutineTimeViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -848,6 +850,7 @@
 				0C4A801C28F7D31600890495 /* ColorRGBA.swift */,
 				5F59FFAA29106AAE00AD05F4 /* Document.swift */,
 				3F3BD22B29116EA100295A57 /* TimeToIdConverter.swift */,
+				3F98CCC12912855400400762 /* DayToIdConverter.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1459,6 +1462,7 @@
 				5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */,
 				3F3BD22C29116EA100295A57 /* TimeToIdConverter.swift in Sources */,
 				0CAFDA5328FE568C0035F252 /* ParentTodayActivityEditOrderView.swift in Sources */,
+				3F98CCC22912855400400762 /* DayToIdConverter.swift in Sources */,
 				5F2158152908C0B900EA5085 /* ChildActivityViewController.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
 				4AA00AD32910E855002CD604 /* Images.swift in Sources */,

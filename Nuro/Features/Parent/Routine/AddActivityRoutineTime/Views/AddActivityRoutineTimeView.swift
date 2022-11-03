@@ -18,7 +18,7 @@ class AddActivityRoutineTimeView: UIView {
     }()
     
     var delegate: ParentRoutineAddActivityRoutineTimeDelegate!
-    var delegateData: ParentRoutineDataDelegate!
+    var delegateData: ParentRoutineAddActivityTimeDataDelegate!
     var vc: AddActivityRoutimeTimeViewController!
     
     func setup(vc: AddActivityRoutimeTimeViewController) {
@@ -51,7 +51,7 @@ class AddActivityRoutineTimeView: UIView {
             tempArr.append(i.row)
         }
         
-        delegateData.sendResult(times: tempArr)
+        delegateData.sendTimesResult(times: tempArr)
         delegate.popViewController()
     }
     
