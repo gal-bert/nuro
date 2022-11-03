@@ -26,6 +26,7 @@ class AddActivityViewModel {
     
     func loadAllActivities() {
         activities = activityRepository.getAllActivities()
+        filteredActivities = activities
     }
     
     func filterFromSearch() {

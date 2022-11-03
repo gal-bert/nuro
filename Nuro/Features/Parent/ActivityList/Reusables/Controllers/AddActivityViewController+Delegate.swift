@@ -16,8 +16,12 @@ extension AddActivityViewController: AddActivityDelegate {
     }
 
     func filterCategory() {
-        viewModel.filteredActivities = viewModel.activities.filter {
-            $0.category?.categoryName?.contains(addActivityView.segmentedControl.titleForSegment(at: addActivityView.segmentedControl.selectedSegmentIndex) ?? "") ?? true
+        if addActivityView.segmentedControl.selectedSegmentIndex > 0{
+            viewModel.filteredActivities = viewModel.activities.filter {
+                $0.category?.categoryName?.contains(addActivityView.segmentedControl.titleForSegment(at: addActivityView.segmentedControl.selectedSegmentIndex) ?? "") ?? true
+            }
+        } else {
+            viewModel.filteredActivities = viewModel.activities
         }
         addActivityView.collectionView.reloadData()
     }
@@ -61,7 +65,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
             // TODO: Push view to create new activity
         }
         else {
-            delegate?.addActivityToRoutine(activity: viewModel.activities[indexPath.item])
+            delegate?.addActivityToRoutine(activity: viewModel.filteredActivities[indexPath.item])
             navigationController?.popViewController(animated: true)
         }
     }
