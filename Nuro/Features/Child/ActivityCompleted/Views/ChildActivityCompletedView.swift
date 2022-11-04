@@ -48,12 +48,14 @@ class ChildActivityCompletedView: UIView {
     private var delegate: ChildActivityCompletedDelegate?
     var animationDelegate: ChildRoutineAnimationDelegate?
     
-    func setup(vc: ChildActivityCompletedViewController) {
+    func setup(vc: ChildActivityCompletedViewController, activityDesc: String) {
         delegate = vc
         
         setupButton()
         setupUI()
         setupConstraints()
+        
+        activityDescLabel.text = activityDesc
         
         Transition.smoothAnimationWithDelay(view: self, subviews: subviews, bgColor: Colors.Neutral.white, delayForViews: [appreciationImage], delayTime: Transition.DelayTime.slightDelay)
     }

@@ -10,11 +10,12 @@ import UIKit
 class ChildActivityCompletedViewController: UIViewController {
 
     private let childActivityCompletedView = ChildActivityCompletedView()
+    var activityDesc: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        childActivityCompletedView.setup(vc: self)
+        childActivityCompletedView.setup(vc: self, activityDesc: activityDesc ?? "")
         navigationItem.setHidesBackButton(true, animated: false)
     }
     
