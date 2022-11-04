@@ -14,7 +14,7 @@ class ChildStarterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        childStarterView.setup()
+        childStarterView.setup(vc: self)
     }
     
     override func loadView() {

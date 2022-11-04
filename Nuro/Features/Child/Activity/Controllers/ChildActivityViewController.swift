@@ -9,14 +9,15 @@ import UIKit
 
 class ChildActivityViewController: UIViewController {
 
-    private let childActivityView = ChildActivityView()
+    let childActivityView = ChildActivityView()
     var activity: Activity?
+    var routineDelegateReference: ChildRoutineViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        activity = RoutineDetailLocalRepository.shared.getRoutineDetails(dayID: 1, timeID: 1)[0].activity
-        childActivityView.setup(model: activity ?? Activity())
+        childActivityView.setup(model: activity ?? Activity(), vc: self)
+        self.navigationItem.setHidesBackButton(true, animated: false)
     }
 
     override func loadView() {

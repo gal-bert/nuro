@@ -42,4 +42,9 @@ extension ChildPinUnlockViewController: ChildPinUnlockViewDelegate {
             childPinUnlockView.clearLastPin(count: viewModel.pin.count)
         }
     }
+    
+    func dismissPage() {
+        Transition.animateTransition(vc: self)
+        navigationController?.popViewController(animated: false)
+    }
 }

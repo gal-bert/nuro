@@ -32,11 +32,17 @@ class ChildActivityView: UIView {
     
     private lazy var doneButton = ChildButton(title: "Aku sudah selesai", height: ScreenSizes.halfScreenHeight / 4)
     
-    func setup(model: Activity) {
+    private var delegate: ChildActivityDelegate?
+    
+    func setup(model: Activity, vc: ChildActivityViewController) {
+        delegate = vc
+        
         setupButton()
         setupUI()
         setupConstraints()
         setupValue(model: model)
+        
+        Transition.smoothAnimationBlack(subviews: subviews)
     }
     
     private func setupButton() {
@@ -44,7 +50,7 @@ class ChildActivityView: UIView {
     }
     
     private func setupUI() {
-        backgroundColor = Colors.Neutral.white
+        backgroundColor = .black
         
         addSubview(activityImage)
         addSubview(labelContainer)
@@ -80,8 +86,7 @@ class ChildActivityView: UIView {
     }
     
     @objc func activityCompleted() {
-        // TODO: Add segue to activity completed
-        // ..
+        delegate?.toActivityCompleted()
     }
 
 }

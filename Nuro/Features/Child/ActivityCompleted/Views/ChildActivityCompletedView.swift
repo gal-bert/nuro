@@ -8,7 +8,7 @@
 import UIKit
 
 class ChildActivityCompletedView: UIView {
-
+    
     private lazy var pageTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
@@ -45,10 +45,19 @@ class ChildActivityCompletedView: UIView {
         return sv
     }()
     
-    func setup() {
+    private var delegate: ChildActivityCompletedDelegate?
+    var animationDelegate: ChildRoutineAnimationDelegate?
+    
+    func setup(vc: ChildActivityCompletedViewController, activityDesc: String) {
+        delegate = vc
+        
         setupButton()
         setupUI()
         setupConstraints()
+        
+        activityDescLabel.text = activityDesc
+        
+        Transition.smoothAnimationWithDelay(view: self, subviews: subviews, bgColor: Colors.Neutral.white, delayForViews: [appreciationImage], delayTime: Transition.DelayTime.slightDelay)
     }
     
     private func setupButton() {
@@ -83,7 +92,7 @@ class ChildActivityCompletedView: UIView {
     }
     
     @objc func nextActivity() {
-        // TODO: Add segue to next activity
-        // ..
+        animationDelegate?.triggerAnimation()
+        delegate?.dismissViewController()
     }
 }
