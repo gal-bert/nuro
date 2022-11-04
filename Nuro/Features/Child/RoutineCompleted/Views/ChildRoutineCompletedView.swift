@@ -100,4 +100,7 @@ class ChildRoutineCompletedView: UIView {
         delegate?.toParentMode()
     }
 
+    func getDelayedView() -> [UIView] {
+        return [parentModeButton, appreciationImage]
+    }
 }

@@ -24,17 +24,15 @@ class ChildRoutineViewController: UIViewController {
         
         childRoutineView.setup(vc: self)
         totalActivity = viewModel.activities.count
-        
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
-            if willBeAnimated {
-                nextActivity()
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if willBeAnimated {
-            nextActivity()
+        Transition.smoothAnimationWithDelay(view: childRoutineView, subviews: childRoutineView.subviews, bgColor: Colors.Neutral.white, delayForViews: childRoutineView.getDelayedView(), delayTime: Transition.DelayTime.fullDelay)
+        
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
+            if willBeAnimated {
+                nextActivity()
+            }
         }
     }
     
@@ -46,6 +44,7 @@ class ChildRoutineViewController: UIViewController {
         isFirstActivityCardHidden  = true
         
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
+            childRoutineView.disableStartButton()
             childRoutineView.animateHideRow()
             viewModel.removeFirstActivity()
             Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [self] timer in
@@ -56,9 +55,11 @@ class ChildRoutineViewController: UIViewController {
                 Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
                     let dest = ChildRoutineCompletedViewController()
                     dest.modalPresentationStyle = .fullScreen
-                    self.navigationController?.pushViewController(dest, animated: true)
+                    dest.modalTransitionStyle = .crossDissolve
+                    
+                    Transition.animateTransition(vc: self)
+                    self.navigationController?.pushViewController(dest, animated: false)
                 }
-                
             }
             
             isFirstActivityCardHidden  = false

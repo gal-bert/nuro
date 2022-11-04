@@ -41,6 +41,8 @@ class ChildActivityView: UIView {
         setupUI()
         setupConstraints()
         setupValue(model: model)
+        
+        Transition.smoothAnimationBlack(subviews: subviews)
     }
     
     private func setupButton() {
@@ -48,7 +50,7 @@ class ChildActivityView: UIView {
     }
     
     private func setupUI() {
-        backgroundColor = Colors.Neutral.white
+        backgroundColor = .black
         
         addSubview(activityImage)
         addSubview(labelContainer)

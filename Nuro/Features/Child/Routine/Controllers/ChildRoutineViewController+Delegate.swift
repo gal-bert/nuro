@@ -19,14 +19,17 @@ extension ChildRoutineViewController: ChildRoutineDelegate {
         dest.modalPresentationStyle = .fullScreen
         dest.routineDelegateReference = self
         dest.activity = viewModel.activities[0].activity
-        navigationController?.pushViewController(dest, animated: true)
+        
+        Transition.animateTransition(vc: self)
+        navigationController?.pushViewController(dest, animated: false)
     }
     
     func toPinUnlockView() {
         let dest = ChildPinUnlockViewController()
         dest.modalPresentationStyle = .fullScreen
-        dest.modalTransitionStyle = .crossDissolve
-        self.present(dest, animated: true)
+        
+        Transition.animateTransition(vc: self)
+        navigationController?.pushViewController(dest, animated: false)
     }
 }
 

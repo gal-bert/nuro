@@ -44,6 +44,7 @@ extension ChildPinUnlockViewController: ChildPinUnlockViewDelegate {
     }
     
     func dismissPage() {
-        self.dismiss(animated: true)
+        Transition.animateTransition(vc: self)
+        navigationController?.popViewController(animated: false)
     }
 }

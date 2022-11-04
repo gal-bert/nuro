@@ -16,6 +16,7 @@ class ChildPinUnlockViewController: UIViewController {
         super.viewDidLoad()
         
         childPinUnlockView.setup(vc: self)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     override func loadView() {

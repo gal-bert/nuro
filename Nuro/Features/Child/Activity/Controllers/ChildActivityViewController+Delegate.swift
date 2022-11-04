@@ -13,6 +13,8 @@ extension ChildActivityViewController: ChildActivityDelegate {
         dest.modalPresentationStyle = .fullScreen
         dest.modalTransitionStyle = .crossDissolve
         dest.setDelegate(reference: routineDelegateReference ?? ChildRoutineViewController())
-        navigationController?.pushViewController(dest, animated: true)
+        
+        Transition.animateTransition(vc: self)
+        navigationController?.pushViewController(dest, animated: false)
     }
 }

@@ -16,6 +16,8 @@ extension ChildStarterViewController: ChildStarterDelegate {
         
         let nav = UINavigationController(rootViewController: dest)
         nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true)
+        
+        Transition.animateTransition(vc: self)
+        self.present(nav, animated: false)
     }
 }

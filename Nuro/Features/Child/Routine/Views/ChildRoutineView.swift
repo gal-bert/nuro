@@ -132,6 +132,8 @@ class ChildRoutineView: UIView {
     }
     
     private func setupButton() {
+        startButton.isUserInteractionEnabled = true
+        
         startButton.addTarget(self, action: #selector(startActivity), for: .touchUpInside)
         parentButton.addTarget(self, action: #selector(toPinUnlock), for: .touchUpInside)
     }
@@ -164,6 +166,7 @@ class ChildRoutineView: UIView {
         activityCollectionView.performBatchUpdates {
             activityCollectionView.deleteItems(at: [IndexPath(row: 0, section: 0)])
         }
+        enableStartButton()
     }
     
     func animateHideRow() {
@@ -177,6 +180,7 @@ class ChildRoutineView: UIView {
             stickView.snp.makeConstraints { make in
                 make.left.equalTo(self).offset(-ScreenSizes.halfScreenWidth / 6)
             }
+            enableStartButton()
         })
     }
     
@@ -190,7 +194,23 @@ class ChildRoutineView: UIView {
         }
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
             stickView.frame = CGRect(x: stickView.frame.origin.x - ScreenSizes.halfScreenWidth - (ScreenSizes.halfScreenWidth / 6), y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
-        }, completion: nil)
+        }, completion: { _ in
+            self.enableStartButton()
+        })
+    }
+    
+    func disableStartButton() {
+        startButton.isUserInteractionEnabled = false
+        startButton.alpha = 0.7
+    }
+    
+    func enableStartButton() {
+        startButton.isUserInteractionEnabled = true
+        startButton.alpha = 1.0
+    }
+    
+    func getDelayedView() -> [UIView] {
+        return [activityCollectionView]
     }
 }
 

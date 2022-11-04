@@ -97,6 +97,8 @@ class ChildPinUnlockView: UIView {
         textFields.append(textField2)
         textFields.append(textField3)
         textFields.append(textField4)
+        
+        Transition.smoothAnimationWithDelay(view: self, subviews: subviews, bgColor: Colors.Brand.floralWhite, delayForViews: getDelayedView(), delayTime: Transition.DelayTime.slightDelay)
     }
     
     private func setupCollectionView(vc: ChildPinUnlockViewController) {
@@ -203,5 +205,9 @@ class ChildPinUnlockView: UIView {
     
     func clearLastPin(count: Int) {
         textFields[count].text = ""
+    }
+    
+    private func getDelayedView() -> [UIView] {
+        return [imageView, collectionView]
     }
 }

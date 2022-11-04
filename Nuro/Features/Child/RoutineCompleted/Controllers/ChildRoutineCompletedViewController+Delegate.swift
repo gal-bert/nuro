@@ -11,7 +11,8 @@ extension ChildRoutineCompletedViewController: ChildRoutineCompletedDelegate {
     func toParentMode() {
         let dest = ChildPinUnlockViewController()
         dest.modalPresentationStyle = .fullScreen
-        dest.modalTransitionStyle = .crossDissolve
-        present(dest, animated: true)
+        
+        Transition.animateTransition(vc: self)
+        navigationController?.pushViewController(dest, animated: false)
     }
 }

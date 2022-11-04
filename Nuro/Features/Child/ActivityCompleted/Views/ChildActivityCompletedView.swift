@@ -8,7 +8,7 @@
 import UIKit
 
 class ChildActivityCompletedView: UIView {
-
+    
     private lazy var pageTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
@@ -54,6 +54,8 @@ class ChildActivityCompletedView: UIView {
         setupButton()
         setupUI()
         setupConstraints()
+        
+        Transition.smoothAnimationWithDelay(view: self, subviews: subviews, bgColor: Colors.Neutral.white, delayForViews: [appreciationImage], delayTime: Transition.DelayTime.slightDelay)
     }
     
     private func setupButton() {
