@@ -220,7 +220,7 @@
 		0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Regular.otf"; sourceTree = "<group>"; };
 		0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Bold.otf"; sourceTree = "<group>"; };
 		0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Medium.otf"; sourceTree = "<group>"; };
-		0C79CE9D28EAB45100706D0A /* Nuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C79CE9D28EAB45100706D0A /* Otin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C79CEA028EAB45100706D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C79CEA228EAB45100706D0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0C79CEAA28EAB45100706D0A /* Nuro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nuro.xcdatamodel; sourceTree = "<group>"; };
@@ -443,7 +443,7 @@
 		0C79CE9E28EAB45100706D0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C79CE9D28EAB45100706D0A /* Nuro.app */,
+				0C79CE9D28EAB45100706D0A /* Otin.app */,
 				0C79CEB628EAB45200706D0A /* NuroTests.xctest */,
 				0C79CEC028EAB45200706D0A /* NuroUITests.xctest */,
 				0C9EFA6029153B5F00449EAD /* TimeframeTest.xctest */,
@@ -1384,7 +1384,7 @@
 				0CF0668C29025AC900061701 /* RxDataSources */,
 			);
 			productName = Nuro;
-			productReference = 0C79CE9D28EAB45100706D0A /* Nuro.app */;
+			productReference = 0C79CE9D28EAB45100706D0A /* Otin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0C79CEB528EAB45200706D0A /* NuroTests */ = {
@@ -1872,14 +1872,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5658ASKD6C;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = CL42QD4LKB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Otin;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ability to capture activity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1888,8 +1890,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.karennatalia.NuroByPetak9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
+				PRODUCT_NAME = Otin;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -1906,14 +1908,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5658ASKD6C;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = CL42QD4LKB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Otin;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ability to capture activity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1922,8 +1926,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.karennatalia.NuroByPetak9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
+				PRODUCT_NAME = Otin;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
