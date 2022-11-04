@@ -32,7 +32,11 @@ class ChildActivityView: UIView {
     
     private lazy var doneButton = ChildButton(title: "Aku sudah selesai", height: ScreenSizes.halfScreenHeight / 4)
     
-    func setup(model: Activity) {
+    private var delegate: ChildActivityDelegate?
+    
+    func setup(model: Activity, vc: ChildActivityViewController) {
+        delegate = vc
+        
         setupButton()
         setupUI()
         setupConstraints()
@@ -80,8 +84,7 @@ class ChildActivityView: UIView {
     }
     
     @objc func activityCompleted() {
-        // TODO: Add segue to activity completed
-        // ..
+        delegate?.toActivityCompleted()
     }
 
 }

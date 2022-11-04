@@ -29,7 +29,11 @@ class ChildStarterView: UIView {
         return sv
     }()
     
-    func setup() {
+    private var delegate: ChildStarterDelegate?
+    
+    func setup(vc: ChildStarterViewController) {
+        delegate = vc
+        
         setupButton()
         setupUI()
         setupConstraints()
@@ -64,7 +68,6 @@ class ChildStarterView: UIView {
     }
     
     @objc func viewRoutine() {
-        // TODO: Add segue to child routine view
-        // ..
+        delegate?.toRoutineView()
     }
 }

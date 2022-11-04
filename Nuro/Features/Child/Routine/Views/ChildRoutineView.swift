@@ -133,13 +133,19 @@ class ChildRoutineView: UIView {
     
     private func setupButton() {
         startButton.addTarget(self, action: #selector(startActivity), for: .touchUpInside)
+        parentButton.addTarget(self, action: #selector(toPinUnlock), for: .touchUpInside)
     }
     
     @objc func startActivity() {
-        delegate?.animateNextActivity()
-        
-        // TODO: Segue to full screen activity page
-        // ..
+        delegate?.toActivityView()
+    }
+    
+    func makeViewHidden() {
+        stackView.alpha = 0
+    }
+    
+    @objc func toPinUnlock() {
+        delegate?.toPinUnlockView()
     }
     
     func animateToNextActivity(totalActivity: Int, currTotalActivity: Int) {

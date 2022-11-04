@@ -45,7 +45,12 @@ class ChildActivityCompletedView: UIView {
         return sv
     }()
     
-    func setup() {
+    private var delegate: ChildActivityCompletedDelegate?
+    var animationDelegate: ChildRoutineAnimationDelegate?
+    
+    func setup(vc: ChildActivityCompletedViewController) {
+        delegate = vc
+        
         setupButton()
         setupUI()
         setupConstraints()
@@ -83,7 +88,7 @@ class ChildActivityCompletedView: UIView {
     }
     
     @objc func nextActivity() {
-        // TODO: Add segue to next activity
-        // ..
+        animationDelegate?.triggerAnimation()
+        delegate?.dismissViewController()
     }
 }

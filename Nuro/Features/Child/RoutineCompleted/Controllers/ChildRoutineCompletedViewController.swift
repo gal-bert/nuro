@@ -14,7 +14,8 @@ class ChildRoutineCompletedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        childRoutineCompletedView.setup()
+        childRoutineCompletedView.setup(vc: self)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     override func loadView() {

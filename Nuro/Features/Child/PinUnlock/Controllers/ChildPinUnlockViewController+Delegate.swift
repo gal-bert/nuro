@@ -42,4 +42,8 @@ extension ChildPinUnlockViewController: ChildPinUnlockViewDelegate {
             childPinUnlockView.clearLastPin(count: viewModel.pin.count)
         }
     }
+    
+    func dismissPage() {
+        self.dismiss(animated: true)
+    }
 }

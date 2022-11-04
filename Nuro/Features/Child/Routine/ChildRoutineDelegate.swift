@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ChildRoutineDelegate {
     func animateNextActivity()
+    func toActivityView()
+    func toPinUnlockView()
 }

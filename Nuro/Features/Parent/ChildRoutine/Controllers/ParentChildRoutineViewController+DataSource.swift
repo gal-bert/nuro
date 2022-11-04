@@ -24,6 +24,7 @@ extension ParentChildRoutineViewController: UITableViewDataSource {
         cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.morning, text: "Pagi", colorName: Colors.Text.onyx)
         cell.backgroundColor = Colors.Background.water
         cell.collectionView.backgroundColor = cell.backgroundColor
+        cell.routines = viewModel.todaysRoutines
         
         return cell
     }

@@ -11,8 +11,9 @@ class ChildRoutineViewController: UIViewController {
     
     var isFirstActivityCardHidden  = false
     private var totalActivity = 0
+    var willBeAnimated = false
     
-    private let childRoutineView = ChildRoutineView()
+    let childRoutineView = ChildRoutineView()
     let viewModel = ChildRoutineViewModel()
     
     override func viewDidLoad() {
@@ -23,6 +24,18 @@ class ChildRoutineViewController: UIViewController {
         
         childRoutineView.setup(vc: self)
         totalActivity = viewModel.activities.count
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
+            if willBeAnimated {
+                nextActivity()
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if willBeAnimated {
+            nextActivity()
+        }
     }
     
     override func loadView() {
@@ -32,18 +45,24 @@ class ChildRoutineViewController: UIViewController {
     func nextActivity() {
         isFirstActivityCardHidden  = true
         
-        childRoutineView.animateHideRow()
-        if viewModel.activities.count > 0 {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
+            childRoutineView.animateHideRow()
             viewModel.removeFirstActivity()
             Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [self] timer in
                 childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activities.count)
             }
+            
+            if viewModel.activities.count == 0 {
+                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
+                    let dest = ChildRoutineCompletedViewController()
+                    dest.modalPresentationStyle = .fullScreen
+                    self.navigationController?.pushViewController(dest, animated: true)
+                }
+                
+            }
+            
+            isFirstActivityCardHidden  = false
+            willBeAnimated = false
         }
-        else {
-            // Segue ke activity done
-        }
-        
-        
-        isFirstActivityCardHidden  = false
     }
 }

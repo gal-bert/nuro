@@ -10,10 +10,12 @@ import UIKit
 class ParentChildRoutineViewController: UIViewController {
 
     private let parentChildRoutineView = ParentChildRoutineView()
+    let viewModel = ParentChildRoutineViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.getTodaysRoutine()
         parentChildRoutineView.setup(vc: self)
     }
     

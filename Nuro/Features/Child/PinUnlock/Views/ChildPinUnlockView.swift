@@ -9,6 +9,7 @@ import UIKit
 
 protocol ChildPinUnlockViewDelegate {
     func deleteLastPin()
+    func dismissPage()
 }
 
 class ChildPinUnlockView: UIView {
@@ -88,9 +89,9 @@ class ChildPinUnlockView: UIView {
         setupCollectionView(vc: vc)
         setupUI()
         setupConstraints()
+        setupButton()
         
         delegate = vc
-        deletePinButton.addTarget(self, action: #selector(deleteClicked), for: .touchUpInside)
         
         textFields.append(textField1)
         textFields.append(textField2)
@@ -169,6 +170,11 @@ class ChildPinUnlockView: UIView {
         }
     }
     
+    private func setupButton() {
+        deletePinButton.addTarget(self, action: #selector(deleteClicked), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(dismissPage), for: .touchUpInside)
+    }
+    
     private func createFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 100, height: 100)
@@ -189,6 +195,10 @@ class ChildPinUnlockView: UIView {
     
     @objc func deleteClicked() {
         delegate?.deleteLastPin()
+    }
+    
+    @objc func dismissPage() {
+        delegate?.dismissPage()
     }
     
     func clearLastPin(count: Int) {

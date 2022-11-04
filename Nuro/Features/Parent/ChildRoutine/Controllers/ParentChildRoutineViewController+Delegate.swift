@@ -13,3 +13,12 @@ extension ParentChildRoutineViewController: UITableViewDelegate {
         return tableView.frame.height - 80
     }
 }
+
+extension ParentChildRoutineViewController: ParentChildRoutineDelegate {
+    func toChildMode() {
+        let dest = ChildStarterViewController()
+        dest.modalPresentationStyle = .fullScreen
+        dest.modalTransitionStyle = .coverVertical
+        self.present(dest, animated: true)
+    }
+}

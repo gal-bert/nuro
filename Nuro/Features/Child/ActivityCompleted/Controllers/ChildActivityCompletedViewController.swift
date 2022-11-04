@@ -14,10 +14,15 @@ class ChildActivityCompletedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        childActivityCompletedView.setup()
+        childActivityCompletedView.setup(vc: self)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     override func loadView() {
         self.view = childActivityCompletedView
+    }
+    
+    func setDelegate(reference: ChildRoutineViewController) {
+        childActivityCompletedView.animationDelegate = reference
     }
 }

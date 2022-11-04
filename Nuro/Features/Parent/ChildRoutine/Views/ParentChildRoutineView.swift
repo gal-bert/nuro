@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ParentChildRoutineDelegate {
+    func toChildMode()
+}
+
 class ParentChildRoutineView: UIView {
     
     private lazy var pageTitleLabel: UILabel = {
@@ -72,7 +76,11 @@ class ParentChildRoutineView: UIView {
         return button
     }()
     
+    private var delegate: ParentChildRoutineDelegate?
+    
     func setup(vc: ParentChildRoutineViewController) {
+        delegate = vc
+        
         setupUI()
         setupConstraints()
         setupTableView(vc: vc)
@@ -110,6 +118,6 @@ class ParentChildRoutineView: UIView {
     }
     
     @objc func toChildMode() {
-        // TODO: Add segue to child mode
+        delegate?.toChildMode()
     }
 }
