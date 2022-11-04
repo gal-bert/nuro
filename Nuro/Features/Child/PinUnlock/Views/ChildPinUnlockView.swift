@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol ChildPinUnlockViewDelegate {
-    func deleteLastPin()
-    func dismissPage()
-}
-
 class ChildPinUnlockView: UIView {
     
     private lazy var pageTitleLabel: UILabel = {

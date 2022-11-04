@@ -23,8 +23,7 @@ extension ChildPinUnlockViewController: UICollectionViewDelegate {
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
             if viewModel.pin.count == 4 {
                 if viewModel.checkPin() {
-                    // TODO: Segue to parent mode
-                    // ..
+                    self.dismiss(animated: true)
                 }
                 else {
                     let alert = Alert.infoAlert(title: "Pin Incorrect", message: "Please insert the correct pin number to move to parents mode")

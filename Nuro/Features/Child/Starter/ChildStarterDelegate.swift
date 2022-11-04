@@ -9,4 +9,5 @@ import Foundation
 
 protocol ChildStarterDelegate {
     func toRoutineView()
+    func backToParentsMode()
 }

@@ -20,4 +20,7 @@ extension ChildStarterViewController: ChildStarterDelegate {
         Transition.animateTransition(vc: self)
         self.present(nav, animated: false)
     }
+    func backToParentsMode() {
+        self.dismiss(animated: true)
+    }
 }
