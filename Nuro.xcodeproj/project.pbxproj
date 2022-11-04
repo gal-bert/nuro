@@ -99,6 +99,13 @@
 		3FBF126A28FEC61400CCC850 /* HeaderTimeframeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */; };
 		3FE992D728F43D820013E78B /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D628F43D820013E78B /* SidebarViewController.swift */; };
 		3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D828F43DCC0013E78B /* TabBarItem.swift */; };
+		4A24DA0E2913718B0078095E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA0D2913718B0078095E /* SettingView.swift */; };
+		4A24DA102913719D0078095E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA0F2913719D0078095E /* SettingViewModel.swift */; };
+		4A24DA12291371E60078095E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA11291371E60078095E /* SettingViewController.swift */; };
+		4A24DA14291372740078095E /* SettingViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA13291372740078095E /* SettingViewController+Delegate.swift */; };
+		4A24DA16291376C80078095E /* SettingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA15291376C80078095E /* SettingDelegate.swift */; };
+		4A24DA18291386390078095E /* SettingTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA17291386390078095E /* SettingTimeTableViewCell.swift */; };
+		4A5E27FC29142E7E00A7FB7D /* SettingParentChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E27FB29142E7E00A7FB7D /* SettingParentChildTableViewCell.swift */; };
 		4A854D7F28FEF3250048C7D8 /* ParentActivityListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D7E28FEF3250048C7D8 /* ParentActivityListDetailView.swift */; };
 		4A854D8328FEF3A90048C7D8 /* ParentActivityListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8228FEF3A90048C7D8 /* ParentActivityListDetailViewController.swift */; };
 		4A854D8528FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A854D8428FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift */; };
@@ -272,6 +279,13 @@
 		3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTimeframeSection.swift; sourceTree = "<group>"; };
 		3FE992D628F43D820013E78B /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		3FE992D828F43DCC0013E78B /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		4A24DA0D2913718B0078095E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4A24DA0F2913719D0078095E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		4A24DA11291371E60078095E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4A24DA13291372740078095E /* SettingViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+Delegate.swift"; sourceTree = "<group>"; };
+		4A24DA15291376C80078095E /* SettingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDelegate.swift; sourceTree = "<group>"; };
+		4A24DA17291386390078095E /* SettingTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTimeTableViewCell.swift; sourceTree = "<group>"; };
+		4A5E27FB29142E7E00A7FB7D /* SettingParentChildTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingParentChildTableViewCell.swift; sourceTree = "<group>"; };
 		4A854D7E28FEF3250048C7D8 /* ParentActivityListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailView.swift; sourceTree = "<group>"; };
 		4A854D8228FEF3A90048C7D8 /* ParentActivityListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailViewController.swift; sourceTree = "<group>"; };
 		4A854D8428FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentActivityListDetailViewModel.swift; sourceTree = "<group>"; };
@@ -469,6 +483,7 @@
 		0CA82E0D28EC6F2E00D811A6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				4A24DA09291366E90078095E /* Setting */,
 				0CA82E1028EC701900D811A6 /* Parent */,
 				0CA82E1328EC702D00D811A6 /* Child */,
 			);
@@ -545,6 +560,8 @@
 				3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */,
 				3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */,
 				3F9664B4290E4F2F0056B6D6 /* PlainTableViewCell.swift */,
+				4A24DA17291386390078095E /* SettingTimeTableViewCell.swift */,
+				4A5E27FB29142E7E00A7FB7D /* SettingParentChildTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -1018,6 +1035,42 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4A24DA09291366E90078095E /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4A24DA15291376C80078095E /* SettingDelegate.swift */,
+				4A24DA0A29136C5A0078095E /* Views */,
+				4A24DA0B29136C860078095E /* ViewModels */,
+				4A24DA0C29136C8E0078095E /* Controllers */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		4A24DA0A29136C5A0078095E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A24DA0D2913718B0078095E /* SettingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A24DA0B29136C860078095E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4A24DA0F2913719D0078095E /* SettingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A24DA0C29136C8E0078095E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A24DA11291371E60078095E /* SettingViewController.swift */,
+				4A24DA13291372740078095E /* SettingViewController+Delegate.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		4A854D8C29017F070048C7D8 /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1483,11 +1536,13 @@
 				3FBAB77429101AE90066E04D /* AddActivityRoutineDayViewModel.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
 				0CA82E2B28EC782200D811A6 /* ParentTodayActivityViewModel.swift in Sources */,
+				4A24DA102913719D0078095E /* SettingViewModel.swift in Sources */,
 				5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */,
 				4A854D8E29017F270048C7D8 /* SearchController.swift in Sources */,
 				5F563D2728F79E77003748D7 /* ActivityModel.swift in Sources */,
 				0CCF58E729068DE90005AF63 /* ParentTodayActivityDetailViewController+Delegate.swift in Sources */,
 				0CAD213F2901694B00941794 /* AddActivityViewModel.swift in Sources */,
+				4A24DA0E2913718B0078095E /* SettingView.swift in Sources */,
 				5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */,
 				0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */,
 				0CAD212C2901538C00941794 /* Alert.swift in Sources */,
@@ -1505,6 +1560,7 @@
 				0C5855DC29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift in Sources */,
 				3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */,
 				0CF066832901856200061701 /* AddActivityContentCollectionViewCell.swift in Sources */,
+				4A5E27FC29142E7E00A7FB7D /* SettingParentChildTableViewCell.swift in Sources */,
 				0CA82E3128EC79F000D811A6 /* Query.swift in Sources */,
 				5F2158172908C0C600EA5085 /* ChildActivityView.swift in Sources */,
 				0CAD21352901683F00941794 /* ParentTodayActivityEditOrderViewModel.swift in Sources */,
@@ -1516,12 +1572,14 @@
 				4A854D90290235B50048C7D8 /* UIImage+Ext.swift in Sources */,
 				0CB13F8228FC052100009729 /* ParentTodayActivityEmptyStateView.swift in Sources */,
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
+				4A24DA16291376C80078095E /* SettingDelegate.swift in Sources */,
 				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
 				0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */,
 				0C5855D6290FFA53004D4DDD /* CreateActivityViewController.swift in Sources */,
 				0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */,
 				5F3199062906159900E7FBE1 /* ChildRoutineCompletedView.swift in Sources */,
 				5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */,
+				4A24DA14291372740078095E /* SettingViewController+Delegate.swift in Sources */,
 				0CAD213D2901693E00941794 /* AddActivityViewController.swift in Sources */,
 				5F02CB37290A203A0079FFC5 /* ChildPinUnlockViewController+DataSource.swift in Sources */,
 				3F9664BC290EC67A0056B6D6 /* AddActivityRoutimeTimeViewController.swift in Sources */,
@@ -1547,6 +1605,7 @@
 				5F87D83428FE5F6D00C06CE1 /* SeederValidator.swift in Sources */,
 				5F02CB3D290A21EA0079FFC5 /* DeletePinButton.swift in Sources */,
 				5F3199042906158900E7FBE1 /* ChildRoutineCompletedViewController.swift in Sources */,
+				4A24DA18291386390078095E /* SettingTimeTableViewCell.swift in Sources */,
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
 				5F02CB39290A20760079FFC5 /* PinTextField.swift in Sources */,
@@ -1558,6 +1617,7 @@
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 				0CF06681290180CE00061701 /* AddActivityViewController+Delegate.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
+				4A24DA12291371E60078095E /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1727,9 +1787,10 @@
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CL42QD4LKB;
+				DEVELOPMENT_TEAM = KR56UH6MNG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Ability to capture activity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1741,7 +1802,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
+				PRODUCT_BUNDLE_IDENTIFIER = id.FinnChristoffer.NuroByPetak9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1760,9 +1821,10 @@
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CL42QD4LKB;
+				DEVELOPMENT_TEAM = KR56UH6MNG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Ability to capture activity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1774,7 +1836,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
+				PRODUCT_BUNDLE_IDENTIFIER = id.FinnChristoffer.NuroByPetak9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
