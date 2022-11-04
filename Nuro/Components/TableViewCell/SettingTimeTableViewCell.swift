@@ -29,13 +29,12 @@ class SettingTimeTableViewCell: UITableViewCell {
         return view
     }()
     
-    lazy var timePicker: UIPickerView = {
-        let view = UIPickerView()
-        var hour: Int = 0
-        var minutes:Int = 0
+    lazy var timePicker: UIDatePicker = {
+        let view = UIDatePicker()
+        view.datePickerMode = .time
         return view
     }()
-    
+
     
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -53,12 +52,17 @@ class SettingTimeTableViewCell: UITableViewCell {
         addSubview(stackView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(timePicker)
+        timePicker.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(timePickerClicked)))
     }
     
     private func setupConstraints() {
         stackView.snp.makeConstraints { make in
             make.left.top.right.bottom.equalTo(self)
         }
+    }
+    
+    @objc private func timePickerClicked() {
+        
     }
 
 }

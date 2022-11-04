@@ -15,7 +15,14 @@ extension SettingViewController: SettingDelegate {
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch tableView {
+        case settingView.tableViewProfile:
+            return 2
+        case settingView.tableViewTime:
+            return 3
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,22 +43,32 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch tableView {
-//        case settingView.tableViewProfile:
-//            return 55
-//        case settingView.tableViewTime:
-//            return 55
-//        default:
-//            print("Something wrong")
-//        }
-//        return
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch tableView {
+        case settingView.tableViewProfile:
+            return 55
+        case settingView.tableViewTime:
+            return 55
+        default:
+            return 0
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        let cell = tableView.cellForRow(at: indexPath) as! SettingParentChildTableViewCell
-        cell.textField.becomeFirstResponder()
+        switch tableView {
+        case settingView.tableViewProfile:
+            print(indexPath.row)
+            let cell = tableView.cellForRow(at: indexPath) as! SettingParentChildTableViewCell
+            cell.textField.becomeFirstResponder()
+        case settingView.tableViewTime:
+            print(indexPath.row)
+            let cell = tableView.cellForRow(at: indexPath) as! SettingTimeTableViewCell
+            cell.timePicker.becomeFirstResponder()
+        default:
+            return 
+        }
+        
     }
     
     

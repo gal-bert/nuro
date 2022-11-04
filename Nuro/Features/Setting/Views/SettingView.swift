@@ -44,6 +44,12 @@ class SettingView: UIView {
         return view
     }()
     
+    private lazy var timePicker: UIDatePicker = {
+        let view = UIDatePicker()
+        view.datePickerMode = .time
+        return view
+    }()
+    
     func setup(vc: SettingViewController) {
         backgroundColor = Colors.Neutral.white
         delegate = vc
@@ -60,6 +66,7 @@ class SettingView: UIView {
         addSubview(tableViewProfile)
         addSubview(TimeLabel)
         addSubview(tableViewTime)
+        addSubview(timePicker)
         
         
         setupNavigationBar()
@@ -84,19 +91,25 @@ class SettingView: UIView {
         tableViewProfile.snp.makeConstraints { make in
             make.top.equalTo(profileLabel.snp.bottom)
             make.left.right.equalTo(self)
-            make.height.equalTo(self)
+            make.height.equalTo(150)
         }
         
         TimeLabel.snp.makeConstraints { make in
             make.top.equalTo(tableViewProfile.snp.bottom)
             make.left.equalTo(self).offset(25)
-            make.height.equalTo(self)
+//            make.height.equalTo()
         }
         
         tableViewTime.snp.makeConstraints { make in
-            make.top.equalTo(tableViewProfile.snp.bottom)
+            make.top.equalTo(TimeLabel.snp.bottom)
+            make.left.right.equalTo(self).inset(15)
+            make.height.equalTo(150)
+        }
+        
+        timePicker.snp.makeConstraints { make in
+            make.top.equalTo(tableViewTime.snp.bottom)
             make.left.right.equalTo(self)
-            make.height.equalTo(self)
+//            make.height.equalTo(100)
         }
     }
     
