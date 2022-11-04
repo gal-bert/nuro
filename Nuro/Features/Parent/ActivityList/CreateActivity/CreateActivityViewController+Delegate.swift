@@ -43,7 +43,6 @@ extension CreateActivityViewController: UITextViewDelegate {
 
 extension CreateActivityViewController: CreateActivityDelegate {
     func pushViewController(dest: UIImagePickerController, type:UIImagePickerController.SourceType) {
-        dest.allowsEditing = true
         dest.sourceType = type
         dest.delegate = self
         present(dest, animated: true)
@@ -96,9 +95,10 @@ extension CreateActivityViewController: CreateActivityDelegate {
 }
 
 extension CreateActivityViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
-        guard let image = info[.editedImage] as? UIImage else {
+        guard let image = info[.originalImage] as? UIImage else {
             print("No image found")
             return
         }
