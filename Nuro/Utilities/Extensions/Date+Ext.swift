@@ -71,9 +71,9 @@ extension Date {
     func getTimeframe() -> String {
         let midnight = "00:00"
         
-        let morning = "08:00"
-        let afternoon = "12:00"
-        let evening = "18:30"
+        let morning = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.morningTime) ?? "08:00"
+        let afternoon = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.afternoonTime) ?? "12:00"
+        let evening = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.eveningTime) ?? "18:30"
         
         let curr = getTickingTime()
         

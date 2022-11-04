@@ -42,6 +42,7 @@
 		0C98AC0B291520A500CB17F0 /* TimeframeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C98AC0A291520A500CB17F0 /* TimeframeValidator.swift */; };
 		0C9EFA6329153B5F00449EAD /* TimeframeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EFA6229153B5F00449EAD /* TimeframeTest.swift */; };
 		0C9EFA6A29153BAA00449EAD /* TimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EFA6929153BAA00449EAD /* TimeTest.swift */; };
+		0C9EFA6C291541F700449EAD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EFA6B291541F700449EAD /* UserDefaults.swift */; };
 		0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0228EC6A8C00D811A6 /* Environment.swift */; };
 		0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */; };
 		0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1528EC719B00D811A6 /* String+Ext.swift */; };
@@ -231,6 +232,7 @@
 		0C9EFA6029153B5F00449EAD /* TimeframeTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeframeTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9EFA6229153B5F00449EAD /* TimeframeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeframeTest.swift; sourceTree = "<group>"; };
 		0C9EFA6929153BAA00449EAD /* TimeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTest.swift; sourceTree = "<group>"; };
+		0C9EFA6B291541F700449EAD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		0CA82E0228EC6A8C00D811A6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		0CA82E1528EC719B00D811A6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -895,6 +897,7 @@
 				3F3BD22B29116EA100295A57 /* TimeToIdConverter.swift */,
 				3F98CCC12912855400400762 /* DayToIdConverter.swift */,
 				0C98AC0A291520A500CB17F0 /* TimeframeValidator.swift */,
+				0C9EFA6B291541F700449EAD /* UserDefaults.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1595,6 +1598,7 @@
 				5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */,
 				4A854D90290235B50048C7D8 /* UIImage+Ext.swift in Sources */,
 				0CB13F8228FC052100009729 /* ParentTodayActivityEmptyStateView.swift in Sources */,
+				0C9EFA6C291541F700449EAD /* UserDefaults.swift in Sources */,
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
 				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
 				0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */,

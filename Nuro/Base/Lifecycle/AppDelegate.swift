@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         seederValidator.checkActivitySeedingStatus()
         seederValidator.checkDummyActivitySeedingStatus()
         
+        UserDefaultsHelper.registerDefaultValue()
+        
         return true
     }
 
