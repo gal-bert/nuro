@@ -57,7 +57,7 @@ class ParentTodayActivityDetailView: UIView {
         setupNavigationBar(vc: vc)
         setupConstraints()
         
-        imageView.image = UIImage(data: vc.routineDetail?.activity?.activityImage ?? Data())
+        imageView.image = Document.getImageFromDocument(imageURL: vc.routineDetail?.activity?.activityImageURL)
         titleLabel.text = vc.routineDetail?.activity?.activityName
         descriptionLabel.text = vc.routineDetail?.activity?.activityDesc
         

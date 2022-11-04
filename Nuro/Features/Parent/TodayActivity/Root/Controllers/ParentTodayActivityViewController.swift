@@ -18,7 +18,7 @@ class ParentTodayActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         parentTodayActivityView.setup(vc: self)
-
+        
         viewModel.loadAll(dayId: 1) 
 
     }

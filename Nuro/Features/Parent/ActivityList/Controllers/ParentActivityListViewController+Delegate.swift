@@ -22,17 +22,45 @@ extension ParentActivityListViewController: SearchControllerDelegate {
 extension ParentActivityListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionViewFolder: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return viewModel.categoryActivities.count
     }
     
     func collectionView(_ collectionViewFolder: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionViewFolder.dequeueReusableCell(withReuseIdentifier: ParentActivityFolderCollectionViewCell.identifier, for: indexPath) as! ParentActivityFolderCollectionViewCell
+        cell.titleLabel.text = viewModel.categoryActivities[indexPath.item].categoryName
+        switch indexPath.item {
+        case 0:
+            cell.setupColorSet(colorSet: ColorSet.edukasiColor)
+            cell.emojiImageView.image = Images.edukasiIcon
+        case 1:
+            cell.setupColorSet(colorSet: ColorSet.hiburanColor)
+            cell.emojiImageView.image = Images.hiburanIcon
+        case 2:
+            cell.setupColorSet(colorSet: ColorSet.kebersihanDiriColor)
+            cell.emojiImageView.image = Images.kebersihanIcon
+        case 3:
+            cell.setupColorSet(colorSet: ColorSet.olahragaColor)
+            cell.emojiImageView.image = Images.olahragaIcon
+        case 4:
+            cell.setupColorSet(colorSet: ColorSet.peliharaanColor)
+            cell.emojiImageView.image = Images.peliharaanIcon
+        case 5:
+            cell.setupColorSet(colorSet: ColorSet.hariColor)
+            cell.emojiImageView.image = Images.sehari2Icon
+        case 6:
+            cell.setupColorSet(colorSet: ColorSet.tugasRumahColor)
+            cell.emojiImageView.image = Images.tugasRumahIcon
+        default:
+            cell.setupColorSet(colorSet: ColorSet.lainnyaColor)
+            cell.emojiImageView.image = Images.lainnyaIcon
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected Cell : \(indexPath.row)")
-        navigationController?.pushViewController(ParentActivityListDetailViewController(), animated: true)
+        let dest = ParentActivityListDetailViewController()
+        dest.viewModel.categorySelected = viewModel.categoryActivities[indexPath.item]
+        navigationController?.pushViewController(dest, animated: true)
     }
     
     func collectionView(_ collectionViewFolder: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

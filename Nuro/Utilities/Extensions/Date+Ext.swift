@@ -14,7 +14,7 @@ extension Date {
         return dateformat.string(from: self)
     }
     
-    func generateTimestampForFilename() -> String {
+    static func generateTimestampForFilename() -> String {
         let date = Date()
         let calendar = Calendar.current
 
@@ -25,8 +25,9 @@ extension Date {
         let hour = calendar.component(.hour, from: date)
         let minute = calendar.component(.minute, from: date)
         let second = calendar.component(.second, from: date)
+        let nanoSecond = calendar.component(.nanosecond, from: date)
 
-        let timestamp = "Nuro_\(year)\(month)\(day)_\(hour)\(minute)\(second)"
+        let timestamp = "Nuro_\(year)\(month)\(day)_\(hour)\(minute)\(second)\(nanoSecond)"
         
         return timestamp
     }
@@ -55,7 +56,37 @@ extension Date {
         time = "\(hourString):\(minuteString)"
         
         return time
-        
     }
+    
+    func getCurrentWeekday() -> Int {
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let weekday = calendar.component(.weekday, from: date) - 1
+        
+        return weekday
+    }
+    
+    /// The compared time should be a String with the format of HH:mm
+    func getTimeframe() -> String {
+        let midnight = "00:00"
+        
+        let morning = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.morningTime) ?? "08:00"
+        let afternoon = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.afternoonTime) ?? "12:00"
+        let evening = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.eveningTime) ?? "18:30"
+        
+        let curr = getTickingTime()
+        
+        if curr > midnight && curr < afternoon {
+            return "Pagi"
+        }
+        else if curr > morning && curr < evening {
+            return "Siang"
+        }
+        else {
+            return "Malam"
+        }
+    }
+
     
 }

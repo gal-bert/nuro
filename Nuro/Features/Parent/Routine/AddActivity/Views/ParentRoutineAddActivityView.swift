@@ -12,6 +12,7 @@ class ParentRoutineAddActivityView: UIView {
     let waktuRutinitasButton = CreateActivityButton(leftTitle: "Waktu Rutinitas", rightTitle: "")
     let hariRutinitasButton = CreateActivityButton(leftTitle: "Hari Rutinitas", rightTitle: "")
     
+    var vc: ParentRoutineAddActivityViewController?
     var delegate: ParentRoutineAddActivityDelegate!
     
     lazy var containerView: UIView = {
@@ -53,6 +54,8 @@ class ParentRoutineAddActivityView: UIView {
         delegate = vc
         setupNavigationBar(vc: vc)
         
+        self.vc = vc
+        
         addSubview(containerView)
         containerView.addSubview(stackView)
         stackView.addArrangedSubview(iconChooseImageView)
@@ -68,17 +71,23 @@ class ParentRoutineAddActivityView: UIView {
     }
     
     @objc private func didTapChooseActivity(_ gesture: UITapGestureRecognizer) {
-        delegate.pushViewController(dest: AddActivityViewController())
+        let dest = AddActivityViewController()
+        dest.delegate = vc
+        delegate.pushViewController(dest: dest)
     }
     
     @objc private func didTapRoutineTime(_ gesture: UITapGestureRecognizer) {
         // TODO: Push View Controller to Table View of Time Selection
-        delegate.pushViewController(dest: AddActivityRoutimeTimeViewController())
+        let dest = AddActivityRoutimeTimeViewController()
+        dest.addActivityRoutineTimeView.delegateData = vc
+        delegate.pushViewController(dest: dest)
     }
 
     @objc private func didTapRoutineDay(_ gesture: UITapGestureRecognizer) {
         // TODO: Push View Controller to Table View of Day Selection
-        delegate.pushViewController(dest: AddActivityRoutineDayViewController())
+        let dest = AddActivityRoutineDayViewController()
+        dest.addActivityRoutineDayView.delegateData = vc
+        delegate.pushViewController(dest: dest)
     }
     
     func setupNavigationBar(vc: ParentRoutineAddActivityViewController) {
@@ -94,7 +103,7 @@ class ParentRoutineAddActivityView: UIView {
     }
     
     @objc func didAddButtonClicked() {
-        // TODO: Save activity to routine with CoreData
+        delegate.saveActivity()
     }
     
     func setupConstraints() {

@@ -9,7 +9,7 @@ import Foundation
 
 extension ParentTodayActivityDetailViewController: ParentTodayActivityDetailDelegate {
     func dismissViewController() {
-        reloadDelegate.reloadTableView()
+        reloadDelegate.reloadView()
         dismiss(animated: true)
     }
     

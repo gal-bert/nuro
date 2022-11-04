@@ -10,14 +10,15 @@ import SnapKit
 
 class ParentActivityListDetailView: UIView {
     
+    let addButton = AddButton()
+    let editButton = SmallCapsuleButton(title: "Edit")
+    
     var delegate: ParentActivityListDetailDelegate!
     var vc: ParentActivityListDetailViewController!
     
-    let editButton = SmallCapsuleButton(title: "Edit")
-    
     let searchController = SearchController()
     
-    let collectionViewListDetail: UICollectionView = {
+    let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -28,45 +29,45 @@ class ParentActivityListDetailView: UIView {
         backgroundColor = Colors.Neutral.white
         delegate = vc
         self.vc = vc
-        collectionViewListDetail.dataSource = vc
-        collectionViewListDetail.delegate = vc
-        collectionViewListDetail.register(AddActivityContentCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityContentCollectionViewCell.identifier)
-        addSubview(collectionViewListDetail)
+        collectionView.dataSource = vc
+        collectionView.delegate = vc
+        collectionView.register(ParentActivityListDetailCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier)
+        addSubview(collectionView)
         searchController.setupSearchController(vc: vc)
-        setupNavigationBar()
+        self.setupNavigationBar()
         setupConstraints()
     }
     
-    private func setupNavigationBar() {
+    func setupNavigationBar() {
         
         vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
         //Title Navbar
-        vc.title = "Judul Jenis Aktivitas"
+//        vc.title = "Judul Jenis Aktivitas"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
-        //Setup AddButton
-        let addButton = AddButton()
+        
         addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
-        //Setup EditButton
         editButton.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
         
         vc.navigationItem.rightBarButtonItems = [
             UIBarButtonItem(customView: addButton),
-            UIBarButtonItem(customView: editButton)
+            vc.editButtonItem
             ]
     }
     
     @objc private func addButtonAction() {
-//        delegate.printText(text: "Add Button Clicked")
-        delegate.presentViewController(dest: CreateActivityViewController())
+        let dest = CreateActivityViewController()
+        dest.category = delegate.getCategory()
+        dest.delegate = vc
+        delegate.presentViewController(dest: dest)
     }
-    
+
     @objc private func editButtonAction() {
-        
+        //belum tau mau diapain
     }
     
     private func setupConstraints() {
-        collectionViewListDetail.snp.makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(23)
             make.left.right.equalTo(self).inset(25)
             make.bottom.equalTo(safeAreaLayoutGuide)

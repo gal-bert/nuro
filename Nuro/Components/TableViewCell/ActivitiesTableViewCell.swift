@@ -48,7 +48,7 @@ class ActivitiesTableViewCell: UITableViewCell {
     private let stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
-        view.distribution = .fillEqually
+        view.distribution = .equalSpacing
         view.spacing = 20
         return view
     }()
@@ -80,11 +80,10 @@ class ActivitiesTableViewCell: UITableViewCell {
         wrapperView.addSubview(stackView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(descLabel)
-        stackView.addArrangedSubview(categoryLabel)
     }
     
     func configure(model: Activity) {
-        cellImageView.image = UIImage(data: model.activityImage ?? Data())
+        cellImageView.image = Document.getImageFromDocument(imageURL: model.activityImageURL)
         titleLabel.text = model.activityName
         descLabel.text = model.activityDesc
         categoryLabel.text = model.category?.categoryName

@@ -33,7 +33,7 @@ class CreateActivityView: UIView {
         return view
     }()
     
-    private lazy var nameTextField: UITextField = {
+    lazy var nameTextField: UITextField = {
         let view = UITextField()
         view.backgroundColor = Colors.Brand.floralWhite
         view.layer.borderColor = Colors.Brand.jasmine.cgColor
@@ -68,12 +68,13 @@ class CreateActivityView: UIView {
         
         delegate = vc
         descTextArea.delegate = vc
+        nameTextField.delegate = vc
         
         addSubview(parentStackView)
         
         
         parentStackView.addArrangedSubview(topStackView)
-        parentStackView.addArrangedSubview(categoryContainer)
+//        parentStackView.addArrangedSubview(categoryContainer)
         
         topStackView.addArrangedSubview(selectImageSelector)
         topStackView.addArrangedSubview(rightStackView)
@@ -94,6 +95,7 @@ class CreateActivityView: UIView {
         vc.title = "Tambah Aktivitas Baru"
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(dismissAction))
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(saveAction))
+        vc.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     @objc func dismissAction() {

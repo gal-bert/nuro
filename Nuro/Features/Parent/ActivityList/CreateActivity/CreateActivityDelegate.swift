@@ -13,3 +13,7 @@ protocol CreateActivityDelegate {
     func dismissViewController()
     func saveActivity()
 }
+
+protocol ReloadCreateActivity {
+    func reloadData()
+}
