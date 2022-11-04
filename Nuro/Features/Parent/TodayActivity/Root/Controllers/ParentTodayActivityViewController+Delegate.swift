@@ -51,15 +51,13 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8, colorName: Colors.Text.onyx)
             cell.backgroundColor = Colors.Background.papayaWhip
             cell.collectionView.backgroundColor = cell.backgroundColor
-//            cell.routines = viewModel.afternoonActivities
-            cell.routines = viewModel.morningActivities
+            cell.routines = viewModel.afternoonActivities
             
         case 2:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.night, text: "Malam", colorName: Colors.Text.onyx)
             cell.backgroundColor = Colors.Background.soap
             cell.collectionView.backgroundColor = cell.backgroundColor
-//            cell.routines = viewModel.eveningActivities
-            cell.routines = viewModel.morningActivities
+            cell.routines = viewModel.eveningActivities
 
         default:
             cell.timeframeLabel.text = "Empty"
