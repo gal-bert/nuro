@@ -44,7 +44,7 @@ class ParentChildRoutineView: UIView {
     
     private lazy var routineTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = Colors.Background.water
+        tableView.backgroundColor = .clear
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
         tableView.separatorColor = .clear

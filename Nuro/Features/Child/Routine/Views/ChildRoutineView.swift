@@ -17,7 +17,7 @@ class ChildRoutineView: UIView {
     
     private lazy var pageTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Aktivitas XXXX"
+        label.text = "Aktivitas \(Date().getTimeframe())"
         label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
         label.textAlignment = .center
         label.textColor = Colors.Text.onyx
@@ -71,8 +71,6 @@ class ChildRoutineView: UIView {
         stackView.addArrangedSubview(activityCollectionView)
         stackView.addArrangedSubview(startButton)
         
-        // TODO: Set title "Aktivitas Pagi/Siang/Malem"
-        pageTitleLabel.text = "Aktivitas Pagi"
     }
     
     private func setupConstraints() {

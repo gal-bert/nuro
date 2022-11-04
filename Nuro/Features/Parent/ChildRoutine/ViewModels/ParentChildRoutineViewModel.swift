@@ -12,7 +12,7 @@ class ParentChildRoutineViewModel {
     var todaysRoutines = [RoutineDetail]()
     
     func getTodaysRoutine() {
-        todaysRoutines = RoutineDetailLocalRepository.shared.getRoutineDetails(dayID: 1, timeID: 1)
+        todaysRoutines = RoutineDetailLocalRepository.shared.getRoutineDetails(dayID: Date().getCurrentWeekday(), timeID: Date().getTimeframeId())
     }
     
 }

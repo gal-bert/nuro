@@ -19,8 +19,7 @@ class ChildRoutineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Set current routine dayID and timeID
-        viewModel.loadActivities(dayID: 1, timeID: 1)
+        viewModel.loadActivities(dayID: Date().getCurrentWeekday(), timeID: Date().getTimeframeId())
         
         childRoutineView.setup(vc: self)
         totalActivity = viewModel.activities.count

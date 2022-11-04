@@ -45,6 +45,8 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
     
     func setupUI() {
         layer.cornerRadius = 50
+        layer.borderColor = Colors.Brand.jasmine.cgColor
+        layer.borderWidth = 2
         clipsToBounds = true
         
         contentView.addSubview(activityImage)

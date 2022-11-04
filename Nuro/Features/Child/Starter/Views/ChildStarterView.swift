@@ -12,14 +12,14 @@ class ChildStarterView: UIView {
     private lazy var greetingLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
-        label.text = "Selamat pagi, xxxx!"
+        label.text = "Selamat \(Date().getTimeframe()), \(Strings.kidsName)!"
         label.textAlignment = .center
         label.textColor = Colors.Text.onyx
         return label
     }()
     
     private lazy var timeImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, imageName: Icons.morning)
-    private lazy var button = ChildButton(title: "Selamat pagi", height: ScreenSizes.halfScreenHeight / 4)
+    private lazy var button = ChildButton(title: "Selamat \(Date().getTimeframe())", height: ScreenSizes.halfScreenHeight / 4)
     
     private lazy var stackView: UIStackView = {
         let sv = UIStackView()

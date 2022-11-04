@@ -87,6 +87,24 @@ extension Date {
             return "Malam"
         }
     }
+    
+    func getTimeframeId() -> Int {
+        switch getTimeframe() {
+        case "Pagi":
+            return 1
+            
+        case "Siang":
+            return 2
+            
+        case "Malam":
+            return 3
+            
+        default:
+            return 1
+        }
+    }
+    
+    
 
     
 }
