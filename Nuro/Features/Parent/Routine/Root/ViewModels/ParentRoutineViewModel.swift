@@ -34,4 +34,32 @@ class ParentRoutineViewModel {
         afternoonActivities = routineDetailRepo.getRoutineDetails(of: routineHeaders[startIndex+1])
         eveningActivities = routineDetailRepo.getRoutineDetails(of: routineHeaders[startIndex+2])
     }
+
+    func getRoutineDetail(section:Int, row: Int) -> RoutineDetail {
+        switch section {
+        case 0: //Morning
+            return morningActivities[row]
+        case 1: //Afternoon
+            return afternoonActivities[row]
+        case 2: //Evening
+            return eveningActivities[row]
+        default:
+            return RoutineDetail()
+        }
+    }
+
+    func getActivityNameFromCell(section:Int, row: Int) -> String {
+        switch section {
+        case 0: //Morning
+            return morningActivities[row].activity?.activityName ?? ""
+        case 1: //Afternoon
+            return afternoonActivities[row].activity?.activityName ?? ""
+        case 2: //Evening
+            return eveningActivities[row].activity?.activityName ?? ""
+        default:
+            return ""
+        }
+    }
+
+
 }

@@ -14,7 +14,12 @@ class ChildRoutineCompletedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        childRoutineCompletedView.setup()
+        childRoutineCompletedView.setup(vc: self)
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Transition.smoothAnimationWithDelay(view: childRoutineCompletedView, subviews: childRoutineCompletedView.subviews, bgColor: Colors.Neutral.white, delayForViews: childRoutineCompletedView.getDelayedView(), delayTime: Transition.DelayTime.slightDelay)
     }
     
     override func loadView() {

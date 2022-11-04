@@ -14,11 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let seederValidator = SeederValidator.shared
-        seederValidator.checkCategorySeedingStatus()
-        seederValidator.checkRoutineHeaderSeedingStatus()
-        seederValidator.checkActivitySeedingStatus()
-        seederValidator.checkDummyActivitySeedingStatus()
+        UserDefaultsHelper.registerDefaultValue()
+        
+         if UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isFirstTime) {
+             Seeder.shared.seedAll()
+             UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isFirstTime)
+         }
+        
         
         return true
     }

@@ -68,6 +68,7 @@ class CreateActivityView: UIView {
         
         delegate = vc
         descTextArea.delegate = vc
+        nameTextField.delegate = vc
         
         addSubview(parentStackView)
         
@@ -94,6 +95,7 @@ class CreateActivityView: UIView {
         vc.title = "Tambah Aktivitas Baru"
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(dismissAction))
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(saveAction))
+        vc.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     @objc func dismissAction() {

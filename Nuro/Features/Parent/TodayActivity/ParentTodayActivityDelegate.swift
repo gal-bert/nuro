@@ -16,11 +16,6 @@ protocol ParentTodayActivityEditOrderDelegate {
     func pushViewController(dest: UIViewController)
 }
 
-protocol ReloadDelegate {
-    func reloadTableView()
-}
-
-
 protocol ParentTodayActivityDetailDelegate {
     func dismissViewController()
     func deleteAction()

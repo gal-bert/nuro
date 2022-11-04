@@ -14,6 +14,9 @@ class ChildActivityCollectionViewCell: UICollectionViewCell {
     private lazy var activityImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.borderColor = Colors.Brand.jasmine.cgColor
+        imageView.layer.cornerRadius = 50
+        imageView.layer.borderWidth = 2
         return imageView
     }()
     

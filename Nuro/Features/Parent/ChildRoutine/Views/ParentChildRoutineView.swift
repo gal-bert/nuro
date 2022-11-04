@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ParentChildRoutineDelegate {
+    func toChildMode()
+}
+
 class ParentChildRoutineView: UIView {
     
     private lazy var pageTitleLabel: UILabel = {
@@ -40,7 +44,7 @@ class ParentChildRoutineView: UIView {
     
     private lazy var routineTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = Colors.Background.water
+        tableView.backgroundColor = .clear
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
         tableView.separatorColor = .clear
@@ -72,7 +76,11 @@ class ParentChildRoutineView: UIView {
         return button
     }()
     
+    private var delegate: ParentChildRoutineDelegate?
+    
     func setup(vc: ParentChildRoutineViewController) {
+        delegate = vc
+        
         setupUI()
         setupConstraints()
         setupTableView(vc: vc)
@@ -110,6 +118,6 @@ class ParentChildRoutineView: UIView {
     }
     
     @objc func toChildMode() {
-        // TODO: Add segue to child mode
+        delegate?.toChildMode()
     }
 }

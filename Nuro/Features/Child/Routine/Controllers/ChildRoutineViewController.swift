@@ -11,18 +11,28 @@ class ChildRoutineViewController: UIViewController {
     
     var isFirstActivityCardHidden  = false
     private var totalActivity = 0
+    var willBeAnimated = false
     
-    private let childRoutineView = ChildRoutineView()
+    let childRoutineView = ChildRoutineView()
     let viewModel = ChildRoutineViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Set current routine dayID and timeID
-        viewModel.loadActivities(dayID: 1, timeID: 1)
+        viewModel.loadActivities(dayID: Date().getCurrentWeekday(), timeID: Date().getTimeframeId())
         
         childRoutineView.setup(vc: self)
         totalActivity = viewModel.activities.count
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Transition.smoothAnimationWithDelay(view: childRoutineView, subviews: childRoutineView.subviews, bgColor: Colors.Neutral.white, delayForViews: childRoutineView.getDelayedView(), delayTime: Transition.DelayTime.fullDelay)
+        
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [self] timer in
+            if willBeAnimated {
+                nextActivity()
+            }
+        }
     }
     
     override func loadView() {
@@ -32,18 +42,27 @@ class ChildRoutineViewController: UIViewController {
     func nextActivity() {
         isFirstActivityCardHidden  = true
         
-        childRoutineView.animateHideRow()
-        if viewModel.activities.count > 0 {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
+            childRoutineView.disableStartButton()
+            childRoutineView.animateHideRow()
             viewModel.removeFirstActivity()
             Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [self] timer in
                 childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activities.count)
             }
+            
+            if viewModel.activities.count == 0 {
+                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
+                    let dest = ChildRoutineCompletedViewController()
+                    dest.modalPresentationStyle = .fullScreen
+                    dest.modalTransitionStyle = .crossDissolve
+                    
+                    Transition.animateTransition(vc: self)
+                    self.navigationController?.pushViewController(dest, animated: false)
+                }
+            }
+            
+            isFirstActivityCardHidden  = false
+            willBeAnimated = false
         }
-        else {
-            // Segue ke activity done
-        }
-        
-        
-        isFirstActivityCardHidden  = false
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20672E28F0850700AAA8F3 /* Paths.swift */; };
 		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
+		0C491E352913722A007D1CFC /* GlobalDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C491E342913722A007D1CFC /* GlobalDelegates.swift */; };
 		0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4A801C28F7D31600890495 /* ColorRGBA.swift */; };
 		0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */; };
 		0C5855D4290FFA10004D4DDD /* CreateActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855D3290FFA10004D4DDD /* CreateActivityView.swift */; };
@@ -38,6 +39,11 @@
 		0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89254328ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift */; };
 		0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */; };
 		0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C935DE528F4550800C7BA3E /* Fonts.swift */; };
+		0C98AC0B291520A500CB17F0 /* TimeframeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C98AC0A291520A500CB17F0 /* TimeframeValidator.swift */; };
+		0C9EFA6329153B5F00449EAD /* TimeframeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EFA6229153B5F00449EAD /* TimeframeTest.swift */; };
+		0C9EFA6A29153BAA00449EAD /* TimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EFA6929153BAA00449EAD /* TimeTest.swift */; };
+		0C9EFA6C291541F700449EAD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EFA6B291541F700449EAD /* UserDefaults.swift */; };
+		0C9EFA6E291563D400449EAD /* ChildPinUnlockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EFA6D291563D400449EAD /* ChildPinUnlockDelegate.swift */; };
 		0CA82E0328EC6A8C00D811A6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0228EC6A8C00D811A6 /* Environment.swift */; };
 		0CA82E0928EC6D8200D811A6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */; };
 		0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA82E1528EC719B00D811A6 /* String+Ext.swift */; };
@@ -89,6 +95,7 @@
 		3F9664BC290EC67A0056B6D6 /* AddActivityRoutimeTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9664BB290EC67A0056B6D6 /* AddActivityRoutimeTimeViewController.swift */; };
 		3F9664BE290EC6AA0056B6D6 /* AddActivityRoutineTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9664BD290EC6AA0056B6D6 /* AddActivityRoutineTimeView.swift */; };
 		3F9664C0290EC87D0056B6D6 /* AddActivityRoutineTimeViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9664BF290EC87D0056B6D6 /* AddActivityRoutineTimeViewController+Delegate.swift */; };
+		3F98CCC22912855400400762 /* DayToIdConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98CCC12912855400400762 /* DayToIdConverter.swift */; };
 		3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F996A4D28EDAEA600C343CC /* ParentRoutineDelegate.swift */; };
 		3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */; };
 		3FBAB76C290F70390066E04D /* AddActivityRoutineTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBAB76B290F70390066E04D /* AddActivityRoutineTimeViewModel.swift */; };
@@ -149,7 +156,16 @@
 		5F59FFA7290F436D00AD05F4 /* ChildPinUnlockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFA6290F436D00AD05F4 /* ChildPinUnlockViewModel.swift */; };
 		5F59FFA9290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFA8290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift */; };
 		5F59FFAB29106AAE00AD05F4 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFAA29106AAE00AD05F4 /* Document.swift */; };
-		5F87D83428FE5F6D00C06CE1 /* SeederValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F87D83328FE5F6D00C06CE1 /* SeederValidator.swift */; };
+		5F59FFAE291096B600AD05F4 /* ParentChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFAD291096B600AD05F4 /* ParentChildRoutineViewModel.swift */; };
+		5F59FFB02910996C00AD05F4 /* ChildStarterViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFAF2910996C00AD05F4 /* ChildStarterViewController+Delegate.swift */; };
+		5F7134A92914A26B00B9FF2E /* ChildRoutineCompletedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7134A82914A26B00B9FF2E /* ChildRoutineCompletedDelegate.swift */; };
+		5F7134AB2914A31C00B9FF2E /* ChildRoutineCompletedViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7134AA2914A31C00B9FF2E /* ChildRoutineCompletedViewController+Delegate.swift */; };
+		5F7134AD2914A3EB00B9FF2E /* ChildActivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7134AC2914A3EB00B9FF2E /* ChildActivityDelegate.swift */; };
+		5F7134AF2914A46500B9FF2E /* ChildStarterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7134AE2914A46500B9FF2E /* ChildStarterDelegate.swift */; };
+		5F7134B12914A97500B9FF2E /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7134B02914A97500B9FF2E /* Transition.swift */; };
+		5F8AA9E62910A18300331DB0 /* ChildActivityViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA9E52910A18300331DB0 /* ChildActivityViewController+Delegate.swift */; };
+		5F93EA0129148ACF00B8F5C4 /* ChildActivityCompletedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F93EA0029148ACF00B8F5C4 /* ChildActivityCompletedDelegate.swift */; };
+		5F93EA0329148AFF00B8F5C4 /* ChildActivityCompletedViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F93EA0229148AFF00B8F5C4 /* ChildActivityCompletedViewController+Delegate.swift */; };
 		5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */; };
 		5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */; };
 		5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */; };
@@ -182,11 +198,19 @@
 			remoteGlobalIDString = 0C79CE9C28EAB45100706D0A;
 			remoteInfo = Nuro;
 		};
+		0C9EFA6429153B5F00449EAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C79CE9528EAB45100706D0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C79CE9C28EAB45100706D0A;
+			remoteInfo = Nuro;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0C20672E28F0850700AAA8F3 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
+		0C491E342913722A007D1CFC /* GlobalDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDelegates.swift; sourceTree = "<group>"; };
 		0C4A801C28F7D31600890495 /* ColorRGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRGBA.swift; sourceTree = "<group>"; };
 		0C556D0028EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTodayActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0C5855D3290FFA10004D4DDD /* CreateActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityView.swift; sourceTree = "<group>"; };
@@ -221,6 +245,12 @@
 		0C89254328ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentTodayActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
 		0C89254628ED447D007BE0A4 /* SmallCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCapsuleButton.swift; sourceTree = "<group>"; };
 		0C935DE528F4550800C7BA3E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0C98AC0A291520A500CB17F0 /* TimeframeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeframeValidator.swift; sourceTree = "<group>"; };
+		0C9EFA6029153B5F00449EAD /* TimeframeTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeframeTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9EFA6229153B5F00449EAD /* TimeframeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeframeTest.swift; sourceTree = "<group>"; };
+		0C9EFA6929153BAA00449EAD /* TimeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTest.swift; sourceTree = "<group>"; };
+		0C9EFA6B291541F700449EAD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		0C9EFA6D291563D400449EAD /* ChildPinUnlockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPinUnlockDelegate.swift; sourceTree = "<group>"; };
 		0CA82E0228EC6A8C00D811A6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		0CA82E0828EC6D8200D811A6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		0CA82E1528EC719B00D811A6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -269,6 +299,7 @@
 		3F9664BB290EC67A0056B6D6 /* AddActivityRoutimeTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityRoutimeTimeViewController.swift; sourceTree = "<group>"; };
 		3F9664BD290EC6AA0056B6D6 /* AddActivityRoutineTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityRoutineTimeView.swift; sourceTree = "<group>"; };
 		3F9664BF290EC87D0056B6D6 /* AddActivityRoutineTimeViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddActivityRoutineTimeViewController+Delegate.swift"; sourceTree = "<group>"; };
+		3F98CCC12912855400400762 /* DayToIdConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayToIdConverter.swift; sourceTree = "<group>"; };
 		3F996A4D28EDAEA600C343CC /* ParentRoutineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineDelegate.swift; sourceTree = "<group>"; };
 		3F996A4F28EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentRoutineViewController+Delegate.swift"; sourceTree = "<group>"; };
 		3FBAB76B290F70390066E04D /* AddActivityRoutineTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddActivityRoutineTimeViewModel.swift; path = Nuro/Features/Parent/Routine/AddActivityRoutineTime/ViewModels/AddActivityRoutineTimeViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -329,7 +360,16 @@
 		5F59FFA6290F436D00AD05F4 /* ChildPinUnlockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPinUnlockViewModel.swift; sourceTree = "<group>"; };
 		5F59FFA8290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildPinUnlockViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5F59FFAA29106AAE00AD05F4 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		5F87D83328FE5F6D00C06CE1 /* SeederValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederValidator.swift; sourceTree = "<group>"; };
+		5F59FFAD291096B600AD05F4 /* ParentChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentChildRoutineViewModel.swift; sourceTree = "<group>"; };
+		5F59FFAF2910996C00AD05F4 /* ChildStarterViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildStarterViewController+Delegate.swift"; sourceTree = "<group>"; };
+		5F7134A82914A26B00B9FF2E /* ChildRoutineCompletedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineCompletedDelegate.swift; sourceTree = "<group>"; };
+		5F7134AA2914A31C00B9FF2E /* ChildRoutineCompletedViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineCompletedViewController+Delegate.swift"; sourceTree = "<group>"; };
+		5F7134AC2914A3EB00B9FF2E /* ChildActivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityDelegate.swift; sourceTree = "<group>"; };
+		5F7134AE2914A46500B9FF2E /* ChildStarterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildStarterDelegate.swift; sourceTree = "<group>"; };
+		5F7134B02914A97500B9FF2E /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		5F8AA9E52910A18300331DB0 /* ChildActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
+		5F93EA0029148ACF00B8F5C4 /* ChildActivityCompletedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityCompletedDelegate.swift; sourceTree = "<group>"; };
+		5F93EA0229148AFF00B8F5C4 /* ChildActivityCompletedViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildActivityCompletedViewController+Delegate.swift"; sourceTree = "<group>"; };
 		5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderLocalRepository.swift; sourceTree = "<group>"; };
 		5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailLocalRepository.swift; sourceTree = "<group>"; };
 		5FC373E428FC9E56004EF523 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
@@ -373,9 +413,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0C9EFA5D29153B5E00449EAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C491E3329137217007D1CFC /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0C491E342913722A007D1CFC /* GlobalDelegates.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		0C5855D2290FF97D004D4DDD /* CreateActivity */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +449,7 @@
 				0C79CE9F28EAB45100706D0A /* Nuro */,
 				0C79CEB928EAB45200706D0A /* NuroTests */,
 				0C79CEC328EAB45200706D0A /* NuroUITests */,
+				0C9EFA6129153B5F00449EAD /* TimeframeTest */,
 				0C79CE9E28EAB45100706D0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -404,6 +460,7 @@
 				0C79CE9D28EAB45100706D0A /* Nuro.app */,
 				0C79CEB628EAB45200706D0A /* NuroTests.xctest */,
 				0C79CEC028EAB45200706D0A /* NuroUITests.xctest */,
+				0C9EFA6029153B5F00449EAD /* TimeframeTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -426,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				0C79CEBA28EAB45200706D0A /* NuroTests.swift */,
+				0C9EFA6929153BAA00449EAD /* TimeTest.swift */,
 			);
 			path = NuroTests;
 			sourceTree = "<group>";
@@ -448,9 +506,18 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		0C9EFA6129153B5F00449EAD /* TimeframeTest */ = {
+			isa = PBXGroup;
+			children = (
+				0C9EFA6229153B5F00449EAD /* TimeframeTest.swift */,
+			);
+			path = TimeframeTest;
+			sourceTree = "<group>";
+		};
 		0CA82E0A28EC6D9400D811A6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0C491E3329137217007D1CFC /* Delegates */,
 				0CF2C21628F5308D00D91E79 /* Constants */,
 				0CF2C21528F5307A00D91E79 /* Functions */,
 				0CA82E2F28EC79E100D811A6 /* CoreData */,
@@ -863,8 +930,12 @@
 			children = (
 				0CF2C21128F4874C00D91E79 /* TextAttachments.swift */,
 				0C4A801C28F7D31600890495 /* ColorRGBA.swift */,
+				5F7134B02914A97500B9FF2E /* Transition.swift */,
 				5F59FFAA29106AAE00AD05F4 /* Document.swift */,
 				3F3BD22B29116EA100295A57 /* TimeToIdConverter.swift */,
+				3F98CCC12912855400400762 /* DayToIdConverter.swift */,
+				0C98AC0A291520A500CB17F0 /* TimeframeValidator.swift */,
+				0C9EFA6B291541F700449EAD /* UserDefaults.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1123,6 +1194,7 @@
 			isa = PBXGroup;
 			children = (
 				5F02CB32290A1DF60079FFC5 /* ChildPinUnlockView.swift */,
+				0C9EFA6D291563D400449EAD /* ChildPinUnlockDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1142,6 +1214,7 @@
 			children = (
 				5F2158132908C0A300EA5085 /* Views */,
 				5F2158122908C09E00EA5085 /* Controllers */,
+				5F7134AC2914A3EB00B9FF2E /* ChildActivityDelegate.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -1150,6 +1223,7 @@
 			isa = PBXGroup;
 			children = (
 				5F2158142908C0B900EA5085 /* ChildActivityViewController.swift */,
+				5F8AA9E52910A18300331DB0 /* ChildActivityViewController+Delegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1167,6 +1241,7 @@
 			children = (
 				5F3198EB2905F2B900E7FBE1 /* Controllers */,
 				5F3198EA2905F2B400E7FBE1 /* Views */,
+				5F7134AE2914A46500B9FF2E /* ChildStarterDelegate.swift */,
 			);
 			path = Starter;
 			sourceTree = "<group>";
@@ -1183,6 +1258,7 @@
 			isa = PBXGroup;
 			children = (
 				5F3198EC2905F2CF00E7FBE1 /* ChildStarterViewController.swift */,
+				5F59FFAF2910996C00AD05F4 /* ChildStarterViewController+Delegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1192,6 +1268,7 @@
 			children = (
 				5F3198FD2906102700E7FBE1 /* Views */,
 				5F3198FC2906102100E7FBE1 /* Controllers */,
+				5F93EA0029148ACF00B8F5C4 /* ChildActivityCompletedDelegate.swift */,
 			);
 			path = ActivityCompleted;
 			sourceTree = "<group>";
@@ -1200,6 +1277,7 @@
 			isa = PBXGroup;
 			children = (
 				5F3198FA2906101900E7FBE1 /* ChildActivityCompletedViewController.swift */,
+				5F93EA0229148AFF00B8F5C4 /* ChildActivityCompletedViewController+Delegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1217,6 +1295,7 @@
 			children = (
 				5F3199022906157400E7FBE1 /* Controllers */,
 				5F3199012906156E00E7FBE1 /* Views */,
+				5F7134A82914A26B00B9FF2E /* ChildRoutineCompletedDelegate.swift */,
 			);
 			path = RoutineCompleted;
 			sourceTree = "<group>";
@@ -1233,6 +1312,7 @@
 			isa = PBXGroup;
 			children = (
 				5F3199032906158900E7FBE1 /* ChildRoutineCompletedViewController.swift */,
+				5F7134AA2914A31C00B9FF2E /* ChildRoutineCompletedViewController+Delegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1253,11 +1333,18 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		5F59FFAC291096A000AD05F4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5F59FFAD291096B600AD05F4 /* ParentChildRoutineViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5F87D83528FE6B3F00C06CE1 /* Seeder */ = {
 			isa = PBXGroup;
 			children = (
 				0CA82E3228EC7B2500D811A6 /* Seeder.swift */,
-				5F87D83328FE5F6D00C06CE1 /* SeederValidator.swift */,
 			);
 			path = Seeder;
 			sourceTree = "<group>";
@@ -1265,6 +1352,7 @@
 		5FC373EA28FCB11E004EF523 /* ChildRoutine */ = {
 			isa = PBXGroup;
 			children = (
+				5F59FFAC291096A000AD05F4 /* ViewModels */,
 				5FC373EC28FCB12D004EF523 /* Controllers */,
 				5FC373EB28FCB128004EF523 /* Views */,
 			);
@@ -1388,6 +1476,24 @@
 			productReference = 0C79CEC028EAB45200706D0A /* NuroUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		0C9EFA5F29153B5E00449EAD /* TimeframeTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C9EFA6629153B5F00449EAD /* Build configuration list for PBXNativeTarget "TimeframeTest" */;
+			buildPhases = (
+				0C9EFA5C29153B5E00449EAD /* Sources */,
+				0C9EFA5D29153B5E00449EAD /* Frameworks */,
+				0C9EFA5E29153B5E00449EAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C9EFA6529153B5F00449EAD /* PBXTargetDependency */,
+			);
+			name = TimeframeTest;
+			productName = TimeframeTest;
+			productReference = 0C9EFA6029153B5F00449EAD /* TimeframeTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1406,6 +1512,10 @@
 						TestTargetID = 0C79CE9C28EAB45100706D0A;
 					};
 					0C79CEBF28EAB45200706D0A = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 0C79CE9C28EAB45100706D0A;
+					};
+					0C9EFA5F29153B5E00449EAD = {
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = 0C79CE9C28EAB45100706D0A;
 					};
@@ -1432,6 +1542,7 @@
 				0C79CE9C28EAB45100706D0A /* Nuro */,
 				0C79CEB528EAB45200706D0A /* NuroTests */,
 				0C79CEBF28EAB45200706D0A /* NuroUITests */,
+				0C9EFA5F29153B5E00449EAD /* TimeframeTest */,
 			);
 		};
 /* End PBXProject section */
@@ -1468,6 +1579,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0C9EFA5E29153B5E00449EAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1476,6 +1594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CD5796328FE720F00F40DB3 /* UIView+Ext.swift in Sources */,
+				5F59FFB02910996C00AD05F4 /* ChildStarterViewController+Delegate.swift in Sources */,
 				4ABE2D1A28EDB44A0082147F /* ParentActivityListViewController+Delegate.swift in Sources */,
 				3F9664BE290EC6AA0056B6D6 /* AddActivityRoutineTimeView.swift in Sources */,
 				5F3198FB2906101900E7FBE1 /* ChildActivityCompletedViewController.swift in Sources */,
@@ -1485,8 +1604,11 @@
 				0C5855DA29101E0B004D4DDD /* CreateActivityDelegate.swift in Sources */,
 				3F996A4E28EDAEA600C343CC /* ParentRoutineDelegate.swift in Sources */,
 				0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */,
+				5F8AA9E62910A18300331DB0 /* ChildActivityViewController+Delegate.swift in Sources */,
 				3F59A3712905AECE00F1877B /* ParentRoutineAddActivityView.swift in Sources */,
 				0CA96D7628FD269000DB7D4C /* CellEditButton.swift in Sources */,
+				5F7134AD2914A3EB00B9FF2E /* ChildActivityDelegate.swift in Sources */,
+				5F7134AF2914A46500B9FF2E /* ChildStarterDelegate.swift in Sources */,
 				0CD5796528FEB7CF00F40DB3 /* ParentTodayActivityEditOrder+Delegate.swift in Sources */,
 				5FC373F028FCB203004EF523 /* ParentChildRoutineViewController.swift in Sources */,
 				5FC373F928FDA16D004EF523 /* ParentChildRoutineViewController+Delegate.swift in Sources */,
@@ -1512,6 +1634,7 @@
 				5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */,
 				3F3BD22C29116EA100295A57 /* TimeToIdConverter.swift in Sources */,
 				0CAFDA5328FE568C0035F252 /* ParentTodayActivityEditOrderView.swift in Sources */,
+				3F98CCC22912855400400762 /* DayToIdConverter.swift in Sources */,
 				5F2158152908C0B900EA5085 /* ChildActivityViewController.swift in Sources */,
 				0C89254228ED3FF8007BE0A4 /* ParentTodayActivityDelegate.swift in Sources */,
 				4AA00AD32910E855002CD604 /* Images.swift in Sources */,
@@ -1521,6 +1644,7 @@
 				3F9664B5290E4F2F0056B6D6 /* PlainTableViewCell.swift in Sources */,
 				4A854D8928FEF9270048C7D8 /* ParentActivityListDetailDelegate.swift in Sources */,
 				5F3199082906276F00E7FBE1 /* ParentModeButton.swift in Sources */,
+				0C491E352913722A007D1CFC /* GlobalDelegates.swift in Sources */,
 				0CA82E2D28EC784E00D811A6 /* ParentTodayActivityViewController.swift in Sources */,
 				5FEDEDF828ED35A400FB8DF6 /* ChildRoutineView.swift in Sources */,
 				0CF066852901870000061701 /* AddActivityButtonCollectionViewCell.swift in Sources */,
@@ -1531,6 +1655,7 @@
 				0C81BA7329063701004EAE13 /* SearchControllerDelegate.swift in Sources */,
 				3F0F385E28ED3DA800C1EC68 /* ParentRoutineViewModel.swift in Sources */,
 				0C89254728ED447D007BE0A4 /* SmallCapsuleButton.swift in Sources */,
+				5F93EA0129148ACF00B8F5C4 /* ChildActivityCompletedDelegate.swift in Sources */,
 				4AA00ACF29102973002CD604 /* ColorSet.swift in Sources */,
 				4AD3981628F44EC40091F7C9 /* ParentActivityListFolderCollectionViewCell.swift in Sources */,
 				3FBAB77429101AE90066E04D /* AddActivityRoutineDayViewModel.swift in Sources */,
@@ -1545,15 +1670,18 @@
 				4A24DA0E2913718B0078095E /* SettingView.swift in Sources */,
 				5FC373E528FC9E56004EF523 /* CoreDataProtocols.swift in Sources */,
 				0C89254428ED4035007BE0A4 /* ParentTodayActivityViewController+Delegate.swift in Sources */,
+				5F7134B12914A97500B9FF2E /* Transition.swift in Sources */,
 				0CAD212C2901538C00941794 /* Alert.swift in Sources */,
 				0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */,
 				0CF2C21028F4630B00D91E79 /* Corners.swift in Sources */,
+				5F7134A92914A26B00B9FF2E /* ChildRoutineCompletedDelegate.swift in Sources */,
 				3F996A5028EDAF1500C343CC /* ParentRoutineViewController+Delegate.swift in Sources */,
 				5F3198FF2906103A00E7FBE1 /* ChildActivityCompletedView.swift in Sources */,
 				5FC373EE28FCB14E004EF523 /* ParentChildRoutineView.swift in Sources */,
 				5F563D1F28F598DF003748D7 /* CategoryLocalRepository.swift in Sources */,
 				4AA00AD129102AB2002CD604 /* ColorSetModel.swift in Sources */,
 				3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */,
+				0C98AC0B291520A500CB17F0 /* TimeframeValidator.swift in Sources */,
 				4A854D8528FEF5270048C7D8 /* ParentActivityListDetailViewModel.swift in Sources */,
 				4A854D8B28FFC4380048C7D8 /* ParentActivityListDetailCollectionViewCell.swift in Sources */,
 				0CCF58E0290688E40005AF63 /* ParentTodayActivityDetailView.swift in Sources */,
@@ -1571,6 +1699,7 @@
 				5F2B8BF228EE41A6000BA3F6 /* ChildRoutineViewModel.swift in Sources */,
 				4A854D90290235B50048C7D8 /* UIImage+Ext.swift in Sources */,
 				0CB13F8228FC052100009729 /* ParentTodayActivityEmptyStateView.swift in Sources */,
+				0C9EFA6C291541F700449EAD /* UserDefaults.swift in Sources */,
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
 				4A24DA16291376C80078095E /* SettingDelegate.swift in Sources */,
 				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
@@ -1581,8 +1710,10 @@
 				5FB15D8A28F7CA3A003822F9 /* RoutineDetailLocalRepository.swift in Sources */,
 				4A24DA14291372740078095E /* SettingViewController+Delegate.swift in Sources */,
 				0CAD213D2901693E00941794 /* AddActivityViewController.swift in Sources */,
+				5F59FFAE291096B600AD05F4 /* ParentChildRoutineViewModel.swift in Sources */,
 				5F02CB37290A203A0079FFC5 /* ChildPinUnlockViewController+DataSource.swift in Sources */,
 				3F9664BC290EC67A0056B6D6 /* AddActivityRoutimeTimeViewController.swift in Sources */,
+				0C9EFA6E291563D400449EAD /* ChildPinUnlockDelegate.swift in Sources */,
 				5FE056AF28F4E2BA004A8CAA /* CoreDataManager.swift in Sources */,
 				4ABE2D1C28EDB4700082147F /* ParentActivityListDelegate.swift in Sources */,
 				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
@@ -1601,14 +1732,15 @@
 				5F02CB33290A1DF60079FFC5 /* ChildPinUnlockView.swift in Sources */,
 				0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */,
 				5F02CB3B290A21AD0079FFC5 /* PinNumberCollectionViewCell.swift in Sources */,
+				5F7134AB2914A31C00B9FF2E /* ChildRoutineCompletedViewController+Delegate.swift in Sources */,
 				0CA82E1E28EC72E500D811A6 /* Colors.swift in Sources */,
-				5F87D83428FE5F6D00C06CE1 /* SeederValidator.swift in Sources */,
 				5F02CB3D290A21EA0079FFC5 /* DeletePinButton.swift in Sources */,
 				5F3199042906158900E7FBE1 /* ChildRoutineCompletedViewController.swift in Sources */,
 				4A24DA18291386390078095E /* SettingTimeTableViewCell.swift in Sources */,
 				4ABE2D1428ED313E0082147F /* ParentActivityListView.swift in Sources */,
 				0CCD3F5228EDBB8C0033D5A6 /* Jumbotron.swift in Sources */,
 				5F02CB39290A20760079FFC5 /* PinTextField.swift in Sources */,
+				5F93EA0329148AFF00B8F5C4 /* ChildActivityCompletedViewController+Delegate.swift in Sources */,
 				0CA82E1628EC719B00D811A6 /* String+Ext.swift in Sources */,
 				5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */,
 				5FEDEDFA28ED391B00FB8DF6 /* ChildRoutineViewController+DataSource.swift in Sources */,
@@ -1625,6 +1757,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9EFA6A29153BAA00449EAD /* TimeTest.swift in Sources */,
 				0C79CEBB28EAB45200706D0A /* NuroTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1635,6 +1768,14 @@
 			files = (
 				0C79CEC728EAB45200706D0A /* NuroUITestsLaunchTests.swift in Sources */,
 				0C79CEC528EAB45200706D0A /* NuroUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9EFA5C29153B5E00449EAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9EFA6329153B5F00449EAD /* TimeframeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1650,6 +1791,11 @@
 			isa = PBXTargetDependency;
 			target = 0C79CE9C28EAB45100706D0A /* Nuro */;
 			targetProxy = 0C79CEC128EAB45200706D0A /* PBXContainerItemProxy */;
+		};
+		0C9EFA6529153B5F00449EAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C79CE9C28EAB45100706D0A /* Nuro */;
+			targetProxy = 0C9EFA6429153B5F00449EAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1787,7 +1933,7 @@
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KR56UH6MNG;
+				DEVELOPMENT_TEAM = 5658ASKD6C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ability to capture activity";
@@ -1802,7 +1948,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.FinnChristoffer.NuroByPetak9;
+				PRODUCT_BUNDLE_IDENTIFIER = id.karennatalia.NuroByPetak9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1821,7 +1967,7 @@
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KR56UH6MNG;
+				DEVELOPMENT_TEAM = 5658ASKD6C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ability to capture activity";
@@ -1836,7 +1982,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.FinnChristoffer.NuroByPetak9;
+				PRODUCT_BUNDLE_IDENTIFIER = id.karennatalia.NuroByPetak9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1923,6 +2069,50 @@
 			};
 			name = Release;
 		};
+		0C9EFA6729153B5F00449EAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CL42QD4LKB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.TimeframeTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nuro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nuro";
+			};
+			name = Debug;
+		};
+		0C9EFA6829153B5F00449EAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CL42QD4LKB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.TimeframeTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nuro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nuro";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1958,6 +2148,15 @@
 			buildConfigurations = (
 				0C79CED128EAB45200706D0A /* Debug */,
 				0C79CED228EAB45200706D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C9EFA6629153B5F00449EAD /* Build configuration list for PBXNativeTarget "TimeframeTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C9EFA6729153B5F00449EAD /* Debug */,
+				0C9EFA6829153B5F00449EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

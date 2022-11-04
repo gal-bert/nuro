@@ -48,7 +48,7 @@ class ActivitiesTableViewCell: UITableViewCell {
     private let stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
-        view.distribution = .fillEqually
+        view.distribution = .equalSpacing
         view.spacing = 20
         return view
     }()
@@ -80,7 +80,6 @@ class ActivitiesTableViewCell: UITableViewCell {
         wrapperView.addSubview(stackView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(descLabel)
-        stackView.addArrangedSubview(categoryLabel)
     }
     
     func configure(model: Activity) {

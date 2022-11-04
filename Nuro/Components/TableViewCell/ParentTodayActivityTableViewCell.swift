@@ -108,9 +108,9 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let dest = ParentTodayActivityDetailViewController()
-        dest.routineDetail = routines[indexPath.item]
-        delegate.presentViewController(dest: dest)
+//        let dest = ParentTodayActivityDetailViewController()
+//        dest.routineDetail = routines[indexPath.item]
+//        delegate.presentViewController(dest: dest)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
