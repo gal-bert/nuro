@@ -56,7 +56,37 @@ extension Date {
         time = "\(hourString):\(minuteString)"
         
         return time
-        
     }
+    
+    func getCurrentWeekday() -> Int {
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let weekday = calendar.component(.weekday, from: date) - 1
+        
+        return weekday
+    }
+    
+    /// The compared time should be a String with the format of HH:mm
+    func getTimeframe() -> String {
+        let midnight = "00:00"
+        
+        let morning = "08:00"
+        let afternoon = "12:00"
+        let evening = "18:30"
+        
+        let curr = getTickingTime()
+        
+        if curr > midnight && curr < afternoon {
+            return "Pagi"
+        }
+        else if curr > morning && curr < evening {
+            return "Siang"
+        }
+        else {
+            return "Malam"
+        }
+    }
+
     
 }

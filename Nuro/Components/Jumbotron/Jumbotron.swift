@@ -20,7 +20,7 @@ class Jumbotron: UIView {
         let view = UILabel()
         view.textColor = Colors.Brand.blueViolet
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
-        view.text = "Selamat Pagi Mom!"
+        view.text = "Selamat \(Date().getTimeframe()) Mom!"
         return view
     }()
     
