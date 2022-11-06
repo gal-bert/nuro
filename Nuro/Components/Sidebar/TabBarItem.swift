@@ -8,7 +8,7 @@
 import UIKit
 
 enum TabBarItem: Int, CaseIterable {
-    case parentTodayActivity, parentRoutine, parentActivityList, childRoutine
+    case parentTodayActivity, parentRoutine, parentActivityList, childRoutine, settingsPage
     
     func title() -> String {
         switch self {
@@ -20,6 +20,8 @@ enum TabBarItem: Int, CaseIterable {
             return Strings.parentActivityListTitle
         case .childRoutine:
             return Strings.childRoutineTitle
+        case .settingsPage:
+            return Strings.settingsTitle
         }
     }
     
@@ -33,6 +35,8 @@ enum TabBarItem: Int, CaseIterable {
             return UIImage(systemName: Icons.listBulletRectanglePortrait)
         case .childRoutine:
             return UIImage(systemName: Icons.aqi)
+        case .settingsPage:
+            return UIImage(systemName: Icons.gear)
         }
     }
 }

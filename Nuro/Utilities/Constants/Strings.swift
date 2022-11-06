@@ -15,6 +15,7 @@ enum Strings {
     static let parentRoutineTitle = "Rutinitas"
     static let parentActivityListTitle = "Daftar Aktivitas"
     static let childRoutineTitle = "Rutinitas Anak"
+    static let settingsTitle = "Pengaturan"
     
     enum Category {
         static let others = "Lainnya"
