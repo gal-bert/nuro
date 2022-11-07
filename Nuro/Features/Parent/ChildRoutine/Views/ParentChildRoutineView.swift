@@ -56,7 +56,7 @@ class ParentChildRoutineView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 32
+        stackView.distribution = .equalSpacing
         stackView.alignment = .center
         return stackView
     }()
@@ -102,12 +102,13 @@ class ParentChildRoutineView: UIView {
         }
         
         startButton.snp.makeConstraints { make in
-            make.height.equalTo(80)
+            make.height.equalTo(ScreenSizes.halfScreenHeight / 5)
             make.width.equalTo(ScreenSizes.halfScreenWidth)
         }
         
         routineTableView.snp.makeConstraints { make in
             make.left.right.equalTo(stackView)
+            make.height.equalTo(ScreenSizes.screenHeight * 2/3)
         }
     }
     
