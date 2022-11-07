@@ -14,12 +14,10 @@ extension ChildStarterViewController: ChildStarterDelegate {
         dest.modalPresentationStyle = .fullScreen
         dest.modalTransitionStyle = .crossDissolve
         
-        let nav = UINavigationController(rootViewController: dest)
-        nav.modalPresentationStyle = .fullScreen
-        
         Transition.animateTransition(vc: self)
-        self.present(nav, animated: false)
+        navigationController?.pushViewController(dest, animated: false)
     }
+    
     func backToParentsMode() {
         self.dismiss(animated: true)
     }

@@ -10,7 +10,9 @@ import Foundation
 extension ChildActivityCompletedViewController: ChildActivityCompletedDelegate {
     func dismissViewController() {
         Transition.animateTransition(vc: self)
-        navigationController?.popToRootViewController(animated: false)
+        if let routineViewController = navigationController?.viewControllers[1] {
+            navigationController?.popToViewController(routineViewController, animated: false)
+        }
     }
 }
 
