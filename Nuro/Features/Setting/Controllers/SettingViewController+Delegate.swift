@@ -14,18 +14,6 @@ extension SettingViewController: SettingDelegate {
 }
 
 extension SettingViewController: UITextFieldDelegate {
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        switch textField.tag {
-//        case 0:
-//            let text = textField.text == "" ? "Orang Tua" : textField.text
-//            UserDefaults.standard.set(text, forKey: UserDefaultsHelper.Keys.parentsName)
-//        case 1:
-//            let text = textField.text == "" ? "Anak" : textField.text
-//            UserDefaults.standard.set(text, forKey: UserDefaultsHelper.Keys.kidsName)
-//        default:
-//            print("Other")
-//        }
-//    }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let text = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
