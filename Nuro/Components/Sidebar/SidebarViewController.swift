@@ -142,14 +142,17 @@ extension SidebarViewController: UICollectionViewDelegate {
         switch sidebarItem.id {
         case RowIdentifier.parentTodayActivity:
             let navCon = UINavigationController(rootViewController: ParentTodayActivityViewController())
+            deselectSettingsCell()
             splitViewController?.setViewController(navCon, for: .secondary)
             
         case RowIdentifier.parentRoutine:
             let navCon = UINavigationController(rootViewController: ParentRoutineViewController())
+            deselectSettingsCell()
             splitViewController?.setViewController(navCon, for: .secondary)
             
         case RowIdentifier.parentActivityList:
             let navCon = UINavigationController(rootViewController: ParentActivityListViewController())
+            deselectSettingsCell()
             splitViewController?.setViewController(navCon, for: .secondary)
             
         default:
@@ -161,6 +164,7 @@ extension SidebarViewController: UICollectionViewDelegate {
         switch sidebarItem.id {
         case RowIdentifier.childRoutine:
             let navCon = UINavigationController(rootViewController: ParentChildRoutineViewController())
+            deselectSettingsCell()
             splitViewController?.setViewController(navCon, for: .secondary)
             
         default:
@@ -173,10 +177,25 @@ extension SidebarViewController: UICollectionViewDelegate {
             
         case RowIdentifier.settingsPage:
             let navCon = UINavigationController(rootViewController: ParentRoutineAddActivityViewController())
+            deselectMainCells()
             splitViewController?.setViewController(navCon, for: .secondary)
             
         default:
             collectionViewMain.deselectItem(at: indexPath, animated: true)
+        }
+    }
+    
+    func deselectMainCells() {
+        let selectedItems = collectionViewMain.indexPathsForSelectedItems
+        for indexPath in selectedItems! {
+            collectionViewMain.deselectItem(at: indexPath, animated:true)
+        }
+    }
+    
+    func deselectSettingsCell() {
+        let selectedItems = collectionViewSetting.indexPathsForSelectedItems
+        for indexPath in selectedItems! {
+            collectionViewSetting.deselectItem(at: indexPath, animated:true)
         }
     }
     
