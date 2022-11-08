@@ -1,4 +1,4 @@
-//
+ //
 //  SettingView.swift
 //  Nuro
 //
@@ -69,8 +69,6 @@ class SettingView: UIView {
         addSubview(tableViewProfile)
         addSubview(timeLabel)
         addSubview(tableViewTime)
-        addSubview(timePicker)
-        
         
         setupNavigationBar()
         setupConstraints()
