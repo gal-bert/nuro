@@ -6,34 +6,35 @@
 //
 
 import UIKit
+import SnapKit
 import Combine
 
 @available(iOS 14, *)
 class SidebarViewController: UIViewController {
-
+    
     private enum SidebarItemType: Int {
         case header, expandableRow, row
     }
     
     private enum SidebarSection: Int {
-        case parentSection, childSection
+        case parentSection, childSection, settingsSection
     }
     
     private struct SidebarItem: Hashable, Identifiable {
         let id: UUID
         let type: SidebarItemType
-        let title: String
+        let title: String?
         let subtitle: String?
         let image: UIImage?
         
         static func header(title: String, id: UUID = UUID()) -> Self {
             return SidebarItem(id: id, type: .header, title: title, subtitle: nil, image: nil)
         }
-
+        
         static func expandableRow(title: String, subtitle: String?, image: UIImage?, id: UUID = UUID()) -> Self {
             return SidebarItem(id: id, type: .expandableRow, title: title, subtitle: subtitle, image: image)
         }
-
+        
         static func row(title: String, subtitle: String?, image: UIImage?, id: UUID = UUID()) -> Self {
             return SidebarItem(id: id, type: .row, title: title, subtitle: subtitle, image: image)
         }
@@ -44,36 +45,60 @@ class SidebarViewController: UIViewController {
         static let parentRoutine = UUID()
         static let parentActivityList = UUID()
         static let childRoutine = UUID()
+        static let settingsPage = UUID()
     }
     
-    private var collectionView: UICollectionView!
-    private var dataSource: UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>!
-
-
+    private var collectionViewMain: UICollectionView!
+    private var collectionViewSetting: UICollectionView!
+    private var dataSourceMain: UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>!
+    private var dataSourceSetting: UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.tintColor = Colors.Brand.blueViolet
-//        view.tintColor = Colors.Brand.blueViolet
-
+        view.backgroundColor = Colors.Brand.jasmine
+        
         configureCollectionView()
         configureDataSource()
         applyInitialSnapshot()
         
-        collectionView.selectItem(at: [0,1], animated: true, scrollPosition: .top)
+        collectionViewMain.selectItem(at: [0,1], animated: true, scrollPosition: .top)
     }
-
+    
 }
 
 @available(iOS 14, *)
 extension SidebarViewController {
     
     private func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
-        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor = .systemBackground
-        collectionView.delegate = self
-        view.addSubview(collectionView)
+        collectionViewMain = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionViewMain.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionViewMain.backgroundColor = .systemBackground
+        collectionViewMain.isScrollEnabled = false
+        collectionViewMain.delegate = self
+        
+        collectionViewSetting = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionViewSetting.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionViewSetting.backgroundColor = .systemBackground
+        collectionViewSetting.isScrollEnabled = false
+        collectionViewSetting.delegate = self
+        
+        view.addSubview(collectionViewMain)
+        view.addSubview(collectionViewSetting)
+        
+        collectionViewMain.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.height.equalTo(ScreenSizes.screenHeight * 0.85)
+        }
+        
+        collectionViewSetting.snp.makeConstraints { make in
+            make.top.equalTo(collectionViewMain.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
+        }
+        
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -87,22 +112,30 @@ extension SidebarViewController {
         }
         return layout
     }
-
 }
 
 @available(iOS 14, *)
 extension SidebarViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let sidebarItem = dataSource.itemIdentifier(for: indexPath) else { return }
         
-        switch indexPath.section {
-        case SidebarSection.parentSection.rawValue:
-            didSelectParentItem(sidebarItem, at: indexPath)
-        case SidebarSection.childSection.rawValue:
-            didSelectChildItem(sidebarItem, at: indexPath)
-        default:
-            collectionView.deselectItem(at: indexPath, animated: true)
+        if collectionView == self.collectionViewMain {
+            guard let sidebarItem = dataSourceMain.itemIdentifier(for: indexPath) else { return }
+            
+            switch indexPath.section {
+            case SidebarSection.parentSection.rawValue:
+                didSelectParentItem(sidebarItem, at: indexPath)
+            case SidebarSection.childSection.rawValue:
+                didSelectChildItem(sidebarItem, at: indexPath)
+            default:
+                collectionView.deselectItem(at: indexPath, animated: true)
+            }
         }
+        else {
+            guard let sidebarSetting = dataSourceSetting.itemIdentifier(for: indexPath) else { return }
+            
+            didSelectSettingsItem(sidebarSetting, at: indexPath)
+        }
+
     }
     
     private func didSelectParentItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
@@ -120,7 +153,7 @@ extension SidebarViewController: UICollectionViewDelegate {
             splitViewController?.setViewController(navCon, for: .secondary)
             
         default:
-            collectionView.deselectItem(at: indexPath, animated: true)
+            collectionViewMain.deselectItem(at: indexPath, animated: true)
         }
     }
     
@@ -131,7 +164,19 @@ extension SidebarViewController: UICollectionViewDelegate {
             splitViewController?.setViewController(navCon, for: .secondary)
             
         default:
-            collectionView.deselectItem(at: indexPath, animated: true)
+            collectionViewMain.deselectItem(at: indexPath, animated: true)
+        }
+    }
+    
+    private func didSelectSettingsItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
+        switch sidebarItem.id {
+            
+        case RowIdentifier.settingsPage:
+            let navCon = UINavigationController(rootViewController: ParentRoutineAddActivityViewController())
+            splitViewController?.setViewController(navCon, for: .secondary)
+            
+        default:
+            collectionViewMain.deselectItem(at: indexPath, animated: true)
         }
     }
     
@@ -150,7 +195,7 @@ extension SidebarViewController {
             
             cell.contentConfiguration = contentConfiguration
         }
-        
+            
         let expandableRowRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SidebarItem> {
             (cell, indexPath, item) in
             
@@ -168,17 +213,28 @@ extension SidebarViewController {
             var contentConfiguration = UIListContentConfiguration.sidebarSubtitleCell()
             contentConfiguration.text = item.title
             contentConfiguration.textProperties.font = UIFont(name: Fonts.VisbyRoundCF.medium, size: 20)!
-//            contentConfiguration.textProperties.color = Colors.Text.onyx
             contentConfiguration.secondaryText = item.subtitle
             contentConfiguration.image = item.image
-//            contentConfiguration.imageProperties.tintColor = Colors.Brand.blueViolet
             
             cell.contentConfiguration = contentConfiguration
         }
         
-        dataSource = UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>(collectionView: collectionView) {
+        dataSourceMain = UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>(collectionView: collectionViewMain) {
             (collectionView, indexPath, item) -> UICollectionViewCell in
             
+            switch item.type {
+            case .header:
+                return collectionView.dequeueConfiguredReusableCell(using: headerRegistration, for: indexPath, item: item)
+            case .expandableRow:
+                return collectionView.dequeueConfiguredReusableCell(using: expandableRowRegistration, for: indexPath, item: item)
+            default:
+                return collectionView.dequeueConfiguredReusableCell(using: rowRegistration, for: indexPath, item: item)
+            }
+        }
+        
+        dataSourceSetting = UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>(collectionView: collectionViewSetting) {
+            (collectionView, indexPath, item) -> UICollectionViewCell in
+
             switch item.type {
             case .header:
                 return collectionView.dequeueConfiguredReusableCell(using: headerRegistration, for: indexPath, item: item)
@@ -218,10 +274,22 @@ extension SidebarViewController {
         return snapshot
     }
     
-    private func applyInitialSnapshot() {
-        dataSource.apply(parentSnapshot(), to: .parentSection, animatingDifferences: false)
-        dataSource.apply(childSnapshot(), to: .childSection, animatingDifferences: false)
+    private func settingsSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
+        var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
+        let header = SidebarItem.header(title: "")
+        let items: [SidebarItem] = [
+            .row(title: TabBarItem.settingsPage.title(), subtitle: nil, image: TabBarItem.settingsPage.image(), id: RowIdentifier.settingsPage)
+        ]
+        
+        snapshot.append([header])
+        snapshot.expand([header])
+        snapshot.append(items, to: header)
+        return snapshot
     }
     
-    
+    private func applyInitialSnapshot() {
+        dataSourceMain.apply(parentSnapshot(), to: .parentSection, animatingDifferences: false)
+        dataSourceMain.apply(childSnapshot(), to: .childSection, animatingDifferences: false)
+        dataSourceSetting.apply(settingsSnapshot(), to: .settingsSection, animatingDifferences: false)
+    }
 }
