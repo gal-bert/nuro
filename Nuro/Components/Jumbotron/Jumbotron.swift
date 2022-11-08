@@ -121,6 +121,8 @@ class Jumbotron: UIView {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.clockLabel.text = "\(Date().getTickingTime())"
             self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName)!)!"
+            self.setJumbotronImage()
+            self.getIndonesianDate()
         }
     }
     

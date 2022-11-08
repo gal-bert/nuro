@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SettingDelegate {
-    func printText(text: String)
+    func setTimepickerValue(value: String, tag: Int)
 }

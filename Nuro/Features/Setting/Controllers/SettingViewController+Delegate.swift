@@ -8,8 +8,18 @@
 import UIKit
 
 extension SettingViewController: SettingDelegate {
-    func printText(text: String) {
-        viewModel.printText(text: text)
+    func setTimepickerValue(value: String, tag: Int) {
+        switch tag {
+        case 0:
+            UserDefaults.standard.set(value, forKey: UserDefaultsHelper.Keys.morningTime)
+        case 1:
+            UserDefaults.standard.set(value, forKey: UserDefaultsHelper.Keys.afternoonTime)
+        case 2:
+            UserDefaults.standard.set(value, forKey: UserDefaultsHelper.Keys.eveningTime)
+        default:
+            print("default")
+        }
+        
     }
 }
 
@@ -72,16 +82,26 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
 
         case settingView.tableViewTime:
             let cell = settingView.tableViewTime.dequeueReusableCell(withIdentifier: SettingTimeTableViewCell.identifier) as! SettingTimeTableViewCell
+            cell.delegate = self
             switch indexPath.item {
             case 0:
                 cell.titleLabel.text = "Pagi"
                 cell.backgroundColor = Colors.Background.water
+                cell.timePicker.tag = indexPath.row
+                cell.timePicker.date = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.morningTime)!)
+            
             case 1:
                 cell.titleLabel.text = "Siang"
                 cell.backgroundColor = Colors.Background.papayaWhip
+                cell.timePicker.tag = indexPath.row
+                cell.timePicker.date = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.afternoonTime)!)
+
             case 2:
                 cell.titleLabel.text = "Malam"
                 cell.backgroundColor = Colors.Background.soap
+                cell.timePicker.tag = indexPath.row
+                cell.timePicker.date = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.eveningTime)!)
+
             default:
                 print("Loading Error")
             }

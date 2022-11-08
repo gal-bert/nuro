@@ -21,5 +21,4 @@ class SettingViewController: UIViewController {
         self.view = settingView
     }
     
-//    overri
 }

@@ -11,6 +11,8 @@ class SettingTimeTableViewCell: UITableViewCell {
     
     static let identifier = "settingTimeTableViewCell"
     
+    var delegate: SettingDelegate?
+    
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = Colors.Text.onyx
@@ -41,6 +43,25 @@ class SettingTimeTableViewCell: UITableViewCell {
     private func setupView() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(timePicker)
+        
+        timePicker.addTarget(self, action: #selector(setTimepickerValue), for: .valueChanged)
+    }
+    
+    @objc func setTimepickerValue() {
+        let date = Date()
+        let calendar = Calendar.current
+        var time: String = ""
+
+        let hour = calendar.component(.hour, from: timePicker.date)
+        let minute = calendar.component(.minute, from:  timePicker.date)
+        let seconds = calendar.component(.second, from: timePicker.date)
+
+        let hourString = hour < 10 ? "0\(hour)" : "\(hour)"
+        let minuteString = minute < 10 ? "0\(minute)" : "\(minute)"
+
+        time = "\(hourString):\(minuteString)"
+        let tag = timePicker.tag
+        delegate?.setTimepickerValue(value: time, tag: tag)
     }
     
     private func setupConstraints() {
