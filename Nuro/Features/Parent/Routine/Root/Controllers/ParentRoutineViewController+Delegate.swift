@@ -112,18 +112,59 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
 extension ParentRoutineViewController : UITableViewDragDelegate {
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let dragItem = UIDragItem(itemProvider: NSItemProvider())
-//        dragItem.localObject = arr[indexPath.row]
-        return [dragItem]
         
-        // TODO: Implement array changes and save to coredata
+        if indexPath.section == 0 {
+            let dragItem = UIDragItem(itemProvider: NSItemProvider())
+            dragItem.localObject = viewModel.morningActivities[indexPath.row]
+            return [dragItem]
+        }
+        else if indexPath.section == 1 {
+            let dragItem = UIDragItem(itemProvider: NSItemProvider())
+            dragItem.localObject = viewModel.afternoonActivities[indexPath.row]
+            return [dragItem]
+        }
+        else {
+            let dragItem = UIDragItem(itemProvider: NSItemProvider())
+            dragItem.localObject = viewModel.eveningActivities[indexPath.row]
+            return [dragItem]
+        }
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        let mv = arr[sourceIndexPath.row]
-//        arr.remove(at: sourceIndexPath.row)
-//        arr.insert(mv, at: destinationIndexPath.row)
-        // TODO: Implement array changes and save to coredata
+        
+        if sourceIndexPath.section == 0 {
+            let mv = viewModel.morningActivities[sourceIndexPath.row]
+            viewModel.morningActivities.remove(at: sourceIndexPath.row)
+            viewModel.morningActivities.insert(mv, at: destinationIndexPath.row)
+            
+            let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
+            
+            for (index, routine) in viewModel.morningActivities.enumerated() {
+                routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
+            }
+        }
+        else if sourceIndexPath.section == 1 {
+            let mv = viewModel.afternoonActivities[sourceIndexPath.row]
+            viewModel.afternoonActivities.remove(at: sourceIndexPath.row)
+            viewModel.afternoonActivities.insert(mv, at: destinationIndexPath.row)
+            
+            let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
+            
+            for (index, routine) in viewModel.afternoonActivities.enumerated() {
+                routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
+            }
+        }
+        else {
+            let mv = viewModel.eveningActivities[sourceIndexPath.row]
+            viewModel.eveningActivities.remove(at: sourceIndexPath.row)
+            viewModel.eveningActivities.insert(mv, at: destinationIndexPath.row)
+            
+            let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
+            
+            for (index, routine) in viewModel.eveningActivities.enumerated() {
+                routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
+            }
+        }
     }
     
 }
