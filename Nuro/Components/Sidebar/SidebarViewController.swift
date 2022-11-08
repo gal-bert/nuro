@@ -213,6 +213,7 @@ extension SidebarViewController {
             contentConfiguration.textProperties.color = Colors.Text.onyx
             
             cell.contentConfiguration = contentConfiguration
+            cell.isUserInteractionEnabled = false
         }
             
         let expandableRowRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SidebarItem> {
