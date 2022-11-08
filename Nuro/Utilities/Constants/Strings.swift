@@ -16,6 +16,8 @@ enum Strings {
     static let parentActivityListTitle = "Daftar Aktivitas"
     static let childRoutineTitle = "Rutinitas Anak"
     static let settingsTitle = "Pengaturan"
+    static let kidsName = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.kidsName) ?? "Anak"
+    static let parentsName = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName) ?? "Mom"
     
     enum Category {
         static let others = "Lainnya"

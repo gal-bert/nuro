@@ -16,6 +16,7 @@ class ChildPinUnlockViewModel {
     func checkPin() -> Bool {
         if pin == dummyCorrectPin {
             pin.removeAll()
+            
             return true
         }
         else {

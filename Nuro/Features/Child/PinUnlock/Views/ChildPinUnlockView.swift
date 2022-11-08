@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ChildPinUnlockViewDelegate {
-    func deleteLastPin()
-}
-
 class ChildPinUnlockView: UIView {
     
     private lazy var pageTitleLabel: UILabel = {
@@ -88,14 +84,16 @@ class ChildPinUnlockView: UIView {
         setupCollectionView(vc: vc)
         setupUI()
         setupConstraints()
+        setupButton()
         
         delegate = vc
-        deletePinButton.addTarget(self, action: #selector(deleteClicked), for: .touchUpInside)
         
         textFields.append(textField1)
         textFields.append(textField2)
         textFields.append(textField3)
         textFields.append(textField4)
+        
+        Transition.smoothAnimationWithDelay(view: self, subviews: subviews, bgColor: Colors.Brand.floralWhite, delayForViews: getDelayedView(), delayTime: Transition.DelayTime.slightDelay)
     }
     
     private func setupCollectionView(vc: ChildPinUnlockViewController) {
@@ -169,6 +167,11 @@ class ChildPinUnlockView: UIView {
         }
     }
     
+    private func setupButton() {
+        deletePinButton.addTarget(self, action: #selector(deleteClicked), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(dismissPage), for: .touchUpInside)
+    }
+    
     private func createFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 100, height: 100)
@@ -191,7 +194,15 @@ class ChildPinUnlockView: UIView {
         delegate?.deleteLastPin()
     }
     
+    @objc func dismissPage() {
+        delegate?.dismissPage()
+    }
+    
     func clearLastPin(count: Int) {
         textFields[count].text = ""
+    }
+    
+    private func getDelayedView() -> [UIView] {
+        return [imageView, collectionView]
     }
 }

@@ -22,7 +22,7 @@ class ParentModeButton: UIButton {
         configuration = .filled()
         
         let config = UIImage.SymbolConfiguration(pointSize: 28)
-        let image = UIImage(systemName: Icons.parentMode, withConfiguration: config)?.withTintColor(Colors.Brand.jasmine).withRenderingMode(.alwaysOriginal)
+        var image = UIImage(systemName: Icons.parentMode, withConfiguration: config)?.withTintColor(Colors.Brand.jasmine).withRenderingMode(.alwaysOriginal)
         
         setImage(image, for: .normal)
         tintColor = Colors.Brand.floralWhite

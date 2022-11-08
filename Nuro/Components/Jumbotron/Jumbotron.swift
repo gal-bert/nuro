@@ -20,7 +20,7 @@ class Jumbotron: UIView {
         let view = UILabel()
         view.textColor = Colors.Brand.blueViolet
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
-        view.text = "Selamat Pagi Mom!"
+        view.text = "Selamat \(Date().getTimeframe()) Mom!"
         return view
     }()
     
@@ -104,9 +104,11 @@ class Jumbotron: UIView {
     private func getTickingTime () {
         /// Initialize tick time to prevent delay from timer
         self.clockLabel.text = "\(Date().getTickingTime())"
+        self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(Strings.parentsName)!"
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.clockLabel.text = "\(Date().getTickingTime())"
+            self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(Strings.parentsName)!"
         }
     }
     

@@ -55,7 +55,11 @@ class ChildRoutineCompletedView: UIView {
     
     private lazy var parentModeButton = ParentModeButton(size: 80)
     
-    func setup() {
+    private var delegate: ChildRoutineCompletedDelegate?
+    
+    func setup(vc: ChildRoutineCompletedViewController) {
+        delegate = vc
+        
         setupButton()
         setupUI()
         setupConstraints()
@@ -93,8 +97,10 @@ class ChildRoutineCompletedView: UIView {
     }
     
     @objc func toPinUnlock() {
-        // TODO: Add segue to pin unlock page
-        // ..
+        delegate?.toParentMode()
     }
 
+    func getDelayedView() -> [UIView] {
+        return [parentModeButton, appreciationImage]
+    }
 }
