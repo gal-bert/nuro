@@ -50,10 +50,13 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 cell.titleLabel.text = "Nama Orang Tua"
                 cell.textField.tag = indexPath.row
-//                cell.textField.text =
+                cell.textField.text = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName) ?? "Orang Tua"
+                cell.textField.placeholder = "Masukkan nama anda"
             case 1:
                 cell.titleLabel.text = "Nama Anak"
                 cell.textField.tag = indexPath.row
+                cell.textField.text = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.kidsName) ?? "Anak"
+                cell.textField.placeholder = "Masukkan nama anak anda"
             default:
                 print("Loading Error")
             }

@@ -80,7 +80,6 @@ class SettingParentChildTableViewCell: UITableViewCell {
     @objc private func editButtonClicked() {
         textField.becomeFirstResponder()
     }
-
 }
 
 
