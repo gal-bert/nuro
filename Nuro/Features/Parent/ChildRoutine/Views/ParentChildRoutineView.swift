@@ -26,10 +26,10 @@ class ParentChildRoutineView: UIView {
         label.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)
         
         var boldAttribute = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)]
-        var boldString = NSMutableAttributedString(string: "Guided Access", attributes: boldAttribute)
+        var boldString = NSMutableAttributedString(string: "Guided Access", attributes: boldAttribute as [NSAttributedString.Key : Any])
         
         var regularAttribute = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 22)]
-        var regularString = NSMutableAttributedString(string: " belum dinyalakan ", attributes: regularAttribute)
+        var regularString = NSMutableAttributedString(string: " belum dinyalakan ", attributes: regularAttribute as [NSAttributedString.Key : Any])
         
         let imageAttachment = TextAttachments.getMulticoloredAttachment(imageName: "questionmark.circle.fill", firstColorName: Colors.Text.onyx, secondColorName: Colors.Background.alabaster)
         
@@ -56,7 +56,7 @@ class ParentChildRoutineView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 32
+        stackView.distribution = .equalSpacing
         stackView.alignment = .center
         return stackView
     }()
@@ -69,7 +69,7 @@ class ParentChildRoutineView: UIView {
         button.clipsToBounds = true
         button.backgroundColor = Colors.Brand.blueViolet
         
-        let font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)
+        let font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32) ?? UIFont()
         let attributedTitle = NSAttributedString(string: "Mulai Rutinitas Anak", attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: Colors.Neutral.white])
         button.setAttributedTitle(attributedTitle, for: UIControl.State.normal)
         
@@ -102,12 +102,13 @@ class ParentChildRoutineView: UIView {
         }
         
         startButton.snp.makeConstraints { make in
-            make.height.equalTo(80)
+            make.height.equalTo(ScreenSizes.halfScreenHeight / 5)
             make.width.equalTo(ScreenSizes.halfScreenWidth)
         }
         
         routineTableView.snp.makeConstraints { make in
             make.left.right.equalTo(stackView)
+            make.height.equalTo(ScreenSizes.screenHeight * 2/3)
         }
     }
     

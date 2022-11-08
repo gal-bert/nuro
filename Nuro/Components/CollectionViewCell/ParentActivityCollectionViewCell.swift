@@ -38,6 +38,19 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
+    lazy var labelContainer: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.alignment = .center
+        sv.spacing = 4
+        return sv
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .gray
@@ -60,8 +73,10 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         descriptionLabel.textColor = titleLabel.textColor
         
         addSubview(imageView)
-        addSubview(titleLabel)
-        addSubview(descriptionLabel)
+        addSubview(labelContainer)
+        labelContainer.addSubview(stackView)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(descriptionLabel)
         
         imageView.image = UIImage(named: "dummy")
     }
@@ -77,18 +92,17 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self)
-//            make.height.equalTo(180)
             make.height.equalTo(contentView.frame.height * 2 / 3)
         }
         
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(15)
-            make.left.right.equalTo(self).inset(10)
+        labelContainer.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom)
+            make.bottom.left.right.equalTo(self)
         }
         
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
-            make.left.right.equalTo(self).inset(10)
+        stackView.snp.makeConstraints { make in
+            make.centerY.equalTo(labelContainer)
+            make.left.right.equalTo(labelContainer).inset(12)
         }
         
     }
