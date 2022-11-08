@@ -254,9 +254,6 @@ class ChildRoutineView: UIView {
         parentButton.isUserInteractionEnabled = true
         parentButton.alpha = 1.0
     }
-    
-    func getDelayedView() -> [UIView] {
-        return [activityCollectionView]
-    }
+
 }
 
