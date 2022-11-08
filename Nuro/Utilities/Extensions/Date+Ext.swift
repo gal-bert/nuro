@@ -48,7 +48,6 @@ extension Date {
         
         let hour = calendar.component(.hour, from: date)
         let minute = calendar.component(.minute, from: date)
-        let seconds = calendar.component(.second, from: date)
         
         let hourString = hour < 10 ? "0\(hour)" : "\(hour)"
         let minuteString = minute < 10 ? "0\(minute)" : "\(minute)"
@@ -56,6 +55,18 @@ extension Date {
         time = "\(hourString):\(minuteString)"
         
         return time
+    }
+    
+    func formatForDatepicker(value: String) -> Date {
+        
+        let dateStr = value
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "id")
+        dateFormatter.dateFormat = "HH:mm"
+        let date = dateFormatter.date(from: dateStr) ?? Date()
+
+        return date
     }
     
     func getCurrentWeekday() -> Int {
