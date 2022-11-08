@@ -12,10 +12,15 @@ extension SettingViewController: SettingDelegate {
         switch tag {
         case 0:
             UserDefaults.standard.set(value, forKey: UserDefaultsHelper.Keys.morningTime)
+            settingView.tableViewTime.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .none)
         case 1:
             UserDefaults.standard.set(value, forKey: UserDefaultsHelper.Keys.afternoonTime)
+            settingView.tableViewTime.reloadRows(at: [IndexPath(row: 0, section: 0), IndexPath(row: 2, section: 0)], with: .none)
+
         case 2:
             UserDefaults.standard.set(value, forKey: UserDefaultsHelper.Keys.eveningTime)
+            settingView.tableViewTime.reloadRows(at: [IndexPath(row: 0, section: 0), IndexPath(row: 1, section: 0)], with: .none)
+
         default:
             print("default")
         }
@@ -89,18 +94,23 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.backgroundColor = Colors.Background.water
                 cell.timePicker.tag = indexPath.row
                 cell.timePicker.date = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.morningTime)!)
-            
+                cell.timePicker.minimumDate = Date().formatForDatepicker(value: "00:00")
+                cell.timePicker.maximumDate = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.afternoonTime)!)
             case 1:
                 cell.titleLabel.text = "Siang"
                 cell.backgroundColor = Colors.Background.papayaWhip
                 cell.timePicker.tag = indexPath.row
                 cell.timePicker.date = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.afternoonTime)!)
-
+                cell.timePicker.minimumDate = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.morningTime)!)
+                cell.timePicker.maximumDate = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.eveningTime)!)
             case 2:
                 cell.titleLabel.text = "Malam"
                 cell.backgroundColor = Colors.Background.soap
                 cell.timePicker.tag = indexPath.row
                 cell.timePicker.date = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.eveningTime)!)
+                cell.timePicker.minimumDate = Date().formatForDatepicker(value: UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.afternoonTime)!)
+                cell.timePicker.maximumDate = Date().formatForDatepicker(value: "23:59")
+                
 
             default:
                 print("Loading Error")
