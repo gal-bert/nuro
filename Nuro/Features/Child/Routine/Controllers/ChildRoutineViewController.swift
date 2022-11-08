@@ -23,6 +23,7 @@ class ChildRoutineViewController: UIViewController {
         
         totalActivity = viewModel.activities.count
         childRoutineView.setup(vc: self, totalActivity: totalActivity)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +44,7 @@ class ChildRoutineViewController: UIViewController {
         isFirstActivityCardHidden  = true
         
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
-            childRoutineView.disableStartButton()
+            childRoutineView.disableButtons()
             childRoutineView.animateHideRow()
             viewModel.removeFirstActivity()
             

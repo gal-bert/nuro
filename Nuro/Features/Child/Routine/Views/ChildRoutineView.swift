@@ -198,7 +198,7 @@ class ChildRoutineView: UIView {
         activityCollectionView.performBatchUpdates {
             activityCollectionView.deleteItems(at: [IndexPath(row: 0, section: 0)])
         }
-        enableStartButton()
+        enableButtons()
     }
     
     func animateHideRow() {
@@ -212,7 +212,7 @@ class ChildRoutineView: UIView {
             stickView.snp.makeConstraints { make in
                 make.left.equalTo(self).offset(-ScreenSizes.halfScreenWidth / 6)
             }
-            enableStartButton()
+            enableButtons()
         })
     }
     
@@ -235,8 +235,28 @@ class ChildRoutineView: UIView {
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
             stickView.frame = CGRect(x: stickView.frame.origin.x - ScreenSizes.halfScreenWidth - (ScreenSizes.halfScreenWidth / 6), y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
         }, completion: { _ in
-            self.enableStartButton()
+            self.enableButtons()
         })
+    }
+    
+    func disableButtons() {
+        startButton.isUserInteractionEnabled = false
+        startButton.alpha = 0.7
+        
+        parentButton.isUserInteractionEnabled = false
+        parentButton.alpha = 0.7
+    }
+    
+    func enableButtons() {
+        startButton.isUserInteractionEnabled = true
+        startButton.alpha = 1.0
+        
+        parentButton.isUserInteractionEnabled = true
+        parentButton.alpha = 1.0
+    }
+    
+    func getDelayedView() -> [UIView] {
+        return [activityCollectionView]
     }
 }
 

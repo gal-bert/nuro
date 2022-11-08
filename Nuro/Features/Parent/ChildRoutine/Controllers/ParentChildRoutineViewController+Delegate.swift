@@ -18,7 +18,11 @@ extension ParentChildRoutineViewController: ParentChildRoutineDelegate {
     func toChildMode() {
         let dest = ChildStarterViewController()
         dest.modalPresentationStyle = .fullScreen
-        dest.modalTransitionStyle = .coverVertical
-        self.present(dest, animated: true)
+        
+        let nav = UINavigationController(rootViewController: dest)
+        nav.modalPresentationStyle = .fullScreen
+        nav.modalTransitionStyle = .coverVertical
+        
+        self.present(nav, animated: true)
     }
 }

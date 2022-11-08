@@ -121,7 +121,7 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if isViewingChildRoutine { // Parent Child Routine
-            return CGSize(width: CollectionViewAttributes.collectionViewCellWidth + 24, height: CollectionViewAttributes.collectionViewCellHeight + 24)
+            return CGSize(width: Int(ScreenSizes.halfScreenWidth * 2/5) + 24, height: Int(ScreenSizes.screenHeight) * 2/3 * 3/5)
         }
         else { // Parent Today Activity
             return CGSize(width: CollectionViewAttributes.collectionViewCellWidth, height: CollectionViewAttributes.collectionViewCellHeight)
