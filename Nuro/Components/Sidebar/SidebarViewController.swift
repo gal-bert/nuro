@@ -176,7 +176,7 @@ extension SidebarViewController: UICollectionViewDelegate {
         switch sidebarItem.id {
             
         case RowIdentifier.settingsPage:
-            let navCon = UINavigationController(rootViewController: ParentRoutineAddActivityViewController())
+            let navCon = UINavigationController(rootViewController: SettingViewController())
             deselectMainCells()
             splitViewController?.setViewController(navCon, for: .secondary)
             

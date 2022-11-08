@@ -11,16 +11,17 @@ extension SettingViewController: SettingDelegate {
     func printText(text: String) {
         viewModel.printText(text: text)
     }
-    
 }
 
 extension SettingViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField.tag {
         case 0:
-            UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.parentsName)
+            let text = textField.text == "" ? "Orang Tua" : textField.text
+            UserDefaults.standard.set(text, forKey: UserDefaultsHelper.Keys.parentsName)
         case 1:
-            UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.kidsName)
+            let text = textField.text == "" ? "Anak" : textField.text
+            UserDefaults.standard.set(text, forKey: UserDefaultsHelper.Keys.kidsName)
         default:
             print("Other")
         }
@@ -38,7 +39,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         switch tableView {
@@ -47,7 +48,6 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textField.delegate = self
             switch indexPath.item {
             case 0:
-//                cell.stackView.layer.cornerRadius = CGFloat(Corners.topLeft,Corners.topRight)
                 cell.titleLabel.text = "Nama Orang Tua"
                 cell.textField.tag = indexPath.row
 //                cell.textField.text =
@@ -58,18 +58,19 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                 print("Loading Error")
             }
             return cell
+
         case settingView.tableViewTime:
             let cell = settingView.tableViewTime.dequeueReusableCell(withIdentifier: SettingTimeTableViewCell.identifier) as! SettingTimeTableViewCell
             switch indexPath.item {
             case 0:
                 cell.titleLabel.text = "Pagi"
-                cell.stackView.backgroundColor = Colors.Background.water
+                cell.backgroundColor = Colors.Background.water
             case 1:
                 cell.titleLabel.text = "Siang"
-                cell.stackView.backgroundColor = Colors.Background.papayaWhip
+                cell.backgroundColor = Colors.Background.papayaWhip
             case 2:
                 cell.titleLabel.text = "Malam"
-                cell.stackView.backgroundColor = Colors.Background.soap
+                cell.backgroundColor = Colors.Background.soap
             default:
                 print("Loading Error")
             }
@@ -79,8 +80,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
-    
+
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch tableView {
         case settingView.tableViewProfile:
@@ -90,7 +91,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return 0
         }
-        
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

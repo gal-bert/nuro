@@ -32,9 +32,9 @@ class SettingParentChildTableViewCell: UITableViewCell {
         view.layer.borderColor = Colors.Brand.jasmine.cgColor
         view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)
         view.attributedPlaceholder = NSAttributedString(
-            string: "Masukkan nama aktivitas", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)!, .foregroundColor: Colors.Text.onyx]
-            
+            string: "Masukkan nama", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)!]
         )
+        view.textAlignment = .right
         return view
     }()
 
@@ -58,21 +58,15 @@ class SettingParentChildTableViewCell: UITableViewCell {
     }
     
     private func setupConstraints() {
-//        stackView.snp.makeConstraints { make in
-//            make.left.top.bottom.equalTo(self)
-//            make.right.equalTo(self).offset(20)
-//        }
         
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(self).inset(15)
             make.centerY.equalTo(self)
-            make.width.equalTo(150)
         }
         
         textField.snp.makeConstraints { make in
             make.right.equalTo(editButton.snp.left).inset(-25)
             make.centerY.equalTo(self)
-            make.width.equalTo(300)
         }
         
         editButton.snp.makeConstraints { make in
@@ -80,12 +74,7 @@ class SettingParentChildTableViewCell: UITableViewCell {
             make.centerY.equalTo(self)
             make.width.equalTo(30)
         }
-        
-        
-        
-        
-        
-        
+
     }
     
     @objc private func editButtonClicked() {

@@ -20,9 +20,14 @@ class ParentTodayActivityViewController: UIViewController {
         parentTodayActivityView.setup(vc: self)
         
         viewModel.loadAll(dayId: Date().getCurrentWeekday()) 
-
+        print("did load")
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("did appear")
+    }
+
     override func loadView() {
         self.view = parentTodayActivityView
     }

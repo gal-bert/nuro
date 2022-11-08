@@ -11,16 +11,6 @@ class SettingTimeTableViewCell: UITableViewCell {
     
     static let identifier = "settingTimeTableViewCell"
     
-    
-    lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.backgroundColor = Colors.Background.papayaWhip
-        view.axis = .horizontal
-//        view.distribution = .equalSpacing
-        view.layer.cornerRadius = 20
-        return view
-    }()
-    
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = Colors.Text.onyx
@@ -37,8 +27,6 @@ class SettingTimeTableViewCell: UITableViewCell {
         return view
     }()
 
-    
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
                 
@@ -51,23 +39,19 @@ class SettingTimeTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        contentView.addSubview(stackView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(timePicker)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(timePicker)
     }
     
     private func setupConstraints() {
-        stackView.snp.makeConstraints { make in
-            make.left.top.right.bottom.equalTo(self)
-        }
         titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(stackView).offset(15)
-            make.width.equalTo(150)
+            make.left.equalTo(self).offset(15)
+            make.centerY.equalTo(self)
         }
         
         timePicker.snp.makeConstraints { make in
-            make.left.equalTo(titleLabel.snp.right).offset(35)
-            make.width.equalTo(150)
+            make.right.equalTo(self).inset(15)
+            make.centerY.equalTo(self)
         }
     }
 }

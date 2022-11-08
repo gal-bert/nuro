@@ -25,8 +25,8 @@ class UserDefaultsHelper {
                 Keys.afternoonTime: "12:00",
                 Keys.eveningTime: "18:00",
                 Keys.isFirstTime: true,
-                Keys.parentsName: "Mamak",
-                Keys.kidsName: "Kid"
+                Keys.parentsName: "Orang Tua",
+                Keys.kidsName: "Anak"
             ]
         )
     }

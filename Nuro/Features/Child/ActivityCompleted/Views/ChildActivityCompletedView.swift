@@ -12,7 +12,7 @@ class ChildActivityCompletedView: UIView {
     private lazy var pageTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
-        label.text = "Kerja bagus, \(Strings.kidsName)!"
+        label.text = "Kerja bagus, \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.kidsName)!)!"
         label.textAlignment = .center
         label.textColor = Colors.Text.onyx
         return label

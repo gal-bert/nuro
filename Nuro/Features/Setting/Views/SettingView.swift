@@ -15,7 +15,7 @@ class SettingView: UIView {
     
     let tableViewProfile: UITableView = {
         let view = UITableView(frame: .zero, style: .insetGrouped)
-        view.separatorColor = .clear
+//        view.separatorColor = .clear
         view.backgroundColor = .clear
         view.allowsSelection = false
         return view
@@ -29,7 +29,7 @@ class SettingView: UIView {
         return view
     }()
     
-    let TimeLabel: UILabel = {
+    let timeLabel: UILabel = {
         let view = UILabel()
         view.text = "Waktu"
         view.textColor = .black
@@ -38,10 +38,12 @@ class SettingView: UIView {
     }()
     
     let tableViewTime: UITableView = {
-        let view = UITableView()
+        let view = UITableView(frame: .zero, style: .insetGrouped)
         view.separatorColor = .clear
         view.backgroundColor = .clear
         view.allowsSelection = false
+//        view.layer.cornerRadius = 20
+//        view.clipsToBounds = true
         return view
     }()
     
@@ -65,7 +67,7 @@ class SettingView: UIView {
 //        tableView.register(HeaderTimeframeSection.self, forHeaderFooterViewReuseIdentifier: HeaderTimeframeSection.identifier)
         addSubview(profileLabel)
         addSubview(tableViewProfile)
-        addSubview(TimeLabel)
+        addSubview(timeLabel)
         addSubview(tableViewTime)
         addSubview(timePicker)
         
@@ -77,7 +79,7 @@ class SettingView: UIView {
     private func setupNavigationBar() {
         vc.navigationController?.navigationBar.barTintColor = Colors.Neutral.white
         //Title Navbar
-        vc.title = Strings.SettingTitle
+        vc.title = Strings.settingsTitle
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
     }
@@ -95,15 +97,14 @@ class SettingView: UIView {
             make.height.equalTo(150)
         }
         
-        TimeLabel.snp.makeConstraints { make in
-            make.top.equalTo(tableViewProfile.snp.bottom)
+        timeLabel.snp.makeConstraints { make in
+            make.top.equalTo(tableViewProfile.snp.bottom).offset(30)
             make.left.equalTo(self).offset(25)
-//            make.height.equalTo()
         }
         
         tableViewTime.snp.makeConstraints { make in
-            make.top.equalTo(TimeLabel.snp.bottom).offset(10)
-            make.left.right.equalTo(self).inset(15)
+            make.top.equalTo(timeLabel.snp.bottom)
+            make.left.right.equalTo(self)
             make.height.equalTo(200)
         }
     }
