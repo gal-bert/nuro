@@ -52,12 +52,13 @@ class ChildRoutineView: UIView {
     
     private var delegate: ChildRoutineDelegate?
     
-    func setup(vc: ChildRoutineViewController) {
+    func setup(vc: ChildRoutineViewController, totalActivity: Int) {
         backgroundColor = .white
         delegate = vc
         
         setupUI()
         setupConstraints()
+        setupInitialStickViewWidth(totalActivity: totalActivity)
         setupCollectionView(vc: vc)
         setupButton()
     }
@@ -140,22 +141,55 @@ class ChildRoutineView: UIView {
         delegate?.toActivityView()
     }
     
-    func makeViewHidden() {
-        stackView.alpha = 0
-    }
-    
     @objc func toPinUnlock() {
         delegate?.toPinUnlockView()
+    }
+    
+    func disableStartButton() {
+        startButton.isUserInteractionEnabled = false
+        startButton.alpha = 0.7
+    }
+    
+    func enableStartButton() {
+        startButton.isUserInteractionEnabled = true
+        startButton.alpha = 1.0
+    }
+    
+    func getDelayedView() -> [UIView] {
+        return [activityCollectionView]
+    }
+    
+    private func setupInitialStickViewWidth(totalActivity: Int) {
+        if totalActivity == 1 {
+            stickView.snp.makeConstraints { make in
+                make.left.right.equalTo(self).inset(ScreenSizes.halfScreenWidth / 6)
+            }
+        }
+        else if totalActivity == 2 {
+            stickView.snp.makeConstraints { make in
+                make.width.equalTo(ScreenSizes.screenWidth * 1.5 - ScreenSizes.halfScreenWidth / 6)
+                make.width.equalTo(ScreenSizes.screenWidth)
+            }
+        }
+    }
+    
+    
+    // MARK: All code below are for Stick View next activity animation
+    func makeViewHidden() {
+        stackView.alpha = 0
     }
     
     func animateToNextActivity(totalActivity: Int, currTotalActivity: Int) {
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
             animateDeleteRow()
-            if totalActivity == currTotalActivity + 1 {
+            if totalActivity == 2 && totalActivity == currTotalActivity + 1 {
+                animateStickEndMovement(totalActivity: totalActivity)
+            }
+            else if totalActivity == currTotalActivity + 1 {
                 animateStickStartMovement()
             }
-            else if currTotalActivity == 1 {
-                animateStickEndMovement()
+            else if currTotalActivity == 1 && totalActivity != 2 {
+                animateStickEndMovement(totalActivity: totalActivity)
             }
         }, completion: nil)
     }
@@ -182,13 +216,21 @@ class ChildRoutineView: UIView {
         })
     }
     
-    private func animateStickEndMovement() {
+    private func animateStickEndMovement(totalActivity: Int) {
+        var stickWidth: CGFloat = 0.0
+        if totalActivity == 2 {
+            stickWidth = ScreenSizes.screenWidth * 1.5 - ScreenSizes.halfScreenWidth / 6
+        }
+        else {
+            stickWidth = ScreenSizes.screenWidth * 2
+        }
+        
         stickView.snp.removeConstraints()
         stickView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
             make.right.equalTo(self).offset(-ScreenSizes.halfScreenWidth / 6)
             make.height.equalTo(ScreenSizes.halfScreenHeight / 5)
-            make.width.equalTo(ScreenSizes.screenWidth * 2)
+            make.width.equalTo(stickWidth)
         }
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: { [self] in
             stickView.frame = CGRect(x: stickView.frame.origin.x - ScreenSizes.halfScreenWidth - (ScreenSizes.halfScreenWidth / 6), y: stickView.frame.origin.y, width: stickView.frame.width, height: stickView.frame.height)
