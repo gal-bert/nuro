@@ -20,5 +20,6 @@ class SettingViewController: UIViewController {
     override func loadView() {
         self.view = settingView
     }
-
+    
+//    overri
 }

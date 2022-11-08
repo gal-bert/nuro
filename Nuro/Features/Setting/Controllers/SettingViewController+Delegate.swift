@@ -11,6 +11,20 @@ extension SettingViewController: SettingDelegate {
     func printText(text: String) {
         viewModel.printText(text: text)
     }
+    
+}
+
+extension SettingViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField.tag {
+        case 0:
+            UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.parentsName)
+        case 1:
+            UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.kidsName)
+        default:
+            print("Other")
+        }
+    }
 }
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
@@ -30,11 +44,35 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case settingView.tableViewProfile:
             let cell = settingView.tableViewProfile.dequeueReusableCell(withIdentifier: SettingParentChildTableViewCell.identifier) as! SettingParentChildTableViewCell
-            cell.textField.text = ""
-            cell.textField.placeholder = "enter the text"
+            cell.textField.delegate = self
+            switch indexPath.item {
+            case 0:
+//                cell.stackView.layer.cornerRadius = CGFloat(Corners.topLeft,Corners.topRight)
+                cell.titleLabel.text = "Nama Orang Tua"
+                cell.textField.tag = indexPath.row
+//                cell.textField.text =
+            case 1:
+                cell.titleLabel.text = "Nama Anak"
+                cell.textField.tag = indexPath.row
+            default:
+                print("Loading Error")
+            }
             return cell
         case settingView.tableViewTime:
             let cell = settingView.tableViewTime.dequeueReusableCell(withIdentifier: SettingTimeTableViewCell.identifier) as! SettingTimeTableViewCell
+            switch indexPath.item {
+            case 0:
+                cell.titleLabel.text = "Pagi"
+                cell.stackView.backgroundColor = Colors.Background.water
+            case 1:
+                cell.titleLabel.text = "Siang"
+                cell.stackView.backgroundColor = Colors.Background.papayaWhip
+            case 2:
+                cell.titleLabel.text = "Malam"
+                cell.stackView.backgroundColor = Colors.Background.soap
+            default:
+                print("Loading Error")
+            }
             return cell
         default:
             print("Something wrong")

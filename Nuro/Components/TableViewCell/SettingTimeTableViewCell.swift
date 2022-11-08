@@ -12,11 +12,11 @@ class SettingTimeTableViewCell: UITableViewCell {
     static let identifier = "settingTimeTableViewCell"
     
     
-    private let stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.backgroundColor = Colors.Background.papayaWhip
         view.axis = .horizontal
-        view.distribution = .fillProportionally
+//        view.distribution = .equalSpacing
         view.layer.cornerRadius = 20
         return view
     }()
@@ -24,7 +24,7 @@ class SettingTimeTableViewCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = Colors.Text.onyx
-        view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
         view.text = "Pagi"
         return view
     }()
@@ -32,6 +32,8 @@ class SettingTimeTableViewCell: UITableViewCell {
     lazy var timePicker: UIDatePicker = {
         let view = UIDatePicker()
         view.datePickerMode = .time
+        view.locale = Locale(identifier: "id")
+//        view.backgroundColor = Colors.Button.pewterBlue
         return view
     }()
 
@@ -49,21 +51,24 @@ class SettingTimeTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        addSubview(stackView)
+        contentView.addSubview(stackView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(timePicker)
-        timePicker.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(timePickerClicked)))
     }
     
     private func setupConstraints() {
         stackView.snp.makeConstraints { make in
             make.left.top.right.bottom.equalTo(self)
         }
-    }
-    
-    @objc private func timePickerClicked() {
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalTo(stackView).offset(15)
+            make.width.equalTo(150)
+        }
         
+        timePicker.snp.makeConstraints { make in
+            make.left.equalTo(titleLabel.snp.right).offset(35)
+            make.width.equalTo(150)
+        }
     }
-
 }
 

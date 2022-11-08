@@ -17,7 +17,7 @@ class SettingView: UIView {
         let view = UITableView(frame: .zero, style: .insetGrouped)
         view.separatorColor = .clear
         view.backgroundColor = .clear
-//        view.allowsSelection = false
+        view.allowsSelection = false
         return view
     }()
     
@@ -41,6 +41,7 @@ class SettingView: UIView {
         let view = UITableView()
         view.separatorColor = .clear
         view.backgroundColor = .clear
+        view.allowsSelection = false
         return view
     }()
     
@@ -101,15 +102,9 @@ class SettingView: UIView {
         }
         
         tableViewTime.snp.makeConstraints { make in
-            make.top.equalTo(TimeLabel.snp.bottom)
+            make.top.equalTo(TimeLabel.snp.bottom).offset(10)
             make.left.right.equalTo(self).inset(15)
-            make.height.equalTo(150)
-        }
-        
-        timePicker.snp.makeConstraints { make in
-            make.top.equalTo(tableViewTime.snp.bottom)
-            make.left.right.equalTo(self)
-//            make.height.equalTo(100)
+            make.height.equalTo(200)
         }
     }
     

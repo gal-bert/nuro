@@ -28,25 +28,13 @@ class SettingParentChildTableViewCell: UITableViewCell {
     
     lazy var textField: UITextField = {
         let view = UITextField()
-        view.backgroundColor = Colors.Brand.floralWhite
+        view.backgroundColor = .clear
         view.layer.borderColor = Colors.Brand.jasmine.cgColor
-        view.layer.borderWidth = 1
-        view.layer.cornerRadius = 20
         view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)
         view.attributedPlaceholder = NSAttributedString(
-            string: "Nama orang tua",
-            attributes: [NSAttributedString.Key.foregroundColor: Colors.Neutral.bronze]
+            string: "Masukkan nama aktivitas", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)!, .foregroundColor: Colors.Text.onyx]
+            
         )
-        return view
-    }()
-    
-    private let stackView: UIStackView = {
-        let view = UIStackView()
-        view.backgroundColor = Colors.Background.papayaWhip
-        view.axis = .horizontal
-        view.distribution = .fillProportionally
-        view.layer.cornerRadius = 20
-//        view.spacing = 20
         return view
     }()
 
@@ -62,26 +50,46 @@ class SettingParentChildTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        addSubview(stackView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(textField)
-        stackView.addArrangedSubview(editButton)
+        backgroundColor = Colors.Background.papayaWhip
+        addSubview(titleLabel)
+        addSubview(textField)
+        contentView.addSubview(editButton)
+        editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
     }
     
     private func setupConstraints() {
-        stackView.snp.makeConstraints { make in
-            make.left.right.top.bottom.equalTo(self)
-        }
+//        stackView.snp.makeConstraints { make in
+//            make.left.top.bottom.equalTo(self)
+//            make.right.equalTo(self).offset(20)
+//        }
         
         titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(stackView).inset(15)
+            make.left.equalTo(self).inset(15)
+            make.centerY.equalTo(self)
+            make.width.equalTo(150)
         }
+        
+        textField.snp.makeConstraints { make in
+            make.right.equalTo(editButton.snp.left).inset(-25)
+            make.centerY.equalTo(self)
+            make.width.equalTo(300)
+        }
+        
+        editButton.snp.makeConstraints { make in
+            make.right.equalTo(self).inset(15)
+            make.centerY.equalTo(self)
+            make.width.equalTo(30)
+        }
+        
+        
+        
+        
         
         
     }
     
     @objc private func editButtonClicked() {
-        
+        textField.becomeFirstResponder()
     }
 
 }
