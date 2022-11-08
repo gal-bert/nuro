@@ -104,11 +104,11 @@ class Jumbotron: UIView {
     private func getTickingTime () {
         /// Initialize tick time to prevent delay from timer
         self.clockLabel.text = "\(Date().getTickingTime())"
-        self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(Strings.parentsName)!"
+        self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName)!)!"
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.clockLabel.text = "\(Date().getTickingTime())"
-            self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(Strings.parentsName)!"
+            self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName)!)!"
         }
     }
     
