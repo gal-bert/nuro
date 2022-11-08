@@ -96,6 +96,7 @@ class ParentRoutineAddActivityView: UIView {
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(didAddButtonClicked))
         vc.navigationItem.leftBarButtonItem?.tintColor = Colors.Brand.blueViolet
         vc.navigationItem.rightBarButtonItem?.tintColor = Colors.Brand.blueViolet
+        vc.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     @objc func didCancelButtonClicked() {
@@ -127,6 +128,15 @@ class ParentRoutineAddActivityView: UIView {
         hariRutinitasButton.snp.makeConstraints { make in
             make.top.equalTo(waktuRutinitasButton.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(40)
+        }
+    }
+    
+    func validateEmptyField() {
+        if waktuRutinitasButton.rightLabel.text != "" && hariRutinitasButton.rightLabel.text != "" && vc?.activity != nil {
+            vc?.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        else {
+            vc?.navigationItem.rightBarButtonItem?.isEnabled = false
         }
     }
 }
