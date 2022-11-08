@@ -44,14 +44,6 @@ class ParentActivityListView: UIView {
         vc.title = Strings.parentActivityListTitle
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
-        //Setup Button
-        let addButton = AddButton()
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addButton)
-        addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
-    }
-    
-    @objc private func addButtonAction() {
-        delegate.printText(text: "Add Button Clicked")
     }
     
     private func setupConstraints() {

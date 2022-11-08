@@ -22,7 +22,7 @@ enum Environment {
 extension Environment {
     static func showDoubleColumnSplitViewController() -> UISplitViewController? {
         
-        let parentTodayActivityViewController = ParentTodayActivityViewController()
+        let parentTodayActivityViewController = SettingViewController()
         
         let sidebarViewController = SidebarViewController()
         
