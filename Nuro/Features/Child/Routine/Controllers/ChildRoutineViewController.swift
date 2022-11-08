@@ -21,8 +21,8 @@ class ChildRoutineViewController: UIViewController {
         
         viewModel.loadActivities(dayID: Date().getCurrentWeekday(), timeID: Date().getTimeframeId())
         
-        childRoutineView.setup(vc: self)
         totalActivity = viewModel.activities.count
+        childRoutineView.setup(vc: self, totalActivity: totalActivity)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +46,11 @@ class ChildRoutineViewController: UIViewController {
             childRoutineView.disableStartButton()
             childRoutineView.animateHideRow()
             viewModel.removeFirstActivity()
-            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [self] timer in
-                childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activities.count)
+            
+            if totalActivity != 1 {
+                Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [self] timer in
+                    childRoutineView.animateToNextActivity(totalActivity: totalActivity, currTotalActivity: viewModel.activities.count)
+                }
             }
             
             if viewModel.activities.count == 0 {
