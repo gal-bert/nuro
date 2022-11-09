@@ -12,7 +12,7 @@ class ChildStarterView: UIView {
     private lazy var greetingLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
-        label.text = "Selamat \(Date().getTimeframe()), \(Strings.kidsName)!"
+        label.text = "Selamat \(Date().getTimeframe()), \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.kidsName)!)!"
         label.textAlignment = .center
         label.textColor = Colors.Text.onyx
         return label

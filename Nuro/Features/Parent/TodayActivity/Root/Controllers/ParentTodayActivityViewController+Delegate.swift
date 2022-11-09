@@ -9,7 +9,7 @@ import UIKit
 
 extension ParentTodayActivityViewController: ReloadDelegate {
     func reloadView() {
-        viewModel.loadAll(dayId: 1)
+        viewModel.loadAll(dayId: Date().getCurrentWeekday())
         parentTodayActivityView.tableView.reloadData()
     }
 }

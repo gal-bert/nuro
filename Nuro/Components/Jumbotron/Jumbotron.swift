@@ -20,7 +20,6 @@ class Jumbotron: UIView {
         let view = UILabel()
         view.textColor = Colors.Brand.blueViolet
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 36)
-        view.text = "Selamat \(Date().getTimeframe()) Mom!"
         return view
     }()
     
@@ -67,7 +66,6 @@ class Jumbotron: UIView {
     func setup() {
         self.layer.cornerRadius = 20
         backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
-        imageView.image = UIImage(named: "dummy")
         addSubview(imageView)
         
         addSubview(parentStackView)
@@ -79,6 +77,7 @@ class Jumbotron: UIView {
         parentStackView.addArrangedSubview(greetingLabel)
         parentStackView.addArrangedSubview(childStackView)
         
+        setJumbotronImage()
         getIndonesianDate()
         getTickingTime()
         
@@ -93,7 +92,7 @@ class Jumbotron: UIView {
         
         parentStackView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.left.equalTo(imageView.snp.right).offset(25)
+            make.left.equalTo(imageView.snp.right).offset(32)
         }
     }
     
@@ -101,14 +100,29 @@ class Jumbotron: UIView {
         self.dateLabel.text = "\(Date().getLongIndonesianDate())"
     }
     
+    private func setJumbotronImage() {
+        switch Date().getTimeframeId() {
+        case 1:
+            imageView.image = UIImage(named: "morning-jumbotron")
+        case 2:
+            imageView.image = UIImage(named: "afternoon-jumbotron")
+        case 3:
+            imageView.image = UIImage(named: "evening-jumbotron")
+        default:
+            imageView.image = UIImage(named: "morning-jumbotron")
+        }
+    }
+    
     private func getTickingTime () {
         /// Initialize tick time to prevent delay from timer
         self.clockLabel.text = "\(Date().getTickingTime())"
-        self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(Strings.parentsName)!"
+        self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName)!)!"
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.clockLabel.text = "\(Date().getTickingTime())"
-            self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(Strings.parentsName)!"
+            self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName)!)!"
+            self.setJumbotronImage()
+            self.getIndonesianDate()
         }
     }
     

@@ -49,6 +49,8 @@ class ParentRoutineView: UIView {
         addSubview(segmentedControl)
         segmentedControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
         
+        segmentedControl.selectedSegmentIndex = Date().getCurrentWeekday() - 1
+        
         addSubview(tableView)
         
         setupConstraint()
