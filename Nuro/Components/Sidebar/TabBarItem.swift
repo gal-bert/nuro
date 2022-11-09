@@ -28,13 +28,13 @@ enum TabBarItem: Int, CaseIterable {
     func image() -> UIImage? {
         switch self {
         case .parentTodayActivity:
-            return UIImage(named: Icons.hariIni)?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(weight: .regular))
+            return UIImage(named: Icons.today)?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(weight: .black))
         case .parentRoutine:
-            return UIImage(named: Icons.penjadwalan)
+            return UIImage(named: Icons.routines)?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(weight: .black))
         case .parentActivityList:
-            return UIImage(named: Icons.aktivitas)
+            return UIImage(named: Icons.activity)?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(weight: .black))
         case .childRoutine:
-            return UIImage(systemName: Icons.aqi)
+            return UIImage(named: Icons.kids)?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(weight: .black))
         case .settingsPage:
             return UIImage(systemName: Icons.gear)
         }

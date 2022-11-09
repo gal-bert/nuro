@@ -24,7 +24,14 @@ enum Icons {
     static let parentMode = "person.2.fill"
     static let cancel = "xmark"
     static let gear = "gearshape"
-    static let hariIni = "hariIniIcon"
-    static let penjadwalan = "penjadwalanIcon"
-    static let aktivitas = "aktivitasIcon"
+    static let today = "today"
+    static let todayFill = "today.fill"
+    static let routines = "routines"
+    static let routinesFill = "routines.fill"
+    static let activity = "list"
+    static let activityFill = "list.fill"
+    static let kids = "kids"
+    static let kidsFill = "kids.fill"
+    static let addActivtiy = "add.activtiy"
+    
 }
