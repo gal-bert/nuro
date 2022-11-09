@@ -11,10 +11,10 @@ import Foundation
 /// Put strings here for reusables
 
 enum Strings {
-    static let parentTodayActivityTitle = "Aktivitas Hari Ini"
-    static let parentRoutineTitle = "Rutinitas"
-    static let parentActivityListTitle = "Daftar Aktivitas"
-    static let childRoutineTitle = "Rutinitas Anak"
+    static let parentTodayActivityTitle = "Hari Ini"
+    static let parentRoutineTitle = "Penjadwalan"
+    static let parentActivityListTitle = "Aktivitas"
+    static let childRoutineTitle = "Mode Anak"
     static let settingsTitle = "Pengaturan"
 
     enum Category {
