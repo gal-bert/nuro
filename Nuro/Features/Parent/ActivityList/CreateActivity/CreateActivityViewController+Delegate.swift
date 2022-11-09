@@ -7,22 +7,6 @@
 
 import UIKit
 
-extension CreateActivityViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let text = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
-        
-        if text.isEmpty {
-            navigationItem.rightBarButtonItem?.isEnabled = false
-        } else {
-            navigationItem.rightBarButtonItem?.isEnabled = true
-        }
-        return true
-    }
-    
-}
-
 extension CreateActivityViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -32,11 +16,17 @@ extension CreateActivityViewController: UITextViewDelegate {
         }
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        createActivityView.validateEmptyField(vc: self)
+    }
+    
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Ketik kalimat reward singkat untuk anak saat menyelesaikan aktivitas..."
+            textView.text = Strings.emptyDescTextViewPlaceHolder
             textView.textColor = Colors.Neutral.bronze
         }
+        
+        createActivityView.validateEmptyField(vc: self)
     }
     
 }
@@ -92,6 +82,10 @@ extension CreateActivityViewController: CreateActivityDelegate {
         dismissViewController()
     }
     
+    func validateFields() {
+        createActivityView.validateEmptyField(vc: self)
+    }
+    
 }
 
 extension CreateActivityViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
@@ -107,5 +101,6 @@ extension CreateActivityViewController: UIImagePickerControllerDelegate & UINavi
         createActivityView.selectImageSelector.imageView.image = image
         
         createActivityView.selectImageSelector.stackView.removeFromSuperview()
+        createActivityView.validateEmptyField(vc: self)
     }
 }
