@@ -55,6 +55,9 @@ class ChildStarterView: UIView {
         stackView.addArrangedSubview(greetingLabel)
         stackView.addArrangedSubview(timeImage)
         stackView.addArrangedSubview(button)
+
+        TimeframeImageHelper.setImage(imageView: timeImage)
+
     }
     
     private func setupConstraints() {

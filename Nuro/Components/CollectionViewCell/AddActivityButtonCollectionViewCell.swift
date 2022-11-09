@@ -23,7 +23,7 @@ class AddActivityButtonCollectionViewCell: UICollectionViewCell {
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Tambah Aktivitas"
-        view.textColor = Colors.Text.seaweed
+        view.textColor = Colors.Text.onyx
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 20)
         view.textAlignment = .center
         view.numberOfLines = 2

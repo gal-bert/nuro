@@ -120,6 +120,9 @@ class ChildPinUnlockView: UIView {
         pinStackView.addArrangedSubview(textField3)
         pinStackView.addArrangedSubview(textField4)
         pinStackView.addArrangedSubview(deletePinButton)
+
+        TimeframeImageHelper.setImage(imageView: imageView)
+
     }
     
     private func setupConstraints() {

@@ -23,7 +23,7 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Judul Aktivitas"
-        view.textColor = .black
+        view.textColor = Colors.Text.onyx
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
         view.textAlignment = .center
         return view
@@ -68,8 +68,6 @@ class ParentActivityCollectionViewCell: UICollectionViewCell {
         backgroundColor = Colors.Brand.floralWhite
         layer.borderColor = Colors.Brand.jasmine.cgColor
         layer.borderWidth = 1
-        
-        titleLabel.textColor = Colors.Text.seaweed
         descriptionLabel.textColor = titleLabel.textColor
         
         addSubview(imageView)

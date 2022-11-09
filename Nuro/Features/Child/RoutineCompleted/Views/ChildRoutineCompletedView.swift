@@ -36,7 +36,7 @@ class ChildRoutineCompletedView: UIView {
         return label
     }()
     
-    private lazy var appreciationImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, imageName: Icons.checkmark)
+    private lazy var appreciationImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, image: UIImage(named: "trophy-circle") ?? UIImage())
     
     private lazy var labelStackView: UIStackView = {
         let sv = UIStackView()

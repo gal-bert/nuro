@@ -181,6 +181,7 @@
 		5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */; };
 		5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */; };
 		5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */; };
+		F447ECEE15D5FCCF1A51EF28 /* TimeframeImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -385,6 +386,7 @@
 		5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderModel.swift; sourceTree = "<group>"; };
 		5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailModel.swift; sourceTree = "<group>"; };
+		F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeframeImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -936,6 +938,7 @@
 				3F98CCC12912855400400762 /* DayToIdConverter.swift */,
 				0C98AC0A291520A500CB17F0 /* TimeframeValidator.swift */,
 				0C9EFA6B291541F700449EAD /* UserDefaults.swift */,
+				F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1750,6 +1753,7 @@
 				0CF06681290180CE00061701 /* AddActivityViewController+Delegate.swift in Sources */,
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 				4A24DA12291371E60078095E /* SettingViewController.swift in Sources */,
+				F447ECEE15D5FCCF1A51EF28 /* TimeframeImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
