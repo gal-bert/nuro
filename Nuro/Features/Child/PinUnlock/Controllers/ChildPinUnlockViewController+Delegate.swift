@@ -23,6 +23,7 @@ extension ChildPinUnlockViewController: UICollectionViewDelegate {
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
             if viewModel.pin.count == 4 {
                 if viewModel.checkPin() {
+                    UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isLocked)
                     self.dismiss(animated: true)
                 }
                 else {
