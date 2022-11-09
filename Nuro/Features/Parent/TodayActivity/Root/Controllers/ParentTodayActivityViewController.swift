@@ -26,6 +26,19 @@ class ParentTodayActivityViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("did appear")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isLocked) {
+            let starterVC = ChildStarterViewController()
+            let routineVC = ChildRoutineViewController()
+            let nav = UINavigationController()
+            nav.modalPresentationStyle = .fullScreen
+            nav.setViewControllers([starterVC, routineVC], animated: false)
+            self.present(nav, animated: false)
+        }
     }
 
     override func loadView() {

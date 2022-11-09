@@ -13,7 +13,7 @@ extension ChildStarterViewController: ChildStarterDelegate {
         let dest = ChildRoutineViewController()
         dest.modalPresentationStyle = .fullScreen
         dest.modalTransitionStyle = .crossDissolve
-        
+        UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isLocked)
         Transition.animateTransition(vc: self)
         navigationController?.pushViewController(dest, animated: false)
     }

@@ -16,6 +16,7 @@ class UserDefaultsHelper {
         static let isFirstTime = "IS_FIRST_TIME"
         static let parentsName = "PARENTS_NAME"
         static let kidsName = "KIDS_NAME"
+        static let isLocked = "IS_LOCKED"
     }
     
     static func registerDefaultValue() -> Void {
@@ -26,7 +27,8 @@ class UserDefaultsHelper {
                 Keys.eveningTime: "18:00",
                 Keys.isFirstTime: true,
                 Keys.parentsName: "Orang Tua",
-                Keys.kidsName: "Anak"
+                Keys.kidsName: "Anak",
+                Keys.isLocked: false
             ]
         )
     }
