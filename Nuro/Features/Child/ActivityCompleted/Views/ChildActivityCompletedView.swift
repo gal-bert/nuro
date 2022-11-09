@@ -27,7 +27,7 @@ class ChildActivityCompletedView: UIView {
         return label
     }()
     
-    private lazy var appreciationImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, imageName: Icons.checkmark)
+    private lazy var appreciationImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, image: UIImage(named: "checklist-circle") ?? UIImage())
     private lazy var nextActivityButton = ChildButton(title: "Terima kasih", height: ScreenSizes.halfScreenHeight / 4)
     
     private lazy var labelStackView: UIStackView = {

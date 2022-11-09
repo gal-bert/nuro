@@ -77,7 +77,7 @@ class Jumbotron: UIView {
         parentStackView.addArrangedSubview(greetingLabel)
         parentStackView.addArrangedSubview(childStackView)
         
-        setJumbotronImage()
+        TimeframeImageHelper.setImage(imageView: imageView)
         getIndonesianDate()
         getTickingTime()
         
@@ -100,19 +100,6 @@ class Jumbotron: UIView {
         self.dateLabel.text = "\(Date().getLongIndonesianDate())"
     }
     
-    private func setJumbotronImage() {
-        switch Date().getTimeframeId() {
-        case 1:
-            imageView.image = UIImage(named: "morning-jumbotron")
-        case 2:
-            imageView.image = UIImage(named: "afternoon-jumbotron")
-        case 3:
-            imageView.image = UIImage(named: "evening-jumbotron")
-        default:
-            imageView.image = UIImage(named: "morning-jumbotron")
-        }
-    }
-    
     private func getTickingTime () {
         /// Initialize tick time to prevent delay from timer
         self.clockLabel.text = "\(Date().getTickingTime())"
@@ -121,7 +108,7 @@ class Jumbotron: UIView {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.clockLabel.text = "\(Date().getTickingTime())"
             self.greetingLabel.text = "Selamat \(Date().getTimeframe()), \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName)!)!"
-            self.setJumbotronImage()
+            TimeframeImageHelper.setImage(imageView: self.imageView)
             self.getIndonesianDate()
         }
     }

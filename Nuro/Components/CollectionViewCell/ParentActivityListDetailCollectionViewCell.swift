@@ -52,7 +52,7 @@ class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Detail Aktivitas"
-        view.textColor = .black
+        view.textColor = Colors.Text.onyx
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)
         view.textAlignment = .center
         view.numberOfLines = 2
@@ -76,7 +76,6 @@ class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
         layer.borderColor = Colors.Brand.jasmine.cgColor
         layer.borderWidth = 1
         
-        titleLabel.textColor = Colors.Text.onyx
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(deleteButton)

@@ -23,7 +23,7 @@ class AddActivityContentCollectionViewCell: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Sepak Bola"
-        view.textColor = .black
+        view.textColor = Colors.Text.onyx
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 20)
         view.textAlignment = .center
         view.numberOfLines = 2
@@ -47,8 +47,6 @@ class AddActivityContentCollectionViewCell: UICollectionViewCell {
         backgroundColor = Colors.Brand.floralWhite
         layer.borderColor = Colors.Brand.jasmine.cgColor
         layer.borderWidth = 1
-        
-        titleLabel.textColor = Colors.Text.seaweed
         addMultipleSubviews(views: imageView, titleLabel)
         
     }
