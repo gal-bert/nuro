@@ -16,7 +16,7 @@ extension AddActivityViewController: AddActivityDelegate {
     }
 
     func filterCategory() {
-        if addActivityView.segmentedControl.selectedSegmentIndex > 0{
+        if addActivityView.segmentedControl.selectedSegmentIndex > 0 {
             viewModel.filteredActivities = viewModel.activities.filter {
                 $0.category?.categoryName?.contains(addActivityView.segmentedControl.titleForSegment(at: addActivityView.segmentedControl.selectedSegmentIndex) ?? "") ?? true
             }
@@ -32,31 +32,28 @@ extension AddActivityViewController: SearchControllerDelegate {
         print("SEARCH: \(text)")
         // TODO: What happen if search?
     }
+
 }
 
 extension AddActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-    var activities = addActivityView.segmentedControl.selectedSegmentIndex > 0 ? viewModel.filteredActivities : viewModel.activities
+    let activities = addActivityView.segmentedControl.selectedSegmentIndex > 0 ? viewModel.filteredActivities : viewModel.activities
 
-    if indexPath.row == 0 {
+    if addActivityView.segmentedControl.selectedSegmentIndex > 0, indexPath.item == 0 {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityButtonCollectionViewCell.identifier, for: indexPath) as! AddActivityButtonCollectionViewCell
         return cell
     }
-    else {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityContentCollectionViewCell.identifier, for: indexPath) as! AddActivityContentCollectionViewCell
-        cell.titleLabel.text = activities[indexPath.item].activityName
-        cell.imageView.image = Document.getImageFromDocument(imageURL: activities[indexPath.item].activityImageURL)
-
-        return cell
-    }
-
-    return UICollectionViewCell()
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActivityContentCollectionViewCell.identifier, for: indexPath) as! AddActivityContentCollectionViewCell
+    cell.titleLabel.text = activities[indexPath.item].activityName
+    cell.imageView.image = Document.getImageFromDocument(imageURL: activities[indexPath.item].activityImageURL)
+    return cell
+    
 }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var activities = addActivityView.segmentedControl.selectedSegmentIndex > 0 ? viewModel.filteredActivities : viewModel.activities
+        let activities = addActivityView.segmentedControl.selectedSegmentIndex > 0 ? viewModel.filteredActivities : viewModel.activities
         return activities.count
     }
     

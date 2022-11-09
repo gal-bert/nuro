@@ -35,10 +35,10 @@ class AddActivityView: UIView {
         collectionView.dataSource = vc
         collectionView.register(AddActivityButtonCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityButtonCollectionViewCell.identifier)
         collectionView.register(AddActivityContentCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityContentCollectionViewCell.identifier)
-        
+
         
         addMultipleSubviews(views: segmentedControl, collectionView)
-
+        
         segmentedControl.addTarget(self, action: #selector(selectedSegmentChanged), for: .valueChanged)
         
         setupNavigationBar(vc: vc)
