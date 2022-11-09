@@ -12,6 +12,8 @@ extension ParentRoutineAddActivityViewController: AddActivityToRoutineDelegate {
         self.activity = activity
         parentRoutineAddActivityView.iconChooseImageView.image = Document.getImageFromDocument(imageURL: activity.activityImageURL)
         parentRoutineAddActivityView.selectImageLabel.text = activity.activityName
+        
+        parentRoutineAddActivityView.validateEmptyField()
     }
 }
 
@@ -43,6 +45,8 @@ extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityTimeDa
         timesSorted = timesSorted.sorted()
         self.times = timesSorted
         parentRoutineAddActivityView.waktuRutinitasButton.rightLabel.text = TimeToIdConverter.idToTime(times: timesSorted)
+        
+        parentRoutineAddActivityView.validateEmptyField()
     }
     
     func sendDaysResult(days: [Int]) {
@@ -50,5 +54,7 @@ extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityTimeDa
         daysSorted = daysSorted.sorted()
         self.days = daysSorted
         parentRoutineAddActivityView.hariRutinitasButton.rightLabel.text = DayToIdConverted.idToDay(days: daysSorted)
+        
+        parentRoutineAddActivityView.validateEmptyField()
     }
 }

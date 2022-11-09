@@ -55,7 +55,7 @@ class CreateActivityView: UIView {
         view.layer.cornerRadius = 20
         view.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)
-        view.text = "Ketik kalimat reward singkat untuk anak saat menyelesaikan aktivitas..."
+        view.text = Strings.emptyDescTextViewPlaceHolder
         view.textColor = Colors.Neutral.bronze
         return view
     }()
@@ -68,14 +68,9 @@ class CreateActivityView: UIView {
         
         delegate = vc
         descTextArea.delegate = vc
-        nameTextField.delegate = vc
         
         addSubview(parentStackView)
-        
-        
         parentStackView.addArrangedSubview(topStackView)
-//        parentStackView.addArrangedSubview(categoryContainer)
-        
         topStackView.addArrangedSubview(selectImageSelector)
         topStackView.addArrangedSubview(rightStackView)
         rightStackView.addArrangedSubview(nameTextField)
@@ -84,6 +79,7 @@ class CreateActivityView: UIView {
         let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         nameTextField.leftView = paddingView
         nameTextField.leftViewMode = .always
+        nameTextField.addTarget(self, action: #selector(textFieldValueChanged), for: .editingChanged)
         
         selectImageSelector.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapImageSelector)))
         
@@ -109,7 +105,10 @@ class CreateActivityView: UIView {
     @objc func didTapImageSelector() {
         delegate.pushSelectorAlert()
     }
-                                                
+    
+    @objc func textFieldValueChanged() {
+        delegate.validateFields()
+    }
     
     private func setupConstraints() {
         parentStackView.snp.makeConstraints { make in
@@ -117,6 +116,15 @@ class CreateActivityView: UIView {
         }
         nameTextField.snp.makeConstraints { make in
             make.height.equalTo(ScreenSizes.modalHeight * 0.3)
+        }
+    }
+    
+    func validateEmptyField(vc: CreateActivityViewController) {
+        if nameTextField.text != "" && descTextArea.text != Strings.emptyDescTextViewPlaceHolder && descTextArea.text != "" && selectImageSelector.imageView.image != nil {
+            vc.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        else {
+            vc.navigationItem.rightBarButtonItem?.isEnabled = false
         }
     }
     

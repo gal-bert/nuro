@@ -12,6 +12,7 @@ protocol CreateActivityDelegate {
     func pushSelectorAlert()
     func dismissViewController()
     func saveActivity()
+    func validateFields()
 }
 
 protocol ReloadCreateActivity {

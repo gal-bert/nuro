@@ -16,7 +16,10 @@ enum Strings {
     static let parentActivityListTitle = "Daftar Aktivitas"
     static let childRoutineTitle = "Rutinitas Anak"
     static let settingsTitle = "Pengaturan"
-
+    static let kidsName = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.kidsName) ?? "Anak"
+    static let parentsName = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName) ?? "Mom"
+    static let emptyDescTextViewPlaceHolder = "Ketik kalimat reward singkat untuk anak saat menyelesaikan aktivitas..."
+    
     enum Category {
         static let others = "Lainnya"
     }
