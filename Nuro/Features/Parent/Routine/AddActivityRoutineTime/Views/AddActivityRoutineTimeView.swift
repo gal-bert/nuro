@@ -12,7 +12,7 @@ class AddActivityRoutineTimeView: UIView {
     lazy var tableView: UITableView = {
         let view = UITableView()
         view.allowsMultipleSelection = true
-        view.separatorColor = Colors.Background.pinkLace
+
         view.isScrollEnabled = false
         return view
     }()
