@@ -9,4 +9,5 @@ import Foundation
 
 class AddActivityRoutineTimeViewModel {
     let time = ["Pagi", "Siang", "Malam"]
+    var timeSelected = [Int]()
 }
