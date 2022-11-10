@@ -58,8 +58,11 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            // TODO: Push view to create new activity
+        if addActivityView.segmentedControl.selectedSegmentIndex > 0, indexPath.row == 0 {
+            let dest = CreateActivityViewController()
+            dest.addActivityDelegate = self.delegate
+            dest.category = viewModel.getSelectedCategory(selectedIndex: addActivityView.segmentedControl.selectedSegmentIndex - 1)
+            navigationController?.pushViewController(dest, animated: true)
         }
         else {
             delegate?.addActivityToRoutine(activity: viewModel.filteredActivities[indexPath.item])

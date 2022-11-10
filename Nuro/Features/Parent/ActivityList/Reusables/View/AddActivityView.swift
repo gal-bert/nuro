@@ -49,7 +49,7 @@ class AddActivityView: UIView {
     }
     
     func setupNavigationBar(vc: AddActivityViewController) {
-        vc.title = "Tambah Aktivitas - Pagi"
+        vc.title = "Pilih Aktivitas"
     }
     
     private func setupConstraints() {

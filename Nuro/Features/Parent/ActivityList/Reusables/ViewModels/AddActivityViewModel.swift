@@ -33,4 +33,9 @@ class AddActivityViewModel {
         
     }
     
+    func getSelectedCategory(selectedIndex: Int) -> Category {
+        let categories = categoryRepository.getAll()
+        return categories[selectedIndex]
+    }
+    
 }
