@@ -60,7 +60,7 @@ class AddActivityButtonCollectionViewCell: UICollectionViewCell {
     private func setupConstraints() {
         
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(20)
+            make.top.equalTo(self).inset(50)
             make.left.right.equalTo(self).inset(50)
             make.height.equalTo(imageView.snp.width)
         }

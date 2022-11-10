@@ -87,11 +87,11 @@ class ParentActivityListDetailCollectionViewCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self)
-            make.height.equalTo(120)
+            make.height.equalTo(140)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.top.equalTo(imageView.snp.bottom).offset(30)
             make.left.right.equalTo(self).inset(10)
         }
         
