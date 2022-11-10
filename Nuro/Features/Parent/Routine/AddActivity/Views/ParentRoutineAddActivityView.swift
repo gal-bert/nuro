@@ -77,16 +77,16 @@ class ParentRoutineAddActivityView: UIView {
     }
     
     @objc private func didTapRoutineTime(_ gesture: UITapGestureRecognizer) {
-        // TODO: Push View Controller to Table View of Time Selection
         let dest = AddActivityRoutimeTimeViewController()
         dest.addActivityRoutineTimeView.delegateData = vc
+        dest.addActivityRoutineTimeViewModel.timeSelected = vc?.times ?? []
         delegate.pushViewController(dest: dest)
     }
 
     @objc private func didTapRoutineDay(_ gesture: UITapGestureRecognizer) {
-        // TODO: Push View Controller to Table View of Day Selection
         let dest = AddActivityRoutineDayViewController()
         dest.addActivityRoutineDayView.delegateData = vc
+        dest.addActivityRoutineDayViewModel.daysSelected = vc?.days ?? []
         delegate.pushViewController(dest: dest)
     }
     

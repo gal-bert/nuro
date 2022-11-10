@@ -9,4 +9,5 @@ import Foundation
 
 class AddActivityRoutineDayViewModel {
     let days = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
+    var daysSelected = [Int]()
 }

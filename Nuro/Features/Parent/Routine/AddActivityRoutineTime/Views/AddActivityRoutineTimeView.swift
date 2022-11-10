@@ -44,13 +44,14 @@ class AddActivityRoutineTimeView: UIView {
     }
     
     @objc func didFinishButtonClicked() {
-        let selectedCell = tableView.indexPathsForSelectedRows ?? []
         var tempArr = [Int]()
-        
-        for i in selectedCell {
-            tempArr.append(i.row)
+        for i in 0...2 {
+            if let cell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) {
+                if cell.accessoryType == .checkmark {
+                    tempArr.append(i)
+                }
+            }
         }
-        
         delegateData.sendTimesResult(times: tempArr)
         delegate.popViewController()
     }

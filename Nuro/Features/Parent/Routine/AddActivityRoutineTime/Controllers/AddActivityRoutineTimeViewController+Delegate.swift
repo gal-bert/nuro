@@ -24,10 +24,9 @@ extension AddActivityRoutimeTimeViewController: UITableViewDelegate, UITableView
 
         cell.cellLabel.text = addActivityRoutineTimeViewModel.time[indexPath.row]
         
-//        if indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2 {
-//            cell.isSelected = true
-//            cell.accessoryType = .checkmark
-//        }
+        if addActivityRoutineTimeViewModel.timeSelected.contains(indexPath.row) {
+            cell.accessoryType = .checkmark
+        }
         
         return cell
     }
@@ -37,14 +36,13 @@ extension AddActivityRoutimeTimeViewController: UITableViewDelegate, UITableView
         
         if cell.accessoryType == .checkmark {
             cell.accessoryType = .none
-            cell.setSelected(false, animated: true)
         } else {
-            cell.setSelected(true, animated: true)
             cell.accessoryType = .checkmark
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addActivityRoutineTimeViewModel.time.count
