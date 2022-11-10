@@ -21,10 +21,28 @@ extension AddActivityRoutimeTimeViewController: UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = addActivityRoutineTimeView.tableView.dequeueReusableCell(withIdentifier: PlainTableViewCell.identifier) as! PlainTableViewCell
-        cell.selectionStyle = .none
+
         cell.cellLabel.text = addActivityRoutineTimeViewModel.time[indexPath.row]
+        
+        if addActivityRoutineTimeViewModel.timeSelected.contains(indexPath.row) {
+            cell.accessoryType = .checkmark
+        }
+        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        
+        if cell.accessoryType == .checkmark {
+            cell.accessoryType = .none
+        } else {
+            cell.accessoryType = .checkmark
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addActivityRoutineTimeViewModel.time.count

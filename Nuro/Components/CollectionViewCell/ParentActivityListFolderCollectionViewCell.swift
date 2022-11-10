@@ -19,7 +19,7 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
     
     lazy var topFolderView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 12
         view.layer.maskedCorners = [Corners.topLeft, Corners.topRight]
         return view
     }()
@@ -92,8 +92,8 @@ class ParentActivityFolderCollectionViewCell: UICollectionViewCell {
         
         topFolderView.snp.makeConstraints { make in
             make.top.equalTo(self)
-            make.left.right.equalTo(self).inset(32)
-            make.height.equalTo(16)
+            make.left.right.equalTo(self).inset(20)
+            make.height.equalTo(15)
             make.width.equalTo(220)
         }
         
