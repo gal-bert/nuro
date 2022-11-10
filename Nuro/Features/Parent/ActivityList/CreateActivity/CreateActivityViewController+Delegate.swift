@@ -67,18 +67,26 @@ extension CreateActivityViewController: CreateActivityDelegate {
     }
     
     func dismissViewController() {
-        self.dismiss(animated: true)
+        if (navigationController?.viewControllers.count ?? 0) > 1 {
+            navigationController?.popToRootViewController(animated: true)
+        }
+        else {
+            self.dismiss(animated: true)
+        }
     }
     
     func saveActivity() {
-        
         ActivityLocalRepository.shared.add(
             name: createActivityView.nameTextField.text ?? "",
             desc: createActivityView.descTextArea.text ?? "",
             imageURL: Document.saveToDocument(image: createActivityView.selectImageSelector.imageView.image),
             to: category ?? Category()
         )
-        delegate.reloadData()
+        
+        delegate?.reloadData()
+        let activities = ActivityLocalRepository.shared.getActivitiesOfCategory(category: category ?? Category())
+        addActivityDelegate?.addActivityToRoutine(activity: activities[activities.count - 1])
+        
         dismissViewController()
     }
     

@@ -17,13 +17,14 @@ class AddActivityButtonCollectionViewCell: UICollectionViewCell {
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         view.image = UIImage(systemName: Icons.plus)
+        view.tintColor = Colors.Neutral.bronze
         return view
     }()
     
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
-        view.text = "Tambah Aktivitas"
-        view.textColor = Colors.Text.onyx
+        view.text = "Buat Aktivitas"
+        view.textColor = Colors.Neutral.grey
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 20)
         view.textAlignment = .center
         view.numberOfLines = 2
@@ -33,6 +34,8 @@ class AddActivityButtonCollectionViewCell: UICollectionViewCell {
     private lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
+        view.alignment = .center
+        view.spacing = 8
         return view
     }()
     
@@ -49,27 +52,25 @@ class AddActivityButtonCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-        
         backgroundColor = Colors.Brand.floralWhite
         layer.borderColor = Colors.Brand.jasmine.cgColor
         layer.borderWidth = 1
         
-        addMultipleSubviews(views: imageView, titleLabel)
+        addSubview(stackView)
+        stackView.addArrangedSubview(imageView)
+        stackView.addArrangedSubview(titleLabel)
     }
     
     private func setupConstraints() {
+        stackView.snp.makeConstraints { make in
+            make.left.right.equalTo(self).inset(8)
+            make.centerY.equalTo(self)
+        }
         
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(50)
-            make.left.right.equalTo(self).inset(50)
-            make.height.equalTo(imageView.snp.width)
+            make.height.equalTo(self.bounds.width / 2)
+            make.width.equalTo(self.bounds.width / 2)
         }
-        
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
-            make.left.right.equalTo(self).inset(10)
-        }
-        
     }
     
 }

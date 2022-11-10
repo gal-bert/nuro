@@ -88,9 +88,12 @@ class CreateActivityView: UIView {
     }
     
     func setupNavigationBar(vc: CreateActivityViewController) {
-        vc.title = "Tambah Aktivitas Baru"
-        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(dismissAction))
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(saveAction))
+        vc.title = "Buat Aktivitas Baru"
+        
+        if (vc.navigationController?.viewControllers.count ?? 0) <= 1 {
+            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Batal", style: .plain, target: self, action: #selector(dismissAction))
+        }
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Buat", style: .plain, target: self, action: #selector(saveAction))
         vc.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
