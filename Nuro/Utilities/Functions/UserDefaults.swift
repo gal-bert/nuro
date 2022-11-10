@@ -17,6 +17,7 @@ class UserDefaultsHelper {
         static let parentsName = "PARENTS_NAME"
         static let kidsName = "KIDS_NAME"
         static let isLocked = "IS_LOCKED"
+        static let lastWeekdayId = "LAST_WEEKDAY_ID"
     }
     
     static func registerDefaultValue() -> Void {
@@ -28,7 +29,8 @@ class UserDefaultsHelper {
                 Keys.isFirstTime: true,
                 Keys.parentsName: "Orang Tua",
                 Keys.kidsName: "Anak",
-                Keys.isLocked: false
+                Keys.isLocked: false,
+                Keys.lastWeekdayId: Date().getCurrentWeekday()
             ]
         )
     }

@@ -13,6 +13,7 @@ class ParentChildRoutineViewModel {
     
     func getTodaysRoutine() {
         todaysRoutines = RoutineDetailLocalRepository.shared.getRoutineDetails(dayID: Date().getCurrentWeekday(), timeID: Date().getTimeframeId())
+        //TODO: Change to Mirror Repository
     }
     
 }
