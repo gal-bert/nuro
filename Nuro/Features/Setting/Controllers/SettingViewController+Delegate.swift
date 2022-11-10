@@ -22,7 +22,7 @@ extension SettingViewController: SettingDelegate {
             settingView.tableViewTime.reloadRows(at: [IndexPath(row: 0, section: 0), IndexPath(row: 1, section: 0)], with: .none)
 
         default:
-            print("default")
+            return
         }
         
     }
@@ -138,11 +138,9 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case settingView.tableViewProfile:
-            print(indexPath.row)
             let cell = tableView.cellForRow(at: indexPath) as! SettingParentChildTableViewCell
             cell.textField.becomeFirstResponder()
         case settingView.tableViewTime:
-            print(indexPath.row)
             let cell = tableView.cellForRow(at: indexPath) as! SettingTimeTableViewCell
             cell.timePicker.becomeFirstResponder()
         default:

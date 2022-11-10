@@ -51,17 +51,13 @@ class Seeder {
         var activityTemplate: [ActivityModel] = []
         var category: Category = Category()
         
-        // MARK: DUMMY IMAGE IN DOCUMENT
-        let fileURL = Document.saveToDocument(image: UIImage(named: "test"))
-        
         category = categoryRepo.getCategory(name: "Tugas Rumah")
         activityTemplate.append(ActivityModel(activityName: "Sapu", activityDesc: "Lantai bebas dari debu", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Sapu")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Pel", activityDesc: "Lantai menjadi bersih", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Pel")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Rapikan mainan", activityDesc: "Sekarang mainanmu rapih", activityImageURL: Document.saveToDocument(image: UIImage(named: "test")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Siram tanaman", activityDesc: "Tanaman tumbuh besar", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Siram_tanaman")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Cuci piring", activityDesc: "Piring bersih dari kuman", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Cuci_Piring")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Buang sampah", activityDesc: "Lingkunganmu jadi bersih", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Membuang_sampah")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Kunci pintu", activityDesc: "Rumahmu jadi aman", activityImageURL: Document.saveToDocument(image: UIImage(named: "test")), createdAt: Date(), category: category))
+        activityTemplate.append(ActivityModel(activityName: "Kunci pintu", activityDesc: "Rumahmu jadi aman", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_kunci_pintu")), createdAt: Date(), category: category))
         
         category = categoryRepo.getCategory(name: "Kebersihan Diri")
         activityTemplate.append(ActivityModel(activityName: "Mandi", activityDesc: "Badan bersih dan segar", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Mandi")), createdAt: Date(), category: category))
@@ -72,7 +68,7 @@ class Seeder {
         category = categoryRepo.getCategory(name: "Olahraga")
         activityTemplate.append(ActivityModel(activityName: "Jalan-jalan", activityDesc: "Tubuhmu sehat dan kuat", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Jalan_jalan")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Senam", activityDesc: "Tubuhmu sehat dan kuat", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Senam")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Menari", activityDesc: "Tubuhmu sehat dan kuat", activityImageURL: Document.saveToDocument(image: UIImage(named: "test")), createdAt: Date(), category: category))
+        activityTemplate.append(ActivityModel(activityName: "Menari", activityDesc: "Tubuhmu sehat dan kuat", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_menari")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Sepeda", activityDesc: "Tubuhmu sehat dan kuat", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Sepeda")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Basket", activityDesc: "Tubuhmu sehat dan kuat", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Basketball")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Sepak bola", activityDesc: "Tubuhmu sehat dan kuat", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Sepakbola")), createdAt: Date(), category: category))
@@ -82,9 +78,8 @@ class Seeder {
         category = categoryRepo.getCategory(name: "Edukasi")
         activityTemplate.append(ActivityModel(activityName: "Kerja PR", activityDesc: "Gurumu pasti senang", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Pekerjaan_Rumah")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Belajar", activityDesc: "Pengetahuanmu semakin luas", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Belajar")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Pergi kursus", activityDesc: "Agar dirimu pintar", activityImageURL: Document.saveToDocument(image: UIImage(named: "test")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Main musik", activityDesc: "Perasaan tenang", activityImageURL: Document.saveToDocument(image: UIImage(named: "test")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Terapi", activityDesc: "Sekarang jadi hebat", activityImageURL: Document.saveToDocument(image: UIImage(named: "test")), createdAt: Date(), category: category))
+        activityTemplate.append(ActivityModel(activityName: "Pergi kursus", activityDesc: "Agar dirimu pintar", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_kursus")), createdAt: Date(), category: category))
+        activityTemplate.append(ActivityModel(activityName: "Main musik", activityDesc: "Perasaan tenang", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_music")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Baca buku", activityDesc: "Kamu menjadi semakin pintar", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Membaca_buku")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Pergi sekolah", activityDesc: "Agar lebih pintar", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Pergi_Sekolah")), createdAt: Date(), category: category))
         activityTemplate.append(ActivityModel(activityName: "Pakai seragam", activityDesc: "Agar terlihat rapih", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Seragam_sekolah")), createdAt: Date(), category: category))
@@ -100,14 +95,9 @@ class Seeder {
         activityTemplate.append(ActivityModel(activityName: "Mandikan hewan", activityDesc: "Hewan jadi bersih", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Mandi_peliharaan")), createdAt: Date(), category: category))
         
         category = categoryRepo.getCategory(name: "Sehari-hari")
-        activityTemplate.append(ActivityModel(activityName: "Sarapan", activityDesc: "Gizi tubuhmu terpenuhi", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Makan")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Makan siang", activityDesc: "Gizi tubuhmu terpenuhi", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Makan")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Makan malam", activityDesc: "Gizi tubuhmu terpenuhi", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Makan")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Makan buah", activityDesc: "Gizi tubuhmu terpenuhi", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Makan")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Tidur siang", activityDesc: "Energimu terisi kembali", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Tidur")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Tidur malam", activityDesc: "Energimu terisi kembali", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Tidur")), createdAt: Date(), category: category))
-        activityTemplate.append(ActivityModel(activityName: "Berdoa", activityDesc: "Sekarang dirimu tenang", activityImageURL: Document.saveToDocument(image: UIImage(named: "test")), createdAt: Date(), category: category))
-        
+        activityTemplate.append(ActivityModel(activityName: "Makan", activityDesc: "Gizi tubuhmu terpenuhi", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Makan")), createdAt: Date(), category: category))
+        activityTemplate.append(ActivityModel(activityName: "Tidur", activityDesc: "Energimu terisi kembali", activityImageURL: Document.saveToDocument(image: UIImage(named: "activity_Tidur")), createdAt: Date(), category: category))
+
         category = categoryRepo.getCategory(name: "Lainnya")
         
         return activityTemplate
