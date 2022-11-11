@@ -81,6 +81,25 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dest = CreateActivityViewController()
+        dest.reloadDelegate = self
+        
+        switch indexPath.section {
+        case 0:
+            dest.activity = viewModel.morningActivities[indexPath.row].activity
+            dest.category = viewModel.morningActivities[indexPath.row].activity?.category
+        case 1:
+            dest.activity = viewModel.afternoonActivities[indexPath.row].activity
+            dest.category = viewModel.afternoonActivities[indexPath.row].activity?.category
+        case 2:
+            dest.activity = viewModel.eveningActivities[indexPath.row].activity
+            dest.category = viewModel.eveningActivities[indexPath.row].activity?.category
+        default:
+            dest.activity = Activity()
+            dest.category = Category()
+        }
+        
+        presentViewController(dest: dest)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

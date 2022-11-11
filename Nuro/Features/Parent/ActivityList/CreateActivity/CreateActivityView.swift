@@ -44,6 +44,7 @@ class CreateActivityView: UIView {
             string: "Masukkan nama aktivitas",
             attributes: [NSAttributedString.Key.foregroundColor: Colors.Neutral.bronze]
         )
+        view.textColor = Colors.Text.onyx
         return view
     }()
     
@@ -97,12 +98,23 @@ class CreateActivityView: UIView {
         vc.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
+    func setupForEditMode(activity: Activity, vc: CreateActivityViewController) {
+        nameTextField.text = activity.activityName
+        descTextArea.text = activity.activityDesc
+        selectImageSelector.imageView.image = Document.getImageFromDocument(imageURL: activity.activityImageURL)
+        
+        vc.title = "Detil Aktivitas"
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simpan", style: .done, target: self, action: #selector(saveAction))
+        
+        descTextArea.textColor = Colors.Text.onyx
+    }
+    
     @objc func dismissAction() {
         delegate.dismissViewController()
     }
     
     @objc func saveAction() {
-        delegate.saveActivity()
+        delegate.saveActivity(name: nameTextField.text ?? "", desc: descTextArea.text ?? "", image: selectImageSelector.imageView.image ?? UIImage())
     }
     
     @objc func didTapImageSelector() {

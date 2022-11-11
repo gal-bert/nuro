@@ -12,7 +12,7 @@ extension CreateActivityViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == Colors.Neutral.bronze {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = Colors.Text.onyx
         }
     }
     
@@ -75,18 +75,24 @@ extension CreateActivityViewController: CreateActivityDelegate {
         }
     }
     
-    func saveActivity() {
-        ActivityLocalRepository.shared.add(
-            name: createActivityView.nameTextField.text ?? "",
-            desc: createActivityView.descTextArea.text ?? "",
-            imageURL: Document.saveToDocument(image: createActivityView.selectImageSelector.imageView.image),
-            to: category ?? Category()
-        )
+    func saveActivity(name: String, desc: String, image: UIImage) {
+        if self.navigationItem.rightBarButtonItem?.title == "Buat" {
+            ActivityLocalRepository.shared.add(
+                name: name,
+                desc: desc,
+                imageURL: Document.saveToDocument(image: image),
+                to: category ?? Category()
+            )
         
-        delegate?.reloadData()
-        let activities = ActivityLocalRepository.shared.getActivitiesOfCategory(category: category ?? Category())
-        addActivityDelegate?.addActivityToRoutine(activity: activities[activities.count - 1])
+            let activities = ActivityLocalRepository.shared.getActivitiesOfCategory(category: category ?? Category())
+            addActivityDelegate?.addActivityToRoutine(activity: activities[activities.count - 1])
+        }
+        else {
+            Document.removeFromDocument(imageURL: activity?.activityImageURL ?? "")
+            ActivityLocalRepository.shared.update(activity: activity ?? Activity(), newName: name, newDesc: desc, newImageURL: Document.saveToDocument(image: image), newCategory: category ?? Category())
+        }
         
+        reloadDelegate?.reloadView()
         dismissViewController()
     }
     
