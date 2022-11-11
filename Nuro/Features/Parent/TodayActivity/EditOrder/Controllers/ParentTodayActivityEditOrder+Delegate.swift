@@ -7,13 +7,24 @@
 
 import UIKit
 
+extension ParentTodayActivityEditOrderViewController: AddActivityToRoutineDelegate {
+    func addActivityToRoutine(activity: Activity) {
+        let timeId = mirrorDetails[0].mirrorHeader?.timeID
+        MirrorDetailLocalRepository.shared.add(timeID: Int(timeId!), activity: activity)
+        mirrorDetails = MirrorDetailLocalRepository.shared.getMirrorDetails(timeID: Int(timeId!))
+        parentTodayActivityEditOrderView.tableView.reloadData()
+    }
+}
+
 extension ParentTodayActivityEditOrderViewController: ParentTodayActivityEditOrderDelegate {
     func dismissViewController() {
         self.dismiss(animated: true)
         reloadDelegate.reloadView()
     }
     
-    func pushViewController(dest: UIViewController) {
+    func pushViewController() {
+        let dest = AddActivityViewController()
+        dest.delegate = self
         navigationController?.pushViewController(dest, animated: true)
     }
 }
@@ -24,7 +35,7 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentTodayActivityEditOrderView.tableView.dequeueReusableCell(withIdentifier: ActivitiesTableViewCell.identifier) as! ActivitiesTableViewCell
         
-        let activity = routineDetails[indexPath.row].activity
+        let activity = mirrorDetails[indexPath.row].activity
         
         cell.configure(model: activity ?? Activity())
         
@@ -32,7 +43,7 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return routineDetails.count
+        return mirrorDetails.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,7 +54,8 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
         if editingStyle == .delete {
             let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
                 
-                RoutineDetailLocalRepository.shared.delete(routineDetail: self.routineDetails[indexPath.row])
+//                RoutineDetailLocalRepository.shared.delete(routineDetail: self.mirrorDetails[indexPath.row])
+                MirrorDetailLocalRepository.shared.delete(mirrorDetail: self.mirrorDetails[indexPath.row])
                 self.dismissViewController()
             }
             present(alert, animated: true)
@@ -56,19 +68,21 @@ extension ParentTodayActivityEditOrderViewController : UITableViewDragDelegate {
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
-        dragItem.localObject = routineDetails[indexPath.row]
+        dragItem.localObject = mirrorDetails[indexPath.row]
         return [dragItem]
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let mv = routineDetails[sourceIndexPath.row]
-        routineDetails.remove(at: sourceIndexPath.row)
-        routineDetails.insert(mv, at: destinationIndexPath.row)
+        let mv = mirrorDetails[sourceIndexPath.row]
+        mirrorDetails.remove(at: sourceIndexPath.row)
+        mirrorDetails.insert(mv, at: destinationIndexPath.row)
         
-        let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
+//        let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
+        let mirrorDetailLocalRepo = MirrorDetailLocalRepository.shared
         
-        for (index, routine) in routineDetails.enumerated() {
-            routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
+        for (index, mirror) in mirrorDetails.enumerated() {
+//            routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
+            mirrorDetailLocalRepo.updatePosition(mirrorDetail: mirror, newPosition: index+1)
         }
     }
     

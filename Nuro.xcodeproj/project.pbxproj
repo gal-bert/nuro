@@ -181,6 +181,8 @@
 		5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */; };
 		5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */; };
 		5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */; };
+		F447E0F1924FBD2877765D86 /* MirrorDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */; };
+		F447E3A6FA914DFD8A037BA7 /* MirrorHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */; };
 		F447ECEE15D5FCCF1A51EF28 /* TimeframeImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -387,6 +389,8 @@
 		5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderModel.swift; sourceTree = "<group>"; };
 		5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailModel.swift; sourceTree = "<group>"; };
 		F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeframeImageHelper.swift; sourceTree = "<group>"; };
+		F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorHeaderLocalRepository.swift; sourceTree = "<group>"; };
+		F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorDetailLocalRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1397,6 +1401,8 @@
 				5F563D2028F61424003748D7 /* ActivityLocalRepository.swift */,
 				5FB15D8728F7C944003822F9 /* RoutineHeaderLocalRepository.swift */,
 				5FB15D8928F7CA3A003822F9 /* RoutineDetailLocalRepository.swift */,
+				F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */,
+				F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1754,6 +1760,8 @@
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 				4A24DA12291371E60078095E /* SettingViewController.swift in Sources */,
 				F447ECEE15D5FCCF1A51EF28 /* TimeframeImageHelper.swift in Sources */,
+				F447E3A6FA914DFD8A037BA7 /* MirrorHeaderLocalRepository.swift in Sources */,
+				F447E0F1924FBD2877765D86 /* MirrorDetailLocalRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,23 +9,22 @@ import Foundation
 
 class ParentTodayActivityViewModel {
 
-	let activities = [RoutineHeaderModel]()
+	var routineRepository = MirrorHeaderLocalRepository.shared
+	var mirrorDetailRepo = MirrorDetailLocalRepository.shared
 
-	var routineRepository = RoutineHeaderLocalRepository.shared
-	var routineDetailRepo = RoutineDetailLocalRepository.shared
-
-	var morningActivities = [RoutineDetail]()
-	var afternoonActivities = [RoutineDetail]()
-	var eveningActivities = [RoutineDetail]()
+	var morningActivities = [MirrorDetail]()
+	var afternoonActivities = [MirrorDetail]()
+	var eveningActivities = [MirrorDetail]()
 
 
 	func loadAll(dayId: Int) {
-		morningActivities = routineDetailRepo.getRoutineDetails(dayID: dayId, timeID: 1)
-		afternoonActivities = routineDetailRepo.getRoutineDetails(dayID: dayId, timeID: 2)
-		eveningActivities = routineDetailRepo.getRoutineDetails(dayID: dayId, timeID: 3)
-
-		// 1. load all activities
-		// 2. Process to divide the data 3 section
+		morningActivities = mirrorDetailRepo.getMirrorDetails(timeID: 1)
+		afternoonActivities = mirrorDetailRepo.getMirrorDetails(timeID: 2)
+		eveningActivities = mirrorDetailRepo.getMirrorDetails(timeID: 3)
 	}
 
+
+
+    
+    
 }
