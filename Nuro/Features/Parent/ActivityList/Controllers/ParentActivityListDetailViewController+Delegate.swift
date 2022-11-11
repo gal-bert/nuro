@@ -30,6 +30,7 @@ extension ParentActivityListDetailViewController: ParentActivityListDetailDelega
 extension ParentActivityListDetailViewController: ReloadDelegate {
     func reloadView() {
         viewModel.loadAllActivity()
+        parentActivityListDetailView.collectionView.reloadData()
     }
 }
 
@@ -72,7 +73,7 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dest = CreateActivityViewController()
-        dest.activity = viewModel.listActivities[indexPath.item]
+        dest.activity = viewModel.filteredActivities[indexPath.item]
         dest.category = viewModel.categorySelected
         dest.reloadDelegate = self
         presentViewController(dest: dest)
