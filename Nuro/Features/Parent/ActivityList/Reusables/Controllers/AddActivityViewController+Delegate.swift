@@ -28,6 +28,10 @@ extension AddActivityViewController: AddActivityDelegate {
 }
 
 extension AddActivityViewController: SearchControllerDelegate {
+    func filtered(searchText: String) {
+        
+    }
+    
     func getResult(text: String) {
         print("SEARCH: \(text)")
         // TODO: What happen if search?
