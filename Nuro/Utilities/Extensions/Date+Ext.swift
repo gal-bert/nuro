@@ -73,9 +73,14 @@ extension Date {
         let date = Date()
         let calendar = Calendar.current
         
-        let weekday = calendar.component(.weekday, from: date) - 1
-        
-        return weekday
+        let weekday = calendar.component(.weekday, from: date)
+
+        if weekday == 1 {
+            return 7
+        } else {
+            return weekday - 1
+        }
+
     }
     
     /// The compared time should be a String with the format of HH:mm

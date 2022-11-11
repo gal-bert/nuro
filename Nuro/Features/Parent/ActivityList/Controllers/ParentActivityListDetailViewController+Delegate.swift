@@ -26,22 +26,45 @@ extension ParentActivityListDetailViewController: ParentActivityListDetailDelega
     }
 }
 
+
 extension ParentActivityListDetailViewController: ReloadDelegate {
     func reloadView() {
         viewModel.loadAllActivity()
+    }
+}
+
+extension ParentActivityListDetailViewController: SearchControllerDelegate {
+    func getResult(text: String) {
+        print("Punya finn Detail: \(text)")
+        filtered(searchText: text)
+    }
+    func filtered(searchText: String) {
+        viewModel.filteredActivities = viewModel.activityList.filter {
+            if(searchText != ""){
+                let searchTextMatch = $0.activityName?.lowercased().contains(searchText.lowercased())
+                return searchTextMatch ?? false
+            }
+            else{
+                viewModel.filteredActivities = viewModel.activityList
+                parentActivityListDetailView.collectionView.reloadData()
+                return true
+            }
+        }
+        print(viewModel.filteredActivities)
         parentActivityListDetailView.collectionView.reloadData()
     }
 }
 
 extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.listActivities.count
+        return viewModel.filteredActivities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier, for: indexPath) as! ParentActivityListDetailCollectionViewCell
-        cell.titleLabel.text = viewModel.listActivities[indexPath.row].activityName
-        cell.imageView.image = Document.getImageFromDocument(imageURL: viewModel.listActivities[indexPath.row].activityImageURL)
+        let selectedActivity = viewModel.filteredActivities[indexPath.row]
+        cell.titleLabel.text = selectedActivity.activityName
+        cell.imageView.image = Document.getImageFromDocument(imageURL: selectedActivity.activityImageURL)
         cell.index = indexPath
         cell.delegate = self
         return cell
@@ -72,7 +95,7 @@ extension ParentActivityListDetailViewController: DeleteDataCollectionProtocol {
     func deleteData(indx: Int) {
 
         let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari Daftar Aktivitas?") {
-            ActivityLocalRepository.shared.delete(activity: self.viewModel.listActivities[indx])
+            ActivityLocalRepository.shared.delete(activity: self.viewModel.activityList[indx])
             self.viewModel.loadAllActivity()
             self.parentActivityListDetailView.collectionView.reloadData()
             self.dismissViewController()

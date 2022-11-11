@@ -12,10 +12,12 @@ class ParentActivityListDetailViewModel {
     let activityRepository = ActivityLocalRepository.shared
 
     var categorySelected: Category?
-    var listActivities = [Activity]()
+    var activityList = [Activity]()
+    var filteredActivities = [Activity]()
     
     func loadAllActivity() {
-        listActivities = activityRepository.getActivitiesOfCategory(category: categorySelected ?? Category())
+        activityList = activityRepository.getActivitiesOfCategory(category: categorySelected ?? Category())
+        filteredActivities = activityList
     }
     
     func printText(text: String) {

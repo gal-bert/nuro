@@ -9,6 +9,7 @@ import UIKit
 
 protocol SearchControllerDelegate {
     func getResult(text: String)
+    func filtered(searchText: String)
 }
 
 
