@@ -17,6 +17,7 @@ class ParentRoutineViewModel {
     var eveningActivities = [RoutineDetail]()
     
     var routineHeaders = [RoutineHeader]()
+    var globalDayId: Int?
     
     func loadAll(dayId: Int) {
         routineHeaders = routineHeaderRepo.getAll()
@@ -63,17 +64,28 @@ class ParentRoutineViewModel {
     }
     
     func moveRoutineDetail(source: IndexPath, dest: IndexPath){
+        let startIndex = (globalDayId! - 1 ) * 3
+
         var sourceRoutine: RoutineDetail?
         switch source.section{
         case 0:
             sourceRoutine = morningActivities[source.row]
             morningActivities.remove(at: source.row)
+            for (index, routine) in morningActivities.enumerated() {
+                routineDetailRepo.updatePosition(routineDetail: routine, newPosition: index+1, routineHeader: routineHeaders[startIndex + source.section] )
+            }
         case 1:
             sourceRoutine = afternoonActivities[source.row]
             afternoonActivities.remove(at: source.row)
+            for (index, routine) in afternoonActivities.enumerated() {
+                routineDetailRepo.updatePosition(routineDetail: routine, newPosition: index+1, routineHeader: routineHeaders[startIndex + source.section] )
+            }
         case 2:
             sourceRoutine = eveningActivities[source.row]
             eveningActivities.remove(at: source.row)
+            for (index, routine) in eveningActivities.enumerated() {
+                routineDetailRepo.updatePosition(routineDetail: routine, newPosition: index+1, routineHeader: routineHeaders[startIndex + source.section] )
+            }
         default:
             return
         }
@@ -81,16 +93,19 @@ class ParentRoutineViewModel {
         switch dest.section{
         case 0:
             morningActivities.insert(sourceRoutine ?? RoutineDetail(), at: dest.row)
-            routineDetailRepo
-//
-//            for (index, routine) in viewModel.morningActivities.enumerated() {
-//                routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
-//            }
+            for (index, routine) in morningActivities.enumerated() {
+                routineDetailRepo.updatePosition(routineDetail: routine, newPosition: index+1, routineHeader: routineHeaders[startIndex + dest.section])
+            }
         case 1:
             afternoonActivities.insert(sourceRoutine ?? RoutineDetail(), at: dest.row)
+            for (index, routine) in afternoonActivities.enumerated() {
+                routineDetailRepo.updatePosition(routineDetail: routine, newPosition: index+1, routineHeader: routineHeaders[startIndex + dest.section])
+            }
         case 2:
             eveningActivities.insert(sourceRoutine ?? RoutineDetail(), at: dest.row)
-            
+            for (index, routine) in eveningActivities.enumerated() {
+                routineDetailRepo.updatePosition(routineDetail: routine, newPosition: index+1, routineHeader: routineHeaders[startIndex + dest.section])
+            }
         default:
             return
         }
