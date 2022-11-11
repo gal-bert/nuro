@@ -12,7 +12,7 @@ extension CreateActivityViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == Colors.Neutral.bronze {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = Colors.Text.onyx
         }
     }
     
