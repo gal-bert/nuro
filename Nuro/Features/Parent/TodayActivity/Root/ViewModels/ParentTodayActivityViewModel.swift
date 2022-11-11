@@ -27,6 +27,5 @@ class ParentTodayActivityViewModel {
 		// 1. load all activities
 		// 2. Process to divide the data 3 section
 	}
-    
-    
+
 }

@@ -43,7 +43,7 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
         if editingStyle == .delete {
             let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
                 
-                RoutineDetailLocalRepository.shared.delete(routineDetail: self.routineDetails[indexPath.row] ?? RoutineDetail())
+                RoutineDetailLocalRepository.shared.delete(routineDetail: self.routineDetails[indexPath.row])
                 self.dismissViewController()
             }
             present(alert, animated: true)

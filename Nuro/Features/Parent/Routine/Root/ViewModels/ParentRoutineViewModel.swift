@@ -29,15 +29,11 @@ class ParentRoutineViewModel {
     
     func loadActivities(dayId: Int) {
         let startIndex = (dayId-1) * 3
-        
+        globalDayId = dayId
+
         morningActivities = routineDetailRepo.getRoutineDetails(of: routineHeaders[startIndex])
         afternoonActivities = routineDetailRepo.getRoutineDetails(of: routineHeaders[startIndex+1])
         eveningActivities = routineDetailRepo.getRoutineDetails(of: routineHeaders[startIndex+2])
-        
-        //       let   allActivity = morningActivities + afternoonActivities + eveningActivities
-        
-        
-        //        allActivity.sorted { $0.routineHeader.time > $1.routineHeader.timeID }
     }
     
     func getRoutineDetail(section:Int, row: Int) -> RoutineDetail {
@@ -79,7 +75,7 @@ class ParentRoutineViewModel {
             sourceRoutine = eveningActivities[source.row]
             eveningActivities.remove(at: source.row)
         default:
-            print("a")
+            return
         }
         
         switch dest.section{
@@ -96,8 +92,11 @@ class ParentRoutineViewModel {
             eveningActivities.insert(sourceRoutine ?? RoutineDetail(), at: dest.row)
             
         default:
-            print("a")
+            return
         }
+
+
+
     }
     
 }
