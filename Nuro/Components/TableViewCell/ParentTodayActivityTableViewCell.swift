@@ -12,7 +12,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
     static let identifier = "parentActivityTableViewCell"
     var delegate: ParentTodayActivityDelegate!
 
-    var routines = [RoutineDetail]()
+    var routines = [MirrorDetail]()
 
     var cellBackgroundColor: UIColor?
     var timeframe: Int?

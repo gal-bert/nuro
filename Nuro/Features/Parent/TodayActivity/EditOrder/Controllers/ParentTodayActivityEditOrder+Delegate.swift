@@ -68,7 +68,7 @@ extension ParentTodayActivityEditOrderViewController : UITableViewDragDelegate {
         let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
         
         for (index, routine) in routineDetails.enumerated() {
-            routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
+//            routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
         }
     }
     

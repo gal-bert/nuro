@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
         <attribute name="activityDesc" optional="YES" attributeType="String"/>
         <attribute name="activityImageURL" optional="YES" attributeType="String"/>
@@ -21,7 +21,7 @@
     <entity name="MirrorHeader" representedClassName="MirrorHeader" syncable="YES" codeGenerationType="class">
         <attribute name="dayID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="mirrorDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MirrorDetail" inverseName="mirrorHeader" inverseEntity="MirrorDetail"/>
+        <relationship name="mirrorDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MirrorDetail" inverseName="mirrorHeader" inverseEntity="MirrorDetail"/>
     </entity>
     <entity name="RoutineDetail" representedClassName="RoutineDetail" syncable="YES" codeGenerationType="class">
         <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

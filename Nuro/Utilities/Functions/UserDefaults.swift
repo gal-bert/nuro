@@ -30,7 +30,7 @@ class UserDefaultsHelper {
                 Keys.parentsName: "Orang Tua",
                 Keys.kidsName: "Anak",
                 Keys.isLocked: false,
-                Keys.lastWeekdayId: Date().getCurrentWeekday()
+                Keys.lastWeekdayId: -1
             ]
         )
     }
