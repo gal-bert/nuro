@@ -26,6 +26,5 @@ class ParentTodayActivityViewModel {
 		afternoonActivities = routineDetailRepo.getRoutineDetails(dayID: dayId, timeID: 2)
 		eveningActivities = routineDetailRepo.getRoutineDetails(dayID: dayId, timeID: 3)
 	}
-    
-    
+
 }

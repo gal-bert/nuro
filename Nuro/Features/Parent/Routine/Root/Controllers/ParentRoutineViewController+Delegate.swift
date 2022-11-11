@@ -98,7 +98,6 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
         
         if editingStyle == .delete {
             let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(viewModel.getActivityNameFromCell(section: indexPath.section, row: indexPath.row))\" dari rutinitas ini?") {
-                //TODO: Add delete functions here
                 RoutineDetailLocalRepository.shared.delete(routineDetail: self.viewModel.getRoutineDetail(section: indexPath.section, row: indexPath.row))
                 self.viewModel.loadActivities(dayId: self.parentRoutineView.segmentedControl.selectedSegmentIndex+1)
                 self.parentRoutineView.tableView.reloadData()
@@ -131,40 +130,7 @@ extension ParentRoutineViewController : UITableViewDragDelegate {
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-        if sourceIndexPath.section == 0 {
-            let mv = viewModel.morningActivities[sourceIndexPath.row]
-            viewModel.morningActivities.remove(at: sourceIndexPath.row)
-            viewModel.morningActivities.insert(mv, at: destinationIndexPath.row)
-            
-            let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
-            
-            for (index, routine) in viewModel.morningActivities.enumerated() {
-                routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
-            }
-        }
-        else if sourceIndexPath.section == 1 {
-            let mv = viewModel.afternoonActivities[sourceIndexPath.row]
-            viewModel.afternoonActivities.remove(at: sourceIndexPath.row)
-            viewModel.afternoonActivities.insert(mv, at: destinationIndexPath.row)
-            
-            let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
-            
-            for (index, routine) in viewModel.afternoonActivities.enumerated() {
-                routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
-            }
-        }
-        else {
-            let mv = viewModel.eveningActivities[sourceIndexPath.row]
-            viewModel.eveningActivities.remove(at: sourceIndexPath.row)
-            viewModel.eveningActivities.insert(mv, at: destinationIndexPath.row)
-            
-            let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
-            
-            for (index, routine) in viewModel.eveningActivities.enumerated() {
-                routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
-            }
-        }
+        viewModel.moveRoutineDetail(source: sourceIndexPath, dest: destinationIndexPath)
     }
     
 }

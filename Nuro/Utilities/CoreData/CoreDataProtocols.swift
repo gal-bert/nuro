@@ -32,6 +32,7 @@ protocol RoutineDetailRepository {
     func getMaxPosition(routineHeader: RoutineHeader) -> Int16
     func getRoutineDetails(of header: RoutineHeader) -> [RoutineDetail]
     func getRoutineDetails(dayID: Int, timeID: Int) -> [RoutineDetail]
+    func updatePosition(routineDetail: RoutineDetail, newPosition: Int, routineHeader: RoutineHeader)
     func updatePosition(routineDetail: RoutineDetail, newPosition: Int)
     func delete(routineDetail: RoutineDetail)
 }
