@@ -22,7 +22,9 @@ extension ParentTodayActivityEditOrderViewController: ParentTodayActivityEditOrd
         reloadDelegate.reloadView()
     }
     
-    func pushViewController(dest: UIViewController) {
+    func pushViewController() {
+        let dest = AddActivityViewController()
+        dest.delegate = self
         navigationController?.pushViewController(dest, animated: true)
     }
 }
