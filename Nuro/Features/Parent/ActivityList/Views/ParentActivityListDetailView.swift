@@ -58,7 +58,7 @@ class ParentActivityListDetailView: UIView {
     @objc private func addButtonAction() {
         let dest = CreateActivityViewController()
         dest.category = delegate.getCategory()
-        dest.delegate = vc
+        dest.reloadDelegate = vc
         delegate.presentViewController(dest: dest)
     }
 

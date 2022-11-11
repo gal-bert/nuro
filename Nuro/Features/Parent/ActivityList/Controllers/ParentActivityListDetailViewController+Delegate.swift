@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ParentActivityListDetailViewController: ParentActivityListDetailDelegate, ReloadCreateActivity {
+extension ParentActivityListDetailViewController: ParentActivityListDetailDelegate {
     func getCategory() -> Category {
         return viewModel.categorySelected ?? Category()
     }
@@ -20,14 +20,16 @@ extension ParentActivityListDetailViewController: ParentActivityListDetailDelega
         present(vc, animated: true)
     }
     
-    func reloadData() {
-        viewModel.loadAllActivity()
-        parentActivityListDetailView.collectionView.reloadData()
-    }
-    
     func dismissViewController() {
         parentActivityListDetailView.collectionView.reloadData()
         dismiss(animated: true)
+    }
+}
+
+extension ParentActivityListDetailViewController: ReloadDelegate {
+    func reloadView() {
+        viewModel.loadAllActivity()
+        parentActivityListDetailView.collectionView.reloadData()
     }
 }
 
@@ -49,7 +51,7 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
         let dest = CreateActivityViewController()
         dest.activity = viewModel.listActivities[indexPath.item]
         dest.category = viewModel.categorySelected
-        dest.delegate = self
+        dest.reloadDelegate = self
         presentViewController(dest: dest)
     }
     

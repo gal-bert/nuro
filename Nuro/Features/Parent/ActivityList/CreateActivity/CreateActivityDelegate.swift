@@ -14,7 +14,3 @@ protocol CreateActivityDelegate {
     func saveActivity(name: String, desc: String, image: UIImage)
     func validateFields()
 }
-
-protocol ReloadCreateActivity {
-    func reloadData()
-}

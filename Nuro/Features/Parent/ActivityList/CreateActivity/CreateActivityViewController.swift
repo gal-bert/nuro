@@ -13,7 +13,6 @@ class CreateActivityViewController: UIViewController {
     var category: Category?
     var activity: Activity?
     
-    var delegate: ReloadCreateActivity?
     var reloadDelegate: ReloadDelegate?
     var addActivityDelegate: AddActivityToRoutineDelegate?
     

@@ -92,7 +92,6 @@ extension CreateActivityViewController: CreateActivityDelegate {
             ActivityLocalRepository.shared.update(activity: activity ?? Activity(), newName: name, newDesc: desc, newImageURL: Document.saveToDocument(image: image), newCategory: category ?? Category())
         }
         
-        delegate?.reloadData()
         reloadDelegate?.reloadView()
         dismissViewController()
     }
