@@ -11,7 +11,7 @@ protocol CreateActivityDelegate {
     func pushViewController(dest: UIImagePickerController, type: UIImagePickerController.SourceType)
     func pushSelectorAlert()
     func dismissViewController()
-    func saveActivity()
+    func saveActivity(name: String, desc: String, image: UIImage)
     func validateFields()
 }
 

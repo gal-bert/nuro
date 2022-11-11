@@ -28,4 +28,13 @@ class Document {
         }
         return fileName
     }
+    
+    static func removeFromDocument(imageURL: String) {
+        let url = Paths.documentPath.appendingPathComponent(imageURL)
+        do {
+            try FileManager.default.removeItem(atPath: url.path)
+        } catch {
+            print("Failed to remove image from document")
+        }
+    }
 }

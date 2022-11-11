@@ -46,7 +46,11 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let dest = CreateActivityViewController()
+        dest.activity = viewModel.listActivities[indexPath.item]
+        dest.category = viewModel.categorySelected
+        dest.delegate = self
+        presentViewController(dest: dest)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
