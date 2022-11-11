@@ -14,6 +14,10 @@ extension ParentActivityListViewController: ParentActivityListDelegate {
 }
 
 extension ParentActivityListViewController: SearchControllerDelegate {
+    func filtered(searchText: String) {
+        
+    }
+    
     func getResult(text: String) {
         print("Punya finn: \(text)")
     }

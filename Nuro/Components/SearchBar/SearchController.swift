@@ -12,6 +12,9 @@ class SearchController: UISearchController, UISearchResultsUpdating {
     var searchDelegate: SearchControllerDelegate!
     
     func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let searchText = searchBar.text!
+        
         guard let text = searchController.searchBar.text else {
             return
         }

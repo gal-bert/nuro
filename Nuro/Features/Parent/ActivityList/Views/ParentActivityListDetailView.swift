@@ -34,6 +34,7 @@ class ParentActivityListDetailView: UIView {
         collectionView.register(ParentActivityListDetailCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier)
         addSubview(collectionView)
         searchController.setupSearchController(vc: vc)
+        searchController.searchDelegate = vc
         self.setupNavigationBar()
         setupConstraints()
     }
