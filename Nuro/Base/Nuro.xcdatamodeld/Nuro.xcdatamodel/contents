@@ -6,7 +6,7 @@
         <attribute name="activityName" optional="YES" attributeType="String"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="activityList" inverseEntity="Category"/>
-        <relationship name="mirrorDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MirrorDetail" inverseName="activity" inverseEntity="MirrorDetail"/>
+        <relationship name="mirrorDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MirrorDetail" inverseName="activity" inverseEntity="MirrorDetail"/>
         <relationship name="routineDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RoutineDetail" inverseName="activity" inverseEntity="RoutineDetail"/>
     </entity>
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">

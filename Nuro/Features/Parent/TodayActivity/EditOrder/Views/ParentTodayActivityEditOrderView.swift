@@ -10,7 +10,7 @@ import UIKit
 class ParentTodayActivityEditOrderView: UIView {
     
     var delegate: ParentTodayActivityEditOrderDelegate!
-    
+
     private lazy var navBar: UINavigationBar = {
         let view = UINavigationBar()
         return view
@@ -51,7 +51,8 @@ class ParentTodayActivityEditOrderView: UIView {
     }
     
     @objc func tambah() {
-        delegate.pushViewController(dest: AddActivityViewController())
+        let dest = AddActivityViewController()
+        delegate.pushViewController()
     }
     
     

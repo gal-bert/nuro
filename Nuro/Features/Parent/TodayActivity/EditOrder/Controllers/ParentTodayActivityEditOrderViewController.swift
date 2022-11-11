@@ -11,7 +11,7 @@ class ParentTodayActivityEditOrderViewController: UIViewController {
     
     let parentTodayActivityEditOrderView = ParentTodayActivityEditOrderView()
     
-    var routineDetails = [MirrorDetail]()
+    var mirrorDetails = [MirrorDetail]()
     
     var reloadDelegate: ReloadDelegate!
 

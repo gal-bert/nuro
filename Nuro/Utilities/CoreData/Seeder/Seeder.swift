@@ -118,7 +118,15 @@ class Seeder {
         routineDetailRepo.add(dayID: 2, timeID: 1, activity: activities[1])
         routineDetailRepo.add(dayID: 3, timeID: 1, activity: activities[3])
         routineDetailRepo.add(dayID: 4, timeID: 1, activity: activities[5])
+
         routineDetailRepo.add(dayID: 5, timeID: 1, activity: activities[7])
+        routineDetailRepo.add(dayID: 5, timeID: 1, activity: activities[1])
+        routineDetailRepo.add(dayID: 5, timeID: 1, activity: activities[3])
+        routineDetailRepo.add(dayID: 5, timeID: 2, activity: activities[5])
+        routineDetailRepo.add(dayID: 5, timeID: 2, activity: activities[9])
+        routineDetailRepo.add(dayID: 5, timeID: 3, activity: activities[2])
+        routineDetailRepo.add(dayID: 5, timeID: 3, activity: activities[4])
+
         routineDetailRepo.add(dayID: 6, timeID: 1, activity: activities[9])
         routineDetailRepo.add(dayID: 7, timeID: 2, activity: activities[2])
         routineDetailRepo.add(dayID: 2, timeID: 2, activity: activities[4])

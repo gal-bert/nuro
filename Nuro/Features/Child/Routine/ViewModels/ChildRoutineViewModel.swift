@@ -9,13 +9,12 @@ import Foundation
 
 class ChildRoutineViewModel {
     
-    var activities = [RoutineDetail]()
+    var activities = [MirrorDetail]()
     
-    private let routineDetailRepo = RoutineDetailLocalRepository.shared
+    private let mirrorDetailRepo = MirrorDetailLocalRepository.shared
     
     func loadActivities(dayID: Int, timeID: Int) {
-        activities = routineDetailRepo.getRoutineDetails(dayID: dayID, timeID: timeID)
-        //TODO: Change to Mirror Repository
+        activities = mirrorDetailRepo.getMirrorDetails(timeID: timeID)
     }
     
     func removeFirstActivity() {

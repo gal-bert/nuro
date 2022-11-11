@@ -13,7 +13,7 @@ protocol ParentTodayActivityDelegate {
 
 protocol ParentTodayActivityEditOrderDelegate {
     func dismissViewController()
-    func pushViewController(dest: UIViewController)
+    func pushViewController()
 }
 
 protocol ParentTodayActivityDetailDelegate {
