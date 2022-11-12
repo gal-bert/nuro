@@ -33,5 +33,6 @@ enum Icons {
     static let kids = "kids"
     static let kidsFill = "kids.fill"
     static let addActivtiy = "add.activtiy"
+    static let hint = "questionmark.circle.fill"
     
 }

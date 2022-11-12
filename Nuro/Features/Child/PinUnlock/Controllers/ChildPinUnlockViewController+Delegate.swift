@@ -47,4 +47,8 @@ extension ChildPinUnlockViewController: ChildPinUnlockViewDelegate {
         Transition.animateTransition(vc: self)
         navigationController?.popViewController(animated: false)
     }
+    
+    func showHint() {
+        // TODO: Show Hint Pop Over
+    }
 }
