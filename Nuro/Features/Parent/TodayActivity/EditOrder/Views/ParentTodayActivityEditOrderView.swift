@@ -25,7 +25,7 @@ class ParentTodayActivityEditOrderView: UIView {
         return view
     }()
     
-    func setup(vc: ParentTodayActivityEditOrderViewController) {
+    func setup(vc: ParentTodayActivityEditOrderViewController, timeFrame: Int) {
         backgroundColor = .white
         delegate = vc
         tableView.delegate = vc
@@ -36,12 +36,13 @@ class ParentTodayActivityEditOrderView: UIView {
         
         addSubview(tableView)
         
-        setupNavigationBar(vc: vc)
+        setupNavigationBar(vc: vc, timeFrame: timeFrame)
         setupConstraints()
     }
     
-    func setupNavigationBar(vc: ParentTodayActivityEditOrderViewController) {
-        vc.title = "Aktivitas Hari Ini - Pagi"
+    func setupNavigationBar(vc: ParentTodayActivityEditOrderViewController, timeFrame: Int) {
+        vc.title = "Aktivitas Hari Ini - \(TimeToIdConverter.idToTime(times: [timeFrame]))"
+        
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(dismissAction))
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(tambah))
     }
