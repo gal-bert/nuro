@@ -92,6 +92,7 @@ class ParentChildRoutineView: UIView {
         setupUI()
         setupConstraints()
         setupTableView(vc: vc)
+        setupButton()
     }
     
     private func setupUI() {
