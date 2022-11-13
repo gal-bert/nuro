@@ -53,14 +53,14 @@ class ParentTodayActivityEmptyStateView: UIView {
         let prefix = "Buka halaman"
         let suffix = "untuk menambahkan aktivitas harian"
         
-        let textAttachment = TextAttachments.iconOnly(imageName: Icons.folder, text: "", yOffset: -10, colorName: Colors.Brand.blueViolet)
+        let textAttachment = TextAttachments.iconOnly(imageAsset: Icons.today, text: "", yOffset: -8, colorName: Colors.Brand.blueViolet)
         
         let str = NSMutableAttributedString(string: "")
         let attr = [NSAttributedString.Key.font : UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)]
         
         str.append(NSMutableAttributedString(string: "\(prefix)  "))
         str.append(NSMutableAttributedString(attributedString: textAttachment))
-        str.append(NSMutableAttributedString(string: " Rutinitas", attributes: attr))
+        str.append(NSMutableAttributedString(string: " Hari Ini", attributes: attr))
         str.append(NSMutableAttributedString(string: "\n\(suffix)"))
         
         bottomLabel.attributedText = str

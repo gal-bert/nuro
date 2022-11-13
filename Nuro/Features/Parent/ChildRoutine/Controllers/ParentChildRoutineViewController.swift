@@ -9,7 +9,7 @@ import UIKit
 
 class ParentChildRoutineViewController: UIViewController {
 
-    private let parentChildRoutineView = ParentChildRoutineView()
+    let parentChildRoutineView = ParentChildRoutineView()
     let viewModel = ParentChildRoutineViewModel()
     
     override func viewDidLoad() {
@@ -17,6 +17,14 @@ class ParentChildRoutineViewController: UIViewController {
 
         viewModel.getTodaysRoutine()
         parentChildRoutineView.setup(vc: self)
+        
+        if viewModel.todaysRoutines.count == 0 {
+            parentChildRoutineView.emptyState.isHidden = false
+            parentChildRoutineView.routineTableView.alpha = 0
+            parentChildRoutineView.startButton.isEnabled = false
+            parentChildRoutineView.startButton.backgroundColor = .gray
+        }
+        
     }
     
     override func loadView() {

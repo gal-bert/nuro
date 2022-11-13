@@ -16,7 +16,7 @@ class ParentChildRoutineView: UIView {
     private lazy var pageTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 48)
-        label.text = "Rutinitas Anak"
+        label.text = "Rutinitas Anak - \(Date().getTimeframe())"
         label.textAlignment = .center
         return label
     }()
@@ -42,7 +42,7 @@ class ParentChildRoutineView: UIView {
         return label
     }()
     
-    private lazy var routineTableView: UITableView = {
+    lazy var routineTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.isScrollEnabled = false
@@ -61,7 +61,7 @@ class ParentChildRoutineView: UIView {
         return stackView
     }()
     
-    private lazy var startButton: UIButton = {
+    lazy var startButton: UIButton = {
         let button = UIButton(type: .custom)
         button.configuration = .plain()
         button.addTarget(self, action: #selector(toChildMode), for: .touchUpInside)
@@ -76,6 +76,8 @@ class ParentChildRoutineView: UIView {
         return button
     }()
     
+    lazy var emptyState: UIView = ParentTodayActivityEmptyStateView()
+    
     private var delegate: ParentChildRoutineDelegate?
     
     func setup(vc: ParentChildRoutineViewController) {
@@ -84,14 +86,19 @@ class ParentChildRoutineView: UIView {
         setupUI()
         setupConstraints()
         setupTableView(vc: vc)
+        
+        emptyState.isHidden = true
     }
     
     private func setupUI() {
         self.backgroundColor = Colors.Neutral.white
         
+        addSubview(emptyState)
+        
         addSubview(stackView)
         stackView.addArrangedSubview(pageTitleLabel)
         stackView.addArrangedSubview(routineTableView)
+        
         stackView.addArrangedSubview(startButton)
         stackView.addArrangedSubview(guidedAccessLabel)
     }
@@ -109,6 +116,11 @@ class ParentChildRoutineView: UIView {
         routineTableView.snp.makeConstraints { make in
             make.left.right.equalTo(stackView)
             make.height.equalTo(ScreenSizes.screenHeight * 2/3)
+        }
+        
+        emptyState.snp.makeConstraints { make in
+            make.centerY.equalTo(self).offset(-80)
+            make.left.right.equalTo(self)
         }
     }
     

@@ -37,7 +37,7 @@ extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
 extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = parentTodayActivityView.tableView.dequeueReusableCell(withIdentifier: ParentTodayActivityTableViewCell.identifier) as! ParentTodayActivityTableViewCell
-
+        
         cell.setupDelegate(vc: self)
         
         switch indexPath.section {
@@ -48,6 +48,11 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
             cell.routines = viewModel.morningActivities
             cell.timeframe = 0
             
+            if viewModel.morningActivities.count == 0 {
+                cell.hiddenLabel.isHidden = false
+                cell.collectionView.isHidden = true
+            }
+            
         case 1:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8, colorName: Colors.Text.onyx)
             cell.backgroundColor = Colors.Background.papayaWhip
@@ -55,12 +60,22 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
             cell.routines = viewModel.afternoonActivities
             cell.timeframe = 1
             
+            if viewModel.afternoonActivities.count == 0 {
+                cell.hiddenLabel.isHidden = false
+                cell.collectionView.isHidden = true
+            }
+            
         case 2:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.night, text: "Malam", colorName: Colors.Text.onyx)
             cell.backgroundColor = Colors.Background.soap
             cell.collectionView.backgroundColor = cell.backgroundColor
             cell.routines = viewModel.eveningActivities
             cell.timeframe = 2
+            
+            if viewModel.eveningActivities.count == 0 {
+                cell.hiddenLabel.isHidden = false
+                cell.collectionView.isHidden = true
+            }
 
         default:
             cell.timeframeLabel.text = "Empty"
@@ -80,6 +95,17 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0, viewModel.morningActivities.count == 0{
+            return 100
+        }
+        else if indexPath.section == 1, viewModel.afternoonActivities.count == 0{
+            return 100
+        }
+        else if indexPath.section == 2, viewModel.eveningActivities.count == 0{
+            return 100
+        }
+        
         return CGFloat(CollectionViewAttributes.collectionViewCellHeight) + 110.0
     }
 

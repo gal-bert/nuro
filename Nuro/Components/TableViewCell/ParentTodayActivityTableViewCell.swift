@@ -43,12 +43,21 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         view.distribution = .fillProportionally
         return view
     }()
+    
+    var hiddenLabel: UILabel = {
+        let view = UILabel()
+        view.text = "Tidak ada aktivitas"
+        view.isHidden = true
+        view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 20)
+        return view
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(timeframeLabel)
+        stackView.addArrangedSubview(hiddenLabel)
         stackView.addArrangedSubview(editButton)
 
         contentView.addSubview(collectionView)
