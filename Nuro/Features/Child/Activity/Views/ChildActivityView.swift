@@ -17,7 +17,7 @@ class ChildActivityView: UIView {
     
     private lazy var labelContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = Colors.Text.verseGreen.withAlphaComponent(0.5)
+        view.backgroundColor = Colors.Text.verseGreen.withAlphaComponent(0.8)
         return view
     }()
     

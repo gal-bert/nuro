@@ -10,4 +10,5 @@ import Foundation
 protocol ChildPinUnlockViewDelegate {
     func deleteLastPin()
     func dismissPage()
+    func showHint()
 }

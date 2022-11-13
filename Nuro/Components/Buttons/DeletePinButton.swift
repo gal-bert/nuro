@@ -11,7 +11,7 @@ class DeletePinButton: UIButton {
     
     private lazy var buttonImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .black))
+        imageView.image = UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 26, weight: .black))
         imageView.tintColor = Colors.Neutral.white
         return imageView
     }()
@@ -29,7 +29,7 @@ class DeletePinButton: UIButton {
     
     private func addCustomShapeLayer(width: CGFloat, height: CGFloat) {
         let shapeLayer = CAShapeLayer()
-        shapeLayer.fillColor = Colors.Neutral.bronze.cgColor
+        shapeLayer.fillColor = Colors.Brand.blueViolet.cgColor
         shapeLayer.path = createCustomPath(width: width, height: height)
         shapeLayer.position = CGPoint(x: 0, y: 0)
         

@@ -46,12 +46,20 @@ class ChildPinUnlockView: UIView {
     private lazy var leftStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
-        sv.spacing = 16
+        sv.spacing = 120
         sv.alignment = .center
         return sv
     }()
     
     private lazy var pinStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 16
+        sv.alignment = .center
+        return sv
+    }()
+    
+    private lazy var textStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
         sv.spacing = 16
@@ -65,13 +73,13 @@ class ChildPinUnlockView: UIView {
     private lazy var textField4 = PinTextField()
     private var textFields = [PinTextField]()
     
-    private lazy var deletePinButton = DeletePinButton(width: 64, height: 48)
-    private lazy var imageView = CircleImage(size: ScreenSizes.screenHeight * 1 / 3 + 48, imageName: Icons.morning)
+    private lazy var deletePinButton = DeletePinButton(width: 54, height: 40)
+    private lazy var hintButton = HintButton()
     
     private lazy var instructionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 32)
-        label.text = "Mohon masukkan\ntahun kelahiran Anda:"
+        label.text = "Masukkan tahun kelahiran:"
         label.textAlignment = .center
         label.numberOfLines = 2
         label.textColor = Colors.Text.onyx
@@ -111,18 +119,17 @@ class ChildPinUnlockView: UIView {
         stackView.addArrangedSubview(leftStackView)
         stackView.addArrangedSubview(collectionView)
         
-        leftStackView.addArrangedSubview(imageView)
-        leftStackView.addArrangedSubview(instructionLabel)
+        leftStackView.addArrangedSubview(textStackView)
         leftStackView.addArrangedSubview(pinStackView)
+        
+        textStackView.addArrangedSubview(instructionLabel)
+        textStackView.addArrangedSubview(hintButton)
         
         pinStackView.addArrangedSubview(textField1)
         pinStackView.addArrangedSubview(textField2)
         pinStackView.addArrangedSubview(textField3)
         pinStackView.addArrangedSubview(textField4)
         pinStackView.addArrangedSubview(deletePinButton)
-
-        TimeframeImageHelper.setImage(imageView: imageView)
-
     }
     
     private func setupConstraints() {
@@ -147,10 +154,6 @@ class ChildPinUnlockView: UIView {
             make.width.height.equalTo(100)
         }
         
-        imageView.snp.makeConstraints { make in
-            make.width.height.equalTo(ScreenSizes.screenHeight * 1 / 3 + 48)
-        }
-        
         textField1.snp.makeConstraints { make in
             make.width.height.equalTo(80)
         }
@@ -165,14 +168,15 @@ class ChildPinUnlockView: UIView {
         }
         
         deletePinButton.snp.makeConstraints { make in
-            make.height.equalTo(48)
-            make.width.equalTo(64)
+            make.height.equalTo(40)
+            make.width.equalTo(54)
         }
     }
     
     private func setupButton() {
         deletePinButton.addTarget(self, action: #selector(deleteClicked), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(dismissPage), for: .touchUpInside)
+        hintButton.addTarget(self, action: #selector(viewHint), for: .touchUpInside)
     }
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
@@ -201,11 +205,15 @@ class ChildPinUnlockView: UIView {
         delegate?.dismissPage()
     }
     
+    @objc func viewHint() {
+        delegate?.showHint()
+    }
+    
     func clearLastPin(count: Int) {
         textFields[count].text = ""
     }
     
     private func getDelayedView() -> [UIView] {
-        return [imageView, collectionView]
+        return [collectionView]
     }
 }
