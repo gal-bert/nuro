@@ -9,9 +9,8 @@ import UIKit
 
 extension ParentTodayActivityEditOrderViewController: AddActivityToRoutineDelegate {
     func addActivityToRoutine(activity: Activity) {
-        let timeId = mirrorDetails[0].mirrorHeader?.timeID
-        MirrorDetailLocalRepository.shared.add(timeID: Int(timeId!), activity: activity)
-        mirrorDetails = MirrorDetailLocalRepository.shared.getMirrorDetails(timeID: Int(timeId!))
+        MirrorDetailLocalRepository.shared.add(timeID: (editedTimeFrame ?? 0) + 1, activity: activity)
+        mirrorDetails = MirrorDetailLocalRepository.shared.getMirrorDetails(timeID: (editedTimeFrame ?? 0) + 1)
         parentTodayActivityEditOrderView.tableView.reloadData()
     }
 }

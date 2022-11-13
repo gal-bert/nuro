@@ -74,6 +74,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
     @objc func editButtonAction() {
         let dest = ParentTodayActivityEditOrderViewController()
         dest.mirrorDetails = routines
+        dest.editedTimeFrame = timeframe
         delegate.presentViewController(dest: dest)
     }
 
