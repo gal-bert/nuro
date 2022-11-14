@@ -44,7 +44,23 @@ class WelcomeViewController: UIViewController {
         stackView.addArrangedSubview(imageView)
         view.addSubview(pageControl)
 
+        pageControl.skipButton.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
+        pageControl.nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
+
         setupConstraints()
+    }
+
+    @objc func skipAction() {
+        let dest = Environment.showDoubleColumnSplitViewController()!
+        dest.modalPresentationStyle = .fullScreen
+        present(dest, animated: true)
+    }
+
+    @objc func nextAction() {
+        let dest = WelcomeViewController()
+        dest.modalPresentationStyle = .fullScreen
+        Transition.animateTransition(vc: self, transitionType: .push, transitionSubtype: .fromRight)
+        present(dest, animated: false)
     }
 
     func setupConstraints() {

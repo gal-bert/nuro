@@ -20,6 +20,14 @@ class Transition {
         transition.type = .fade
         vc.view.window?.layer.add(transition, forKey: nil)
     }
+
+    static func animateTransition(vc: UIViewController, transitionType: CATransitionType, transitionSubtype: CATransitionSubtype) {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.type = transitionType
+        transition.subtype = transitionSubtype
+        vc.view.window?.layer.add(transition, forKey: nil)
+    }
     
     static func smoothAnimationWhite(view: UIView, subviews: [UIView], bgColor: UIColor) {
         view.backgroundColor = .black
