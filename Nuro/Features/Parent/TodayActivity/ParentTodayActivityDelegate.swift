@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ParentTodayActivityDelegate {
-    func presentViewController(dest: UIViewController)
+    func presentViewController(dest: UIViewController, modalHeight: CGFloat)
 }
 
 protocol ParentTodayActivityEditOrderDelegate {

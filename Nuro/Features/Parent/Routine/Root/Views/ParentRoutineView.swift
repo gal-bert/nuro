@@ -74,7 +74,7 @@ class ParentRoutineView: UIView {
     @objc private func didAddButtonClicked() {
         let dest = ParentRoutineAddActivityViewController()
         dest.reloadDelegate = vc
-        delegate.presentViewController(dest: dest)
+        delegate.presentViewController(dest: dest, modalHeight: ScreenSizes.modalHeight)
     }
     
     @objc private func didEditButtonClicked() {

@@ -19,10 +19,10 @@ extension ParentRoutineViewController: ParentRoutineDelegate {
         viewModel.loadActivities(dayId: dayId)
     }
     
-    func presentViewController(dest: UIViewController) {
+    func presentViewController(dest: UIViewController, modalHeight: CGFloat) {
         let vc = UINavigationController(rootViewController: dest)
         vc.modalPresentationStyle = .formSheet
-        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
+        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: modalHeight)
         present(vc, animated: true)
     }
 }
@@ -81,25 +81,10 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dest = CreateActivityViewController()
+        let dest = ParentTodayActivityDetailViewController()
+        dest.detail = viewModel.morningActivities[indexPath.row]
         dest.reloadDelegate = self
-        
-        switch indexPath.section {
-        case 0:
-            dest.activity = viewModel.morningActivities[indexPath.row].activity
-            dest.category = viewModel.morningActivities[indexPath.row].activity?.category
-        case 1:
-            dest.activity = viewModel.afternoonActivities[indexPath.row].activity
-            dest.category = viewModel.afternoonActivities[indexPath.row].activity?.category
-        case 2:
-            dest.activity = viewModel.eveningActivities[indexPath.row].activity
-            dest.category = viewModel.eveningActivities[indexPath.row].activity?.category
-        default:
-            dest.activity = Activity()
-            dest.category = Category()
-        }
-        
-        presentViewController(dest: dest)
+        presentViewController(dest: dest, modalHeight: ScreenSizes.smallModalHeight)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
