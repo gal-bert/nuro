@@ -23,7 +23,7 @@ enum Icons {
     static let photo = "photo"
     static let parentMode = "person.2.fill"
     static let cancel = "xmark"
-    static let gear = "gearshape"
+    static let gear = "gearshape.fill"
     static let today = "today"
     static let todayFill = "today.fill"
     static let routines = "routines"
@@ -33,5 +33,6 @@ enum Icons {
     static let kids = "kids"
     static let kidsFill = "kids.fill"
     static let addActivtiy = "add.activtiy"
+    static let hint = "questionmark.circle.fill"
     
 }

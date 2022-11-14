@@ -12,13 +12,14 @@ class ParentTodayActivityEditOrderViewController: UIViewController {
     let parentTodayActivityEditOrderView = ParentTodayActivityEditOrderView()
     
     var mirrorDetails = [MirrorDetail]()
+    var editedTimeFrame: Int?
     
     var reloadDelegate: ReloadDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isModalInPresentation = true
-        parentTodayActivityEditOrderView.setup(vc: self)
+        parentTodayActivityEditOrderView.setup(vc: self, timeFrame: editedTimeFrame ?? 0)
         
         // Disable swipe down to dismiss / lightbox mode
     }
