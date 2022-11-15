@@ -106,8 +106,8 @@ class InputKidsNameViewController: UIViewController {
         subChildStackView.addArrangedSubview(noticeLabel)
 
         view.addSubview(pageControl)
-        
-        pageControl.pageIndicator.text = "3/5"
+
+        pageControl.pageIndicator.text = "3/\(Strings.maxOnboardingPage)"
 
         pageControl.skipButton.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
         pageControl.nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
@@ -124,10 +124,10 @@ class InputKidsNameViewController: UIViewController {
     @objc func nextAction() {
 
         if textField.text != "" {
-            UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.parentsName)
+            UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.kidsName)
         }
 
-        let dest = WelcomeViewController()
+        let dest = InputTimeframeViewController()
         dest.modalPresentationStyle = .fullScreen
         Transition.animateTransition(vc: self, transitionType: .push, transitionSubtype: .fromRight)
         present(dest, animated: false)

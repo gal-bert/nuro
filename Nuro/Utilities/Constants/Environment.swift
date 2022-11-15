@@ -13,8 +13,7 @@ import UIKit
 enum Environment {
     
     static let appName = "Nuro"
-//    static let initialVC = showDoubleColumnSplitViewController()  // MARK: Setup initial View Controller here
-    static let initialVC = WelcomeViewController()
+    static let initialVC = UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isFirstTime) ? WelcomeViewController() : showDoubleColumnSplitViewController()!
     static let appTintColor = Colors.Brand.blueViolet
     
 }

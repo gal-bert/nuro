@@ -107,7 +107,7 @@ class InputParentsNameViewController: UIViewController {
 
         view.addSubview(pageControl)
         
-        pageControl.pageIndicator.text = "2/5"
+        pageControl.pageIndicator.text = "2/\(Strings.maxOnboardingPage)"
 
         textField.becomeFirstResponder()
 

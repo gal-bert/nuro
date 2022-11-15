@@ -52,7 +52,7 @@ class OnboardingPageControl: UIView {
 	}
 
 	@objc func nextAction() {
-		print("next")
+
 	}
 
 	func setupConstraints(){

@@ -47,6 +47,8 @@ class WelcomeViewController: UIViewController {
         pageControl.skipButton.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
         pageControl.nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
 
+        pageControl.pageIndicator.text = "1/\(Strings.maxOnboardingPage)"
+
         setupConstraints()
     }
 
