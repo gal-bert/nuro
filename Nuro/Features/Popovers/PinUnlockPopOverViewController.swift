@@ -1,23 +1,24 @@
 //
-//  GuidedAccessPopOverViewController.swift
+//  PinUnlockPopOverViewController.swift
 //  Nuro
 //
-//  Created by Samuel Dennis on 13/11/22.
+//  Created by Samuel Dennis on 15/11/22.
 //
 
 import UIKit
 import SnapKit
 
-class GuidedAccessPopOverViewController: UIViewController {
-
+class PinUnlockPopOverViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = Colors.Brand.floralWhite
         
         lazy var pageTitleLabel: UILabel = {
             let label = UILabel()
             label.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 24)
-            label.text = "Guided Access"
+            label.text = "Kata Sandi"
             label.textColor = Colors.Brand.blueViolet
             label.textAlignment = .left
             return label
@@ -26,14 +27,14 @@ class GuidedAccessPopOverViewController: UIViewController {
         lazy var instructionLabel: UILabel = {
             let label = UILabel()
             label.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 16)
-            label.text = "Izinkan OTIN menyalakan guided access untuk memaksimalkan pengalaman anak menggunakan aplikasi."
+            label.text = "Sistem kata sandi tidak menggunakan tahun kelahiran asli anda."
             label.textColor = Colors.Brand.blueViolet
             label.textAlignment = .left
-            label.numberOfLines = 3
+            label.numberOfLines = 2
             return label
         }()
         
-        lazy var dismissButton = PopoverButton(title: "Buka Pengaturan")
+        lazy var dismissButton = PopoverButton(title: "Tutup")
         
         dismissButton.addTarget(self, action: #selector(didTappedDismissButton), for: .touchUpInside)
         
@@ -42,7 +43,7 @@ class GuidedAccessPopOverViewController: UIViewController {
         view.addSubview(dismissButton)
         
         pageTitleLabel.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview().inset(20)
+            make.top.left.right.equalToSuperview().inset(30)
         }
         
         instructionLabel.snp.makeConstraints { make in
@@ -51,20 +52,13 @@ class GuidedAccessPopOverViewController: UIViewController {
         }
         
         dismissButton.snp.makeConstraints { make in
-//            make.top.equalTo(instructionLabel.snp.bottom)
-            make.right.bottom.equalToSuperview().inset(20)
-            make.width.equalTo(ScreenSizes.screenWidth/7)
+            make.right.bottom.equalToSuperview().inset(10)
+            make.width.equalTo(ScreenSizes.screenWidth/10)
             make.height.equalTo(ScreenSizes.screenHeight/25)
         }
     }
     
     @objc func didTappedDismissButton() {
-        let urlString = "App-prefs:ACCESSIBILITY&path=GUIDED_ACCESS_TITLE"
-        let url = URL(string: urlString)!
-        UIApplication.shared.open(url)
-        
         dismiss(animated: true)
     }
-
-
 }
