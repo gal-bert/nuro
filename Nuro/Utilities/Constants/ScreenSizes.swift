@@ -20,6 +20,7 @@ enum ScreenSizes {
     static let quarterScreenWidth = screenWidth / 4
     
     static let modalHeight = halfScreenHeight * 1.5
+    static let smallModalHeight = screenHeight * 5/8
     static let modalWidth = halfScreenWidth * 1.75
     
 }

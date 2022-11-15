@@ -18,6 +18,8 @@ class ParentTodayActivityDetailView: UIView {
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
+        view.layer.borderColor = Colors.Neutral.bronze.cgColor
+        view.layer.borderWidth = 0.5
         view.image = UIImage(named: "dummy")
         return view
     }()
@@ -25,8 +27,8 @@ class ParentTodayActivityDetailView: UIView {
     private lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
-        view.spacing = 10
-        view.alignment = .center
+        view.spacing = 24
+        view.alignment = .leading
         return view
     }()
     
@@ -41,14 +43,14 @@ class ParentTodayActivityDetailView: UIView {
     
     lazy var descriptionLabel: UILabel = {
         let view = UILabel()
-        view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 32)
+        view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)
         view.textColor = Colors.Text.onyx
         view.numberOfLines = 2
         view.text = "Kasurmu bersih dan rapih"
         return view
     }()
     
-    func setup(vc: ParentTodayActivityDetailViewController) {
+    func setup(vc: ParentTodayActivityDetailViewController, detail: AnyObject?) {
         backgroundColor = .white
         delegate = vc
         addMultipleSubviews(views: imageView, stackView)
@@ -57,16 +59,15 @@ class ParentTodayActivityDetailView: UIView {
         setupNavigationBar(vc: vc)
         setupConstraints()
         
-        imageView.image = Document.getImageFromDocument(imageURL: vc.routineDetail?.activity?.activityImageURL)
-        titleLabel.text = vc.routineDetail?.activity?.activityName
-        descriptionLabel.text = vc.routineDetail?.activity?.activityDesc
-        
+        imageView.image = Document.getImageFromDocument(imageURL: detail?.activity?.activityImageURL)
+        titleLabel.text = detail?.activity?.activityName
+        descriptionLabel.text = detail?.activity?.activityDesc
     }
     
     func setupNavigationBar(vc: ParentTodayActivityDetailViewController){
-        vc.title = "Aktivitas Pagi"
-        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(dismissAction))
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hapus", style: .plain, target: self, action: #selector(deleteAction))
+        vc.title = "Detil Aktivitas"
+        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Batal", style: .plain, target: self, action: #selector(dismissAction))
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hapus", style: .done, target: self, action: #selector(deleteAction))
         vc.navigationItem.rightBarButtonItem?.tintColor = .red
     }
     
@@ -80,14 +81,14 @@ class ParentTodayActivityDetailView: UIView {
     
     private func setupConstraints() {
         imageView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(safeAreaLayoutGuide).inset(80)
+            make.top.bottom.equalTo(safeAreaLayoutGuide).inset(64)
             make.left.equalTo(safeAreaLayoutGuide).inset(40)
-            make.width.equalTo(imageView.snp.height)
+            make.width.equalTo(ScreenSizes.modalWidth / 2)
         }
         
         stackView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.left.equalTo(imageView.snp.right).offset(20)
+            make.left.equalTo(imageView.snp.right).offset(24)
             make.right.equalTo(self).inset(20)
         }
         

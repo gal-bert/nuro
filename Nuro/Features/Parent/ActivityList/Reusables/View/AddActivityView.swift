@@ -14,6 +14,13 @@ class AddActivityView: UIView {
     lazy var segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Semua"])
         view.selectedSegmentIndex = 0
+        
+        let selectedTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 16)]
+        let normalTextAttributes = [ NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 16)]
+        view.setTitleTextAttributes(selectedTextAttributes as [NSAttributedString.Key : Any], for: .selected)
+        view.setTitleTextAttributes(normalTextAttributes as [NSAttributedString.Key : Any], for: .normal)
+        view.selectedSegmentTintColor = Colors.Brand.blueViolet
+        
         return view
     }()
     
@@ -24,7 +31,7 @@ class AddActivityView: UIView {
         return view
     }()
     
-    let searchController = SearchController()
+//    let searchController = SearchControllerTemplate()
 
     func setup(vc: AddActivityViewController) {
         backgroundColor = .white
@@ -42,8 +49,8 @@ class AddActivityView: UIView {
         segmentedControl.addTarget(self, action: #selector(selectedSegmentChanged), for: .valueChanged)
         
         setupNavigationBar(vc: vc)
-        searchController.setupSearchController(vc: vc)
-        searchController.searchDelegate = vc
+//        searchController.setupSearchController(vc: vc)
+//        searchController.searchDelegate = vc
 
         setupConstraints()
     }
@@ -56,6 +63,7 @@ class AddActivityView: UIView {
         
         segmentedControl.snp.makeConstraints { make in
             make.top.left.right.equalTo(safeAreaLayoutGuide).inset(20)
+            make.height.equalTo(40)
         }
         
         collectionView.snp.makeConstraints { make in

@@ -7,18 +7,14 @@
 import UIKit
 import Foundation
 
-class SearchController: UISearchController, UISearchResultsUpdating {
+class SearchControllerTemplate {
     
-    var searchDelegate: SearchControllerDelegate!
+    init (searchController: UISearchController){
+        setupSearchController(searchController:searchController)
+    }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let searchText = searchBar.text!
-        
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        searchDelegate.getResult(text: text)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func createWhiteBG(_ frame : CGSize) -> UIImage? {
@@ -33,9 +29,9 @@ class SearchController: UISearchController, UISearchResultsUpdating {
         return image
     }
     
-    func setupSearchController(vc: UIViewController) {
+    func setupSearchController(searchController: UISearchController) {
         
-        let searchController = UISearchController(searchResultsController: nil)
+//        let searchController = UISearchController(searchResultsController: nil)
         let size = CGSize(width: searchController.searchBar.frame.size.width-12, height: searchController.searchBar.frame.size.height-12)
         let bgImageSearchBar = createWhiteBG(size)!
         let imageWithCorner = bgImageSearchBar.createImageWithRoundBorder(cornerRadius: 10)!
@@ -46,13 +42,9 @@ class SearchController: UISearchController, UISearchResultsUpdating {
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.searchBarStyle = UISearchBar.Style.minimal
-        vc.navigationItem.searchController = searchController
-        vc.navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.searchResultsUpdater = self
-        if #available(iOS 16, *){
-            vc.navigationItem.preferredSearchBarPlacement = .stacked
-        }
-        
+//        vc.navigationItem.searchController = self
+//        vc.navigationItem.hidesSearchBarWhenScrolling = false
+//        self.searchResultsUpdater = self
     }
 }
 
