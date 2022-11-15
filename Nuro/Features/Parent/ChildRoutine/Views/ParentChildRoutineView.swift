@@ -50,7 +50,7 @@ class ParentChildRoutineView: UIView {
         return label
     }()
     
-    private lazy var routineTableView: UITableView = {
+    lazy var routineTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.isScrollEnabled = false
