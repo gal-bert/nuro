@@ -74,7 +74,7 @@ class ChildPinUnlockView: UIView {
     private var textFields = [PinTextField]()
     
     private lazy var deletePinButton = DeletePinButton(width: 54, height: 40)
-    private lazy var hintButton = HintButton()
+    lazy var hintButton = HintButton()
     
     private lazy var instructionLabel: UILabel = {
         let label = UILabel()

@@ -49,6 +49,13 @@ extension ChildPinUnlockViewController: ChildPinUnlockViewDelegate {
     }
     
     func showHint() {
-        // TODO: Show Hint Pop Over
+        let dest = PinUnlockPopOverViewController()
+        dest.modalPresentationStyle = .popover
+
+        dest.popoverPresentationController?.sourceView = childPinUnlockView.hintButton
+        dest.popoverPresentationController?.permittedArrowDirections = .left
+        dest.preferredContentSize = CGSize(width: ScreenSizes.screenWidth / 3, height: ScreenSizes.screenHeight / 4)
+
+        self.present(dest, animated: true)
     }
 }
