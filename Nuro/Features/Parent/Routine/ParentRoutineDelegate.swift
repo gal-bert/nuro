@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ParentRoutineDelegate {
-    func presentViewController(dest: UIViewController)
+    func presentViewController(dest: UIViewController, modalHeight: CGFloat)
     func loadActivitiesForDay(dayId: Int)
 }
 

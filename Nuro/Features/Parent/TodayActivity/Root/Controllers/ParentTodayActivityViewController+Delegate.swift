@@ -16,10 +16,10 @@ extension ParentTodayActivityViewController: ReloadDelegate {
 
 extension ParentTodayActivityViewController: ParentTodayActivityDelegate {
 
-    func presentViewController(dest: UIViewController) {
+    func presentViewController(dest: UIViewController, modalHeight: CGFloat) {
         let vc = UINavigationController(rootViewController: dest)
         vc.modalPresentationStyle = .formSheet
-        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: ScreenSizes.modalHeight)
+        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: modalHeight)
         
         if let dest = dest as? ParentTodayActivityEditOrderViewController {
             dest.reloadDelegate = self

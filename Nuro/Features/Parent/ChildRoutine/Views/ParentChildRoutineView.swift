@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol ParentChildRoutineDelegate {
     func toChildMode()
+    func hintPopover()
 }
 
 class ParentChildRoutineView: UIView {
@@ -21,6 +23,17 @@ class ParentChildRoutineView: UIView {
         return label
     }()
     
+    lazy var guidedAccessStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 5
+        sv.alignment = .center
+        sv.distribution = .fill
+        return sv
+    }()
+    
+    lazy var hintButton = HintButton()
+    
     private lazy var guidedAccessLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)
@@ -31,14 +44,9 @@ class ParentChildRoutineView: UIView {
         var regularAttribute = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 22)]
         var regularString = NSMutableAttributedString(string: " belum dinyalakan ", attributes: regularAttribute as [NSAttributedString.Key : Any])
         
-        let imageAttachment = TextAttachments.getMulticoloredAttachment(imageName: "questionmark.circle.fill", firstColorName: Colors.Text.onyx, secondColorName: Colors.Background.alabaster)
-        
         var attributedString = NSMutableAttributedString(attributedString: boldString)
         attributedString.append(NSMutableAttributedString(attributedString: regularString))
-        attributedString.append(NSMutableAttributedString(attachment: imageAttachment))
-        
         label.attributedText = attributedString
-        label.textAlignment = .center
         return label
     }()
     
@@ -88,6 +96,7 @@ class ParentChildRoutineView: UIView {
         setupTableView(vc: vc)
         
         emptyState.isHidden = true
+        setupButton()
     }
     
     private func setupUI() {
@@ -100,12 +109,14 @@ class ParentChildRoutineView: UIView {
         stackView.addArrangedSubview(routineTableView)
         
         stackView.addArrangedSubview(startButton)
-        stackView.addArrangedSubview(guidedAccessLabel)
+        addSubview(guidedAccessStackView)
+        guidedAccessStackView.addArrangedSubview(guidedAccessLabel)
+        guidedAccessStackView.addArrangedSubview(hintButton)
     }
     
     private func setupConstraints() {
         stackView.snp.makeConstraints { make in
-            make.top.left.bottom.right.equalTo(self).inset(40)
+            make.top.left.bottom.right.equalTo(self).inset(50)
         }
         
         startButton.snp.makeConstraints { make in
@@ -122,6 +133,11 @@ class ParentChildRoutineView: UIView {
             make.centerY.equalTo(self).offset(-80)
             make.left.right.equalTo(self)
         }
+        
+        guidedAccessStackView.snp.makeConstraints { make in
+            make.top.equalTo(stackView.snp.bottom)
+            make.centerX.equalTo(startButton)
+        }
     }
     
     private func setupTableView(vc: ParentChildRoutineViewController) {
@@ -130,7 +146,15 @@ class ParentChildRoutineView: UIView {
         routineTableView.register(ParentTodayActivityTableViewCell.self, forCellReuseIdentifier: ParentTodayActivityTableViewCell.identifier)
     }
     
+    private func setupButton() {
+        hintButton.addTarget(self, action: #selector(didHintButtonClicked), for: .touchUpInside)
+    }
+    
     @objc func toChildMode() {
         delegate?.toChildMode()
+    }
+    
+    @objc func didHintButtonClicked() {
+        delegate?.hintPopover()
     }
 }

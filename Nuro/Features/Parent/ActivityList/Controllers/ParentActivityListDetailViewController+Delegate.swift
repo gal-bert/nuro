@@ -34,27 +34,26 @@ extension ParentActivityListDetailViewController: ReloadDelegate {
     }
 }
 
-extension ParentActivityListDetailViewController: SearchControllerDelegate {
-    func getResult(text: String) {
-        print("Punya finn Detail: \(text)")
-        filtered(searchText: text)
-    }
-    func filtered(searchText: String) {
+
+extension ParentActivityListDetailViewController: UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate{
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = parentActivityListDetailView.searchController.searchBar.text
         viewModel.filteredActivities = viewModel.activityList.filter {
             if(searchText != ""){
-                let searchTextMatch = $0.activityName?.lowercased().contains(searchText.lowercased())
+                let searchTextMatch = $0.activityName?.lowercased().contains((searchText?.lowercased())!)
                 return searchTextMatch ?? false
             }
             else{
-                viewModel.filteredActivities = viewModel.activityList
-                parentActivityListDetailView.collectionView.reloadData()
                 return true
             }
         }
-        print(viewModel.filteredActivities)
+        parentActivityListDetailView.collectionView.reloadData()
+    }
+    func didDismissSearchController(_ searchController: UISearchController) {
         parentActivityListDetailView.collectionView.reloadData()
     }
 }
+
 
 extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

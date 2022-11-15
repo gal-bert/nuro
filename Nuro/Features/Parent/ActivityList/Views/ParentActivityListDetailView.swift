@@ -14,9 +14,9 @@ class ParentActivityListDetailView: UIView {
     let editButton = SmallCapsuleButton(title: "Edit")
     
     var delegate: ParentActivityListDetailDelegate!
-    var vc: ParentActivityListDetailViewController!
+    var searchDelegate: SearchControllerDelegate!
     
-    let searchController = SearchController()
+    let searchController = UISearchController()
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -28,22 +28,19 @@ class ParentActivityListDetailView: UIView {
     func setup(vc: ParentActivityListDetailViewController) {
         backgroundColor = Colors.Neutral.white
         delegate = vc
-        self.vc = vc
         collectionView.dataSource = vc
         collectionView.delegate = vc
         collectionView.register(ParentActivityListDetailCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier)
         addSubview(collectionView)
-        searchController.setupSearchController(vc: vc)
-        searchController.searchDelegate = vc
-        self.setupNavigationBar()
+        setupNavigationBar(vc: vc)
+        setupSearchBar(vc: vc)
         setupConstraints()
     }
     
-    func setupNavigationBar() {
+    func setupNavigationBar(vc: ParentActivityListDetailViewController) {
         
         vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
         //Title Navbar
-//        vc.title = "Judul Jenis Aktivitas"
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
         
@@ -54,9 +51,20 @@ class ParentActivityListDetailView: UIView {
             UIBarButtonItem(customView: addButton),
             vc.editButtonItem
             ]
+        vc.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    @objc private func addButtonAction() {
+    private func setupSearchBar(vc: ParentActivityListDetailViewController) {
+        vc.navigationItem.searchController = searchController
+        SearchControllerTemplate(searchController: searchController)
+        searchController.searchResultsUpdater = vc
+        searchController.searchBar.delegate = vc
+        if #available(iOS 16, *){
+            vc.navigationItem.preferredSearchBarPlacement = .stacked
+        }
+    }
+    
+    @objc private func addButtonAction(vc: ParentActivityListDetailViewController) {
         let dest = CreateActivityViewController()
         dest.category = delegate.getCategory()
         dest.reloadDelegate = vc
@@ -64,7 +72,6 @@ class ParentActivityListDetailView: UIView {
     }
 
     @objc private func editButtonAction() {
-        //belum tau mau diapain
     }
     
     private func setupConstraints() {

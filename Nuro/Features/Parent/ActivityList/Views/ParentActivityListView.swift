@@ -10,45 +10,58 @@ import SnapKit
 
 class ParentActivityListView: UIView {
     
+    //Delegate Declaration
     var delegate: ParentActivityListDelegate!
-    var vc: ParentActivityListViewController!
+    var searchDelegate: SearchControllerDelegate!
     
-    let searchController = SearchController()
+    //Component Declaration
+    let searchController = UISearchController ()
     
-    let collectionViewFolder: UICollectionView = {
+    let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 100, right: 0)
         return view
     }()
     
+    //Setup View Function Declaration
     func setup(vc: ParentActivityListViewController) {
         backgroundColor = Colors.Neutral.white
         delegate = vc
-        self.vc = vc
-        collectionViewFolder.dataSource = vc
-        collectionViewFolder.delegate = vc
-        collectionViewFolder.register(ParentActivityFolderCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityFolderCollectionViewCell.identifier)
-        addSubview(collectionViewFolder)
-        setupNavigationBar()
-        searchController.setupSearchController(vc: vc)
-        searchController.searchDelegate = vc
+
+        collectionView.dataSource = vc
+        collectionView.delegate = vc
+        collectionView.register(ParentActivityFolderCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityFolderCollectionViewCell.identifier)
+        collectionView.register(ParentActivityListDetailCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier)
+        addSubview(collectionView)
+        setupNavigationBar(vc: vc)
+        setupSearchBar(vc: vc)
         setupConstraints()
         
     }
     
-    private func setupNavigationBar() {
-        
+    private func setupNavigationBar(vc: ParentActivityListViewController) {
         vc.navigationController?.navigationBar.barTintColor = Colors.Neutral.white
-        //Title Navbar
         vc.title = Strings.parentActivityListTitle
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
+        vc.navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    private func setupSearchBar(vc: ParentActivityListViewController) {
+        vc.navigationItem.searchController = searchController
+        SearchControllerTemplate(searchController: searchController)
+        searchController.searchResultsUpdater = vc
+        searchController.delegate = vc
+        if #available(iOS 16, *){
+            vc.navigationItem.preferredSearchBarPlacement = .stacked
+        }
     }
     
     private func setupConstraints() {
-        collectionViewFolder.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(23)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide)
             make.left.right.equalTo(self).inset(25)
             make.bottom.equalTo(safeAreaLayoutGuide)
         }

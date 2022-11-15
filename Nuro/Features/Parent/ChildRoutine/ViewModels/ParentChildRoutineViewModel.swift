@@ -12,8 +12,6 @@ class ParentChildRoutineViewModel {
     var todaysRoutines = [MirrorDetail]()
     
     func getTodaysRoutine() {
-//        todaysRoutines = RoutineDetailLocalRepository.shared.getRoutineDetails(dayID: Date().getCurrentWeekday(), timeID: Date().getTimeframeId())
-        //TODO: Change to Mirror Repository
         todaysRoutines = MirrorDetailLocalRepository.shared.getMirrorDetails(timeID: Date().getTimeframeId())
     }
     

@@ -21,4 +21,8 @@ class ChildRoutineViewModel {
         activities.removeFirst()
     }
     
+    func popActivityFromCoreData() {
+        mirrorDetailRepo.delete(mirrorDetail: activities[0])
+    }
+    
 }
