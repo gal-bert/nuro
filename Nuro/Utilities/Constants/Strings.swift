@@ -19,7 +19,8 @@ enum Strings {
     static let kidsName = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.kidsName) ?? "Anak"
     static let parentsName = UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName) ?? "Mom"
     static let emptyDescTextViewPlaceHolder = "Ketik kalimat reward singkat untuk anak saat menyelesaikan aktivitas..."
-    
+    static let maxOnboardingPage = "4"
+
     enum Category {
         static let others = "Lainnya"
     }

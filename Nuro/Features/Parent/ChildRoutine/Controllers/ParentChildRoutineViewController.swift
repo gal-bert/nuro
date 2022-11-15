@@ -9,7 +9,7 @@ import UIKit
 
 class ParentChildRoutineViewController: UIViewController {
 
-    private let parentChildRoutineView = ParentChildRoutineView()
+    let parentChildRoutineView = ParentChildRoutineView()
     let viewModel = ParentChildRoutineViewModel()
     
     override func viewDidLoad() {

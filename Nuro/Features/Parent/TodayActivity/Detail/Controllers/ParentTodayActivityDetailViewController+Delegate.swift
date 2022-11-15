@@ -14,9 +14,16 @@ extension ParentTodayActivityDetailViewController: ParentTodayActivityDetailDele
     }
     
     func deleteAction() {
-        let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
-            RoutineDetailLocalRepository.shared.delete(routineDetail: self.routineDetail ?? RoutineDetail())
-            self.dismissViewController()
+        let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(detail?.activity?.activityName ?? "")\" dari rutinitas ini?") { [self] in
+            
+            if detail is MirrorDetail {
+                MirrorDetailLocalRepository.shared.delete(mirrorDetail: (detail as? MirrorDetail) ?? MirrorDetail())
+            }
+            else if detail is RoutineDetail {
+                RoutineDetailLocalRepository.shared.delete(routineDetail: (detail as? RoutineDetail) ?? RoutineDetail())
+            }
+            dismissViewController()
+            
         }
         present(alert, animated: true)
     }

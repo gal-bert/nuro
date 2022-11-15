@@ -75,7 +75,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         let dest = ParentTodayActivityEditOrderViewController()
         dest.mirrorDetails = routines
         dest.editedTimeFrame = timeframe
-        delegate.presentViewController(dest: dest)
+        delegate.presentViewController(dest: dest, modalHeight: ScreenSizes.modalHeight)
     }
 
 
@@ -109,9 +109,9 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let dest = ParentTodayActivityDetailViewController()
-//        dest.routineDetail = routines[indexPath.item]
-//        delegate.presentViewController(dest: dest)
+        let dest = ParentTodayActivityDetailViewController()
+        dest.detail = routines[indexPath.item]
+        delegate.presentViewController(dest: dest, modalHeight: ScreenSizes.smallModalHeight)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

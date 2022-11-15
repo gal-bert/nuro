@@ -17,6 +17,13 @@ class ParentRoutineView: UIView {
     let segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"])
         view.selectedSegmentIndex = 0
+        
+        let selectedTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 20)]
+        let normalTextAttributes = [ NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 20)]
+        view.setTitleTextAttributes(selectedTextAttributes as [NSAttributedString.Key : Any], for: .selected)
+        view.setTitleTextAttributes(normalTextAttributes as [NSAttributedString.Key : Any], for: .normal)
+        view.selectedSegmentTintColor = Colors.Brand.blueViolet
+        
         return view
     }()
     
@@ -74,7 +81,7 @@ class ParentRoutineView: UIView {
     @objc private func didAddButtonClicked() {
         let dest = ParentRoutineAddActivityViewController()
         dest.reloadDelegate = vc
-        delegate.presentViewController(dest: dest)
+        delegate.presentViewController(dest: dest, modalHeight: ScreenSizes.modalHeight)
     }
     
     @objc private func didEditButtonClicked() {
@@ -93,6 +100,7 @@ class ParentRoutineView: UIView {
         segmentedControl.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(40)
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)

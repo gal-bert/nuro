@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1AF93F292247740015E97B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1AF93E292247740015E97B /* WelcomeViewController.swift */; };
+		0C1AF9412922477C0015E97B /* InputParentsNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1AF9402922477C0015E97B /* InputParentsNameViewController.swift */; };
+		0C1AF9432922478C0015E97B /* InputKidsNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1AF9422922478C0015E97B /* InputKidsNameViewController.swift */; };
+		0C1AF945292247990015E97B /* InputTimeframeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1AF944292247990015E97B /* InputTimeframeViewController.swift */; };
+		0C1AF947292247A60015E97B /* FinishPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1AF946292247A60015E97B /* FinishPageViewController.swift */; };
 		0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20672E28F0850700AAA8F3 /* Paths.swift */; };
 		0C20673128F0853800AAA8F3 /* CollectionViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */; };
 		0C491E352913722A007D1CFC /* GlobalDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C491E342913722A007D1CFC /* GlobalDelegates.swift */; };
@@ -106,6 +111,7 @@
 		3FBF126A28FEC61400CCC850 /* HeaderTimeframeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */; };
 		3FE992D728F43D820013E78B /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D628F43D820013E78B /* SidebarViewController.swift */; };
 		3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D828F43DCC0013E78B /* TabBarItem.swift */; };
+		3FF278F329210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF278F229210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift */; };
 		4A24DA0E2913718B0078095E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA0D2913718B0078095E /* SettingView.swift */; };
 		4A24DA102913719D0078095E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA0F2913719D0078095E /* SettingViewModel.swift */; };
 		4A24DA12291371E60078095E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA11291371E60078095E /* SettingViewController.swift */; };
@@ -182,8 +188,11 @@
 		5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */; };
 		5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */; };
 		5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */; };
+		F447E07E08AC1EC550CBDDBB /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E21C380F7C1DE91CFB93 /* SkipButton.swift */; };
 		F447E0F1924FBD2877765D86 /* MirrorDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */; };
 		F447E3A6FA914DFD8A037BA7 /* MirrorHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */; };
+		F447E4A59D90D2EC87EBD5CD /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E69E5E06384C6DBF1DEB /* NextButton.swift */; };
+		F447E6B1D46F125248E6161A /* OnboardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447ED7ED0BA2F543A1E0354 /* OnboardingPageControl.swift */; };
 		F447ECEE15D5FCCF1A51EF28 /* TimeframeImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +221,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1AF93E292247740015E97B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		0C1AF9402922477C0015E97B /* InputParentsNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParentsNameViewController.swift; sourceTree = "<group>"; };
+		0C1AF9422922478C0015E97B /* InputKidsNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKidsNameViewController.swift; sourceTree = "<group>"; };
+		0C1AF944292247990015E97B /* InputTimeframeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTimeframeViewController.swift; sourceTree = "<group>"; };
+		0C1AF946292247A60015E97B /* FinishPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPageViewController.swift; sourceTree = "<group>"; };
 		0C20672E28F0850700AAA8F3 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		0C20673028F0853800AAA8F3 /* CollectionViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributes.swift; sourceTree = "<group>"; };
 		0C491E342913722A007D1CFC /* GlobalDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDelegates.swift; sourceTree = "<group>"; };
@@ -314,6 +328,7 @@
 		3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTimeframeSection.swift; sourceTree = "<group>"; };
 		3FE992D628F43D820013E78B /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		3FE992D828F43DCC0013E78B /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		3FF278F229210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedAccessPopOverViewController.swift; sourceTree = "<group>"; };
 		4A24DA0D2913718B0078095E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		4A24DA0F2913719D0078095E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		4A24DA11291371E60078095E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -390,9 +405,12 @@
 		5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHeaderModel.swift; sourceTree = "<group>"; };
 		5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailModel.swift; sourceTree = "<group>"; };
+		F447E21C380F7C1DE91CFB93 /* SkipButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
 		F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeframeImageHelper.swift; sourceTree = "<group>"; };
+		F447E69E5E06384C6DBF1DEB /* NextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorHeaderLocalRepository.swift; sourceTree = "<group>"; };
 		F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorDetailLocalRepository.swift; sourceTree = "<group>"; };
+		F447ED7ED0BA2F543A1E0354 /* OnboardingPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,9 +576,11 @@
 		0CA82E0D28EC6F2E00D811A6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3FF278F1292109B900AD90F6 /* Popovers */,
 				4A24DA09291366E90078095E /* Setting */,
 				0CA82E1028EC701900D811A6 /* Parent */,
 				0CA82E1328EC702D00D811A6 /* Child */,
+				F447E9C4FEDC60D22F91F68D /* Onboarding */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -579,6 +599,7 @@
 				0CA82E1A28EC726600D811A6 /* Buttons */,
 				0CA82E1928EC725600D811A6 /* CollectionViewCell */,
 				0CA82E1828EC724F00D811A6 /* TableViewCell */,
+				F447EAE373BA0275A65F0FDA /* PageControls */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -665,6 +686,8 @@
 				5F3198F02905FA6400E7FBE1 /* ChildButton.swift */,
 				5F02CB3C290A21EA0079FFC5 /* DeletePinButton.swift */,
 				5F62868B291F469300784FC1 /* HintButton.swift */,
+				F447E69E5E06384C6DBF1DEB /* NextButton.swift */,
+				F447E21C380F7C1DE91CFB93 /* SkipButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1116,6 +1139,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3FF278F1292109B900AD90F6 /* Popovers */ = {
+			isa = PBXGroup;
+			children = (
+				3FF278F229210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift */,
+			);
+			path = Popovers;
+			sourceTree = "<group>";
+		};
 		4A24DA09291366E90078095E /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -1426,6 +1457,26 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		F447E9C4FEDC60D22F91F68D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0C1AF93E292247740015E97B /* WelcomeViewController.swift */,
+				0C1AF9402922477C0015E97B /* InputParentsNameViewController.swift */,
+				0C1AF9422922478C0015E97B /* InputKidsNameViewController.swift */,
+				0C1AF944292247990015E97B /* InputTimeframeViewController.swift */,
+				0C1AF946292247A60015E97B /* FinishPageViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F447EAE373BA0275A65F0FDA /* PageControls */ = {
+			isa = PBXGroup;
+			children = (
+				F447ED7ED0BA2F543A1E0354 /* OnboardingPageControl.swift */,
+			);
+			path = PageControls;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1633,6 +1684,7 @@
 				0CAFDA5528FE58D60035F252 /* ParentTodayActivityEditOrderViewController.swift in Sources */,
 				5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */,
 				0C5855D829100550004D4DDD /* SelectImageSelector.swift in Sources */,
+				3FF278F329210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift in Sources */,
 				0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */,
 				5F563D2128F61424003748D7 /* ActivityLocalRepository.swift in Sources */,
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
@@ -1714,6 +1766,7 @@
 				0C9EFA6C291541F700449EAD /* UserDefaults.swift in Sources */,
 				4ABE2D1828EDB3B40082147F /* ParentActivityListViewModel.swift in Sources */,
 				4A24DA16291376C80078095E /* SettingDelegate.swift in Sources */,
+				0C1AF9432922478C0015E97B /* InputKidsNameViewController.swift in Sources */,
 				0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */,
 				0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */,
 				0C5855D6290FFA53004D4DDD /* CreateActivityViewController.swift in Sources */,
@@ -1731,6 +1784,7 @@
 				0C20672F28F0850700AAA8F3 /* Paths.swift in Sources */,
 				4A854D8728FEF8060048C7D8 /* ParentActivityListDetailViewController+Delegate.swift in Sources */,
 				5F59FFA9290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift in Sources */,
+				0C1AF9412922477C0015E97B /* InputParentsNameViewController.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
 				0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */,
 				3FBAB77229101ABD0066E04D /* AddActivityRoutineDayView.swift in Sources */,
@@ -1740,6 +1794,7 @@
 				0CA82E2428EC765400D811A6 /* Icons.swift in Sources */,
 				0CAD21412901695400941794 /* AddActivityView.swift in Sources */,
 				4A854D7F28FEF3250048C7D8 /* ParentActivityListDetailView.swift in Sources */,
+				0C1AF93F292247740015E97B /* WelcomeViewController.swift in Sources */,
 				3F59A3752905B31500F1877B /* ParentRoutineAddActivityViewController+Delegate.swift in Sources */,
 				5F02CB33290A1DF60079FFC5 /* ChildPinUnlockView.swift in Sources */,
 				0C4A801D28F7D31600890495 /* ColorRGBA.swift in Sources */,
@@ -1764,8 +1819,13 @@
 				0C89254028ED396D007BE0A4 /* AddButton.swift in Sources */,
 				4A24DA12291371E60078095E /* SettingViewController.swift in Sources */,
 				F447ECEE15D5FCCF1A51EF28 /* TimeframeImageHelper.swift in Sources */,
+				0C1AF947292247A60015E97B /* FinishPageViewController.swift in Sources */,
+				0C1AF945292247990015E97B /* InputTimeframeViewController.swift in Sources */,
 				F447E3A6FA914DFD8A037BA7 /* MirrorHeaderLocalRepository.swift in Sources */,
 				F447E0F1924FBD2877765D86 /* MirrorDetailLocalRepository.swift in Sources */,
+				F447E6B1D46F125248E6161A /* OnboardingPageControl.swift in Sources */,
+				F447E4A59D90D2EC87EBD5CD /* NextButton.swift in Sources */,
+				F447E07E08AC1EC550CBDDBB /* SkipButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
