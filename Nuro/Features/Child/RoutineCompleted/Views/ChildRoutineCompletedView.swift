@@ -63,6 +63,8 @@ class ChildRoutineCompletedView: UIView {
         setupButton()
         setupUI()
         setupConstraints()
+        
+        routineDoneLabel.text = "Semua aktivitas \(Date().getTimeframe().lowercased())mu sudah selesai!"
     }
     
     private func setupButton() {
