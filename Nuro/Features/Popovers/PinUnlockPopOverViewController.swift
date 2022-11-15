@@ -53,8 +53,8 @@ class PinUnlockPopOverViewController: UIViewController {
         
         dismissButton.snp.makeConstraints { make in
             make.right.bottom.equalToSuperview().inset(10)
-            make.width.equalTo(ScreenSizes.screenWidth/10)
-            make.height.equalTo(ScreenSizes.screenHeight/25)
+            make.width.equalTo(112)
+            make.height.equalTo(36)
         }
     }
     

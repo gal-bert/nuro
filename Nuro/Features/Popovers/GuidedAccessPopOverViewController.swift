@@ -53,8 +53,8 @@ class GuidedAccessPopOverViewController: UIViewController {
         dismissButton.snp.makeConstraints { make in
 //            make.top.equalTo(instructionLabel.snp.bottom)
             make.right.bottom.equalToSuperview().inset(20)
-            make.width.equalTo(ScreenSizes.screenWidth/7)
-            make.height.equalTo(ScreenSizes.screenHeight/25)
+            make.width.equalTo(178)
+            make.height.equalTo(36)
         }
     }
     
