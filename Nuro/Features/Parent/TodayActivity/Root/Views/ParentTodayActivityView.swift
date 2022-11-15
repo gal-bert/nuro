@@ -62,9 +62,6 @@ class ParentTodayActivityView: UIView {
         stackView.addArrangedSubview(tableView)
         
         setupConstraints()
-        
-        // TODO: Add Empty state logic
-//        setupEmptyState()
     }
     
     private func setupEmptyState() {

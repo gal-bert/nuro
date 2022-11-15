@@ -46,6 +46,7 @@ class ChildRoutineViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
             childRoutineView.disableButtons()
             childRoutineView.animateHideRow()
+            viewModel.popActivityFromCoreData()
             viewModel.removeFirstActivity()
             
             if totalActivity != 1 {

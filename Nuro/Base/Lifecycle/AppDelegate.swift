@@ -15,11 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         UserDefaultsHelper.registerDefaultValue()
-        
 
         if UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isFirstTime) {
             Seeder.shared.seedAll()
-            UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isFirstTime)
         }
 
         if UserDefaults.standard.integer(forKey: UserDefaultsHelper.Keys.lastWeekdayId) != Date().getCurrentWeekday() {
