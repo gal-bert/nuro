@@ -115,6 +115,8 @@ class InputParentsNameViewController: UIViewController {
         pageControl.nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
 
         setupConstraints()
+
+        Transition.smoothAnimationPurple(subviews: view.subviews)
     }
 
     @objc func skipAction() {

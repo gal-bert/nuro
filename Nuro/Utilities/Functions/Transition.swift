@@ -46,21 +46,17 @@ class Transition {
             }
         }
     }
-    
-    static func smoothAnimationPurple(view: UIView, subviews: [UIView], bgColor: UIColor) {
-        view.backgroundColor = bgColor
-        
+
+    static func smoothAnimationPurple(subviews: [UIView]) {
         for subview in subviews {
             subview.alpha = 0
         }
-        
-        UIView.animate(withDuration: 1.0, delay: 0.5) {
-            view.backgroundColor = bgColor
-        }
-        
-        UIView.animate(withDuration: 0.8, delay: 0.8) {
-            for subview in subviews {
-                subview.alpha = 1
+
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { timer in
+            UIView.animate(withDuration: 1.0, delay: 0.0) {
+                for subview in subviews {
+                    subview.alpha = 1
+                }
             }
         }
     }

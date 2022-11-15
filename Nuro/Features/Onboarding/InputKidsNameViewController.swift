@@ -113,6 +113,8 @@ class InputKidsNameViewController: UIViewController {
         pageControl.nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
 
         setupConstraints()
+
+        Transition.smoothAnimationPurple(subviews: view.subviews)
     }
 
     @objc func skipAction() {
@@ -129,7 +131,7 @@ class InputKidsNameViewController: UIViewController {
 
         let dest = InputTimeframeViewController()
         dest.modalPresentationStyle = .fullScreen
-        Transition.animateTransition(vc: self, transitionType: .push, transitionSubtype: .fromRight)
+        Transition.animateTransition(vc: self)
         present(dest, animated: false)
     }
 
