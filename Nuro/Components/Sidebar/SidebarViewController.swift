@@ -85,19 +85,42 @@ extension SidebarViewController: CoachMarksControllerDataSource, CoachMarksContr
             withArrow: true,
             arrowOrientation: coachMark.arrowOrientation
         )
+        
+        switch index {
+            case 0:
+                coachViews.bodyView.hintLabel.text = "Buka halaman Penjadwalan untuk menambahkan aktivitas harian."
+                coachViews.bodyView.nextLabel.text = "Berikutnya"
+            case 1:
+                coachViews.bodyView.hintLabel.text = "Jika jadwal rutinitas telah selesai dibuat, buka halaman Rutinitas Anak."
+                coachViews.bodyView.nextLabel.text = "Berikutnya"
+            default:break
 
-        coachViews.bodyView.hintLabel.text = "Buka halaman Penjadwalan untuk menambahkan aktivitas harian."
-        coachViews.bodyView.nextLabel.text = "Berikutnya"
+        }
 
         return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
     
     func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkAt index: Int) -> Instructions.CoachMark {
-        return coachMarksController.helper.makeCoachMark(for: collectionViewMain.cellForItem(at: IndexPath(item: 2, section: 0)))
+        
+        switch index {
+        case 0:
+            var coachMark = coachMarksController.helper.makeCoachMark(for: collectionViewMain.cellForItem(at: IndexPath(item: 2, section: 0)))
+            //coachMark.isUserInteractionEnabledInsideCutoutPath = true
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughRoutinesCompleted)
+            return coachMark
+        case 1:
+            var coachMark = coachMarksController.helper.makeCoachMark(for: collectionViewMain.cellForItem(at: IndexPath(item: 1, section: 1)))
+            //coachMark.isUserInteractionEnabledInsideCutoutPath = true
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughKidsModeCompleted)
+            return coachMark
+        default:
+            return coachMarksController.helper.makeCoachMark()
+        }
+
     }
     
     func numberOfCoachMarks(for coachMarksController: Instructions.CoachMarksController) -> Int {
-        return 1
+        return 2
     }
     
     
@@ -183,6 +206,7 @@ extension SidebarViewController: UICollectionViewDelegate {
             let navCon = UINavigationController(rootViewController: ParentRoutineViewController())
             deselectSettingsCell()
             splitViewController?.setViewController(navCon, for: .secondary)
+//            coachMarksController.flow.showNext(numberOfCoachMarksToSkip: 2)
             
         case RowIdentifier.parentActivityList:
             let navCon = UINavigationController(rootViewController: ParentActivityListViewController())

@@ -48,7 +48,10 @@ extension ParentRoutineViewController: CoachMarksControllerDataSource, CoachMark
     }
     
     func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkAt index: Int) -> Instructions.CoachMark {
-        return coachMarksController.helper.makeCoachMark(for: parentRoutineView.addButton)
+        var coachMark = coachMarksController.helper.makeCoachMark(for: parentRoutineView.addButton)
+        //coachMark.isUserInteractionEnabledInsideCutoutPath = true
+        UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughAddRoutinesCompleted)
+        return coachMark
     }
     
     func numberOfCoachMarks(for coachMarksController: Instructions.CoachMarksController) -> Int {

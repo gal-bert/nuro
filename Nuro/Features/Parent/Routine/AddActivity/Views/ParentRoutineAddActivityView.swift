@@ -24,7 +24,7 @@ class ParentRoutineAddActivityView: UIView {
         return view
     }()
     
-    private lazy var stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.alignment = .center
@@ -47,6 +47,8 @@ class ParentRoutineAddActivityView: UIView {
         view.text = "Pilih Aktivitas"
         return view
     }()
+
+    lazy var addButton = AddNavigationItemButton()
     
     func setup(vc: ParentRoutineAddActivityViewController) {
         backgroundColor = Colors.Neutral.white
@@ -93,7 +95,9 @@ class ParentRoutineAddActivityView: UIView {
     func setupNavigationBar(vc: ParentRoutineAddActivityViewController) {
         vc.title = "Tambah Aktivitas"
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Batal", style: .plain, target: self, action: #selector(didCancelButtonClicked))
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(didAddButtonClicked))
+//        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(didAddButtonClicked))
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addButton)
+        addButton.addTarget(self, action:  #selector(didAddButtonClicked), for: .touchUpInside)
         vc.navigationItem.leftBarButtonItem?.tintColor = Colors.Brand.blueViolet
         vc.navigationItem.rightBarButtonItem?.tintColor = Colors.Brand.blueViolet
         vc.navigationItem.rightBarButtonItem?.isEnabled = false
@@ -134,9 +138,11 @@ class ParentRoutineAddActivityView: UIView {
     func validateEmptyField() {
         if waktuRutinitasButton.rightLabel.text != "" && hariRutinitasButton.rightLabel.text != "" && vc?.activity != nil {
             vc?.navigationItem.rightBarButtonItem?.isEnabled = true
+            addButton.setTitleColor(Colors.Brand.blueViolet, for: .normal)
         }
         else {
             vc?.navigationItem.rightBarButtonItem?.isEnabled = false
+            addButton.setTitleColor(.gray, for: .normal)
         }
     }
 }
