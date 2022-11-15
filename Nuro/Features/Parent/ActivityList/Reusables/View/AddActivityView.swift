@@ -11,6 +11,9 @@ class AddActivityView: UIView {
     
     var delegate: AddActivityDelegate!
     
+    let searchController = UISearchController ()
+    var searchDelegate: SearchControllerDelegate!
+    
     lazy var segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Semua"])
         view.selectedSegmentIndex = 0
@@ -28,7 +31,7 @@ class AddActivityView: UIView {
 
     func setup(vc: AddActivityViewController) {
         backgroundColor = .white
-
+//        searchController.delegate = self
         delegate = vc
         
         collectionView.delegate = vc
@@ -42,14 +45,24 @@ class AddActivityView: UIView {
         segmentedControl.addTarget(self, action: #selector(selectedSegmentChanged), for: .valueChanged)
         
         setupNavigationBar(vc: vc)
-//        searchController.setupSearchController(vc: vc)
-//        searchController.searchDelegate = vc
+        setupSearchBar(vc: vc)
+
 
         setupConstraints()
     }
     
     func setupNavigationBar(vc: AddActivityViewController) {
         vc.title = "Pilih Aktivitas"
+    }
+    
+    private func setupSearchBar(vc: AddActivityViewController) {
+        vc.navigationItem.searchController = searchController
+        SearchControllerTemplate(searchController: searchController)
+        searchController.searchResultsUpdater = vc
+        searchController.delegate = vc
+        if #available(iOS 16, *){
+            vc.navigationItem.preferredSearchBarPlacement = .stacked
+        }
     }
     
     private func setupConstraints() {

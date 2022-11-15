@@ -14,7 +14,7 @@ class ParentActivityListDetailView: UIView {
     let editButton = SmallCapsuleButton(title: "Edit")
     
     var delegate: ParentActivityListDetailDelegate!
-    var vc: ParentActivityListDetailViewController!
+//    var vc: ParentActivityListDetailViewController!
     var searchDelegate: SearchControllerDelegate!
     
     let searchController = UISearchController()
@@ -29,17 +29,16 @@ class ParentActivityListDetailView: UIView {
     func setup(vc: ParentActivityListDetailViewController) {
         backgroundColor = Colors.Neutral.white
         delegate = vc
-        self.vc = vc
         collectionView.dataSource = vc
         collectionView.delegate = vc
         collectionView.register(ParentActivityListDetailCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier)
         addSubview(collectionView)
-        setupSearchBar()
-        setupNavigationBar()
+        setupNavigationBar(vc: vc)
+        setupSearchBar(vc: vc)
         setupConstraints()
     }
     
-    func setupNavigationBar() {
+    func setupNavigationBar(vc: ParentActivityListDetailViewController) {
         
         vc.navigationController?.navigationBar.backgroundColor = Colors.Neutral.white
         //Title Navbar
@@ -56,7 +55,7 @@ class ParentActivityListDetailView: UIView {
         vc.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    private func setupSearchBar() {
+    private func setupSearchBar(vc: ParentActivityListDetailViewController) {
         vc.navigationItem.searchController = searchController
         SearchControllerTemplate(searchController: searchController)
         searchController.searchResultsUpdater = vc
@@ -66,7 +65,7 @@ class ParentActivityListDetailView: UIView {
         }
     }
     
-    @objc private func addButtonAction() {
+    @objc private func addButtonAction(vc: ParentActivityListDetailViewController) {
         let dest = CreateActivityViewController()
         dest.category = delegate.getCategory()
         dest.reloadDelegate = vc
