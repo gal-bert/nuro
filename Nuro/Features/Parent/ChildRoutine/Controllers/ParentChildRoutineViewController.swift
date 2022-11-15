@@ -19,6 +19,14 @@ class ParentChildRoutineViewController: UIViewController {
         parentChildRoutineView.setup(vc: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.getTodaysRoutine()
+        parentChildRoutineView.routineTableView.reloadData()
+        (
+            parentChildRoutineView.routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ParentTodayActivityTableViewCell
+        )?.collectionView.reloadData()
+    }
+    
     override func loadView() {
         self.view = parentChildRoutineView
     }
