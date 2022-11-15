@@ -25,6 +25,16 @@ class ParentChildRoutineViewController: UIViewController {
             parentChildRoutineView.startButton.backgroundColor = .gray
         }
         
+        NotificationCenter.default.addObserver(
+            forName: UIAccessibility.guidedAccessStatusDidChangeNotification,
+            object: nil,
+            queue: OperationQueue.main) { _ in
+                if UIAccessibility.isGuidedAccessEnabled {
+                    self.parentChildRoutineView.guidedAccessLabel.attributedText = GuidedAccessLabelConfiguration.getAttributedText(boldText: "Guided Access", text: "sedang aktif")
+                } else {
+                    self.parentChildRoutineView.guidedAccessLabel.attributedText = GuidedAccessLabelConfiguration.getAttributedText(boldText: "Guided Access", text: "belum dinyalakan")
+                }
+            }
     }
     
     override func viewWillAppear(_ animated: Bool) {

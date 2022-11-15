@@ -34,19 +34,11 @@ class ParentChildRoutineView: UIView {
     
     lazy var hintButton = HintButton()
     
-    private lazy var guidedAccessLabel: UILabel = {
+    lazy var guidedAccessLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)
         
-        var boldAttribute = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)]
-        var boldString = NSMutableAttributedString(string: "Guided Access", attributes: boldAttribute as [NSAttributedString.Key : Any])
-        
-        var regularAttribute = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 22)]
-        var regularString = NSMutableAttributedString(string: " belum dinyalakan ", attributes: regularAttribute as [NSAttributedString.Key : Any])
-        
-        var attributedString = NSMutableAttributedString(attributedString: boldString)
-        attributedString.append(NSMutableAttributedString(attributedString: regularString))
-        label.attributedText = attributedString
+        label.attributedText = GuidedAccessLabelConfiguration.getAttributedText(boldText: "Guided Access", text: "belum dinyalakan")
         return label
     }()
     
@@ -116,7 +108,8 @@ class ParentChildRoutineView: UIView {
     
     private func setupConstraints() {
         stackView.snp.makeConstraints { make in
-            make.top.left.bottom.right.equalTo(self).inset(50)
+            make.top.left.right.equalTo(self).inset(20)
+            make.bottom.equalTo(guidedAccessStackView.snp.top).offset(-20)
         }
         
         startButton.snp.makeConstraints { make in
