@@ -108,7 +108,7 @@ class InputParentsNameViewController: UIViewController {
         
         let dest = InputKidsNameViewController()
         dest.modalPresentationStyle = .fullScreen
-        Transition.animateTransition(vc: self, transitionType: .push, transitionSubtype: .fromRight)
+        Transition.animateTransition(vc: self)
         present(dest, animated: false)
     }
 
