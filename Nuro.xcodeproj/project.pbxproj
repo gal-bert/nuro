@@ -30,6 +30,7 @@
 		0C74A03928F4527A0081A069 /* VisbyRoundCF-DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02F28F4522F0081A069 /* VisbyRoundCF-DemiBold.otf */; };
 		0C74A03A28F4527A0081A069 /* VisbyRoundCF-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03028F4522F0081A069 /* VisbyRoundCF-Light.otf */; };
 		0C74A03B28F4527A0081A069 /* VisbyRoundCF-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */; };
+		0C772F81292387C300D9E76B /* Instructions in Frameworks */ = {isa = PBXBuildFile; productRef = 0C772F80292387C300D9E76B /* Instructions */; };
 		0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA028EAB45100706D0A /* AppDelegate.swift */; };
 		0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA228EAB45100706D0A /* SceneDelegate.swift */; };
 		0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */; };
@@ -428,6 +429,7 @@
 				0CF0668D29025AC900061701 /* RxDataSources in Frameworks */,
 				0CF0668B29025AC900061701 /* Differentiator in Frameworks */,
 				0CF582EC28F6969800C3D20D /* SnapKit in Frameworks */,
+				0C772F81292387C300D9E76B /* Instructions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1507,6 +1509,7 @@
 				0CF0668729025A6E00061701 /* RxSwift */,
 				0CF0668A29025AC900061701 /* Differentiator */,
 				0CF0668C29025AC900061701 /* RxDataSources */,
+				0C772F80292387C300D9E76B /* Instructions */,
 			);
 			productName = Nuro;
 			productReference = 0C79CE9D28EAB45100706D0A /* Otin.app */;
@@ -1606,6 +1609,7 @@
 				0CF582EA28F6969800C3D20D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				0CF0668629025A6E00061701 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0CF0668929025AC900061701 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */,
 			);
 			productRefGroup = 0C79CE9E28EAB45100706D0A /* Products */;
 			projectDirPath = "";
@@ -2256,6 +2260,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ephread/Instructions";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		0CF0668629025A6E00061701 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -2283,6 +2295,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C772F80292387C300D9E76B /* Instructions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */;
+			productName = Instructions;
+		};
 		0CF0668729025A6E00061701 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0CF0668629025A6E00061701 /* XCRemoteSwiftPackageReference "RxSwift" */;

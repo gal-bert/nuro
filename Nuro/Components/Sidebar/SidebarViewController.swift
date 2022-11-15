@@ -8,9 +8,12 @@
 import UIKit
 import SnapKit
 import Combine
+import Instructions
 
 @available(iOS 14, *)
 class SidebarViewController: UIViewController {
+    
+    let coachMarksController = CoachMarksController()
     
     private enum SidebarItemType: Int {
         case header, expandableRow, row
@@ -65,7 +68,38 @@ class SidebarViewController: UIViewController {
         applyInitialSnapshot()
         
         collectionViewMain.selectItem(at: [0,1], animated: true, scrollPosition: .top)
+        
+        self.coachMarksController.dataSource = self
+        self.coachMarksController.overlay.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.7)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.coachMarksController.start(in: .window(over: self))
+    }
+    
+}
+
+extension SidebarViewController: CoachMarksControllerDataSource, CoachMarksControllerDelegate {
+    func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: Instructions.CoachMark) -> (bodyView: (UIView & Instructions.CoachMarkBodyView), arrowView: (UIView & Instructions.CoachMarkArrowView)?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(
+            withArrow: true,
+            arrowOrientation: coachMark.arrowOrientation
+        )
+
+        coachViews.bodyView.hintLabel.text = "Buka halaman Penjadwalan untuk menambahkan aktivitas harian."
+        coachViews.bodyView.nextLabel.text = "Berikutnya"
+
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    
+    func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkAt index: Int) -> Instructions.CoachMark {
+        return coachMarksController.helper.makeCoachMark(for: collectionViewMain.cellForItem(at: IndexPath(item: 2, section: 0)))
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: Instructions.CoachMarksController) -> Int {
+        return 1
+    }
+    
     
 }
 
@@ -313,3 +347,4 @@ extension SidebarViewController {
         dataSourceSetting.apply(settingsSnapshot(), to: .settingsSection, animatingDifferences: false)
     }
 }
+

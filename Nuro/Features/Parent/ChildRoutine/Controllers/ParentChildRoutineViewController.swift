@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Instructions
 
 class ParentChildRoutineViewController: UIViewController {
 
     let parentChildRoutineView = ParentChildRoutineView()
     let viewModel = ParentChildRoutineViewModel()
+    
+    let coachMarksController = CoachMarksController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,12 @@ class ParentChildRoutineViewController: UIViewController {
                     self.parentChildRoutineView.guidedAccessLabel.attributedText = GuidedAccessLabelConfiguration.getAttributedText(boldText: "Guided Access", text: "belum dinyalakan")
                 }
             }
+        
+        self.coachMarksController.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.coachMarksController.start(in: .window(over: self))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,5 +57,29 @@ class ParentChildRoutineViewController: UIViewController {
     override func loadView() {
         self.view = parentChildRoutineView
     }
+    
+}
+
+extension ParentChildRoutineViewController: CoachMarksControllerDataSource, CoachMarksControllerDelegate {
+    func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: Instructions.CoachMark) -> (bodyView: (UIView & Instructions.CoachMarkBodyView), arrowView: (UIView & Instructions.CoachMarkArrowView)?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(
+            withArrow: true,
+            arrowOrientation: coachMark.arrowOrientation
+        )
+
+        coachViews.bodyView.hintLabel.text = "Tekan “Mulai Rutinitas Anak” untuk memasuki halaman anak. "
+        coachViews.bodyView.nextLabel.text = "Berikutnya"
+
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    
+    func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkAt index: Int) -> Instructions.CoachMark {
+        return coachMarksController.helper.makeCoachMark(for: parentChildRoutineView.startButton)
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: Instructions.CoachMarksController) -> Int {
+        return 1
+    }
+    
     
 }

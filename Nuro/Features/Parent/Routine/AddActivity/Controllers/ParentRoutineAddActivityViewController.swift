@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Instructions
 
 class ParentRoutineAddActivityViewController: UIViewController {
     
@@ -27,3 +28,5 @@ class ParentRoutineAddActivityViewController: UIViewController {
     }
 
 }
+
+
