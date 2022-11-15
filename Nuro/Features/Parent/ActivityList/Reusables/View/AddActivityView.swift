@@ -31,7 +31,7 @@ class AddActivityView: UIView {
         return view
     }()
     
-    let searchController = SearchController()
+//    let searchController = SearchControllerTemplate()
 
     func setup(vc: AddActivityViewController) {
         backgroundColor = .white
@@ -49,8 +49,8 @@ class AddActivityView: UIView {
         segmentedControl.addTarget(self, action: #selector(selectedSegmentChanged), for: .valueChanged)
         
         setupNavigationBar(vc: vc)
-        searchController.setupSearchController(vc: vc)
-        searchController.searchDelegate = vc
+//        searchController.setupSearchController(vc: vc)
+//        searchController.searchDelegate = vc
 
         setupConstraints()
     }

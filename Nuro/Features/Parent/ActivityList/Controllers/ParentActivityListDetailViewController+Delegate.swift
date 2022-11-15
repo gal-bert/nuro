@@ -34,6 +34,25 @@ extension ParentActivityListDetailViewController: ReloadDelegate {
     }
 }
 
+
+extension ParentActivityListDetailViewController: UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate{
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = parentActivityListDetailView.searchController.searchBar.text
+        viewModel.filteredActivities = viewModel.activityList.filter {
+            if(searchText != ""){
+                let searchTextMatch = $0.activityName?.lowercased().contains((searchText?.lowercased())!)
+                return searchTextMatch ?? false
+            }
+            else{
+                return true
+            }
+        }
+        parentActivityListDetailView.collectionView.reloadData()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        parentActivityListDetailView.collectionView.reloadData()
+    }
+}
 extension ParentActivityListDetailViewController: SearchControllerDelegate {
     func getResult(text: String) {
         print("Punya finn Detail: \(text)")
@@ -51,7 +70,6 @@ extension ParentActivityListDetailViewController: SearchControllerDelegate {
                 return true
             }
         }
-        print(viewModel.filteredActivities)
         parentActivityListDetailView.collectionView.reloadData()
     }
 }
