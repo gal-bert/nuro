@@ -18,7 +18,7 @@ class ParentChildRoutineView: UIView {
     private lazy var pageTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 48)
-        label.text = "Rutinitas Anak"
+        label.text = "Rutinitas Anak - \(Date().getTimeframe())"
         label.textAlignment = .center
         return label
     }()
@@ -76,6 +76,8 @@ class ParentChildRoutineView: UIView {
         return button
     }()
     
+    lazy var emptyState: UIView = ParentTodayActivityEmptyStateView()
+    
     private var delegate: ParentChildRoutineDelegate?
     
     func setup(vc: ParentChildRoutineViewController) {
@@ -84,15 +86,20 @@ class ParentChildRoutineView: UIView {
         setupUI()
         setupConstraints()
         setupTableView(vc: vc)
+        
+        emptyState.isHidden = true
         setupButton()
     }
     
     private func setupUI() {
         self.backgroundColor = Colors.Neutral.white
         
+        addSubview(emptyState)
+        
         addSubview(stackView)
         stackView.addArrangedSubview(pageTitleLabel)
         stackView.addArrangedSubview(routineTableView)
+        
         stackView.addArrangedSubview(startButton)
         addSubview(guidedAccessStackView)
         guidedAccessStackView.addArrangedSubview(guidedAccessLabel)
@@ -113,6 +120,11 @@ class ParentChildRoutineView: UIView {
         routineTableView.snp.makeConstraints { make in
             make.left.right.equalTo(stackView)
             make.height.equalTo(ScreenSizes.screenHeight * 2/3)
+        }
+        
+        emptyState.snp.makeConstraints { make in
+            make.centerY.equalTo(self).offset(-80)
+            make.left.right.equalTo(self)
         }
         
         guidedAccessStackView.snp.makeConstraints { make in

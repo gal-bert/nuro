@@ -21,7 +21,6 @@ extension ParentChildRoutineViewController: UITableViewDataSource {
         cell.isViewingChildRoutine = true
         cell.editButton.removeFromSuperview()
         
-        // TODO: Sync text and collection view item based on routine time
         
         switch Date().getTimeframeId() {
         case 1:
@@ -42,7 +41,6 @@ extension ParentChildRoutineViewController: UITableViewDataSource {
         default:
             cell.timeframeLabel.text = "Empty"
         }
-        
         cell.routines = viewModel.todaysRoutines
         
         return cell

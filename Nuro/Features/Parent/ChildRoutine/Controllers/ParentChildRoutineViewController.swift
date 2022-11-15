@@ -18,6 +18,13 @@ class ParentChildRoutineViewController: UIViewController {
         viewModel.getTodaysRoutine()
         parentChildRoutineView.setup(vc: self)
         
+        if viewModel.todaysRoutines.count == 0 {
+            parentChildRoutineView.emptyState.isHidden = false
+            parentChildRoutineView.routineTableView.alpha = 0
+            parentChildRoutineView.startButton.isEnabled = false
+            parentChildRoutineView.startButton.backgroundColor = .gray
+        }
+        
         NotificationCenter.default.addObserver(
             forName: UIAccessibility.guidedAccessStatusDidChangeNotification,
             object: nil,
