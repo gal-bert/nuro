@@ -11,6 +11,9 @@ class AddActivityView: UIView {
     
     var delegate: AddActivityDelegate!
     
+    let searchController = UISearchController ()
+    var searchDelegate: SearchControllerDelegate!
+    
     lazy var segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: ["Semua"])
         view.selectedSegmentIndex = 0
@@ -30,33 +33,35 @@ class AddActivityView: UIView {
         layout.scrollDirection = .vertical
         return view
     }()
-    
-//    let searchController = SearchControllerTemplate()
 
     func setup(vc: AddActivityViewController) {
         backgroundColor = .white
-
         delegate = vc
         
         collectionView.delegate = vc
         collectionView.dataSource = vc
         collectionView.register(AddActivityButtonCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityButtonCollectionViewCell.identifier)
         collectionView.register(AddActivityContentCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityContentCollectionViewCell.identifier)
-
-        
         addMultipleSubviews(views: segmentedControl, collectionView)
-        
         segmentedControl.addTarget(self, action: #selector(selectedSegmentChanged), for: .valueChanged)
-        
-        setupNavigationBar(vc: vc)
-//        searchController.setupSearchController(vc: vc)
-//        searchController.searchDelegate = vc
 
+        setupNavigationBar(vc: vc)
+        setupSearchBar(vc: vc)
         setupConstraints()
     }
     
     func setupNavigationBar(vc: AddActivityViewController) {
         vc.title = "Pilih Aktivitas"
+    }
+    
+    private func setupSearchBar(vc: AddActivityViewController) {
+        vc.navigationItem.searchController = searchController
+        SearchControllerTemplate(searchController: searchController)
+        searchController.searchResultsUpdater = vc
+        searchController.delegate = vc
+        if #available(iOS 16, *){
+            vc.navigationItem.preferredSearchBarPlacement = .stacked
+        }
     }
     
     private func setupConstraints() {

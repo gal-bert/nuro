@@ -49,30 +49,11 @@ extension ParentActivityListDetailViewController: UISearchResultsUpdating, UISea
         }
         parentActivityListDetailView.collectionView.reloadData()
     }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    func didDismissSearchController(_ searchController: UISearchController) {
         parentActivityListDetailView.collectionView.reloadData()
     }
 }
-extension ParentActivityListDetailViewController: SearchControllerDelegate {
-    func getResult(text: String) {
-        print("Punya finn Detail: \(text)")
-        filtered(searchText: text)
-    }
-    func filtered(searchText: String) {
-        viewModel.filteredActivities = viewModel.activityList.filter {
-            if(searchText != ""){
-                let searchTextMatch = $0.activityName?.lowercased().contains(searchText.lowercased())
-                return searchTextMatch ?? false
-            }
-            else{
-                viewModel.filteredActivities = viewModel.activityList
-                parentActivityListDetailView.collectionView.reloadData()
-                return true
-            }
-        }
-        parentActivityListDetailView.collectionView.reloadData()
-    }
-}
+
 
 extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

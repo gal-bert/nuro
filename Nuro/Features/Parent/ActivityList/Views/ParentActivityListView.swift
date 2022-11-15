@@ -10,12 +10,12 @@ import SnapKit
 
 class ParentActivityListView: UIView {
     
+    //Delegate Declaration
     var delegate: ParentActivityListDelegate!
-    var vc: ParentActivityListViewController!
-    
-    let searchController = UISearchController ()
-    
     var searchDelegate: SearchControllerDelegate!
+    
+    //Component Declaration
+    let searchController = UISearchController ()
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -25,36 +25,35 @@ class ParentActivityListView: UIView {
         return view
     }()
     
+    //Setup View Function Declaration
     func setup(vc: ParentActivityListViewController) {
         backgroundColor = Colors.Neutral.white
         delegate = vc
-        self.vc = vc
+
         collectionView.dataSource = vc
         collectionView.delegate = vc
         collectionView.register(ParentActivityFolderCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityFolderCollectionViewCell.identifier)
         collectionView.register(ParentActivityListDetailCollectionViewCell.self, forCellWithReuseIdentifier: ParentActivityListDetailCollectionViewCell.identifier)
         addSubview(collectionView)
-        setupNavigationBar()
-        setupSearchBar()
+        setupNavigationBar(vc: vc)
+        setupSearchBar(vc: vc)
         setupConstraints()
         
     }
     
-    private func setupNavigationBar() {
-        
+    private func setupNavigationBar(vc: ParentActivityListViewController) {
         vc.navigationController?.navigationBar.barTintColor = Colors.Neutral.white
-        //Title Navbar
         vc.title = Strings.parentActivityListTitle
         vc.navigationController?.navigationBar.prefersLargeTitles = true
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
         vc.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    private func setupSearchBar() {
+    private func setupSearchBar(vc: ParentActivityListViewController) {
         vc.navigationItem.searchController = searchController
         SearchControllerTemplate(searchController: searchController)
         searchController.searchResultsUpdater = vc
-        searchController.searchBar.delegate = vc
+        searchController.delegate = vc
         if #available(iOS 16, *){
             vc.navigationItem.preferredSearchBarPlacement = .stacked
         }

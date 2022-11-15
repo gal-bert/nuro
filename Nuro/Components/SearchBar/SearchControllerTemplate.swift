@@ -30,8 +30,6 @@ class SearchControllerTemplate {
     }
     
     func setupSearchController(searchController: UISearchController) {
-        
-//        let searchController = UISearchController(searchResultsController: nil)
         let size = CGSize(width: searchController.searchBar.frame.size.width-12, height: searchController.searchBar.frame.size.height-12)
         let bgImageSearchBar = createWhiteBG(size)!
         let imageWithCorner = bgImageSearchBar.createImageWithRoundBorder(cornerRadius: 10)!
@@ -42,9 +40,6 @@ class SearchControllerTemplate {
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.searchBarStyle = UISearchBar.Style.minimal
-//        vc.navigationItem.searchController = self
-//        vc.navigationItem.hidesSearchBarWhenScrolling = false
-//        self.searchResultsUpdater = self
     }
 }
 

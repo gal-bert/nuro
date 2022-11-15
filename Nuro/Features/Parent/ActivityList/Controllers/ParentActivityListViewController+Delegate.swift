@@ -13,7 +13,7 @@ extension ParentActivityListViewController: ParentActivityListDelegate {
     }
 }
 
-extension ParentActivityListViewController: UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate{
+extension ParentActivityListViewController: UISearchResultsUpdating, UISearchControllerDelegate{
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = parentActivityListView.searchController.searchBar.text
         viewModel.filteredActivities = viewModel.activityList.filter {
@@ -27,38 +27,10 @@ extension ParentActivityListViewController: UISearchResultsUpdating, UISearchBar
         }
         parentActivityListView.collectionView.reloadData()
     }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        let searchText = parentActivityListView.searchController.searchBar.text
-//        print("Punya finn: \(text)")
-        print(parentActivityListView.searchController.isActive)
-//        filtered(searchText)
+    func didDismissSearchController(_ searchController: UISearchController) {
         parentActivityListView.collectionView.reloadData()
     }
-    
-    
 }
-
-//extension ParentActivityListViewController: SearchControllerDelegate {
-//    func filtered(searchText: String) {
-//        viewModel.filteredActivities = viewModel.activityList.filter {
-//            if(searchText != ""){
-//                let searchTextMatch = $0.activityName?.lowercased().contains(searchText.lowercased())
-//                return searchTextMatch ?? false
-//            }
-//            else{
-//                return true
-//            }
-//        }
-//        parentActivityListView.collectionView.reloadData()
-//    }
-//
-//    func getResult(text: String) {
-//        print("Punya finn: \(text)")
-//        print(parentActivityListView.searchController.isActive)
-//        filtered(searchText: text)
-//        parentActivityListView.collectionView.reloadData()
-//    }
-//}
 
 extension ParentActivityListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
