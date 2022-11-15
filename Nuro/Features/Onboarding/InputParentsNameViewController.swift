@@ -16,6 +16,22 @@ class InputParentsNameViewController: UIViewController {
         view.alignment = .center
         return view
     }()
+
+    lazy var childStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.alignment = .center
+        view.spacing = 5
+        return view
+    }()
+
+    lazy var subChildStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.alignment = .center
+        view.spacing = 15
+        return view
+    }()
     
     lazy var imageView: UIImageView = {
         let view = UIImageView()
@@ -79,16 +95,21 @@ class InputParentsNameViewController: UIViewController {
         view.backgroundColor = Colors.Brand.blueViolet
         view.addSubview(stackView)
         stackView.addArrangedSubview(imageView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(subtitleLabel)
-        stackView.addArrangedSubview(textField)
-        stackView.addArrangedSubview(divider)
-        stackView.addArrangedSubview(noticeLabel)
+        stackView.addArrangedSubview(childStackView)
+        stackView.addArrangedSubview(subChildStackView)
+
+        childStackView.addArrangedSubview(titleLabel)
+        childStackView.addArrangedSubview(subtitleLabel)
+
+        subChildStackView.addArrangedSubview(textField)
+        subChildStackView.addArrangedSubview(divider)
+        subChildStackView.addArrangedSubview(noticeLabel)
+
         view.addSubview(pageControl)
         
-        textField.becomeFirstResponder()
-        
         pageControl.pageIndicator.text = "2/5"
+
+        textField.becomeFirstResponder()
 
         pageControl.skipButton.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
         pageControl.nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
@@ -103,9 +124,11 @@ class InputParentsNameViewController: UIViewController {
     }
 
     @objc func nextAction() {
-        
-        UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.parentsName)
-        
+
+        if textField.text != "" {
+            UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.parentsName)
+        }
+
         let dest = InputKidsNameViewController()
         dest.modalPresentationStyle = .fullScreen
         Transition.animateTransition(vc: self)

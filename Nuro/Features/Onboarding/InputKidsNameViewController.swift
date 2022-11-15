@@ -16,6 +16,22 @@ class InputKidsNameViewController: UIViewController {
         view.alignment = .center
         return view
     }()
+
+    lazy var childStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.alignment = .center
+        view.spacing = 5
+        return view
+    }()
+
+    lazy var subChildStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.alignment = .center
+        view.spacing = 15
+        return view
+    }()
     
     lazy var imageView: UIImageView = {
         let view = UIImageView()
@@ -48,7 +64,7 @@ class InputKidsNameViewController: UIViewController {
         view.layer.borderColor = Colors.Brand.jasmine.cgColor
         view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)
         view.attributedPlaceholder = NSAttributedString(
-            string: "Nama anak", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)!]
+            string: "Nama anak anda", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)!]
         )
         view.tintColor = Colors.Neutral.white
         view.textColor = Colors.Neutral.white
@@ -79,14 +95,17 @@ class InputKidsNameViewController: UIViewController {
         view.backgroundColor = Colors.Brand.blueViolet
         view.addSubview(stackView)
         stackView.addArrangedSubview(imageView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(subtitleLabel)
-        stackView.addArrangedSubview(textField)
-        stackView.addArrangedSubview(divider)
-        stackView.addArrangedSubview(noticeLabel)
+        stackView.addArrangedSubview(childStackView)
+        stackView.addArrangedSubview(subChildStackView)
+
+        childStackView.addArrangedSubview(titleLabel)
+        childStackView.addArrangedSubview(subtitleLabel)
+
+        subChildStackView.addArrangedSubview(textField)
+        subChildStackView.addArrangedSubview(divider)
+        subChildStackView.addArrangedSubview(noticeLabel)
+
         view.addSubview(pageControl)
-        
-        textField.becomeFirstResponder()
         
         pageControl.pageIndicator.text = "3/5"
 
@@ -103,9 +122,11 @@ class InputKidsNameViewController: UIViewController {
     }
 
     @objc func nextAction() {
-        
-        UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.parentsName)
-        
+
+        if textField.text != "" {
+            UserDefaults.standard.set(textField.text, forKey: UserDefaultsHelper.Keys.parentsName)
+        }
+
         let dest = WelcomeViewController()
         dest.modalPresentationStyle = .fullScreen
         Transition.animateTransition(vc: self, transitionType: .push, transitionSubtype: .fromRight)
