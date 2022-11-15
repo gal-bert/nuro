@@ -106,6 +106,7 @@
 		3FBF126A28FEC61400CCC850 /* HeaderTimeframeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */; };
 		3FE992D728F43D820013E78B /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D628F43D820013E78B /* SidebarViewController.swift */; };
 		3FE992D928F43DCC0013E78B /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE992D828F43DCC0013E78B /* TabBarItem.swift */; };
+		3FF278F329210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF278F229210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift */; };
 		4A24DA0E2913718B0078095E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA0D2913718B0078095E /* SettingView.swift */; };
 		4A24DA102913719D0078095E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA0F2913719D0078095E /* SettingViewModel.swift */; };
 		4A24DA12291371E60078095E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24DA11291371E60078095E /* SettingViewController.swift */; };
@@ -314,6 +315,7 @@
 		3FBF126928FEC61400CCC850 /* HeaderTimeframeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTimeframeSection.swift; sourceTree = "<group>"; };
 		3FE992D628F43D820013E78B /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		3FE992D828F43DCC0013E78B /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		3FF278F229210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedAccessPopOverViewController.swift; sourceTree = "<group>"; };
 		4A24DA0D2913718B0078095E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		4A24DA0F2913719D0078095E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		4A24DA11291371E60078095E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 		0CA82E0D28EC6F2E00D811A6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3FF278F1292109B900AD90F6 /* Popovers */,
 				4A24DA09291366E90078095E /* Setting */,
 				0CA82E1028EC701900D811A6 /* Parent */,
 				0CA82E1328EC702D00D811A6 /* Child */,
@@ -1116,6 +1119,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3FF278F1292109B900AD90F6 /* Popovers */ = {
+			isa = PBXGroup;
+			children = (
+				3FF278F229210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift */,
+			);
+			path = Popovers;
+			sourceTree = "<group>";
+		};
 		4A24DA09291366E90078095E /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -1633,6 +1644,7 @@
 				0CAFDA5528FE58D60035F252 /* ParentTodayActivityEditOrderViewController.swift in Sources */,
 				5FB15D8828F7C944003822F9 /* RoutineHeaderLocalRepository.swift in Sources */,
 				0C5855D829100550004D4DDD /* SelectImageSelector.swift in Sources */,
+				3FF278F329210A5D00AD90F6 /* GuidedAccessPopOverViewController.swift in Sources */,
 				0CD4D51128ED2819000B86FD /* ParentActivityListViewController.swift in Sources */,
 				5F563D2128F61424003748D7 /* ActivityLocalRepository.swift in Sources */,
 				0CA82E2628EC76D000D811A6 /* Strings.swift in Sources */,
