@@ -14,7 +14,6 @@ class ParentActivityListDetailView: UIView {
     let editButton = SmallCapsuleButton(title: "Edit")
     
     var delegate: ParentActivityListDetailDelegate!
-//    var vc: ParentActivityListDetailViewController!
     var searchDelegate: SearchControllerDelegate!
     
     let searchController = UISearchController()

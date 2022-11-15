@@ -33,28 +33,20 @@ class AddActivityView: UIView {
         layout.scrollDirection = .vertical
         return view
     }()
-    
-//    let searchController = SearchControllerTemplate()
 
     func setup(vc: AddActivityViewController) {
         backgroundColor = .white
-//        searchController.delegate = self
         delegate = vc
         
         collectionView.delegate = vc
         collectionView.dataSource = vc
         collectionView.register(AddActivityButtonCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityButtonCollectionViewCell.identifier)
         collectionView.register(AddActivityContentCollectionViewCell.self, forCellWithReuseIdentifier: AddActivityContentCollectionViewCell.identifier)
-
-        
         addMultipleSubviews(views: segmentedControl, collectionView)
-        
         segmentedControl.addTarget(self, action: #selector(selectedSegmentChanged), for: .valueChanged)
-        
+
         setupNavigationBar(vc: vc)
         setupSearchBar(vc: vc)
-
-
         setupConstraints()
     }
     
