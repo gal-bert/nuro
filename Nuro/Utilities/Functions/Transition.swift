@@ -20,6 +20,14 @@ class Transition {
         transition.type = .fade
         vc.view.window?.layer.add(transition, forKey: nil)
     }
+
+    static func animateTransition(vc: UIViewController, transitionType: CATransitionType, transitionSubtype: CATransitionSubtype) {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.type = transitionType
+        transition.subtype = transitionSubtype
+        vc.view.window?.layer.add(transition, forKey: nil)
+    }
     
     static func smoothAnimationWhite(view: UIView, subviews: [UIView], bgColor: UIColor) {
         view.backgroundColor = .black
@@ -35,6 +43,20 @@ class Transition {
         UIView.animate(withDuration: 0.8, delay: 0.8) {
             for subview in subviews {
                 subview.alpha = 1
+            }
+        }
+    }
+
+    static func smoothAnimationPurple(subviews: [UIView]) {
+        for subview in subviews {
+            subview.alpha = 0
+        }
+
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { timer in
+            UIView.animate(withDuration: 1.0, delay: 0.0) {
+                for subview in subviews {
+                    subview.alpha = 1
+                }
             }
         }
     }
