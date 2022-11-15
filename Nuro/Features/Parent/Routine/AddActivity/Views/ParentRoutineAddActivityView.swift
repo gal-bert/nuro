@@ -36,6 +36,7 @@ class ParentRoutineAddActivityView: UIView {
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.tintColor = Colors.Neutral.bronze
+        view.image = UIImage(named: Icons.addActivity)
         return view
     }()
     
@@ -49,7 +50,6 @@ class ParentRoutineAddActivityView: UIView {
     
     func setup(vc: ParentRoutineAddActivityViewController) {
         backgroundColor = Colors.Neutral.white
-        iconChooseImageView.image = UIImage(systemName: Icons.photo)
         
         delegate = vc
         setupNavigationBar(vc: vc)
