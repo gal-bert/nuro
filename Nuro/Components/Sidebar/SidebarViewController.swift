@@ -8,9 +8,12 @@
 import UIKit
 import SnapKit
 import Combine
+import Instructions
 
 @available(iOS 14, *)
 class SidebarViewController: UIViewController {
+    
+    let coachMarksController = CoachMarksController()
     
     private enum SidebarItemType: Int {
         case header, expandableRow, row
@@ -65,7 +68,64 @@ class SidebarViewController: UIViewController {
         applyInitialSnapshot()
         
         collectionViewMain.selectItem(at: [0,1], animated: true, scrollPosition: .top)
+        
+        self.coachMarksController.dataSource = self
+        self.coachMarksController.overlay.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.7)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isWalkthroughRoutinesCompleted){
+            self.coachMarksController.start(in: .window(over: self))
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughRoutinesCompleted)
+        }
+    }
+    
+}
+
+extension SidebarViewController: CoachMarksControllerDataSource, CoachMarksControllerDelegate {
+    func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: Instructions.CoachMark) -> (bodyView: (UIView & Instructions.CoachMarkBodyView), arrowView: (UIView & Instructions.CoachMarkArrowView)?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(
+            withArrow: true,
+            arrowOrientation: coachMark.arrowOrientation
+        )
+        
+        switch index {
+            case 0:
+                coachViews.bodyView.hintLabel.text = "Buka halaman Penjadwalan untuk menambahkan aktivitas harian."
+                coachViews.bodyView.nextLabel.text = "Berikutnya"
+            case 1:
+                coachViews.bodyView.hintLabel.text = "Jika jadwal rutinitas telah selesai dibuat, buka halaman Rutinitas Anak."
+                coachViews.bodyView.nextLabel.text = "Berikutnya"
+            default:break
+
+        }
+
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    
+    func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkAt index: Int) -> Instructions.CoachMark {
+        
+        switch index {
+        case 0:
+            var coachMark = coachMarksController.helper.makeCoachMark(for: collectionViewMain.cellForItem(at: IndexPath(item: 2, section: 0)))
+            //coachMark.isUserInteractionEnabledInsideCutoutPath = true
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughRoutinesCompleted)
+            return coachMark
+        case 1:
+            var coachMark = coachMarksController.helper.makeCoachMark(for: collectionViewMain.cellForItem(at: IndexPath(item: 1, section: 1)))
+            //coachMark.isUserInteractionEnabledInsideCutoutPath = true
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughKidsModeCompleted)
+            return coachMark
+        default:
+            return coachMarksController.helper.makeCoachMark()
+        }
+
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: Instructions.CoachMarksController) -> Int {
+        return 2
+    }
+    
     
 }
 
@@ -149,6 +209,7 @@ extension SidebarViewController: UICollectionViewDelegate {
             let navCon = UINavigationController(rootViewController: ParentRoutineViewController())
             deselectSettingsCell()
             splitViewController?.setViewController(navCon, for: .secondary)
+//            coachMarksController.flow.showNext(numberOfCoachMarksToSkip: 2)
             
         case RowIdentifier.parentActivityList:
             let navCon = UINavigationController(rootViewController: ParentActivityListViewController())
@@ -313,3 +374,4 @@ extension SidebarViewController {
         dataSourceSetting.apply(settingsSnapshot(), to: .settingsSection, animatingDifferences: false)
     }
 }
+

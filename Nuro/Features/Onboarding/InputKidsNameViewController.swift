@@ -58,6 +58,10 @@ class InputKidsNameViewController: UIViewController {
         return view
     }()
     
+    lazy var emptyView: UIView = {
+        return UIView()
+    }()
+    
     lazy var textField: UITextField = {
         let view = UITextField()
         view.backgroundColor = .clear
@@ -96,8 +100,9 @@ class InputKidsNameViewController: UIViewController {
         view.addSubview(stackView)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(childStackView)
+        stackView.addArrangedSubview(emptyView)
         stackView.addArrangedSubview(subChildStackView)
-
+        
         childStackView.addArrangedSubview(titleLabel)
         childStackView.addArrangedSubview(subtitleLabel)
 
@@ -118,6 +123,9 @@ class InputKidsNameViewController: UIViewController {
     }
 
     @objc func skipAction() {
+        UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isFirstTime)
+        Seeder.shared.seedAll()
+        MirrorData.startMirror()
         let dest = Environment.showDoubleColumnSplitViewController()!
         dest.modalPresentationStyle = .fullScreen
         present(dest, animated: true)
@@ -156,6 +164,10 @@ class InputKidsNameViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-60)
             make.height.equalTo(64)
             make.left.right.equalTo(view.safeAreaLayoutGuide).inset(40)
+        }
+        
+        emptyView.snp.makeConstraints { make in
+            make.height.equalTo(8)
         }
 
     }

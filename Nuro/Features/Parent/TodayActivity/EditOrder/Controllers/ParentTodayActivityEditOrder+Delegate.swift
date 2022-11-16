@@ -51,9 +51,8 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari rutinitas ini?") {
+            let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(mirrorDetails[indexPath.row].activity?.activityName ?? "")\" dari rutinitas ini?") {
                 
-//                RoutineDetailLocalRepository.shared.delete(routineDetail: self.mirrorDetails[indexPath.row])
                 MirrorDetailLocalRepository.shared.delete(mirrorDetail: self.mirrorDetails[indexPath.row])
                 self.dismissViewController()
             }

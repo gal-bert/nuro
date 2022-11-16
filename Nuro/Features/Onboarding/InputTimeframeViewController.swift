@@ -62,7 +62,10 @@ class InputTimeframeViewController: UIViewController {
 
         pageControl.pageIndicator.text = "4/\(Strings.maxOnboardingPage)"
 
-        pageControl.skipButton.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
+        pageControl.skipButton.alpha = 0
+        let font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 32)
+        pageControl.nextButton.setAttributedTitle(NSAttributedString(string: "Selesai", attributes: [NSAttributedString.Key.font: font as Any, NSAttributedString.Key.foregroundColor: Colors.Brand.blueViolet]), for: .normal)
+        
         pageControl.nextButton.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
 
         setupConstraints()
@@ -70,15 +73,11 @@ class InputTimeframeViewController: UIViewController {
 
     }
 
-    @objc func skipAction() {
-        let dest = Environment.showDoubleColumnSplitViewController()!
-        dest.modalPresentationStyle = .fullScreen
-        present(dest, animated: true)
-    }
-
     @objc func nextAction() {
 
         UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isFirstTime)
+        Seeder.shared.seedAll()
+        MirrorData.startMirror()
 
         let dest = Environment.showDoubleColumnSplitViewController()!
         dest.modalPresentationStyle = .fullScreen

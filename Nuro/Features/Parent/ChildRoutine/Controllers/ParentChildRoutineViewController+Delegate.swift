@@ -25,6 +25,7 @@ extension ParentChildRoutineViewController: ParentChildRoutineDelegate {
         nav.modalTransitionStyle = .coverVertical
 
         self.present(nav, animated: true)
+//        coachMarksController.flow.showNext()
     }
     
     func hintPopover() {
