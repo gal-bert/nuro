@@ -2069,7 +2069,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
 				PRODUCT_NAME = Otin;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2105,7 +2105,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
 				PRODUCT_NAME = Otin;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
