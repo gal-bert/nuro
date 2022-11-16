@@ -40,7 +40,6 @@ class AddActivityRoutineTimeView: UIView {
     
     private func setupNavigationBar(vc: AddActivityRoutimeTimeViewController) {
         vc.title = "Waktu Rutinitas"
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(didFinishButtonClicked))
     }
     
     @objc func didFinishButtonClicked() {

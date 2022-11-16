@@ -40,7 +40,6 @@ class AddActivityRoutineDayView: UIView {
     
     private func setupNavigationBar(vc: AddActivityRoutineDayViewController) {
         vc.title = "Hari Rutinitas"
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(didFinishButtonClicked))
     }
     
     @objc func didFinishButtonClicked() {
