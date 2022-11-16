@@ -18,10 +18,12 @@ class ParentActivityListDetailView: UIView {
     
     let searchController = UISearchController()
     
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.contentInset = UIEdgeInsets(top: 0, left: 25, bottom: 80, right: 25)
         return view
     }()
     
@@ -47,11 +49,14 @@ class ParentActivityListDetailView: UIView {
         addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
         editButton.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
         
-        vc.navigationItem.rightBarButtonItems = [
+        
+        vc.navigationItem.setRightBarButtonItems([
             UIBarButtonItem(customView: addButton),
-            vc.editButtonItem
-            ]
+            UIBarButtonItem(customView: editButton)
+        ], animated: true)
+
         vc.navigationItem.hidesSearchBarWhenScrolling = false
+        
     }
     
     private func setupSearchBar(vc: ParentActivityListDetailViewController) {
@@ -72,12 +77,13 @@ class ParentActivityListDetailView: UIView {
     }
 
     @objc private func editButtonAction() {
+        delegate.toggleEditing()
     }
     
     private func setupConstraints() {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(23)
-            make.left.right.equalTo(self).inset(25)
+            make.left.right.equalTo(self)
             make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }

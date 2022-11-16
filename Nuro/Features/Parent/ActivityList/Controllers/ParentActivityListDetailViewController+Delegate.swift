@@ -8,6 +8,42 @@
 import UIKit
 
 extension ParentActivityListDetailViewController: ParentActivityListDetailDelegate {
+    func toggleEditing() {
+        if parentActivityListDetailView.collectionView.isEditing == true {
+            setEditing(false, animated: true)
+            parentActivityListDetailView.collectionView.isEditing = false
+            parentActivityListDetailView.editButton.setTitle("Edit", for: .normal)
+            parentActivityListDetailView.editButton.frame.size.width = 60
+
+            // Clear all animation
+            parentActivityListDetailView.collectionView.indexPathsForVisibleItems.forEach { (indexPath) in
+                let cell = parentActivityListDetailView.collectionView.cellForItem(at: indexPath) as! ParentActivityListDetailCollectionViewCell
+                cell.layer.removeAllAnimations()
+            }
+
+        } else {
+            setEditing(true, animated: true)
+
+            // Create wobble animation
+            let wobble = CAKeyframeAnimation(keyPath: "transform.rotation")
+            wobble.values = [0.0, -0.025, 0.0, 0.025, 0.0]
+            wobble.keyTimes = [0.0, 0.25, 0.5, 0.75, 1.0]
+            wobble.duration = 0.4
+            wobble.isAdditive = true
+            wobble.repeatCount = Float.greatestFiniteMagnitude
+
+            // add wobble animation to each collection view cell
+            parentActivityListDetailView.collectionView.indexPathsForVisibleItems.forEach { (indexPath) in
+                let cell = parentActivityListDetailView.collectionView.cellForItem(at: indexPath) as! ParentActivityListDetailCollectionViewCell
+                cell.layer.add(wobble, forKey: "wobble")
+            }
+
+            parentActivityListDetailView.collectionView.isEditing = true
+            parentActivityListDetailView.editButton.setTitle("Selesai", for: .normal)
+            parentActivityListDetailView.editButton.frame.size.width = 80
+        }
+    }
+
     func getCategory() -> Category {
         return viewModel.categorySelected ?? Category()
     }
@@ -94,7 +130,7 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
 extension ParentActivityListDetailViewController: DeleteDataCollectionProtocol {
     func deleteData(indx: Int) {
 
-        let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari Daftar Aktivitas?") {
+        let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(viewModel.filteredActivities[indx].activityName ?? "")\" dari rutinitas ini?") {
             ActivityLocalRepository.shared.delete(activity: self.viewModel.activityList[indx])
             self.viewModel.loadAllActivity()
             self.parentActivityListDetailView.collectionView.reloadData()

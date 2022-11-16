@@ -10,4 +10,5 @@ import UIKit
 protocol ParentActivityListDetailDelegate {
     func presentViewController(dest: UIViewController)
     func getCategory() -> Category
+    func toggleEditing()
 }

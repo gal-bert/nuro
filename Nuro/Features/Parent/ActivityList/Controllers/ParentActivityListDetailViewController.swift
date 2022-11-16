@@ -12,7 +12,6 @@ class ParentActivityListDetailViewController: UIViewController {
     let parentActivityListDetailView = ParentActivityListDetailView()
     let viewModel = ParentActivityListDetailViewModel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         parentActivityListDetailView.setup(vc: self)
@@ -31,4 +30,5 @@ class ParentActivityListDetailViewController: UIViewController {
             cell.isEditing = editing
         }
     }
+
 }
