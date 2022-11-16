@@ -12,9 +12,10 @@ class ChildStarterView: UIView {
     private lazy var greetingLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 64)
-        label.text = "Selamat \(Date().getTimeframe()), \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.kidsName)!)!"
+        label.text = "Selamat \(Date().getTimeframe())\n\(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.kidsName)!)!"
         label.textAlignment = .center
         label.textColor = Colors.Text.onyx
+        label.numberOfLines = 2
         return label
     }()
     
@@ -68,7 +69,9 @@ class ChildStarterView: UIView {
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(self).inset(64)
+            make.top.bottom.equalTo(self).inset(64)
+            make.left.equalTo(parentModeButton.snp.right)
+            make.right.equalTo(self).offset(-64 - 80)
         }
         
         timeImage.snp.makeConstraints { make in
