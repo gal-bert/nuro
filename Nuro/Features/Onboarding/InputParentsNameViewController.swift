@@ -68,7 +68,7 @@ class InputParentsNameViewController: UIViewController {
         view.layer.borderColor = Colors.Brand.jasmine.cgColor
         view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)
         view.attributedPlaceholder = NSAttributedString(
-            string: "Nama anak anda", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)!]
+            string: "Mama, Papa, ...", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)!]
         )
         view.tintColor = Colors.Neutral.white
         view.textColor = Colors.Neutral.white
