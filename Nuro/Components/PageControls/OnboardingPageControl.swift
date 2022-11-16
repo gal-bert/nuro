@@ -22,7 +22,7 @@ class OnboardingPageControl: UIView {
 	lazy var pageIndicator: UILabel = {
 		let view = UILabel()
 		view.text = "1/5"
-		view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 32)
+		view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)
 		view.textColor = Colors.Neutral.white
 		return view
 	}()

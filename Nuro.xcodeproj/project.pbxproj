@@ -88,6 +88,7 @@
 		0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21128F4874C00D91E79 /* TextAttachments.swift */; };
 		0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */; };
 		0CF582EC28F6969800C3D20D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0CF582EB28F6969800C3D20D /* SnapKit */; };
+		0CFBACB229249D36009A2E85 /* MirrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBACB129249D36009A2E85 /* MirrorData.swift */; };
 		3F06EDE328FD64EA003DD7C0 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */; };
 		3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */; };
 		3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */; };
@@ -309,6 +310,7 @@
 		0CF2C20F28F4630B00D91E79 /* Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
 		0CF2C21128F4874C00D91E79 /* TextAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachments.swift; sourceTree = "<group>"; };
 		0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		0CFBACB129249D36009A2E85 /* MirrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorData.swift; sourceTree = "<group>"; };
 		3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewController.swift; sourceTree = "<group>"; };
 		3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineView.swift; sourceTree = "<group>"; };
@@ -982,6 +984,7 @@
 				0C9EFA6B291541F700449EAD /* UserDefaults.swift */,
 				F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */,
 				3F925D352923629500CA8950 /* GuidedAcessLabelConfiguration.swift */,
+				0CFBACB129249D36009A2E85 /* MirrorData.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1803,6 +1806,7 @@
 				5F59FFA9290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift in Sources */,
 				0C1AF9412922477C0015E97B /* InputParentsNameViewController.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
+				0CFBACB229249D36009A2E85 /* MirrorData.swift in Sources */,
 				0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */,
 				3FBAB77229101ABD0066E04D /* AddActivityRoutineDayView.swift in Sources */,
 				5F02CB35290A1E0D0079FFC5 /* ChildPinUnlockViewController.swift in Sources */,

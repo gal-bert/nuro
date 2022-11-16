@@ -142,7 +142,7 @@ class ParentRoutineAddActivityView: UIView {
         }
         else {
             vc?.navigationItem.rightBarButtonItem?.isEnabled = false
-            addButton.setTitleColor(.gray, for: .normal)
+            addButton.setTitleColor(UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3), for: .normal)
         }
     }
 }

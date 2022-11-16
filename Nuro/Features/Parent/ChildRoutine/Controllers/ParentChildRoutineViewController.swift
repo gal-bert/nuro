@@ -21,6 +21,10 @@ class ParentChildRoutineViewController: UIViewController {
         viewModel.getTodaysRoutine()
         parentChildRoutineView.setup(vc: self)
         
+        self.coachMarksController.dataSource = self
+        self.coachMarksController.overlay.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.7)
+
+        
         if viewModel.todaysRoutines.count == 0 {
             parentChildRoutineView.emptyState.isHidden = false
             parentChildRoutineView.routineTableView.alpha = 0
@@ -39,7 +43,7 @@ class ParentChildRoutineViewController: UIViewController {
                 }
             }
         
-        self.coachMarksController.dataSource = self
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

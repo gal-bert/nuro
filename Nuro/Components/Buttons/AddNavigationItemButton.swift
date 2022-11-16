@@ -13,7 +13,8 @@ class AddNavigationItemButton: UIButton {
 
 	private func setupButton() {
 		setTitle("Tambah", for: .normal)
-		setTitleColor(.gray, for: .normal)
+        setTitleColor(UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3), for: .normal)
+        titleLabel?.font = .boldSystemFont(ofSize: 17)
 	}
 
 	required init?(coder: NSCoder) {
