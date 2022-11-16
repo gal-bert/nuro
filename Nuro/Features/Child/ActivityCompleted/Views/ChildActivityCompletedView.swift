@@ -62,6 +62,8 @@ class ChildActivityCompletedView: UIView {
     
     private func setupButton() {
         nextActivityButton.addTarget(self, action: #selector(nextActivity), for: .touchUpInside)
+        nextActivityButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
+        nextActivityButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
     }
     
     private func setupUI() {
@@ -90,9 +92,25 @@ class ChildActivityCompletedView: UIView {
             make.height.equalTo(ScreenSizes.halfScreenHeight / 4)
         }
     }
+
+    @objc func animateUp(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 1.0, scaleY: 1.0) {
+
+        }
+    }
+
+    @objc func animateDown(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 0.9, scaleY: 0.9, withAudio: true) {
+
+        }
+    }
     
     @objc func nextActivity() {
-        animationDelegate?.triggerAnimation()
-        delegate?.dismissViewController()
+
+        MicroInteractions.shrinkAndGrow(button: nextActivityButton, scaleX: 1.0, scaleY: 1.0) {
+            self.animationDelegate?.triggerAnimation()
+            self.delegate?.dismissViewController()
+        }
+
     }
 }

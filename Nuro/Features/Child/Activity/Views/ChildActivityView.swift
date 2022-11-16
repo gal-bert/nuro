@@ -47,6 +47,8 @@ class ChildActivityView: UIView {
     
     private func setupButton() {
         doneButton.addTarget(self, action: #selector(activityCompleted), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
+        doneButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
     }
     
     private func setupUI() {
@@ -84,9 +86,23 @@ class ChildActivityView: UIView {
         activityImage.image = Document.getImageFromDocument(imageURL: model.activityImageURL)
         activityName.text = model.activityName
     }
+
+    @objc func animateUp(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 1.0, scaleY: 1.0) {
+
+        }
+    }
+
+    @objc func animateDown(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 0.9, scaleY: 0.9, withAudio: true) {
+
+        }
+    }
     
     @objc func activityCompleted() {
-        delegate?.toActivityCompleted()
+        MicroInteractions.shrinkAndGrow(button: doneButton, scaleX: 1.0, scaleY: 1.0) {
+            self.delegate?.toActivityCompleted()
+        }
     }
 
 }

@@ -52,9 +52,9 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(mirrorDetails[indexPath.row].activity?.activityName ?? "")\" dari rutinitas ini?") {
-                
                 MirrorDetailLocalRepository.shared.delete(mirrorDetail: self.mirrorDetails[indexPath.row])
-                self.dismissViewController()
+                self.mirrorDetails.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath] , with: .left)
             }
             present(alert, animated: true)
         }
@@ -75,11 +75,9 @@ extension ParentTodayActivityEditOrderViewController : UITableViewDragDelegate {
         mirrorDetails.remove(at: sourceIndexPath.row)
         mirrorDetails.insert(mv, at: destinationIndexPath.row)
         
-//        let routineDetailLocalRepo = RoutineDetailLocalRepository.shared
         let mirrorDetailLocalRepo = MirrorDetailLocalRepository.shared
         
         for (index, mirror) in mirrorDetails.enumerated() {
-//            routineDetailLocalRepo.updatePosition(routineDetail: routine, newPosition: index+1)
             mirrorDetailLocalRepo.updatePosition(mirrorDetail: mirror, newPosition: index+1)
         }
     }

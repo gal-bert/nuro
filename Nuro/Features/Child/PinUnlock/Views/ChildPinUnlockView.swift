@@ -51,7 +51,7 @@ class ChildPinUnlockView: UIView {
         return sv
     }()
     
-    private lazy var pinStackView: UIStackView = {
+    lazy var pinStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
         sv.spacing = 16
@@ -175,7 +175,14 @@ class ChildPinUnlockView: UIView {
     
     private func setupButton() {
         deletePinButton.addTarget(self, action: #selector(deleteClicked), for: .touchUpInside)
+        deletePinButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
+        deletePinButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
+
         cancelButton.addTarget(self, action: #selector(dismissPage), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
+        cancelButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
+
+
         hintButton.addTarget(self, action: #selector(viewHint), for: .touchUpInside)
     }
     
@@ -196,13 +203,29 @@ class ChildPinUnlockView: UIView {
             textField.text = ""
         }
     }
+
+    @objc func animateDown(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 0.9, scaleY: 0.9, withAudio: true, completion: {
+
+        })
+    }
+
+    @objc func animateUp(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 1.0, scaleY: 1.0, completion: {
+
+        })
+    }
     
     @objc func deleteClicked() {
-        delegate?.deleteLastPin()
+        MicroInteractions.shrinkAndGrow(button: deletePinButton, scaleX: 1.0, scaleY: 1.0, completion: {
+            self.delegate?.deleteLastPin()
+        })
     }
     
     @objc func dismissPage() {
-        delegate?.dismissPage()
+        MicroInteractions.shrinkAndGrow(button: cancelButton, scaleX: 1.0, scaleY: 1.0, completion: {
+            self.delegate?.dismissPage()
+        })
     }
     
     @objc func viewHint() {
