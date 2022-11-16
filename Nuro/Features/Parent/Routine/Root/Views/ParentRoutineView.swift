@@ -80,6 +80,7 @@ class ParentRoutineView: UIView {
     @objc private func didAddButtonClicked() {
         let dest = ParentRoutineAddActivityViewController()
         dest.reloadDelegate = vc
+        dest.selectedIndex = segmentedControl.selectedSegmentIndex
         delegate.presentViewController(dest: dest, modalHeight: ScreenSizes.modalHeight)
     }
     

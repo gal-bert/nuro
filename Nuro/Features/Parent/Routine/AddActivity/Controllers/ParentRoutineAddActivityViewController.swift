@@ -14,6 +14,7 @@ class ParentRoutineAddActivityViewController: UIViewController {
     var activity: Activity?
     var days: [Int]?
     var times: [Int]?
+    var selectedIndex: Int?
     var reloadDelegate: ReloadDelegate?
     
     let coachMarksController = CoachMarksController()
@@ -21,6 +22,9 @@ class ParentRoutineAddActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isModalInPresentation = true
+        
+        days = [selectedIndex ?? 1]
+        
         parentRoutineAddActivityView.setup(vc: self)
         coachMarksController.dataSource = self
         self.coachMarksController.overlay.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.7)

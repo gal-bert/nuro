@@ -48,8 +48,8 @@ class OnboardingPageControl: UIView {
 	}
 
 	@objc func skipAction() {
-		print("skip")
-	}
+
+    }
 
 	@objc func nextAction() {
 

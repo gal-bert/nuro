@@ -9,8 +9,8 @@ import UIKit
 
 class ParentRoutineAddActivityView: UIView {
     
-    let waktuRutinitasButton = CreateActivityButton(leftTitle: "Waktu Rutinitas", rightTitle: "Belum dipilih")
-    let hariRutinitasButton = CreateActivityButton(leftTitle: "Hari Rutinitas", rightTitle: "Belum dipilih")
+    var waktuRutinitasButton = CreateActivityButton(leftTitle: "Waktu Rutinitas", rightTitle: "Belum dipilih")
+    var hariRutinitasButton = CreateActivityButton(leftTitle: "Hari Rutinitas", rightTitle: "Belum dipilih")
     
     var vc: ParentRoutineAddActivityViewController?
     var delegate: ParentRoutineAddActivityDelegate!
@@ -64,6 +64,8 @@ class ParentRoutineAddActivityView: UIView {
         stackView.addArrangedSubview(selectImageLabel)
         addSubview(hariRutinitasButton)
         addSubview(waktuRutinitasButton)
+        
+        hariRutinitasButton.rightLabel.attributedText = AddActivityRoutineDayTimeConfiguration.getAttributedText(grayText: "", text: "\(DayToIdConverted.idToDay(days: vc.days!))")
         
         containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapChooseActivity)))
         waktuRutinitasButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapRoutineTime)))

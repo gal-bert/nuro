@@ -12,4 +12,5 @@ class SettingViewModel {
     func printText(text: String) {
         print("\(text)")
     }
+    
 }
