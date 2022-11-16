@@ -205,7 +205,7 @@ class ChildPinUnlockView: UIView {
     }
 
     @objc func animateDown(_ sender: UIButton) {
-        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 0.9, scaleY: 0.9, completion: {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 0.9, scaleY: 0.9, withAudio: true, completion: {
 
         })
     }

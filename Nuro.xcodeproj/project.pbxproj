@@ -196,6 +196,7 @@
 		5FEDEDFC28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDEDFB28ED426600FB8DF6 /* ChildActivityCollectionViewCell.swift */; };
 		5FF20C6228F8BF7900B15E86 /* RoutineHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6128F8BF7900B15E86 /* RoutineHeaderModel.swift */; };
 		5FF20C6428F8BF9E00B15E86 /* RoutineDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF20C6328F8BF9E00B15E86 /* RoutineDetailModel.swift */; };
+		F447E02694EDE8FB428DBCBE /* touch-sound-cut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F447EB99E4EE9B550F3387BD /* touch-sound-cut.mp3 */; };
 		F447E07E08AC1EC550CBDDBB /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E21C380F7C1DE91CFB93 /* SkipButton.swift */; };
 		F447E0F1924FBD2877765D86 /* MirrorDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */; };
 		F447E3A6FA914DFD8A037BA7 /* MirrorHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */; };
@@ -427,6 +428,7 @@
 		F447E69E5E06384C6DBF1DEB /* NextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		F447E6F8738BDE0389F4DE87 /* AddNavigationItemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNavigationItemButton.swift; sourceTree = "<group>"; };
 		F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorHeaderLocalRepository.swift; sourceTree = "<group>"; };
+		F447EB99E4EE9B550F3387BD /* touch-sound-cut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "touch-sound-cut.mp3"; sourceTree = "<group>"; };
 		F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorDetailLocalRepository.swift; sourceTree = "<group>"; };
 		F447ED560BFF2A649931EB34 /* MicroInteractions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicroInteractions.swift; sourceTree = "<group>"; };
 		F447ED7ED0BA2F543A1E0354 /* OnboardingPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageControl.swift; sourceTree = "<group>"; };
@@ -804,6 +806,7 @@
 		0CA82E3428EC7B5400D811A6 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0CFBACB72924E4C3009A2E85 /* Sounds */,
 				0CD4D50B28ED223A000B86FD /* Fonts */,
 				0CA82E3528EC7B6600D811A6 /* Images */,
 			);
@@ -1017,6 +1020,14 @@
 				5F5A61002924A8FF00518C4B /* Pin.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		0CFBACB72924E4C3009A2E85 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F447EB99E4EE9B550F3387BD /* touch-sound-cut.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		3F0F385728ED33DF00C1EC68 /* Views */ = {
@@ -1648,6 +1659,7 @@
 				0C74A03828F4527A0081A069 /* VisbyRoundCF-ExtraLight.otf in Resources */,
 				0C79CEAD28EAB45200706D0A /* Assets.xcassets in Resources */,
 				0C74A03A28F4527A0081A069 /* VisbyRoundCF-Light.otf in Resources */,
+				F447E02694EDE8FB428DBCBE /* touch-sound-cut.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
