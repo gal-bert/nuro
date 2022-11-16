@@ -8,6 +8,20 @@
 import UIKit
 
 extension ParentActivityListDetailViewController: ParentActivityListDetailDelegate {
+    func toggleEditing() {
+        if parentActivityListDetailView.collectionView.isEditing == true {
+            setEditing(false, animated: true)
+            parentActivityListDetailView.collectionView.isEditing = false
+            parentActivityListDetailView.editButton.setTitle("Edit", for: .normal)
+            parentActivityListDetailView.editButton.frame.size.width = 60
+        } else {
+            setEditing(true, animated: true)
+            parentActivityListDetailView.collectionView.isEditing = true
+            parentActivityListDetailView.editButton.setTitle("Selesai", for: .normal)
+            parentActivityListDetailView.editButton.frame.size.width = 80
+        }
+    }
+
     func getCategory() -> Category {
         return viewModel.categorySelected ?? Category()
     }

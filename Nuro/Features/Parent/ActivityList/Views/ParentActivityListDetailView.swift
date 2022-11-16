@@ -11,7 +11,7 @@ import SnapKit
 class ParentActivityListDetailView: UIView {
     
     let addButton = AddButton()
-//    let editButton = SmallCapsuleButton(title: "Edit")
+    let editButton = SmallCapsuleButton(title: "Edit")
     
     var delegate: ParentActivityListDetailDelegate!
     var vc: ParentActivityListDetailViewController!
@@ -48,15 +48,14 @@ class ParentActivityListDetailView: UIView {
         vc.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Fonts.VisbyRoundCF.bold, size: 48) ?? UIFont.systemFont(ofSize: 48)]
         
         addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
-//        editButton.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
+        editButton.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
         
         
-        
-        vc.navigationItem.rightBarButtonItems = [
-                UIBarButtonItem(customView: addButton),
-                vc.editButtonItem
-//                UIBarButtonItem(customView: editButton)
-            ]
+        vc.navigationItem.setRightBarButtonItems([
+            UIBarButtonItem(customView: addButton),
+            UIBarButtonItem(customView: editButton)
+        ], animated: true)
+
         vc.navigationItem.hidesSearchBarWhenScrolling = false
         
     }
@@ -79,7 +78,7 @@ class ParentActivityListDetailView: UIView {
     }
 
     @objc private func editButtonAction() {
-        collectionView.isEditing.toggle()
+        delegate.toggleEditing()
     }
     
     private func setupConstraints() {
