@@ -60,8 +60,8 @@ class ParentRoutineAddActivityView: UIView {
         containerView.addSubview(stackView)
         stackView.addArrangedSubview(iconChooseImageView)
         stackView.addArrangedSubview(selectImageLabel)
-        addSubview(waktuRutinitasButton)
         addSubview(hariRutinitasButton)
+        addSubview(waktuRutinitasButton)
         
         containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapChooseActivity)))
         waktuRutinitasButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapRoutineTime)))
@@ -121,12 +121,12 @@ class ParentRoutineAddActivityView: UIView {
             make.width.equalTo(ScreenSizes.modalWidth * 0.2)
             make.height.equalTo(ScreenSizes.modalHeight * 0.25)
         }
-        waktuRutinitasButton.snp.makeConstraints { make in
+        hariRutinitasButton.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(40)
         }
-        hariRutinitasButton.snp.makeConstraints { make in
-            make.top.equalTo(waktuRutinitasButton.snp.bottom).offset(10)
+        waktuRutinitasButton.snp.makeConstraints { make in
+            make.top.equalTo(hariRutinitasButton.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(40)
         }
     }
