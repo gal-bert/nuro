@@ -113,7 +113,7 @@ extension ParentActivityListDetailViewController: UICollectionViewDelegate, UICo
 extension ParentActivityListDetailViewController: DeleteDataCollectionProtocol {
     func deleteData(indx: Int) {
 
-        let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus { } dari Daftar Aktivitas?") {
+        let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(viewModel.filteredActivities[indx].activityName ?? "")\" dari rutinitas ini?") {
             ActivityLocalRepository.shared.delete(activity: self.viewModel.activityList[indx])
             self.viewModel.loadAllActivity()
             self.parentActivityListDetailView.collectionView.reloadData()
