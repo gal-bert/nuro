@@ -105,6 +105,7 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
             let alert = Alert.destructiveAlert(title: "", message: "Apakah anda ingin menghapus \"\(viewModel.getActivityNameFromCell(section: indexPath.section, row: indexPath.row))\" dari rutinitas ini?") {
                 RoutineDetailLocalRepository.shared.delete(routineDetail: self.viewModel.getRoutineDetail(section: indexPath.section, row: indexPath.row))
                 self.viewModel.loadActivities(dayId: self.parentRoutineView.segmentedControl.selectedSegmentIndex+1)
+                self.parentRoutineView.tableView.deleteRows(at: [indexPath], with: .left)
                 self.parentRoutineView.tableView.reloadData()
             }
             present(alert, animated: true)
