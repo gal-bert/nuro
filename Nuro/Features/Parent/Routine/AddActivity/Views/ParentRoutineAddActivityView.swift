@@ -9,8 +9,8 @@ import UIKit
 
 class ParentRoutineAddActivityView: UIView {
     
-    let waktuRutinitasButton = CreateActivityButton(leftTitle: "Waktu Rutinitas", rightTitle: "")
-    let hariRutinitasButton = CreateActivityButton(leftTitle: "Hari Rutinitas", rightTitle: "")
+    let waktuRutinitasButton = CreateActivityButton(leftTitle: "Waktu Rutinitas", rightTitle: "Belum dipilih")
+    let hariRutinitasButton = CreateActivityButton(leftTitle: "Hari Rutinitas", rightTitle: "Belum dipilih")
     
     var vc: ParentRoutineAddActivityViewController?
     var delegate: ParentRoutineAddActivityDelegate!
@@ -78,14 +78,14 @@ class ParentRoutineAddActivityView: UIView {
     
     @objc private func didTapRoutineTime(_ gesture: UITapGestureRecognizer) {
         let dest = AddActivityRoutimeTimeViewController()
-        dest.addActivityRoutineTimeView.delegateData = vc
+        dest.delegateData = vc
         dest.addActivityRoutineTimeViewModel.timeSelected = vc?.times ?? []
         delegate.pushViewController(dest: dest)
     }
 
     @objc private func didTapRoutineDay(_ gesture: UITapGestureRecognizer) {
         let dest = AddActivityRoutineDayViewController()
-        dest.addActivityRoutineDayView.delegateData = vc
+        dest.delegateData = vc
         dest.addActivityRoutineDayViewModel.daysSelected = vc?.days ?? []
         delegate.pushViewController(dest: dest)
     }
@@ -132,7 +132,7 @@ class ParentRoutineAddActivityView: UIView {
     }
     
     func validateEmptyField() {
-        if waktuRutinitasButton.rightLabel.text != "" && hariRutinitasButton.rightLabel.text != "" && vc?.activity != nil {
+        if vc?.days?.isEmpty == false && vc?.times?.isEmpty == false && vc?.activity != nil {
             vc?.navigationItem.rightBarButtonItem?.isEnabled = true
         }
         else {

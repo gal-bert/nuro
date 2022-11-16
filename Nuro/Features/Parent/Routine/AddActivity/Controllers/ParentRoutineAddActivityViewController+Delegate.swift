@@ -44,7 +44,12 @@ extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityTimeDa
         var timesSorted = times
         timesSorted = timesSorted.sorted()
         self.times = timesSorted
-        parentRoutineAddActivityView.waktuRutinitasButton.rightLabel.text = TimeToIdConverter.idToTime(times: timesSorted)
+        
+        if times.isEmpty {
+            parentRoutineAddActivityView.waktuRutinitasButton.rightLabel.attributedText = AddActivityRoutineDayTimeConfiguration.getAttributedText(grayText: "Belum dipilih", text: "")
+        } else {
+            parentRoutineAddActivityView.waktuRutinitasButton.rightLabel.attributedText = AddActivityRoutineDayTimeConfiguration.getAttributedText(grayText: "", text: "\(TimeToIdConverter.idToTime(times: timesSorted))")
+        }
         
         parentRoutineAddActivityView.validateEmptyField()
     }
@@ -53,7 +58,12 @@ extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityTimeDa
         var daysSorted = days
         daysSorted = daysSorted.sorted()
         self.days = daysSorted
-        parentRoutineAddActivityView.hariRutinitasButton.rightLabel.text = DayToIdConverted.idToDay(days: daysSorted)
+        
+        if days.isEmpty {
+            parentRoutineAddActivityView.hariRutinitasButton.rightLabel.attributedText = AddActivityRoutineDayTimeConfiguration.getAttributedText(grayText: "Belum dipilih", text: "")
+        } else {
+            parentRoutineAddActivityView.hariRutinitasButton.rightLabel.attributedText = AddActivityRoutineDayTimeConfiguration.getAttributedText(grayText: "", text: "\(DayToIdConverted.idToDay(days: daysSorted))")
+        }
         
         parentRoutineAddActivityView.validateEmptyField()
     }

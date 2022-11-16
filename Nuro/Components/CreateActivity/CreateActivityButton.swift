@@ -18,9 +18,7 @@ class CreateActivityButton: UIView {
     
     lazy var rightLabel: UILabel = {
         let view = UILabel()
-        view.textColor = Colors.Text.onyx
-        view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 24)
-        view.text = "Senin, Selasa, Rabu, Kamis, Jumat"
+        view.attributedText = AddActivityRoutineDayTimeConfiguration.getAttributedText(grayText: "Belum dipilih", text: "")
         return view
     }()
     
