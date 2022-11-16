@@ -20,7 +20,7 @@ extension ChildPinUnlockViewController: UICollectionViewDelegate {
             childPinUnlockView.updatePinTextField(count: viewModel.pin.count, newInput: indexPath.item + 1)
         }
         
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [self] timer in
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [self] timer in
             if viewModel.pin.count == 4 {
                 if viewModel.checkPin() {
                     UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isLocked)

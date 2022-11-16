@@ -14,9 +14,9 @@ class ChildPinUnlockViewModel {
     var dummyCorrectPin = [1, 1, 1, 1]
     
     func checkPin() -> Bool {
-        if pin == dummyCorrectPin {
+        let pinNumber = PinConverter.pinArrayToInt(pinArray: pin)
+        if pinNumber >= Pin.minimumYear, pinNumber <= Pin.maximumYear {
             pin.removeAll()
-            
             return true
         }
         else {

@@ -170,6 +170,8 @@
 		5F59FFAB29106AAE00AD05F4 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFAA29106AAE00AD05F4 /* Document.swift */; };
 		5F59FFAE291096B600AD05F4 /* ParentChildRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFAD291096B600AD05F4 /* ParentChildRoutineViewModel.swift */; };
 		5F59FFB02910996C00AD05F4 /* ChildStarterViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59FFAF2910996C00AD05F4 /* ChildStarterViewController+Delegate.swift */; };
+		5F5A61012924A8FF00518C4B /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A61002924A8FF00518C4B /* Pin.swift */; };
+		5F5A61032924A91300518C4B /* PinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A61022924A91300518C4B /* PinConverter.swift */; };
 		5F62868C291F469300784FC1 /* HintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F62868B291F469300784FC1 /* HintButton.swift */; };
 		5F7134A92914A26B00B9FF2E /* ChildRoutineCompletedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7134A82914A26B00B9FF2E /* ChildRoutineCompletedDelegate.swift */; };
 		5F7134AB2914A31C00B9FF2E /* ChildRoutineCompletedViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7134AA2914A31C00B9FF2E /* ChildRoutineCompletedViewController+Delegate.swift */; };
@@ -393,6 +395,8 @@
 		5F59FFAA29106AAE00AD05F4 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		5F59FFAD291096B600AD05F4 /* ParentChildRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentChildRoutineViewModel.swift; sourceTree = "<group>"; };
 		5F59FFAF2910996C00AD05F4 /* ChildStarterViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildStarterViewController+Delegate.swift"; sourceTree = "<group>"; };
+		5F5A61002924A8FF00518C4B /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		5F5A61022924A91300518C4B /* PinConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinConverter.swift; sourceTree = "<group>"; };
 		5F62868B291F469300784FC1 /* HintButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintButton.swift; sourceTree = "<group>"; };
 		5F7134A82914A26B00B9FF2E /* ChildRoutineCompletedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRoutineCompletedDelegate.swift; sourceTree = "<group>"; };
 		5F7134AA2914A31C00B9FF2E /* ChildRoutineCompletedViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildRoutineCompletedViewController+Delegate.swift"; sourceTree = "<group>"; };
@@ -988,6 +992,7 @@
 				3F925D352923629500CA8950 /* GuidedAcessLabelConfiguration.swift */,
 				3F3A96A1292495E2007ADDA5 /* AddActivityRoutineDayTimeConfiguration.swift */,
 				0CFBACB129249D36009A2E85 /* MirrorData.swift */,
+				5F5A61022924A91300518C4B /* PinConverter.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1006,6 +1011,7 @@
 				0CF2C20F28F4630B00D91E79 /* Corners.swift */,
 				4AA00ACE29102973002CD604 /* ColorSet.swift */,
 				4AA00AD22910E855002CD604 /* Images.swift */,
+				5F5A61002924A8FF00518C4B /* Pin.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1684,6 +1690,7 @@
 				3F9664BE290EC6AA0056B6D6 /* AddActivityRoutineTimeView.swift in Sources */,
 				5F3198FB2906101900E7FBE1 /* ChildActivityCompletedViewController.swift in Sources */,
 				3F06EDE328FD64EA003DD7C0 /* ActivitiesTableViewCell.swift in Sources */,
+				5F5A61012924A8FF00518C4B /* Pin.swift in Sources */,
 				0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */,
 				3FBAB77829101B790066E04D /* AddActivityRoutineDayViewController+Delegate.swift in Sources */,
 				0C5855DA29101E0B004D4DDD /* CreateActivityDelegate.swift in Sources */,
@@ -1715,6 +1722,7 @@
 				5F2B8BF028EE4129000BA3F6 /* ChildRoutineViewController+Delegate.swift in Sources */,
 				3FBAB76C290F70390066E04D /* AddActivityRoutineTimeViewModel.swift in Sources */,
 				5F2B8BEE28EE40A4000BA3F6 /* ChildRoutineDelegate.swift in Sources */,
+				5F5A61032924A91300518C4B /* PinConverter.swift in Sources */,
 				0C556D0128EEB3EA005FCD73 /* ParentTodayActivityTableViewCell.swift in Sources */,
 				5F3198EF2905F2E000E7FBE1 /* ChildStarterView.swift in Sources */,
 				5FE0569728F324CC004A8CAA /* ScreenSizes.swift in Sources */,
