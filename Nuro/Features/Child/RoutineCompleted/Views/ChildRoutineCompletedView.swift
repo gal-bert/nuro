@@ -72,7 +72,7 @@ class ChildRoutineCompletedView: UIView {
         parentModeButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
         parentModeButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
     }
-    
+
     private func setupUI() {
         backgroundColor = Colors.Neutral.white
         
