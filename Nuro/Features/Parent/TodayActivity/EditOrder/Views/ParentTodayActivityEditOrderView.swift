@@ -44,7 +44,8 @@ class ParentTodayActivityEditOrderView: UIView {
         vc.title = "Aktivitas Hari Ini - \(TimeToIdConverter.idToTime(times: [timeFrame]))"
         
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Selesai", style: .plain, target: self, action: #selector(dismissAction))
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(tambah))
+//        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tambah", style: .plain, target: self, action: #selector(tambah))
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(weight: .semibold)), style: .plain, target: self, action: #selector(tambah))
     }
     
     @objc func dismissAction() {

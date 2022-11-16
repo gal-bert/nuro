@@ -37,11 +37,22 @@ class ParentTodayActivityViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isLocked) {
+            var vcStack = [UIViewController]()
             let starterVC = ChildStarterViewController()
-            let routineVC = ChildRoutineViewController()
+            vcStack.append(starterVC)
+            
+            if MirrorDetailLocalRepository.shared.getMirrorDetails(timeID: Date().getTimeframeId()).count == 0 {
+                let routineCompletedVC = ChildRoutineCompletedViewController()
+                vcStack.append(routineCompletedVC)
+            }
+            else {
+                let routineVC = ChildRoutineViewController()
+                vcStack.append(routineVC)
+            }
+            
             let nav = UINavigationController()
             nav.modalPresentationStyle = .fullScreen
-            nav.setViewControllers([starterVC, routineVC], animated: false)
+            nav.setViewControllers(vcStack, animated: false)
             self.present(nav, animated: false)
         }
     }
