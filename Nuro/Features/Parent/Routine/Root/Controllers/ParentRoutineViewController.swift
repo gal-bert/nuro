@@ -26,7 +26,10 @@ class ParentRoutineViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.coachMarksController.start(in: .window(over: self))
+        if !UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isWalkthroughAddRoutinesCompleted){
+            self.coachMarksController.start(in: .window(over: self))
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughAddRoutinesCompleted)
+        }
     }
     
     override func loadView() {

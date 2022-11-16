@@ -74,7 +74,10 @@ class SidebarViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.coachMarksController.start(in: .window(over: self))
+        if !UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isWalkthroughRoutinesCompleted){
+            self.coachMarksController.start(in: .window(over: self))
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughRoutinesCompleted)
+        }
     }
     
 }

@@ -47,7 +47,12 @@ class ParentChildRoutineViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.coachMarksController.start(in: .window(over: self))
+        
+        if !UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isWalkthroughStartKidsModeCompleted){
+            self.coachMarksController.start(in: .window(over: self))
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughStartKidsModeCompleted)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

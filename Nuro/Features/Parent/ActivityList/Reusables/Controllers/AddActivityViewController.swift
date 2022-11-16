@@ -34,7 +34,10 @@ class AddActivityViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        coachMarksController.start(in: .window(over: self))
+        if !UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isWalkthroughCollectionViewActivitiesCompleted){
+            self.coachMarksController.start(in: .window(over: self))
+            UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughCollectionViewActivitiesCompleted)
+        }
     }
     
     override func loadView() {
