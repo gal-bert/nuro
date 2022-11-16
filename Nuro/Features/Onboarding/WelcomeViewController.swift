@@ -53,6 +53,9 @@ class WelcomeViewController: UIViewController {
     }
 
     @objc func skipAction() {
+        UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isFirstTime)
+        Seeder.shared.seedAll()
+        MirrorData.startMirror()
         let dest = Environment.showDoubleColumnSplitViewController()!
         dest.modalPresentationStyle = .fullScreen
         present(dest, animated: true)

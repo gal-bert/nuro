@@ -30,6 +30,7 @@
 		0C74A03928F4527A0081A069 /* VisbyRoundCF-DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02F28F4522F0081A069 /* VisbyRoundCF-DemiBold.otf */; };
 		0C74A03A28F4527A0081A069 /* VisbyRoundCF-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03028F4522F0081A069 /* VisbyRoundCF-Light.otf */; };
 		0C74A03B28F4527A0081A069 /* VisbyRoundCF-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03228F452300081A069 /* VisbyRoundCF-Bold.otf */; };
+		0C772F81292387C300D9E76B /* Instructions in Frameworks */ = {isa = PBXBuildFile; productRef = 0C772F80292387C300D9E76B /* Instructions */; };
 		0C79CEA128EAB45100706D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA028EAB45100706D0A /* AppDelegate.swift */; };
 		0C79CEA328EAB45100706D0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA228EAB45100706D0A /* SceneDelegate.swift */; };
 		0C79CEAB28EAB45100706D0A /* Nuro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C79CEA928EAB45100706D0A /* Nuro.xcdatamodeld */; };
@@ -87,6 +88,7 @@
 		0CF2C21228F4874C00D91E79 /* TextAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21128F4874C00D91E79 /* TextAttachments.swift */; };
 		0CF2C21428F52A6D00D91E79 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */; };
 		0CF582EC28F6969800C3D20D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0CF582EB28F6969800C3D20D /* SnapKit */; };
+		0CFBACB229249D36009A2E85 /* MirrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBACB129249D36009A2E85 /* MirrorData.swift */; };
 		3F06EDE328FD64EA003DD7C0 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */; };
 		3F0F385A28ED340300C1EC68 /* ParentRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */; };
 		3F0F385C28ED343F00C1EC68 /* ParentRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */; };
@@ -197,6 +199,7 @@
 		F447E4A59D90D2EC87EBD5CD /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E69E5E06384C6DBF1DEB /* NextButton.swift */; };
 		F447E6B1D46F125248E6161A /* OnboardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447ED7ED0BA2F543A1E0354 /* OnboardingPageControl.swift */; };
 		F447ECEE15D5FCCF1A51EF28 /* TimeframeImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */; };
+		F447EDA1AC1DD96757A70DA2 /* AddNavigationItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E6F8738BDE0389F4DE87 /* AddNavigationItemButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +310,7 @@
 		0CF2C20F28F4630B00D91E79 /* Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
 		0CF2C21128F4874C00D91E79 /* TextAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachments.swift; sourceTree = "<group>"; };
 		0CF2C21328F52A6D00D91E79 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		0CFBACB129249D36009A2E85 /* MirrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorData.swift; sourceTree = "<group>"; };
 		3F06EDE228FD64EA003DD7C0 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		3F0F385928ED340300C1EC68 /* ParentRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineViewController.swift; sourceTree = "<group>"; };
 		3F0F385B28ED343F00C1EC68 /* ParentRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRoutineView.swift; sourceTree = "<group>"; };
@@ -414,6 +418,7 @@
 		F447E21C380F7C1DE91CFB93 /* SkipButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
 		F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeframeImageHelper.swift; sourceTree = "<group>"; };
 		F447E69E5E06384C6DBF1DEB /* NextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		F447E6F8738BDE0389F4DE87 /* AddNavigationItemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNavigationItemButton.swift; sourceTree = "<group>"; };
 		F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorHeaderLocalRepository.swift; sourceTree = "<group>"; };
 		F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorDetailLocalRepository.swift; sourceTree = "<group>"; };
 		F447ED7ED0BA2F543A1E0354 /* OnboardingPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageControl.swift; sourceTree = "<group>"; };
@@ -428,6 +433,7 @@
 				0CF0668D29025AC900061701 /* RxDataSources in Frameworks */,
 				0CF0668B29025AC900061701 /* Differentiator in Frameworks */,
 				0CF582EC28F6969800C3D20D /* SnapKit in Frameworks */,
+				0C772F81292387C300D9E76B /* Instructions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +701,7 @@
 				3F925D33292355FD00CA8950 /* PopoverButton.swift */,
 				F447E69E5E06384C6DBF1DEB /* NextButton.swift */,
 				F447E21C380F7C1DE91CFB93 /* SkipButton.swift */,
+				F447E6F8738BDE0389F4DE87 /* AddNavigationItemButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -977,6 +984,7 @@
 				0C9EFA6B291541F700449EAD /* UserDefaults.swift */,
 				F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */,
 				3F925D352923629500CA8950 /* GuidedAcessLabelConfiguration.swift */,
+				0CFBACB129249D36009A2E85 /* MirrorData.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1507,6 +1515,7 @@
 				0CF0668729025A6E00061701 /* RxSwift */,
 				0CF0668A29025AC900061701 /* Differentiator */,
 				0CF0668C29025AC900061701 /* RxDataSources */,
+				0C772F80292387C300D9E76B /* Instructions */,
 			);
 			productName = Nuro;
 			productReference = 0C79CE9D28EAB45100706D0A /* Otin.app */;
@@ -1606,6 +1615,7 @@
 				0CF582EA28F6969800C3D20D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				0CF0668629025A6E00061701 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0CF0668929025AC900061701 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */,
 			);
 			productRefGroup = 0C79CE9E28EAB45100706D0A /* Products */;
 			projectDirPath = "";
@@ -1796,6 +1806,7 @@
 				5F59FFA9290F448B00AD05F4 /* ChildPinUnlockViewController+Delegate.swift in Sources */,
 				0C1AF9412922477C0015E97B /* InputParentsNameViewController.swift in Sources */,
 				0CCD3F7A28EEB27B0033D5A6 /* ParentActivityCollectionViewCell.swift in Sources */,
+				0CFBACB229249D36009A2E85 /* MirrorData.swift in Sources */,
 				0C935DE628F4550800C7BA3E /* Fonts.swift in Sources */,
 				3FBAB77229101ABD0066E04D /* AddActivityRoutineDayView.swift in Sources */,
 				5F02CB35290A1E0D0079FFC5 /* ChildPinUnlockViewController.swift in Sources */,
@@ -1838,6 +1849,7 @@
 				F447E6B1D46F125248E6161A /* OnboardingPageControl.swift in Sources */,
 				F447E4A59D90D2EC87EBD5CD /* NextButton.swift in Sources */,
 				F447E07E08AC1EC550CBDDBB /* SkipButton.swift in Sources */,
+				F447EDA1AC1DD96757A70DA2 /* AddNavigationItemButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2256,6 +2268,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ephread/Instructions";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		0CF0668629025A6E00061701 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -2283,6 +2303,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C772F80292387C300D9E76B /* Instructions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */;
+			productName = Instructions;
+		};
 		0CF0668729025A6E00061701 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0CF0668629025A6E00061701 /* XCRemoteSwiftPackageReference "RxSwift" */;

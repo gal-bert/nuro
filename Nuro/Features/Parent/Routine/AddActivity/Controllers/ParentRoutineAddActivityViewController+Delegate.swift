@@ -24,6 +24,7 @@ extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityDelega
     }
     
     func pushViewController(dest: UIViewController) {
+//        coachMarksController.flow.showNext()
         navigationController?.pushViewController(dest, animated: true)
     }
     
@@ -36,6 +37,7 @@ extension ParentRoutineAddActivityViewController: ParentRoutineAddActivityDelega
             }
         }
         dismissViewController()
+//        coachMarksController.flow.showNext()
     }
 }
 

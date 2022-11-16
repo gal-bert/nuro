@@ -42,7 +42,7 @@ class InputParentsNameViewController: UIViewController {
 
     lazy var titleLabel: UILabel = {
         let view = UILabel()
-        view.text = "Masukkan nama Anda"
+        view.text = "Masukkan panggilan Anda"
         view.font = UIFont(name: Fonts.VisbyRoundCF.bold, size: 64)
         view.textColor = Colors.Neutral.white
         view.textAlignment = .center
@@ -58,13 +58,17 @@ class InputParentsNameViewController: UIViewController {
         return view
     }()
     
+    lazy var emptyView: UIView = {
+        return UIView()
+    }()
+    
     lazy var textField: UITextField = {
         let view = UITextField()
         view.backgroundColor = .clear
         view.layer.borderColor = Colors.Brand.jasmine.cgColor
         view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)
         view.attributedPlaceholder = NSAttributedString(
-            string: "Nama anda", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)!]
+            string: "Nama anak anda", attributes: [.font: UIFont(name: Fonts.VisbyRoundCF.regular, size: 64)!]
         )
         view.tintColor = Colors.Neutral.white
         view.textColor = Colors.Neutral.white
@@ -96,8 +100,9 @@ class InputParentsNameViewController: UIViewController {
         view.addSubview(stackView)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(childStackView)
+        stackView.addArrangedSubview(emptyView)
         stackView.addArrangedSubview(subChildStackView)
-
+        
         childStackView.addArrangedSubview(titleLabel)
         childStackView.addArrangedSubview(subtitleLabel)
 
@@ -120,6 +125,9 @@ class InputParentsNameViewController: UIViewController {
     }
 
     @objc func skipAction() {
+        UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isFirstTime)
+        Seeder.shared.seedAll()
+        MirrorData.startMirror()
         let dest = Environment.showDoubleColumnSplitViewController()!
         dest.modalPresentationStyle = .fullScreen
         present(dest, animated: true)
@@ -138,6 +146,7 @@ class InputParentsNameViewController: UIViewController {
     }
 
     func setupConstraints() {
+        
         stackView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.right.equalTo(view.safeAreaLayoutGuide)
@@ -158,6 +167,10 @@ class InputParentsNameViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-60)
             make.height.equalTo(64)
             make.left.right.equalTo(view.safeAreaLayoutGuide).inset(40)
+        }
+        
+        emptyView.snp.makeConstraints { make in
+            make.height.equalTo(8)
         }
 
     }

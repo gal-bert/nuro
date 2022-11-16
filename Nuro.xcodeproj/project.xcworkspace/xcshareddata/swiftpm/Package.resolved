@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "instructions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ephread/Instructions",
+      "state" : {
+        "revision" : "c23d3e1ce6d5c877913f530c0b2bda07e2b017c3",
+        "version" : "2.2.0"
+      }
+    },
+    {
       "identity" : "rxdatasources",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RxSwiftCommunity/RxDataSources.git",
