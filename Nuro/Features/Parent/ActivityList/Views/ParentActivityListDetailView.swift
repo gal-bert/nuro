@@ -24,6 +24,7 @@ class ParentActivityListDetailView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.contentInset = UIEdgeInsets(top: 0, left: 25, bottom: 80, right: 25)
         return view
     }()
     
@@ -84,7 +85,7 @@ class ParentActivityListDetailView: UIView {
     private func setupConstraints() {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(23)
-            make.left.right.equalTo(self).inset(25)
+            make.left.right.equalTo(self)
             make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }

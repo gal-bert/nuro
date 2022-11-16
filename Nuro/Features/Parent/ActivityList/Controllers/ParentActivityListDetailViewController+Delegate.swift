@@ -14,8 +14,30 @@ extension ParentActivityListDetailViewController: ParentActivityListDetailDelega
             parentActivityListDetailView.collectionView.isEditing = false
             parentActivityListDetailView.editButton.setTitle("Edit", for: .normal)
             parentActivityListDetailView.editButton.frame.size.width = 60
+
+            // Clear all animation
+            parentActivityListDetailView.collectionView.indexPathsForVisibleItems.forEach { (indexPath) in
+                let cell = parentActivityListDetailView.collectionView.cellForItem(at: indexPath) as! ParentActivityListDetailCollectionViewCell
+                cell.layer.removeAllAnimations()
+            }
+
         } else {
             setEditing(true, animated: true)
+
+            // Create wobble animation
+            let wobble = CAKeyframeAnimation(keyPath: "transform.rotation")
+            wobble.values = [0.0, -0.025, 0.0, 0.025, 0.0]
+            wobble.keyTimes = [0.0, 0.25, 0.5, 0.75, 1.0]
+            wobble.duration = 0.4
+            wobble.isAdditive = true
+            wobble.repeatCount = Float.greatestFiniteMagnitude
+
+            // add wobble animation to each collection view cell
+            parentActivityListDetailView.collectionView.indexPathsForVisibleItems.forEach { (indexPath) in
+                let cell = parentActivityListDetailView.collectionView.cellForItem(at: indexPath) as! ParentActivityListDetailCollectionViewCell
+                cell.layer.add(wobble, forKey: "wobble")
+            }
+
             parentActivityListDetailView.collectionView.isEditing = true
             parentActivityListDetailView.editButton.setTitle("Selesai", for: .normal)
             parentActivityListDetailView.editButton.frame.size.width = 80
