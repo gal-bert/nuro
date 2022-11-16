@@ -199,6 +199,7 @@
 		F447E07E08AC1EC550CBDDBB /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E21C380F7C1DE91CFB93 /* SkipButton.swift */; };
 		F447E0F1924FBD2877765D86 /* MirrorDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */; };
 		F447E3A6FA914DFD8A037BA7 /* MirrorHeaderLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */; };
+		F447E4651B3D1A24EDCD0D77 /* MicroInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447ED560BFF2A649931EB34 /* MicroInteractions.swift */; };
 		F447E4A59D90D2EC87EBD5CD /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E69E5E06384C6DBF1DEB /* NextButton.swift */; };
 		F447E6B1D46F125248E6161A /* OnboardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447ED7ED0BA2F543A1E0354 /* OnboardingPageControl.swift */; };
 		F447ECEE15D5FCCF1A51EF28 /* TimeframeImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447E42903CF88BD4CBEEB2D /* TimeframeImageHelper.swift */; };
@@ -427,6 +428,7 @@
 		F447E6F8738BDE0389F4DE87 /* AddNavigationItemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNavigationItemButton.swift; sourceTree = "<group>"; };
 		F447EA10FBC2B265B7B04997 /* MirrorHeaderLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorHeaderLocalRepository.swift; sourceTree = "<group>"; };
 		F447EC2D7CEA57181940589C /* MirrorDetailLocalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirrorDetailLocalRepository.swift; sourceTree = "<group>"; };
+		F447ED560BFF2A649931EB34 /* MicroInteractions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicroInteractions.swift; sourceTree = "<group>"; };
 		F447ED7ED0BA2F543A1E0354 /* OnboardingPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -993,6 +995,7 @@
 				3F3A96A1292495E2007ADDA5 /* AddActivityRoutineDayTimeConfiguration.swift */,
 				0CFBACB129249D36009A2E85 /* MirrorData.swift */,
 				5F5A61022924A91300518C4B /* PinConverter.swift */,
+				F447ED560BFF2A649931EB34 /* MicroInteractions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1854,6 +1857,7 @@
 				F447E4A59D90D2EC87EBD5CD /* NextButton.swift in Sources */,
 				F447E07E08AC1EC550CBDDBB /* SkipButton.swift in Sources */,
 				F447EDA1AC1DD96757A70DA2 /* AddNavigationItemButton.swift in Sources */,
+				F447E4651B3D1A24EDCD0D77 /* MicroInteractions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

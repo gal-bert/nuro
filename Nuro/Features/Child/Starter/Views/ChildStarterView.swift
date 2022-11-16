@@ -43,7 +43,12 @@ class ChildStarterView: UIView {
     
     private func setupButton() {
         button.addTarget(self, action: #selector(viewRoutine), for: .touchUpInside)
+        button.addTarget(self, action: #selector(animateDown), for: .touchDown)
+        button.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
+
         parentModeButton.addTarget(self, action: #selector(backToParentsMode), for: .touchUpInside)
+        parentModeButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
+        parentModeButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
     }
     
     private func setupUI() {
@@ -83,12 +88,28 @@ class ChildStarterView: UIView {
             make.height.equalTo(ScreenSizes.halfScreenHeight / 4)
         }
     }
+
+    @objc func animateDown(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 0.9, scaleY: 0.9, completion: {
+
+        })
+    }
+
+    @objc func animateUp(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 1.0, scaleY: 1.0, completion: {
+
+        })
+    }
     
     @objc func viewRoutine() {
-        delegate?.toRoutineView()
+        MicroInteractions.shrinkAndGrow(button: button, scaleX: 1.0, scaleY: 1.0, completion: {
+            self.delegate?.toRoutineView()
+        })
     }
     
     @objc func backToParentsMode() {
-        delegate?.backToParentsMode()
+        MicroInteractions.shrinkAndGrow(button: button, scaleX: 1.0, scaleY: 1.0, completion: {
+            self.delegate?.backToParentsMode()
+        })
     }
 }

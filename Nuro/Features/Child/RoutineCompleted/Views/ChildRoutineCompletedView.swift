@@ -30,7 +30,7 @@ class ChildRoutineCompletedView: UIView {
     private lazy var instructionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 48)
-        label.text = "Kembalikan iPad ini ke Mom"
+        label.text = "Kembalikan iPad ini ke \(UserDefaults.standard.string(forKey: UserDefaultsHelper.Keys.parentsName) ?? "Orang Tua") ya!"
         label.textAlignment = .center
         label.textColor = Colors.Text.onyx
         return label
@@ -69,6 +69,8 @@ class ChildRoutineCompletedView: UIView {
     
     private func setupButton() {
         parentModeButton.addTarget(self, action: #selector(toPinUnlock), for: .touchUpInside)
+        parentModeButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
+        parentModeButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
     }
     
     private func setupUI() {
@@ -97,9 +99,23 @@ class ChildRoutineCompletedView: UIView {
             make.width.height.equalTo(80)
         }
     }
+
+    @objc func animateUp(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 1.0, scaleY: 1.0) {
+
+        }
+    }
+
+    @objc func animateDown(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 0.9, scaleY: 0.9) {
+
+        }
+    }
     
     @objc func toPinUnlock() {
-        delegate?.toParentMode()
+        MicroInteractions.shrinkAndGrow(button: parentModeButton, scaleX: 1.0, scaleY: 1.0) {
+            self.delegate?.toParentMode()
+        }
     }
 
     func getDelayedView() -> [UIView] {

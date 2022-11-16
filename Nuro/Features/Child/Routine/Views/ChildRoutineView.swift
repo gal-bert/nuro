@@ -134,11 +134,30 @@ class ChildRoutineView: UIView {
         startButton.isUserInteractionEnabled = true
         
         startButton.addTarget(self, action: #selector(startActivity), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
+        startButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
+
         parentButton.addTarget(self, action: #selector(toPinUnlock), for: .touchUpInside)
+        parentButton.addTarget(self, action: #selector(animateUp), for: .touchUpOutside)
+        parentButton.addTarget(self, action: #selector(animateDown), for: .touchDown)
+    }
+
+    @objc func animateUp(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 1.0, scaleY: 1.0) {
+
+        }
+    }
+
+    @objc func animateDown(_ sender: UIButton) {
+        MicroInteractions.shrinkAndGrow(button: sender, scaleX: 0.9, scaleY: 0.9) {
+
+        }
     }
     
     @objc func startActivity() {
-        delegate?.toActivityView()
+        MicroInteractions.shrinkAndGrow(button: startButton, scaleX: 1.0, scaleY: 1.0, completion: {
+            self.delegate?.toActivityView()
+        })
     }
     
     @objc func toPinUnlock() {
