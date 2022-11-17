@@ -83,7 +83,19 @@ extension ParentRoutineViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dest = ParentTodayActivityDetailViewController()
-        dest.detail = viewModel.morningActivities[indexPath.row]
+        
+        switch indexPath.section {
+        case 0:
+            dest.detail = viewModel.morningActivities[indexPath.row]
+        case 1:
+            dest.detail = viewModel.afternoonActivities[indexPath.row]
+        case 2:
+            dest.detail = viewModel.eveningActivities[indexPath.row]
+        default:
+            break
+        }
+        
+        
         dest.reloadDelegate = self
         presentViewController(dest: dest, modalHeight: ScreenSizes.smallModalHeight)
         tableView.deselectRow(at: indexPath, animated: true)
