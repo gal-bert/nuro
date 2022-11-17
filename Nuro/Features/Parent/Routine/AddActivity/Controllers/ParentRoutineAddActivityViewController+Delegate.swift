@@ -10,8 +10,11 @@ import UIKit
 extension ParentRoutineAddActivityViewController: AddActivityToRoutineDelegate {
     func addActivityToRoutine(activity: Activity) {
         self.activity = activity
-        parentRoutineAddActivityView.iconChooseImageView.image = Document.getImageFromDocument(imageURL: activity.activityImageURL)
-        parentRoutineAddActivityView.selectImageLabel.text = activity.activityName
+        parentRoutineAddActivityView.iconChooseImageView.isHidden = true
+        parentRoutineAddActivityView.choosenImageView.isHidden = false
+        parentRoutineAddActivityView.choosenImageView.image = Document.getImageFromDocument(imageURL: activity.activityImageURL)
+        parentRoutineAddActivityView.labelContainer.isHidden = false
+        parentRoutineAddActivityView.activityName.text = activity.activityName
         
         parentRoutineAddActivityView.validateEmptyField()
     }

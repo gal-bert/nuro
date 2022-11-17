@@ -21,6 +21,7 @@ class ParentRoutineAddActivityView: UIView {
         view.layer.cornerRadius = 20
         view.layer.borderWidth = 1
         view.layer.borderColor = Colors.Brand.jasmine.cgColor
+        view.clipsToBounds = true
         return view
     }()
     
@@ -28,16 +29,27 @@ class ParentRoutineAddActivityView: UIView {
         let view = UIStackView()
         view.axis = .vertical
         view.alignment = .center
+        view.distribution = .equalSpacing
+        view.clipsToBounds = true
         return view
     }()
     
     lazy var iconChooseImageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
+//        view.clipsToBounds = true
         view.tintColor = Colors.Neutral.bronze
         view.image = UIImage(named: Icons.addActivity)
         return view
+    }()
+    
+    lazy var choosenImageView: UIImageView = {
+       let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.image = UIImage()
+        view.isHidden = true
+        return view
+        
     }()
     
     lazy var selectImageLabel: UILabel = {
@@ -46,6 +58,22 @@ class ParentRoutineAddActivityView: UIView {
         view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 32)
         view.text = "Pilih Aktivitas"
         return view
+    }()
+    
+    lazy var labelContainer: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colors.Text.verseGreen.withAlphaComponent(0.8)
+        view.isHidden = true
+        return view
+    }()
+    
+    lazy var activityName: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: Fonts.VisbyRoundCF.heavy, size: 40)
+        label.text = "Activity Name"
+        label.textAlignment = .center
+        label.textColor = Colors.Neutral.white
+        return label
     }()
 
     lazy var addButton = AddNavigationItemButton()
@@ -61,9 +89,13 @@ class ParentRoutineAddActivityView: UIView {
         addSubview(containerView)
         containerView.addSubview(stackView)
         stackView.addArrangedSubview(iconChooseImageView)
+        stackView.addArrangedSubview(choosenImageView)
         stackView.addArrangedSubview(selectImageLabel)
+        containerView.addSubview(labelContainer)
+        labelContainer.addSubview(activityName)
         addSubview(hariRutinitasButton)
         addSubview(waktuRutinitasButton)
+        
         
         hariRutinitasButton.rightLabel.attributedText = AddActivityRoutineDayTimeConfiguration.getAttributedText(grayText: "", text: "\(DayToIdConverted.idToDay(days: vc.days!))")
         
@@ -115,9 +147,9 @@ class ParentRoutineAddActivityView: UIView {
     
     func setupConstraints() {
         containerView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(20)
+            make.top.equalTo(safeAreaLayoutGuide).offset(5)
             make.left.right.equalToSuperview().inset(40)
-            make.height.equalTo(ScreenSizes.modalHeight * 0.65)
+            make.height.equalTo(ScreenSizes.modalHeight * 0.725)
         }
         stackView.snp.makeConstraints { make in
             make.centerY.equalTo(containerView)
@@ -134,6 +166,20 @@ class ParentRoutineAddActivityView: UIView {
         waktuRutinitasButton.snp.makeConstraints { make in
             make.top.equalTo(hariRutinitasButton.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(40)
+        }
+        
+        iconChooseImageView.snp.makeConstraints { make in
+            make.width.equalTo(ScreenSizes.modalWidth * 0.6)
+            make.height.equalTo(ScreenSizes.modalHeight * 0.65)
+        }
+        
+        labelContainer.snp.makeConstraints { make in
+            make.height.equalTo(ScreenSizes.modalHeight / 6)
+            make.bottom.left.right.equalTo(containerView)
+        }
+        
+        activityName.snp.makeConstraints { make in
+            make.center.equalTo(labelContainer)
         }
     }
     
