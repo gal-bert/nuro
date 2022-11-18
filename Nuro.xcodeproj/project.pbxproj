@@ -2093,7 +2093,7 @@
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KR56UH6MNG;
+				DEVELOPMENT_TEAM = CL42QD4LKB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Otin;
@@ -2109,8 +2109,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = id.finn.NuroByPetak9;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
 				PRODUCT_NAME = Otin;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -2129,7 +2129,7 @@
 				CODE_SIGN_ENTITLEMENTS = Nuro/Nuro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KR56UH6MNG;
+				DEVELOPMENT_TEAM = CL42QD4LKB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuro/Base/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Otin;
@@ -2145,8 +2145,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = id.finn.NuroByPetak9;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = id.gregorius.NuroByPetak9;
 				PRODUCT_NAME = Otin;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
