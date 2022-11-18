@@ -19,7 +19,7 @@ class Document {
         let fileName = "\(Date.generateTimestampForFilename()).jpg"
         let url = Paths.documentPath.appendingPathComponent(fileName)
         if let image = image {
-            let imageData = image.jpegData(compressionQuality: 0.2)
+            let imageData = image.jpegData(compressionQuality: 1.0)
             do {
                 try imageData?.write(to: url)
             } catch {
