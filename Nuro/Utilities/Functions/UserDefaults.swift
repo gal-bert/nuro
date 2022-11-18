@@ -25,6 +25,7 @@ class UserDefaultsHelper {
         static let isWalkthroughAddActivityToRoutineCompleted = "IS_WALKTHROUGH_ADD_ACTIVITY_TO_ROUTINE_COMPLETED"
         static let isWalkthroughKidsModeCompleted = "IS_WALKTHROUGH_KIDS_MODE_COMPLETED"
         static let isWalkthroughStartKidsModeCompleted = "IS_WALKTHROUGH_START_KIDS_MODE_COMPLETED"
+        static let isGuidedAccessEnabled = "IS_GUIDED_ACCESS_ENABLED"
     }
     
     static func registerDefaultValue() -> Void {
@@ -40,11 +41,12 @@ class UserDefaultsHelper {
                 Keys.lastWeekdayId: -1,
                 Keys.isWalkthroughRoutinesCompleted: false,
                 Keys.isWalkthroughAddRoutinesCompleted: false,
-               Keys.isWalkthroughSelectActivitiesCompleted: false,
-               Keys.isWalkthroughCollectionViewActivitiesCompleted: false,
-               Keys.isWalkthroughAddActivityToRoutineCompleted: false,
-               Keys.isWalkthroughKidsModeCompleted: false,
-               Keys.isWalkthroughStartKidsModeCompleted: false
+                Keys.isWalkthroughSelectActivitiesCompleted: false,
+                Keys.isWalkthroughCollectionViewActivitiesCompleted: false,
+                Keys.isWalkthroughAddActivityToRoutineCompleted: false,
+                Keys.isWalkthroughKidsModeCompleted: false,
+                Keys.isWalkthroughStartKidsModeCompleted: false,
+                Keys.isGuidedAccessEnabled: false
             ]
         )
     }
