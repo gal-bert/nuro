@@ -11,9 +11,11 @@ extension ParentRoutineAddActivityViewController: AddActivityToRoutineDelegate {
     func addActivityToRoutine(activity: Activity) {
         self.activity = activity
         parentRoutineAddActivityView.iconChooseImageView.isHidden = true
+        parentRoutineAddActivityView.selectImageLabel.isHidden = true
         parentRoutineAddActivityView.choosenImageView.isHidden = false
-        parentRoutineAddActivityView.choosenImageView.image = Document.getImageFromDocument(imageURL: activity.activityImageURL)
         parentRoutineAddActivityView.labelContainer.isHidden = false
+        parentRoutineAddActivityView.containerView.backgroundColor = Colors.Neutral.white
+        parentRoutineAddActivityView.choosenImageView.image = Document.getImageFromDocument(imageURL: activity.activityImageURL)
         parentRoutineAddActivityView.activityName.text = activity.activityName
         
         parentRoutineAddActivityView.validateEmptyField()

@@ -168,13 +168,13 @@ class ParentRoutineAddActivityView: UIView {
             make.left.right.equalToSuperview().inset(40)
         }
         
-        iconChooseImageView.snp.makeConstraints { make in
+        choosenImageView.snp.makeConstraints { make in
             make.width.equalTo(ScreenSizes.modalWidth * 0.6)
             make.height.equalTo(ScreenSizes.modalHeight * 0.65)
         }
         
         labelContainer.snp.makeConstraints { make in
-            make.height.equalTo(ScreenSizes.modalHeight / 6)
+            make.height.equalTo(ScreenSizes.modalHeight / 8)
             make.bottom.left.right.equalTo(containerView)
         }
         
