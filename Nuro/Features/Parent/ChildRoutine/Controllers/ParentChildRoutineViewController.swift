@@ -17,13 +17,13 @@ class ParentChildRoutineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         viewModel.getTodaysRoutine()
         parentChildRoutineView.setup(vc: self)
         
         self.coachMarksController.dataSource = self
         self.coachMarksController.overlay.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.7)
-
+        
         
         if viewModel.todaysRoutines.count == 0 {
             parentChildRoutineView.emptyState.isHidden = false
@@ -32,17 +32,25 @@ class ParentChildRoutineViewController: UIViewController {
             parentChildRoutineView.startButton.backgroundColor = .gray
         }
         
+        if UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isGuidedAccessEnabled) {
+            self.parentChildRoutineView.guidedAccessLabel.attributedText = GuidedAccessLabelConfiguration.getAttributedText(boldText: "Guided Access", text: "sedang aktif")
+            
+        } else {
+            self.parentChildRoutineView.guidedAccessLabel.attributedText = GuidedAccessLabelConfiguration.getAttributedText(boldText: "Guided Access", text: "belum dinyalakan")
+        }
+        
         NotificationCenter.default.addObserver(
             forName: UIAccessibility.guidedAccessStatusDidChangeNotification,
             object: nil,
             queue: OperationQueue.main) { _ in
                 if UIAccessibility.isGuidedAccessEnabled {
+                    UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isGuidedAccessEnabled)
                     self.parentChildRoutineView.guidedAccessLabel.attributedText = GuidedAccessLabelConfiguration.getAttributedText(boldText: "Guided Access", text: "sedang aktif")
                 } else {
+                    UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isGuidedAccessEnabled)
                     self.parentChildRoutineView.guidedAccessLabel.attributedText = GuidedAccessLabelConfiguration.getAttributedText(boldText: "Guided Access", text: "belum dinyalakan")
                 }
             }
-        
         
     }
     

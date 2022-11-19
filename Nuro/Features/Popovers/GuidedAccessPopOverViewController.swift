@@ -33,10 +33,21 @@ class GuidedAccessPopOverViewController: UIViewController {
             return label
         }()
         
-        lazy var dismissButton = PopoverButton(title: "Buka Pengaturan")
+        lazy var dismissButton = PopoverButton()
         
-        dismissButton.addTarget(self, action: #selector(didTappedDismissButton), for: .touchUpInside)
-        
+        if UserDefaults.standard.bool(forKey: UserDefaultsHelper.Keys.isGuidedAccessEnabled) {
+            pageTitleLabel.text = "Guided Access - Aktif"
+            instructionLabel.text = "Guided access untuk memaksimalkan pengalaman anak menggunakan aplikasi sudah aktif"
+            dismissButton = PopoverButton(title: "Baik")
+            dismissButton.addTarget(self, action: #selector(didTappedDismissButton), for: .touchUpInside)
+            
+        } else {
+            pageTitleLabel.text = "Guided Access - Tidak Aktif"
+            instructionLabel.text = "Izinkan OTIN menyalakan guided access untuk memaksimalkan pengalaman anak menggunakan aplikasi."
+            dismissButton = PopoverButton(title: "Buka Pengaturan")
+            dismissButton.addTarget(self, action: #selector(didTappedOpenSettingsButton), for: .touchUpInside)
+        }
+
         view.addSubview(pageTitleLabel)
         view.addSubview(instructionLabel)
         view.addSubview(dismissButton)
@@ -56,9 +67,34 @@ class GuidedAccessPopOverViewController: UIViewController {
             make.width.equalTo(178)
             make.height.equalTo(36)
         }
+        
+        NotificationCenter.default.addObserver(
+            forName: UIAccessibility.guidedAccessStatusDidChangeNotification,
+            object: nil,
+            queue: OperationQueue.main) { _ in
+                if UIAccessibility.isGuidedAccessEnabled {
+                    UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isGuidedAccessEnabled)
+                    pageTitleLabel.text = "Guided Access - Aktif"
+                    instructionLabel.text = "Guided access untuk memaksimalkan pengalaman anak menggunakan aplikasi sudah aktif"
+                    let font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 16)
+                    dismissButton.setAttributedTitle(NSAttributedString(string: "Baik", attributes: [NSAttributedString.Key.font: font as Any, NSAttributedString.Key.foregroundColor: Colors.Neutral.white]), for: .normal)
+                    dismissButton.addTarget(self, action: #selector(self.didTappedDismissButton), for: .touchUpInside)
+                } else {
+                    UserDefaults.standard.set(false, forKey: UserDefaultsHelper.Keys.isGuidedAccessEnabled)
+                    pageTitleLabel.text = "Guided Access - Tidak Aktif"
+                    instructionLabel.text = "Izinkan OTIN menyalakan guided access untuk memaksimalkan pengalaman anak menggunakan aplikasi."
+                    let font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 16)
+                    dismissButton.setAttributedTitle(NSAttributedString(string: "Buka Pengaturan", attributes: [NSAttributedString.Key.font: font as Any, NSAttributedString.Key.foregroundColor: Colors.Neutral.white]), for: .normal)
+                    dismissButton.addTarget(self, action: #selector(self.didTappedOpenSettingsButton), for: .touchUpInside)
+                }
+            }
     }
     
     @objc func didTappedDismissButton() {
+        dismiss(animated: true)
+    }
+    
+    @objc func didTappedOpenSettingsButton() {
         let urlString = "App-prefs:ACCESSIBILITY&path=GUIDED_ACCESS_TITLE"
         let url = URL(string: urlString)!
         UIApplication.shared.open(url)
