@@ -47,6 +47,7 @@ class AddActivityView: UIView {
 
         setupNavigationBar(vc: vc)
         setupSearchBar(vc: vc)
+        vc.navigationItem.hidesSearchBarWhenScrolling = false
         setupConstraints()
     }
     
@@ -73,8 +74,8 @@ class AddActivityView: UIView {
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom).offset(20)
-            make.left.right.equalTo(safeAreaLayoutGuide).inset(15)
-            make.bottom.equalTo(safeAreaLayoutGuide)
+            make.left.right.equalTo(self).inset(15)
+            make.bottom.equalTo(self)
         }
     }
 
