@@ -10,11 +10,6 @@ import Lottie
 
 class Jumbotron: UIView {
     
-    private lazy var animationView: LottieAnimationView = {
-        let view = LottieAnimationView()
-        return view
-    }()
-    
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
@@ -73,15 +68,7 @@ class Jumbotron: UIView {
     
     func setup() {
         self.layer.cornerRadius = 20
-//        backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
-        
-        animationView = .init(name: "OtinJT-Day")
-        animationView.contentMode = .scaleToFill
-        animationView.loopMode = .loop
-        animationView.layer.cornerRadius = 20
-        animationView.play()
-        
-        addSubview(animationView)
+        backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
         
         addSubview(imageView)
         addSubview(parentStackView)
@@ -102,10 +89,6 @@ class Jumbotron: UIView {
     }
     
     private func setupConstraints() {
-        
-        animationView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(self)
-        }
         
         imageView.snp.makeConstraints { make in
             make.top.left.bottom.equalTo(self).inset(35)
