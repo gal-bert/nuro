@@ -18,13 +18,6 @@ class ParentTodayActivityDetailViewController: UIViewController {
         super.viewDidLoad()
         self.isModalInPresentation = true
         parentTodayActivityDetailView.setup(vc: self, detail: detail)
-        
-        if detail is MirrorDetail {
-            print("mirror")
-        }
-        else if detail is RoutineDetail {
-            print("routine")
-        }
     }
 
     override func loadView() {
