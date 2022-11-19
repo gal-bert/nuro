@@ -22,6 +22,8 @@
 		0C5855D829100550004D4DDD /* SelectImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855D729100550004D4DDD /* SelectImageSelector.swift */; };
 		0C5855DA29101E0B004D4DDD /* CreateActivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855D929101E0B004D4DDD /* CreateActivityDelegate.swift */; };
 		0C5855DC29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5855DB29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift */; };
+		0C71ACDA2929430F00ACC9A0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0C71ACD92929430F00ACC9A0 /* Lottie */; };
+		0C71ACDD292943C400ACC9A0 /* OtinJT-Day.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C71ACDC292943C400ACC9A0 /* OtinJT-Day.json */; };
 		0C74A03428F4527A0081A069 /* VisbyRoundCF-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03328F452300081A069 /* VisbyRoundCF-Medium.otf */; };
 		0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A03128F452300081A069 /* VisbyRoundCF-Regular.otf */; };
 		0C74A03628F4527A0081A069 /* VisbyRoundCF-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */; };
@@ -247,6 +249,7 @@
 		0C5855D729100550004D4DDD /* SelectImageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageSelector.swift; sourceTree = "<group>"; };
 		0C5855D929101E0B004D4DDD /* CreateActivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityDelegate.swift; sourceTree = "<group>"; };
 		0C5855DB29101FB6004D4DDD /* CreateActivityViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateActivityViewController+Delegate.swift"; sourceTree = "<group>"; };
+		0C71ACDC292943C400ACC9A0 /* OtinJT-Day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "OtinJT-Day.json"; sourceTree = "<group>"; };
 		0C74A02B28F437F90081A069 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C74A02C28F4522F0081A069 /* VisbyRoundCF-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraBold.otf"; sourceTree = "<group>"; };
 		0C74A02D28F4522F0081A069 /* VisbyRoundCF-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -444,6 +447,7 @@
 				0CF0668B29025AC900061701 /* Differentiator in Frameworks */,
 				0CF582EC28F6969800C3D20D /* SnapKit in Frameworks */,
 				0C772F81292387C300D9E76B /* Instructions in Frameworks */,
+				0C71ACDA2929430F00ACC9A0 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +492,14 @@
 				0C5855D929101E0B004D4DDD /* CreateActivityDelegate.swift */,
 			);
 			path = CreateActivity;
+			sourceTree = "<group>";
+		};
+		0C71ACDB292943B900ACC9A0 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				0C71ACDC292943C400ACC9A0 /* OtinJT-Day.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		0C79CE9428EAB45100706D0A = {
@@ -803,6 +815,7 @@
 		0CA82E3428EC7B5400D811A6 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0C71ACDB292943B900ACC9A0 /* Lottie */,
 				0CFBACB72924E4C3009A2E85 /* Sounds */,
 				0CD4D50B28ED223A000B86FD /* Fonts */,
 				0CA82E3528EC7B6600D811A6 /* Images */,
@@ -1571,6 +1584,7 @@
 				0CF0668A29025AC900061701 /* Differentiator */,
 				0CF0668C29025AC900061701 /* RxDataSources */,
 				0C772F80292387C300D9E76B /* Instructions */,
+				0C71ACD92929430F00ACC9A0 /* Lottie */,
 			);
 			productName = Nuro;
 			productReference = 0C79CE9D28EAB45100706D0A /* Otin.app */;
@@ -1671,6 +1685,7 @@
 				0CF0668629025A6E00061701 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0CF0668929025AC900061701 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */,
+				0C71ACD82929430F00ACC9A0 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 0C79CE9E28EAB45100706D0A /* Products */;
 			projectDirPath = "";
@@ -1691,6 +1706,7 @@
 			files = (
 				0C74A03B28F4527A0081A069 /* VisbyRoundCF-Bold.otf in Resources */,
 				0C74A03628F4527A0081A069 /* VisbyRoundCF-ExtraBold.otf in Resources */,
+				0C71ACDD292943C400ACC9A0 /* OtinJT-Day.json in Resources */,
 				0C74A03528F4527A0081A069 /* VisbyRoundCF-Regular.otf in Resources */,
 				0C79CEB028EAB45200706D0A /* LaunchScreen.storyboard in Resources */,
 				0C74A03928F4527A0081A069 /* VisbyRoundCF-DemiBold.otf in Resources */,
@@ -2328,6 +2344,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0C71ACD82929430F00ACC9A0 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ephread/Instructions";
@@ -2363,6 +2387,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C71ACD92929430F00ACC9A0 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C71ACD82929430F00ACC9A0 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		0C772F80292387C300D9E76B /* Instructions */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0C772F7F292387C300D9E76B /* XCRemoteSwiftPackageReference "Instructions" */;

@@ -6,13 +6,21 @@
 //
 
 import UIKit
+import Lottie
 
 class Jumbotron: UIView {
+    
+    private lazy var animationView: LottieAnimationView = {
+        let view = LottieAnimationView()
+        return view
+    }()
     
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
+        view.frame = CGRect(x: self.frame.width / 2 - 125, y: self.frame.height / 2 - 125, width: 250, height: 250)
+
         return view
     }()
     
@@ -65,9 +73,17 @@ class Jumbotron: UIView {
     
     func setup() {
         self.layer.cornerRadius = 20
-        backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
-        addSubview(imageView)
+//        backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
         
+        animationView = .init(name: "OtinJT-Day")
+        animationView.contentMode = .scaleToFill
+        animationView.loopMode = .loop
+        animationView.layer.cornerRadius = 20
+        animationView.play()
+        
+        addSubview(animationView)
+        
+        addSubview(imageView)
         addSubview(parentStackView)
         addSubview(childStackView)
 
@@ -77,6 +93,7 @@ class Jumbotron: UIView {
         parentStackView.addArrangedSubview(greetingLabel)
         parentStackView.addArrangedSubview(childStackView)
         
+        
         TimeframeImageHelper.setImage(imageView: imageView)
         getIndonesianDate()
         getTickingTime()
@@ -85,6 +102,11 @@ class Jumbotron: UIView {
     }
     
     private func setupConstraints() {
+        
+        animationView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(self)
+        }
+        
         imageView.snp.makeConstraints { make in
             make.top.left.bottom.equalTo(self).inset(35)
             make.width.equalTo(imageView.snp.height)

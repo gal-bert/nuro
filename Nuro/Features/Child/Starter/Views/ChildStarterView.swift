@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import Lottie
 
 class ChildStarterView: UIView {
+    
+    private lazy var animationView: LottieAnimationView = {
+        let view = LottieAnimationView()
+        return view
+    }()
 
     private lazy var greetingLabel: UILabel = {
         let label = UILabel()
@@ -54,6 +60,16 @@ class ChildStarterView: UIView {
     private func setupUI() {
         backgroundColor = Colors.Neutral.white
         
+        animationView = .init(name: "OtinJT-Day")
+        animationView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        
+        animationView.play()
+        
+        
+        addSubview(animationView)
+        
         parentModeButton.setImage(UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 28))?.withTintColor(Colors.Brand.jasmine).withRenderingMode(.alwaysOriginal), for: .normal)
         
         addSubview(stackView)
@@ -61,12 +77,18 @@ class ChildStarterView: UIView {
         stackView.addArrangedSubview(greetingLabel)
         stackView.addArrangedSubview(timeImage)
         stackView.addArrangedSubview(button)
+        
+        
 
         TimeframeImageHelper.setImage(imageView: timeImage)
 
     }
     
     private func setupConstraints() {
+        
+        animationView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(self)
+        }
         
         parentModeButton.snp.makeConstraints { make in
             make.top.left.equalTo(self).inset(64)
