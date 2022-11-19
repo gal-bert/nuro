@@ -1,25 +1,15 @@
 //
-//  ParentTodayActivityEmptyStateView.swift
+//  TableViewEmptyState.swift
 //  Nuro
 //
-//  Created by Gregorius Albert on 16/10/22.
+//  Created by Gregorius Albert on 20/11/22.
 //
 
 import UIKit
 
-class ParentTodayActivityEmptyStateView: UIView {
+class TableViewEmptyState : UIView {
     
-    private lazy var topLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .black
-        view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 22)
-        view.text = "Tidak ada aktivitas tersedia."
-        view.textColor = Colors.Text.onyx
-        view.textAlignment = .center
-        return view
-    }()
-    
-    private lazy var bottomLabel: UILabel = {
+    private lazy var label: UILabel = {
         let view = UILabel()
         view.font = UIFont(name: Fonts.VisbyRoundCF.regular, size: 22)
         view.text = "Buka halaman rutinitas untuk menambahkan aktivitas harian"
@@ -48,22 +38,20 @@ class ParentTodayActivityEmptyStateView: UIView {
     func setup() {
                 
         addSubview(stackView)
-        stackView.addArrangedSubview(topLabel)
-        stackView.addArrangedSubview(bottomLabel)
-        let prefix = "Buka halaman"
+        stackView.addArrangedSubview(label)
+        let prefix = "Tekan tombol"
         let suffix = "untuk menambahkan aktivitas harian"
         
-        let textAttachment = TextAttachments.iconOnly(imageAsset: Icons.todayFill, text: "", yOffset: -7, colorName: Colors.Brand.blueViolet)
+        let textAttachment = TextAttachments.iconOnly(imageName: Icons.plusPlain, text: "", yOffset: -6, colorName: Colors.Brand.blueViolet)
         
         let str = NSMutableAttributedString(string: "")
         let attr = [NSAttributedString.Key.font : UIFont(name: Fonts.VisbyRoundCF.bold, size: 22)]
         
         str.append(NSMutableAttributedString(string: "\(prefix)  "))
         str.append(NSMutableAttributedString(attributedString: textAttachment))
-        str.append(NSMutableAttributedString(string: " Hari Ini", attributes: attr))
         str.append(NSMutableAttributedString(string: "\n\(suffix)"))
         
-        bottomLabel.attributedText = str
+        label.attributedText = str
         
         setupConstraints()
     }
@@ -71,9 +59,9 @@ class ParentTodayActivityEmptyStateView: UIView {
     private func setupConstraints() {
         stackView.snp.makeConstraints { make in
             make.left.right.equalTo(self)
+            make.height.equalTo(ScreenSizes.modalHeight)
         }
     }
     
+   
 }
-
-

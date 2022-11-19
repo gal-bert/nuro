@@ -42,6 +42,13 @@ extension ParentTodayActivityEditOrderViewController: UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if mirrorDetails.count == 0 {
+            tableView.backgroundView = TableViewEmptyState()
+        } else {
+            tableView.backgroundView = nil
+        }
+        
         return mirrorDetails.count
     }
     

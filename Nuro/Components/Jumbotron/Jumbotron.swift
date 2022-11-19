@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class Jumbotron: UIView {
     
@@ -13,6 +14,8 @@ class Jumbotron: UIView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
+        view.frame = CGRect(x: self.frame.width / 2 - 125, y: self.frame.height / 2 - 125, width: 250, height: 250)
+
         return view
     }()
     
@@ -66,8 +69,8 @@ class Jumbotron: UIView {
     func setup() {
         self.layer.cornerRadius = 20
         backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
-        addSubview(imageView)
         
+        addSubview(imageView)
         addSubview(parentStackView)
         addSubview(childStackView)
 
@@ -77,6 +80,7 @@ class Jumbotron: UIView {
         parentStackView.addArrangedSubview(greetingLabel)
         parentStackView.addArrangedSubview(childStackView)
         
+        
         TimeframeImageHelper.setImage(imageView: imageView)
         getIndonesianDate()
         getTickingTime()
@@ -85,6 +89,7 @@ class Jumbotron: UIView {
     }
     
     private func setupConstraints() {
+        
         imageView.snp.makeConstraints { make in
             make.top.left.bottom.equalTo(self).inset(35)
             make.width.equalTo(imageView.snp.height)

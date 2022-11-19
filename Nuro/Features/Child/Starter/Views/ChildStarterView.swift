@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class ChildStarterView: UIView {
 
@@ -61,6 +62,8 @@ class ChildStarterView: UIView {
         stackView.addArrangedSubview(greetingLabel)
         stackView.addArrangedSubview(timeImage)
         stackView.addArrangedSubview(button)
+        
+        
 
         TimeframeImageHelper.setImage(imageView: timeImage)
 

@@ -48,10 +48,10 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
             cell.routines = viewModel.morningActivities
             cell.timeframe = 0
             
-            if viewModel.morningActivities.count == 0 {
-                cell.hiddenLabel.isHidden = false
-                cell.collectionView.isHidden = true
-            }
+//            if viewModel.morningActivities.count == 0 {
+//                cell.hiddenLabel.isHidden = false
+//                cell.collectionView.isHidden = true
+//            }
             
         case 1:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.afternoon, text: "Siang", imageHeight: 40, yOffset: -8, colorName: Colors.Text.onyx)
@@ -60,10 +60,10 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
             cell.routines = viewModel.afternoonActivities
             cell.timeframe = 1
             
-            if viewModel.afternoonActivities.count == 0 {
-                cell.hiddenLabel.isHidden = false
-                cell.collectionView.isHidden = true
-            }
+//            if viewModel.afternoonActivities.count == 0 {
+//                cell.hiddenLabel.isHidden = false
+//                cell.collectionView.isHidden = true
+//            }
             
         case 2:
             cell.timeframeLabel.attributedText = TextAttachments.leadingAttachment(imageName: Icons.night, text: "Malam", colorName: Colors.Text.onyx)
@@ -72,10 +72,10 @@ extension ParentTodayActivityViewController: UITableViewDelegate, UITableViewDat
             cell.routines = viewModel.eveningActivities
             cell.timeframe = 2
             
-            if viewModel.eveningActivities.count == 0 {
-                cell.hiddenLabel.isHidden = false
-                cell.collectionView.isHidden = true
-            }
+//            if viewModel.eveningActivities.count == 0 {
+//                cell.hiddenLabel.isHidden = false
+//                cell.collectionView.isHidden = true
+//            }
 
         default:
             cell.timeframeLabel.text = "Empty"

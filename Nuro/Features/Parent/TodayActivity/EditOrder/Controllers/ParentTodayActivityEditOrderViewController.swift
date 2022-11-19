@@ -24,6 +24,10 @@ class ParentTodayActivityEditOrderViewController: UIViewController {
         // Disable swipe down to dismiss / lightbox mode
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        parentTodayActivityEditOrderView.tableView.reloadData()
+    }
+    
     override func loadView() {
         view = parentTodayActivityEditOrderView
     }
