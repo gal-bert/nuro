@@ -61,17 +61,16 @@ class ChildStarterView: UIView {
     private func setupUI() {
         backgroundColor = Colors.Neutral.white
         
-        addSubview(animationView)
+//        addSubview(animationView)
         
         parentModeButton.setImage(UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 28))?.withTintColor(Colors.Brand.jasmine).withRenderingMode(.alwaysOriginal), for: .normal)
         
         addSubview(stackView)
         addSubview(parentModeButton)
         stackView.addArrangedSubview(greetingLabel)
-        stackView.addArrangedSubview(timeImage)
+//        stackView.addArrangedSubview(timeImage)
+        stackView.addArrangedSubview(animationView)
         stackView.addArrangedSubview(button)
-        
-        greetingLabel.text = ""
 
         TimeframeImageHelper.setImage(imageView: timeImage)
 
@@ -80,11 +79,11 @@ class ChildStarterView: UIView {
     private func setupAnimation() {
         switch Date().getTimeframeId() {
         case 1:
-            animationView = .init(name: "OtinJT-Morning")
+            animationView = .init(name: "OtinJT-Morning-Crop")
         case 2:
-            animationView = .init(name: "OtinJT-Day")
+            animationView = .init(name: "OtinJT-Day-Crop")
         case 3:
-            animationView = .init(name: "OtinJT-Night")
+            animationView = .init(name: "OtinJT-Night-Crop")
         default: break
             
         }
@@ -99,7 +98,7 @@ class ChildStarterView: UIView {
     private func setupConstraints() {
         
         animationView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(self)
+            make.left.right.equalTo(stackView).inset(40)
         }
         
         parentModeButton.snp.makeConstraints { make in

@@ -73,11 +73,11 @@ class Jumbotron: UIView {
     
     func setup() {
         self.layer.cornerRadius = 20
-//        backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
+        backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
         
-        setupAnimation()
+//        setupAnimation()
         
-        addSubview(animationView)
+//        addSubview(animationView)
         
         addSubview(imageView)
         addSubview(parentStackView)
@@ -117,9 +117,9 @@ class Jumbotron: UIView {
     
     private func setupConstraints() {
         
-        animationView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(self)
-        }
+//        animationView.snp.makeConstraints { make in
+//            make.top.left.right.bottom.equalTo(self)
+//        }
         
         imageView.snp.makeConstraints { make in
             make.top.left.bottom.equalTo(self).inset(35)
