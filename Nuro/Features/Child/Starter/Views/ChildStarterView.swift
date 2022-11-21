@@ -37,6 +37,7 @@ class ChildStarterView: UIView {
     
     func setup(vc: ChildStarterViewController) {
         delegate = vc
+        setupAnimation()
         setupButton()
         setupUI()
         setupConstraints()
@@ -55,21 +56,45 @@ class ChildStarterView: UIView {
     private func setupUI() {
         backgroundColor = Colors.Neutral.white
         
+//        addSubview(animationView)
+        
         parentModeButton.setImage(UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 28))?.withTintColor(Colors.Brand.jasmine).withRenderingMode(.alwaysOriginal), for: .normal)
         
         addSubview(stackView)
         addSubview(parentModeButton)
         stackView.addArrangedSubview(greetingLabel)
-        stackView.addArrangedSubview(timeImage)
+//        stackView.addArrangedSubview(timeImage)
+        stackView.addArrangedSubview(animationView)
         stackView.addArrangedSubview(button)
-        
-        
 
         TimeframeImageHelper.setImage(imageView: timeImage)
 
     }
     
+    private func setupAnimation() {
+        switch Date().getTimeframeId() {
+        case 1:
+            animationView = .init(name: "OtinJT-Morning-Crop")
+        case 2:
+            animationView = .init(name: "OtinJT-Day-Crop")
+        case 3:
+            animationView = .init(name: "OtinJT-Night-Crop")
+        default: break
+            
+        }
+        
+        animationView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        
+        animationView.play()
+    }
+    
     private func setupConstraints() {
+        
+        animationView.snp.makeConstraints { make in
+            make.left.right.equalTo(stackView).inset(40)
+        }
         
         parentModeButton.snp.makeConstraints { make in
             make.top.left.equalTo(self).inset(64)
