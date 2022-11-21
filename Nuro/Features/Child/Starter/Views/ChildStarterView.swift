@@ -42,6 +42,7 @@ class ChildStarterView: UIView {
     
     func setup(vc: ChildStarterViewController) {
         delegate = vc
+        setupAnimation()
         setupButton()
         setupUI()
         setupConstraints()
@@ -60,14 +61,6 @@ class ChildStarterView: UIView {
     private func setupUI() {
         backgroundColor = Colors.Neutral.white
         
-        animationView = .init(name: "OtinJT-Day")
-        animationView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        animationView.contentMode = .scaleAspectFill
-        animationView.loopMode = .loop
-        
-        animationView.play()
-        
-        
         addSubview(animationView)
         
         parentModeButton.setImage(UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 28))?.withTintColor(Colors.Brand.jasmine).withRenderingMode(.alwaysOriginal), for: .normal)
@@ -78,10 +71,29 @@ class ChildStarterView: UIView {
         stackView.addArrangedSubview(timeImage)
         stackView.addArrangedSubview(button)
         
-        
+        greetingLabel.text = ""
 
         TimeframeImageHelper.setImage(imageView: timeImage)
 
+    }
+    
+    private func setupAnimation() {
+        switch Date().getTimeframeId() {
+        case 1:
+            animationView = .init(name: "OtinJT-Morning")
+        case 2:
+            animationView = .init(name: "OtinJT-Day")
+        case 3:
+            animationView = .init(name: "OtinJT-Night")
+        default: break
+            
+        }
+        
+        animationView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        
+        animationView.play()
     }
     
     private func setupConstraints() {

@@ -28,6 +28,17 @@ class CircleImage: UIImageView {
         self.clipsToBounds = true
     }
     
+    init (size: CGFloat, animationView: UIImage) {
+        super.init(frame: .zero)
+
+        self.image = image
+        self.contentMode = .scaleAspectFit
+        self.layer.cornerRadius = size / 2
+        self.clipsToBounds = true
+    }
+    
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -75,11 +75,7 @@ class Jumbotron: UIView {
         self.layer.cornerRadius = 20
 //        backgroundColor = UIColor(patternImage: UIImage(named: "jumbotron-bg")!)
         
-        animationView = .init(name: "OtinJT-Day")
-        animationView.contentMode = .scaleToFill
-        animationView.loopMode = .loop
-        animationView.layer.cornerRadius = 20
-        animationView.play()
+        setupAnimation()
         
         addSubview(animationView)
         
@@ -99,6 +95,24 @@ class Jumbotron: UIView {
         getTickingTime()
         
         setupConstraints()
+    }
+    
+    private func setupAnimation() {
+        switch Date().getTimeframeId() {
+        case 1:
+            animationView = .init(name: "OtinJT-Morning")
+        case 2:
+            animationView = .init(name: "OtinJT-Day")
+        case 3:
+            animationView = .init(name: "OtinJT-Night")
+        default:break
+        }
+        
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.layer.cornerRadius = 20
+        animationView.alpha = 0.6
+        animationView.play()
     }
     
     private func setupConstraints() {
