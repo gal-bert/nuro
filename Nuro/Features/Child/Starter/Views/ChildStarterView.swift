@@ -9,11 +9,6 @@ import UIKit
 import Lottie
 
 class ChildStarterView: UIView {
-    
-    private lazy var animationView: LottieAnimationView = {
-        let view = LottieAnimationView()
-        return view
-    }()
 
     private lazy var greetingLabel: UILabel = {
         let label = UILabel()

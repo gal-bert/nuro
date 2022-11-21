@@ -10,11 +10,6 @@ import Lottie
 
 class Jumbotron: UIView {
     
-    private lazy var animationView: LottieAnimationView = {
-        let view = LottieAnimationView()
-        return view
-    }()
-    
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
