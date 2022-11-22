@@ -20,10 +20,11 @@ class ChildPinUnlockView: UIView {
     
     private lazy var cancelButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.configuration = .filled()
-        button.setImage(UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 48, weight: UIImage.SymbolWeight.black)), for: .normal)
+//        button.configuration = .filled()
+//        button.setImage(UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 48, weight: UIImage.SymbolWeight.black)), for: .normal)
+        button.setImage(UIImage(named: "x-button"), for: .normal)
         button.backgroundColor = Colors.Brand.blueViolet
-        button.layer.cornerRadius = 50
+        button.layer.cornerRadius = 40
         button.clipsToBounds = true
         return button
     }()
@@ -150,8 +151,8 @@ class ChildPinUnlockView: UIView {
         }
         
         cancelButton.snp.makeConstraints { make in
-            make.top.right.equalTo(self).inset(48)
-            make.width.height.equalTo(100)
+            make.top.left.equalTo(self).inset(64)
+            make.width.height.equalTo(80)
         }
         
         textField1.snp.makeConstraints { make in

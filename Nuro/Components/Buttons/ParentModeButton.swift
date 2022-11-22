@@ -19,15 +19,9 @@ class ParentModeButton: UIButton {
     }
     
     private func setupButton(size: CGFloat) {
-        configuration = .filled()
         
-        let config = UIImage.SymbolConfiguration(pointSize: 28)
-        var image = UIImage(systemName: Icons.parentMode, withConfiguration: config)?.withTintColor(Colors.Brand.jasmine).withRenderingMode(.alwaysOriginal)
-        
+        let image = UIImage(named: "parents-mode-button")
         setImage(image, for: .normal)
-        tintColor = Colors.Brand.floralWhite
-        layer.borderColor = Colors.Brand.jasmine.cgColor
-        layer.borderWidth = 6
         
         clipsToBounds = true
         layer.cornerRadius = size / 2

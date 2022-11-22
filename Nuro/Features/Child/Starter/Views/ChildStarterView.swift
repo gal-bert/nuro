@@ -26,6 +26,7 @@ class ChildStarterView: UIView {
     }()
     
     private lazy var timeImage = CircleImage(size: ScreenSizes.halfScreenHeight - 80, imageName: Icons.morning)
+    
     private lazy var button = ChildButton(title: "Selamat \(Date().getTimeframe())", height: ScreenSizes.halfScreenHeight / 4)
     
     private lazy var stackView: UIStackView = {
@@ -61,14 +62,11 @@ class ChildStarterView: UIView {
     private func setupUI() {
         backgroundColor = Colors.Neutral.white
         
-//        addSubview(animationView)
-        
-        parentModeButton.setImage(UIImage(systemName: Icons.cancel, withConfiguration: UIImage.SymbolConfiguration(pointSize: 28))?.withTintColor(Colors.Brand.jasmine).withRenderingMode(.alwaysOriginal), for: .normal)
+        parentModeButton.setImage(UIImage(named: "x-button"), for: .normal)
         
         addSubview(stackView)
         addSubview(parentModeButton)
         stackView.addArrangedSubview(greetingLabel)
-//        stackView.addArrangedSubview(timeImage)
         stackView.addArrangedSubview(animationView)
         stackView.addArrangedSubview(button)
 
