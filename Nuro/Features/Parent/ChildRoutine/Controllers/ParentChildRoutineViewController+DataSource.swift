@@ -20,6 +20,7 @@ extension ParentChildRoutineViewController: UITableViewDataSource {
         
         cell.isViewingChildRoutine = true
         cell.editButton.removeFromSuperview()
+        cell.setupDelegate(vc: self)
         
         
         switch Date().getTimeframeId() {

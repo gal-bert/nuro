@@ -10,7 +10,7 @@ import UIKit
 class ParentTodayActivityTableViewCell: UITableViewCell {
 
     static let identifier = "parentActivityTableViewCell"
-    var delegate: ParentTodayActivityDelegate!
+    var delegate: ParentTodayActivityDelegate?
 
     var routines = [MirrorDetail]()
 
@@ -75,8 +75,13 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         setupConstraints()
     }
 
-    func setupDelegate(vc: ParentTodayActivityViewController) {
-        delegate = vc
+    func setupDelegate(vc: Any) {
+        if let vc = vc as? ParentTodayActivityViewController {
+            delegate = vc
+        }
+        else if let vc = vc as? ParentChildRoutineViewController {
+            delegate = vc
+        }
     }
 
 
@@ -84,7 +89,7 @@ class ParentTodayActivityTableViewCell: UITableViewCell {
         let dest = ParentTodayActivityEditOrderViewController()
         dest.mirrorDetails = routines
         dest.editedTimeFrame = timeframe
-        delegate.presentViewController(dest: dest, modalHeight: ScreenSizes.modalHeight)
+        delegate?.presentViewController(dest: dest, modalHeight: ScreenSizes.modalHeight)
     }
 
 
@@ -120,7 +125,7 @@ extension ParentTodayActivityTableViewCell: UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dest = ParentTodayActivityDetailViewController()
         dest.detail = routines[indexPath.item]
-        delegate.presentViewController(dest: dest, modalHeight: ScreenSizes.smallModalHeight)
+        delegate?.presentViewController(dest: dest, modalHeight: ScreenSizes.smallModalHeight)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
