@@ -19,11 +19,17 @@ class PopOverArrowView: UIView, CoachMarkArrowView {
         
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(arrowView)
-        arrowView.createDownArrowShape(width: 32, height: 20)
+        
+        if orientation == .top {
+            arrowView.createUpArrowShape(width: 22, height: 20)
+        }
+        else {
+            arrowView.createDownArrowShape(width: 22, height: 20)
+        }
         
         arrowView.snp.makeConstraints { make in
             make.centerX.equalTo(self)
-            make.width.equalTo(32)
+            make.width.equalTo(22)
             make.height.equalTo(20)
         }
     }

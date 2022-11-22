@@ -79,15 +79,15 @@ class ParentChildRoutineViewController: UIViewController {
 extension ParentChildRoutineViewController: CoachMarksControllerDataSource, CoachMarksControllerDelegate {
     func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: Instructions.CoachMark) -> (bodyView: (UIView & Instructions.CoachMarkBodyView), arrowView: (UIView & Instructions.CoachMarkArrowView)?) {
         
-        let coachMarkBodyView = PopOverBodyView(title: "Mulai Rutinitas Anak", subtitle: "Tekan\"Mulai Rutinitas Anak\" untuk memasuki halaman anak.", buttonTitle: "Mengerti")
-        var coachMarkArrowView: PopOverArrowView?
+        let customBodyView = PopOverBodyView(title: Strings.walkthroughStartKidsModeTitle, subtitle: Strings.walkthroughStartKidsModeSubtitle, buttonTitle: Strings.walkthroughFinishButtonTitle)
+        var customArrowView: PopOverArrowView?
 
         if let arrowOrientation = coachMark.arrowOrientation {
             let view = PopOverArrowView(orientation: arrowOrientation)
-            coachMarkArrowView = view
+            customArrowView = view
         }
 
-        return (bodyView: coachMarkBodyView, arrowView: coachMarkArrowView)
+        return (bodyView: customBodyView, arrowView: customArrowView)
     }
     
     func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkAt index: Int) -> Instructions.CoachMark {
