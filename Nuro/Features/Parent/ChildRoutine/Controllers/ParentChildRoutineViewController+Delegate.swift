@@ -39,3 +39,26 @@ extension ParentChildRoutineViewController: ParentChildRoutineDelegate {
         self.present(dest, animated: true)
     }
 }
+
+extension ParentChildRoutineViewController: ParentTodayActivityDelegate {
+    func presentViewController(dest: UIViewController, modalHeight: CGFloat) {
+        let vc = UINavigationController(rootViewController: dest)
+        vc.modalPresentationStyle = .formSheet
+        vc.preferredContentSize = .init(width: ScreenSizes.modalWidth, height: modalHeight)
+        
+        if let dest = dest as? ParentTodayActivityDetailViewController {
+            dest.reloadDelegate = self
+        }
+        
+        present(vc, animated: true)
+    }
+}
+
+extension ParentChildRoutineViewController: ReloadDelegate {
+    func reloadView() {
+        viewModel.getTodaysRoutine()
+        let cell = parentChildRoutineView.routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ParentTodayActivityTableViewCell
+        cell?.collectionView.reloadData()
+        parentChildRoutineView.routineTableView.reloadData()
+    }
+}
