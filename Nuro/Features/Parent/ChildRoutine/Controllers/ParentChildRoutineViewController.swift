@@ -22,8 +22,7 @@ class ParentChildRoutineViewController: UIViewController {
         parentChildRoutineView.setup(vc: self)
         
         self.coachMarksController.dataSource = self
-        self.coachMarksController.overlay.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.7)
-        
+        self.coachMarksController.overlay.backgroundColor = Colors.Overlay.dark
         
         if viewModel.todaysRoutines.count == 0 {
             parentChildRoutineView.emptyState.isHidden = false
@@ -79,21 +78,24 @@ class ParentChildRoutineViewController: UIViewController {
 
 extension ParentChildRoutineViewController: CoachMarksControllerDataSource, CoachMarksControllerDelegate {
     func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: Instructions.CoachMark) -> (bodyView: (UIView & Instructions.CoachMarkBodyView), arrowView: (UIView & Instructions.CoachMarkArrowView)?) {
-        let coachViews = coachMarksController.helper.makeDefaultCoachViews(
-            withArrow: true,
-            arrowOrientation: coachMark.arrowOrientation
-        )
+        
+        let customBodyView = PopOverBodyView(title: Strings.walkthroughStartKidsModeTitle, subtitle: Strings.walkthroughStartKidsModeSubtitle, buttonTitle: Strings.walkthroughFinishButtonTitle)
+        var customArrowView: PopOverArrowView?
 
-        coachViews.bodyView.hintLabel.text = "Tekan “Mulai Rutinitas Anak” untuk memasuki halaman anak. "
-        coachViews.bodyView.nextLabel.text = "Berikutnya"
+        if let arrowOrientation = coachMark.arrowOrientation {
+            let view = PopOverArrowView(orientation: arrowOrientation)
+            customArrowView = view
+        }
 
-        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+        return (bodyView: customBodyView, arrowView: customArrowView)
     }
     
     func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkAt index: Int) -> Instructions.CoachMark {
         var coachMark = coachMarksController.helper.makeCoachMark(for: parentChildRoutineView.startButton)
         UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughStartKidsModeCompleted)
-        //coachMark.isUserInteractionEnabledInsideCutoutPath = true
+        coachMark.arrowOrientation = .bottom
+        coachMark.gapBetweenCoachMarkAndCutoutPath = 20
+        coachMark.maxWidth = 400
         return coachMark
     }
     

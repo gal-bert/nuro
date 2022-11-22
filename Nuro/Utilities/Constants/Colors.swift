@@ -55,6 +55,10 @@ enum Colors {
         static let darkBlueGray = ColorRGBA.fraction(r: 102, g: 88, b: 163)
     }
     
+    enum Overlay {
+        static let dark = ColorRGBA.fraction(r: 0, g: 0, b: 0, a: 0.3)
+    }
+    
     enum headerFolder {
         static let alabasterDark = ColorRGBA.fraction(r: 207, g: 224, b: 209)
         static let lavenderDark = ColorRGBA.fraction(r: 203, g: 198, b: 222)

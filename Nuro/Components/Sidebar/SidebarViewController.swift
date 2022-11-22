@@ -70,7 +70,7 @@ class SidebarViewController: UIViewController {
         collectionViewMain.selectItem(at: [0,1], animated: true, scrollPosition: .top)
         
         self.coachMarksController.dataSource = self
-        self.coachMarksController.overlay.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.7)
+        self.coachMarksController.overlay.backgroundColor = Colors.Overlay.dark
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,23 +84,24 @@ class SidebarViewController: UIViewController {
 
 extension SidebarViewController: CoachMarksControllerDataSource, CoachMarksControllerDelegate {
     func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: Instructions.CoachMark) -> (bodyView: (UIView & Instructions.CoachMarkBodyView), arrowView: (UIView & Instructions.CoachMarkArrowView)?) {
-        let coachViews = coachMarksController.helper.makeDefaultCoachViews(
-            withArrow: true,
-            arrowOrientation: coachMark.arrowOrientation
-        )
+        
+        var customBodyView = PopOverBodyView()
+        var customArrowView: PopOverArrowView?
         
         switch index {
-            case 0:
-                coachViews.bodyView.hintLabel.text = "Buka halaman Penjadwalan untuk menambahkan aktivitas harian."
-                coachViews.bodyView.nextLabel.text = "Berikutnya"
-            case 1:
-                coachViews.bodyView.hintLabel.text = "Jika jadwal rutinitas telah selesai dibuat, buka halaman Rutinitas Anak."
-                coachViews.bodyView.nextLabel.text = "Berikutnya"
-            default:break
-
+        case 0:
+            customBodyView = PopOverBodyView(title: Strings.walkthroughRoutinesTitle, subtitle: Strings.walkthroughRoutinesSubtitle, buttonTitle: Strings.walkthroughNextButtonTitle)
+        case 1:
+            customBodyView = PopOverBodyView(title: Strings.walkthroughKidsModeTitle, subtitle: Strings.walkthroughKidsModeSubtitle, buttonTitle: Strings.walkthroughNextButtonTitle)
+        default:
+            break
         }
-
-        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+        
+        if let orientation = coachMark.arrowOrientation {
+            customArrowView = PopOverArrowView(orientation: orientation)
+        }
+        
+        return (bodyView: customBodyView, arrowView: customArrowView)
     }
     
     func coachMarksController(_ coachMarksController: Instructions.CoachMarksController, coachMarkAt index: Int) -> Instructions.CoachMark {
@@ -108,12 +109,16 @@ extension SidebarViewController: CoachMarksControllerDataSource, CoachMarksContr
         switch index {
         case 0:
             var coachMark = coachMarksController.helper.makeCoachMark(for: collectionViewMain.cellForItem(at: IndexPath(item: 2, section: 0)))
-            //coachMark.isUserInteractionEnabledInsideCutoutPath = true
+            coachMark.gapBetweenCoachMarkAndCutoutPath = 20
+            coachMark.maxWidth = 400
+            coachMark.arrowOrientation = .top
             UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughRoutinesCompleted)
             return coachMark
         case 1:
             var coachMark = coachMarksController.helper.makeCoachMark(for: collectionViewMain.cellForItem(at: IndexPath(item: 1, section: 1)))
-            //coachMark.isUserInteractionEnabledInsideCutoutPath = true
+            coachMark.gapBetweenCoachMarkAndCutoutPath = 20
+            coachMark.maxWidth = 400
+            coachMark.arrowOrientation = .top
             UserDefaults.standard.set(true, forKey: UserDefaultsHelper.Keys.isWalkthroughKidsModeCompleted)
             return coachMark
         default:
